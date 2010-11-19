@@ -1,0 +1,6 @@
+#name : C++ Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+BEGIN_SRC c++
+$0$>
+#+END_SRC$>

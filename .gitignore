@@ -1,0 +1,15 @@
+#*
+session.*
+*.elc
+*~
+\#~
+.*~
+.#~
+auto-save-list/*
+tramp
+.\#*
+\#*\#
+bookmarks
+history
+el-get
+custom.el

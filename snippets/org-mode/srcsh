@@ -1,0 +1,6 @@
+#name : Shell Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+BEGIN_SRC sh
+$0$>
+#+END_SRC$>

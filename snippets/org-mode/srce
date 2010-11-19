@@ -1,0 +1,6 @@
+#name : emacs-lisp Source Code Block
+#contributor : Martyn Jago <martyn.jago@btinternet.com>
+# --
+#+BEGIN_SRC emacs-lisp
+$0$>
+#+END_SRC$>
