@@ -2,8 +2,9 @@
 ;; ORG MODE stuff day planner GTD
 ;; -----------------------------------------------------------------------------
 
-;;(add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp"))
-;(add-to-list 'load-path (expand-file-name "~/git/org-mode/lisp"))
+(setq load-path (cons (expand-file-name "~/.emacs.d/el-get/org-mode/lisp") load-path))
+(require 'org)
+
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;; Standard key bindings
