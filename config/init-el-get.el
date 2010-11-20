@@ -6,7 +6,10 @@
       '(
 
 	package
-	
+
+;;	(:name fringe-helper :type elpa)
+        (:name dired-plus :type git :url "git://github.com/emacsmirror/dired-plus.git")
+		
 	;; help typing
 	highlight-parentheses
 
@@ -49,8 +52,8 @@
 	       :build/darwin ("./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make autoloads" "make")
 	       :features bbdb
 	       :after (lambda () (bbdb-initialize))
-	       :info "texinfo")
-	))
+	       :info "texinfo"))
+      )
 
 
 ;
