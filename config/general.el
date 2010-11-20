@@ -60,16 +60,13 @@ version-control t) ; use versioned backups
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c C-o") 'scroll-other-window)
 (global-set-key (kbd "C-c M-f") 'load-file)
+(global-unset-key (kbd "C-z"))
 
 (defun change-to-other-buffer ()
  "Change to other buffer"
   (interactive)
  (switch-to-buffer (other-buffer (current-buffer) t)))
 (global-set-key (kbd "<f1>") 'change-to-other-buffer)
-
-(global-set-key (kbd "C-z") (lambda ()
-			      (interactive)
-			      (kill-buffer (buffer-name))))
 
 ;; C-k at beginning of line takes the whole line (no need to c-k twice)
 (setq kill-whole-line t)
@@ -89,20 +86,6 @@ With prefix argument, insert date and time."
   (when arg
     (insert (format-time-string " %H:%M"))))
 ;; (global-set-key (kbd "C-c d") 'insert-date)
-
-;; Kill all the damn '\r' chars...
-(defun dos2unix ()
-  "Convert a buffer from dos ^M end of lines to unix end of lines"
-  (interactive)
-    (goto-char (point-min))
-      (while (search-forward "\r" nil t) (replace-match "")))
-
-;;  put stupid line endings back in. This function should not even exist.
-(defun unix2dos ()
-  "Opposite of dos2unix"
-  (interactive)
-    (goto-char (point-min))
-      (while (search-forward "\n" nil t) (replace-match "\r\n")))
 
 (defun highlight-fixme ()
   (font-lock-add-keywords nil'(("\\<\\(FIXME!?\\)"

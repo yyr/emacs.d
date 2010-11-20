@@ -1,22 +1,10 @@
 ;; -----------------------------------------------------------------------------
-;; LOOK
+;; Essential minors, Change Default behavior 
 ;; -----------------------------------------------------------------------------
 
 ;; stop welcome screen
 (custom-set-variables
  '(inhibit-startup-screen t))
-
-;; Menu
-(global-set-key (kbd "<f10>")
-		(lambda ()
-		  (interactive)
-		  (if (window-system)
-		      (menu-bar-mode (if menu-bar-mode -1 1))
-		    (menu-bar-open))))
-
-;; -----------------------------------------------------------------------------
-;; BEHAVIOR
-;; -----------------------------------------------------------------------------
 
 ;; enable narrowing w/out a prompt toggle -> c-x n n ; c-x n w
 (put 'narrow-to-region 'disabled nil)
@@ -35,3 +23,10 @@
 ;(blink-cursor-mode -1)
 (set-face-attribute 'default nil :height 100)
 (setq visible-bell t)
+(show-paren-mode 1)
+(setq show-paren-style 'parenthesis)
+(setq show-paren-delay 0)
+(column-number-mode 1)
+
+
+(provide 'init-ess-minors)

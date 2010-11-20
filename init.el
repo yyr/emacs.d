@@ -46,6 +46,10 @@
 (require 'init-hippie-expand)
 (require 'init-auto-fill)
 
+;; window & desktop
+(require 'init-ess-minors)
+(require 'init-windows)
+
 ;; File management
 (require 'init-dired)
 
@@ -53,7 +57,7 @@
 (require 'init-ido)
 (require 'init-smex)
 
-;; langs
+;; languages
 (require 'init-perl)
 (require 'init-fortran)
 (require 'init-sh)
@@ -61,6 +65,9 @@
 ;;subject
 (require 'init-octave)  
 (require 'init-latex)   
+
+;; git
+(require 'init-git)
 
 ;; GTD
 (require 'init-org)
@@ -70,8 +77,8 @@
 
 ;; 'make' help
 
-;; utilities
+;; utilities & misc
 (require 'init-utils)
+(require 'init-exec-path)
 
-(load (concat my-emacs-config "look"))           ;; font and themes settings
-(load (concat my-emacs-config "general"))        ;; General seeting for emacs
+(load (concat my-emacs-config "general"))        ;; General settings
