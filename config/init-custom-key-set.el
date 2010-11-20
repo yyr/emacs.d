@@ -6,7 +6,9 @@
 (global-set-key (kbd "C-c c") 'comment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 (global-set-key (kbd "C-c s") 'ispell-word)
-;;(global-set-key (kbd "C-<f4>") '(kill-buffer (current-buffer t)))
+(global-set-key (kbd "C-<f4>") (lambda ()
+			      (interactive)
+			      (kill-buffer (buffer-name))))
 
 ;; use funcion keys 
 (global-set-key [f2] 'split-window-horizontally)
