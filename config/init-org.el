@@ -60,9 +60,9 @@
 ;;info thing
 (global-set-key (kbd "<f9> i") 'bh/org-info)
 
-(defun bh/org-info ()
-  (interactive)
-  (info "~/git/info/org.info"))
+;; (defun bh/org-info ()
+;;   (interactive)
+;;   (info "~/git/info/org.info"))
 
 ;; defuns (finally integrate into other sections)
 ;; ---------------------------------------------
@@ -75,7 +75,6 @@
 ;; TODO key words
 (setq org-todo-keywords (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
  (sequence "WAITING(w@/!)" "SOMEDAY(s!)" "|" "CANCELLED(c@/!)"))))
- ;; (sequence "OPEN(O)" "|" "CLOSED(C)"))))
 
 
 (setq org-todo-keyword-faces (quote (("TODO" :foreground "red" :weight bold)
@@ -110,50 +109,7 @@
                ("WAITING")
                ("CANCELLED")))))
 
-(defun bh/clock-in-to-next (kw)
-  "Switch task from TODO to NEXT when clocking in.
-Skips capture tasks and tasks with subtasks"
-  (if (and (string-equal kw "TODO")
-           (not (and (boundp 'org-capture-mode) org-capture-mode)))
-      (let ((subtree-end (save-excursion (org-end-of-subtree t)))
-            (has-subtask nil))
-        (save-excursion
-          (forward-line 1)
-          (while (and (not has-subtask)
-                      (< (point) subtree-end)
-                      (re-search-forward "^\*+ " subtree-end t))
-            (when (member (org-get-todo-state) org-not-done-keywords)
-              (setq has-subtask t))))
-        (when (not has-subtask)
-          "NEXT"))))
 
-;; Remove empty CLOCK drawers on clock out
-(defun bh/remove-empty-drawer-on-clock-out ()
-  (interactive)
-  (save-excursion
-    (beginning-of-line 0)
-    (org-remove-empty-drawer-at "CLOCK" (point))))
-
-(add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
-
-
-;; org-babel Setup
-;; ---------------
-(setq org-ditaa-jar-path "~/git/repos/org-mode/contrib/scripts/ditaa.jar")
-(add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
-(setq org-babel-load-languages (quote ((emacs-lisp . t)
-                                         (dot . t)
-                                         (ditaa . t)
-                                         (octave . t)
-                                         (python . t)
-                                         (perl . t)
-                                         (gnuplot . t)
-                                         (sh . t))))
-
-;; Do not prompt to confirm evaluation
-;; This may be dangerous - make sure you understand the consequences
-;; of setting this -- see the docstring for details
- (setq org-confirm-babel-evaluate nil)
 
 ;; Narrowing to subtree
 (global-set-key (kbd "<f5>") 'bh/org-todo)
@@ -338,88 +294,5 @@ Skips capture tasks and tasks with subtasks"
 
 (setq org-agenda-auto-exclude-function 'bh/org-auto-exclude-function)
 
-;; Clocking 
-;; ---------
-
-
-;; Rounding minutes
-(setq org-time-stamp-rounding-minutes (quote (1 15)))
-
-;; Sometimes I change tasks I'm clocking quickly - this removes clocked tasks with 0:00 duration
-(setq org-clock-out-remove-zero-time-clocks t)
-
-
-;; ORG-Beamer
-;; ==========
-
-;; allow for export=>beamer by placing
-
-;; #+LaTeX_CLASS: beamer in org files
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-(add-to-list 'org-export-latex-classes
-	     ;; beamer class, for presentations
-	     '("beamer"
-	       "\\documentclass[11pt]{beamer}\n
-      \\mode<{{{beamermode}}}>\n
-      \\usetheme{{{{beamertheme}}}}\n
-      \\usecolortheme{{{{beamercolortheme}}}}\n
-      \\beamertemplateballitem\n
-      \\setbeameroption{show notes}
-      \\usepackage[utf8]{inputenc}\n
-      \\usepackage[T1]{fontenc}\n
-      \\usepackage{hyperref}\n
-      \\usepackage{color}
-      \\usepackage{listings}
-      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
-  frame=single,
-  basicstyle=\\small,
-  showspaces=false,showstringspaces=false,
-  showtabs=false,
-  keywordstyle=\\color{blue}\\bfseries,
-  commentstyle=\\color{red},
-  }\n
-      \\usepackage{verbatim}\n
-      \\institute{{{{beamerinstitute}}}}\n          
-       \\subject{{{{beamersubject}}}}\n"
-
-	       ("\\section{%s}" . "\\section*{%s}")
-	       
-	       ("\\begin{frame}[fragile]\\frametitle{%s}"
-		"\\end{frame}"
-		"\\begin{frame}[fragile]\\frametitle{%s}"
-		"\\end{frame}")))
-
-;; letter class, for formal letters
-
-(add-to-list 'org-export-latex-classes
-
-	     '("letter"
-	       "\\documentclass[11pt]{letter}\n
-      \\usepackage[utf8]{inputenc}\n
-      \\usepackage[T1]{fontenc}\n
-      \\usepackage{color}"
-	       
-	       ("\\section{%s}" . "\\section*{%s}")
-	       ("\\subsection{%s}" . "\\subsection*{%s}")
-	       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
-	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-(setq org-emphasis-alist (quote (("*" bold "<b>" "</b>") 
-      				 ("/" italic "<i>" "</i>")
-      				 ("_" underline "<span style=\"text-decoration:underline;\">" "</span>")
-      				 ("=" org-code "<code>" "</code>" verbatim)
-      				 ("~" org-verbatim "<code>" "</code>" verbatim)
-      				 ("+" (:strike-through t) "<del>" "</del>")
-      				 ("@" org-warning "<b>" "</b>")))
-      org-export-latex-emphasis-alist (quote 
-      				       (("*" "\\textbf{%s}" nil)
-      					("/" "\\emph{%s}" nil) 
-      					("_" "\\underline{%s}" nil)
-      					("+" "\\texttt{%s}" nil)
-      					("=" "\\verb=%s=" nil)
-      					("~" "\\verb~%s~" t)
-      					("@" "\\alert{%s}" nil))))
 
 (provide 'init-org)
