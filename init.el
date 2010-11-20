@@ -56,6 +56,7 @@
 ;; langs
 (require 'init-perl)
 (require 'init-fortran)
+(require 'init-sh)
 
 ;;subject
 (require 'init-octave)  
@@ -66,6 +67,11 @@
 
 ;; Info,  help & Doc
 (require 'init-info)
+
+;; 'make' help
+
+;; utilities
+(require 'init-utils)
 
 (load (concat my-emacs-config "look"))           ;; font and themes settings
 (load (concat my-emacs-config "general"))        ;; General seeting for emacs
