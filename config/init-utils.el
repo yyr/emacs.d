@@ -51,5 +51,52 @@ in `exec-path', or nil if no such command exists"
   (browse-url (concat "file://" (buffer-file-name))))
 
 
+;;----------------------------------------------------------------------------
+;; date insert with arg
+;;----------------------------------------------------------------------------
+(defun insert-date (arg)
+  "Insert date at point.
+With prefix argument, insert date and time."
+  (interactive "P")
+  (insert (format-time-string "%Y-%m-%d"))
+  (when arg
+    (insert (format-time-string " %H:%M"))))
+;; (global-set-key (kbd "C-c d") 'insert-date)
+
+;;----------------------------------------------------------------------------
+;; fixme highlight
+;;----------------------------------------------------------------------------
+(defun highlight-fixme ()
+  (font-lock-add-keywords nil'(("\\<\\(FIXME!?\\)"
+				1 font-lock-warning-face prepend))))
+
+;;----------------------------------------------------------------------------
+;; transpose buffers
+;;----------------------------------------------------------------------------
+(defun transpose-buffers (arg)
+  "Transpose the buffers shown in two windows."
+  (interactive "p")
+  (let ((selector (if (>= arg 0) 'next-window 'previous-window)))
+    (while (/= arg 0)
+      (let ((this-win (window-buffer))
+            (next-win (window-buffer (funcall selector))))
+        (set-window-buffer (selected-window) next-win)
+        (set-window-buffer (funcall selector) this-win)
+        (select-window (funcall selector)))
+      (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
+
+(global-set-key (kbd "C-<f7>") 'transpose-buffers)
+
+
+;;----------------------------------------------------------------------------
+;; delete leading white spaces from emacswiki
+;;----------------------------------------------------------------------------
+(defun my-delete-leading-whitespace (start end)
+  "Delete whitespace at the beginning of each line in region."
+  (interactive "*r")
+  (save-excursion
+    (if (not (bolp)) (forward-line 1))
+    (delete-whitespace-rectangle (point) end nil)))
+
 
 (provide 'init-utils)

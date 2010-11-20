@@ -36,6 +36,10 @@
 ;; load emacs individual configuration files
 ;; -----------------------------------------------------------------------------
 
+;; initial setup, keybindings
+(require 'init-ess-minors)
+(require 'init-custom-key-set)
+
 ;;; package managers
 (require 'init-elpa)
 (require 'init-el-get)
@@ -47,7 +51,6 @@
 (require 'init-auto-fill)
 
 ;; window & desktop
-(require 'init-ess-minors)
 (require 'init-windows)
 
 ;; File management
