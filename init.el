@@ -46,7 +46,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-fill)
 
-;; File managing
+;; File management
 (require 'init-dired)
 
 ;;; make friendly mini buffer 
