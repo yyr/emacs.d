@@ -83,5 +83,6 @@
 ;; utilities & misc
 (require 'init-utils)
 (require 'init-exec-path)
+(require 'init-misc)
 
 (load (concat my-emacs-config "general"))        ;; General settings

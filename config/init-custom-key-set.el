@@ -31,5 +31,16 @@
 ;; C-k at beginning of line takes the whole line (no need to c-k twice)
 (setq kill-whole-line t)
 
+;; (setq ispell-command "")
+(setq text-mode-hook '(lambda ()
+			(local-set-key "\M-\t" 'ispell-complete-word)))
+(setq tex-mode-hook '(lambda ()
+		       (local-set-key "\M-\t" 'ispell-complete-word)))
+(setq latex-mode-hook '(lambda ()
+			 (local-set-key "\M-\t" 'ispell-complete-word)))
+(setq html-helper-mode-hook '(lambda ()
+			       (local-set-key "\M-\t" 'ispell-complete-word)))
+(setq ispell-enable-tex-parser t)
+
 
 (provide 'init-custom-key-set)

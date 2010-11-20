@@ -14,28 +14,15 @@ kept-new-versionhs 6
 kept-old-versions 2
 version-control t) ; use versioned backups
 
+;; How do I stop Emacs from automatically editing my startup file?
+(setq disabled-command-function nil)
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 
 ;(setq x-select-enable-clipboard nil); Ubuntu
 ;;
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-; (setq ispell-command "")
-(setq text-mode-hook '(lambda ()
-			(local-set-key "\M-\t" 'ispell-complete-word)))
-(setq tex-mode-hook '(lambda ()
-		       (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq latex-mode-hook '(lambda ()
-			 (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq html-helper-mode-hook '(lambda ()
-			       (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq ispell-enable-tex-parser t)
-
-;; How do I stop Emacs from automatically editing my startup file?
-(setq disabled-command-function nil)
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror)
-
 (defalias 'yes-or-no-p 'y-or-n-p)
-
 
