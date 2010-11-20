@@ -130,26 +130,3 @@ With prefix argument, insert date and time."
     (if (not (bolp)) (forward-line 1))
     (delete-whitespace-rectangle (point) end nil)))
 
-;; -----------------------------------------------------------------------------
-;; Dired Mode
-;; -----------------------------------------------------------------------------
-
-;; dired-x
-(add-hook 'dired-load-hook
-	  (function (lambda () (load "dired-x"))))
-
-(autoload 'dired-jump "dired-x"
-  "Jump to dired buffer corresponding to current buffer."
-  'interactive)
-(autoload 'dired-jump-other-window "dired-x"
-  "Like \\[dired-jump] (`dired-jump') but in other window."
-  'interactive)
-(setq dired-bind-jump t)
-(global-set-key "\C-x\C-j" 'dired-jump)
-(global-set-key "\C-x4\C-j" 'dired-jump-other-window)
-
-;; -----------------------------------------------------------------------------
-;; RecentFiles
-;; -----------------------------------------------------------------------------
-(recentf-mode 1)
-(setq recentf-max-saved-items '25)
