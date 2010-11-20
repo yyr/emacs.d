@@ -26,3 +26,4 @@ version-control t) ; use versioned backups
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(provide 'init-general)

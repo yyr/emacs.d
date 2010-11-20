@@ -39,6 +39,7 @@
 ;; initial setup, keybindings
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
+(require 'init-general)
 
 ;;; package managers
 (require 'init-elpa)
@@ -85,4 +86,5 @@
 (require 'init-exec-path)
 (require 'init-misc)
 
-(load (concat my-emacs-config "general"))        ;; General settings
+
+;; init ends here
