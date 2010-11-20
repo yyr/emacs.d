@@ -2,6 +2,10 @@
 ;; Dired Mode
 ;; -----------------------------------------------------------------------------
 
+(require 'dired+)
+(setq dired-recursive-deletes 'top)
+(define-key dired-mode-map [mouse-2] 'dired-find-file)
+
 ;; dired-x
 (add-hook 'dired-load-hook
 	  (function (lambda () (load "dired-x"))))
