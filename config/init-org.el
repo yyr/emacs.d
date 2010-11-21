@@ -57,14 +57,6 @@
 ;;                                 (delete-frame)))
 				 ))
 
-
-;;info thing
-(global-set-key (kbd "<f9> i") 'bh/org-info)
-
-;; (defun bh/org-info ()
-;;   (interactive)
-;;   (info "~/git/info/org.info"))
-
 ;; defuns (finally integrate into other sections)
 ;; ---------------------------------------------
 (defun bh/go-to-scratch ()
@@ -182,69 +174,5 @@
  '(org-agenda-tags-todo-honor-ignore-options t)
  '(org-agenda-todo-ignore-scheduled t)
  '(org-agenda-todo-ignore-with-date t))
-
-(setq org-agenda-custom-commands
-      (quote (("w" "Tasks waiting on something" tags "WAITING/!"
-               ((org-use-tag-inheritance nil)
-                (org-agenda-todo-ignore-scheduled nil)
-                (org-agenda-todo-ignore-deadlines nil)
-                (org-agenda-todo-ignore-with-date nil)
-                (org-agenda-overriding-header "Waiting Tasks")))
-              ("r" "Refile New Notes and Tasks" tags "LEVEL=1+REFILE"
-               ((org-agenda-todo-ignore-with-date nil)
-                (org-agenda-todo-ignore-deadlines nil)
-                (org-agenda-todo-ignore-scheduled nil)
-                (org-agenda-overriding-header "Tasks to Refile")))
-              ("N" "Notes" tags "NOTE"
-               ((org-agenda-overriding-header "Notes")))
-              ("n" "Next" tags-todo "-WAITING-CANCELLED/!NEXT"
-               ((org-agenda-overriding-header "Next Tasks")))
-              ("p" "Projects" tags-todo "LEVEL=2-REFILE|LEVEL=1+REFILE/!-DONE-CANCELLED"
-               ((org-agenda-skip-function 'bh/skip-non-projects)
-                (org-agenda-overriding-header "Projects")))
-              ("o" "Other (Non-Project) tasks" tags-todo "LEVEL=2-REFILE|LEVEL=1+REFILE/!-DONE-CANCELLED"
-               ((org-agenda-skip-function 'bh/skip-projects)
-                (org-agenda-overriding-header "Other Non-Project Tasks")))
-              ("A" "Tasks to be Archived" tags "LEVEL=2-REFILE/DONE|CANCELLED"
-               ((org-agenda-overriding-header "Tasks to Archive")))
-              ("h" "Habits" tags "STYLE=\"habit\""
-               ((org-agenda-todo-ignore-with-date nil)
-                (org-agenda-todo-ignore-scheduled nil)
-                (org-agenda-todo-ignore-deadlines nil)
-                (org-agenda-overriding-header "Habits")))
-              ("#" "Stuck Projects" tags-todo "LEVEL=2-REFILE|LEVEL=1+REFILE/!-DONE-CANCELLED"
-               ((org-agenda-skip-function 'bh/skip-non-stuck-projects)
-                (org-agenda-overriding-header "Stuck Projects")))
-              ("c" "Select default clocking task" tags "LEVEL=2-REFILE"
-               ((org-agenda-skip-function
-                 '(org-agenda-skip-subtree-if 'notregexp "^\\*\\* Organization"))
-                (org-agenda-overriding-header "Set default clocking task with C-u C-u I"))))))
-
-(defun bh/weekday-p ()
-  (let ((wday (nth 6 (decode-time))))
-    (and (< wday 6) (> wday 0))))
-
-(defun bh/working-p ()
-  (let ((hour (nth 2 (decode-time))))
-    (and (bh/weekday-p) (or (and (>= hour 8) (<= hour 11))
-                           (and (>= hour 13) (<= hour 16))))))
-
-(defun bh/network-p ()
-  (= 0 (call-process "/bin/ping" nil nil nil
-                     "-c1" "-q" "-t1" "norang.ca")))
-
-(defun bh/org-auto-exclude-function (tag)
-  (and (cond
-       ((string= tag "@home")
-        (bh/working-p))
-       ((string= tag "@office")
-        (not (bh/working-p)))
-       ((or (string= tag "@errand") (string= tag "phone"))
-        (let ((hour (nth 2 (decode-time))))
-          (or (< hour 8) (> hour 21)))))
-       (concat "-" tag)))
-
-(setq org-agenda-auto-exclude-function 'bh/org-auto-exclude-function)
-
 
 (provide 'init-org)
