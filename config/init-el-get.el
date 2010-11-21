@@ -52,9 +52,18 @@
 	       :build/darwin ("./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make autoloads" "make")
 	       :features bbdb
 	       :after (lambda () (bbdb-initialize))
-	       :info "texinfo"))
-      )
+	       :info "texinfo")
 
+	(:name emacs-w3m
+	      :type cvs
+	      :module "emacs-w3m"
+	      :url ":pserver:anonymous@cvs.namazu.org:/storage/cvsroot"
+	      :build ("autoconf" "./configure" "make")
+	      :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
+	      :info "doc"
+	      :features "w3m-load")
+
+	))
 
 ;
 (el-get 'sync)
