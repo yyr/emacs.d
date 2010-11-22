@@ -24,6 +24,23 @@
 (global-set-key (kbd "C-c M-f") 'load-file)
 (global-unset-key (kbd "C-z"))
 
+(global-set-key (kbd "<f9> c") 'calendar)
+(global-set-key (kbd "<f9> g") 'gnus)
+(global-set-key (kbd "<f9> s") 'bh/go-to-scratch)
+(global-set-key (kbd "<f9> f") 'boxquote-insert-file)
+(global-set-key (kbd "<f9> b") 'bbdb)
+(global-set-key (kbd "<f9> r") 'boxquote-region)
+(global-set-key (kbd "<f9> v") 'visible-mode)
+(global-set-key (kbd "C-<f9>") 'previous-buffer)
+(global-set-key (kbd "C-<f10>") 'next-buffer)
+(global-set-key (kbd "M-<f9>") (lambda ()
+                                 (interactive)
+                                 (unless (buffer-modified-p)
+                                   (kill-buffer (current-buffer)))
+;;                                 (delete-frame)))
+				 ))
+
+
 (defun change-to-other-buffer ()
  "Change to other buffer"
   (interactive)

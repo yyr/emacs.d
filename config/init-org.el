@@ -40,30 +40,7 @@
 ;; Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "C-<f8>") 'org-cycle-agenda-files)
-(global-set-key (kbd "<f9> c") 'calendar)
-(global-set-key (kbd "<f9> g") 'gnus)
-(global-set-key (kbd "<f9> s") 'bh/go-to-scratch)
 
-(global-set-key (kbd "<f9> f") 'boxquote-insert-file)
-(global-set-key (kbd "<f9> b") 'bbdb)
-(global-set-key (kbd "<f9> r") 'boxquote-region)
-(global-set-key (kbd "<f9> v") 'visible-mode)
-(global-set-key (kbd "C-<f9>") 'previous-buffer)
-(global-set-key (kbd "C-<f10>") 'next-buffer)
-(global-set-key (kbd "M-<f9>") (lambda ()
-                                 (interactive)
-                                 (unless (buffer-modified-p)
-                                   (kill-buffer (current-buffer)))
-;;                                 (delete-frame)))
-				 ))
-
-;; defuns (finally integrate into other sections)
-;; ---------------------------------------------
-(defun bh/go-to-scratch ()
-  (interactive)
-  (switch-to-buffer "*scratch*")
-  ;; (delete-other-windows))
-  )
 
 ;; TODO key words
 (setq org-todo-keywords (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")

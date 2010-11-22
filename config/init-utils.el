@@ -98,5 +98,12 @@ With prefix argument, insert date and time."
     (if (not (bolp)) (forward-line 1))
     (delete-whitespace-rectangle (point) end nil)))
 
+;; brent henson, norang.org
+(defun bh/go-to-scratch ()
+  (interactive)
+  (switch-to-buffer "*scratch*")
+  ;; (delete-other-windows))
+  )
+
 
 (provide 'init-utils)

@@ -38,6 +38,10 @@
 	       :type git
 	       :url "http://github.com/nonsequitur/smex.git")
 
+	(:name boxquote
+	       :type git
+	       :url "https://github.com/davep/boxquote.el.git")
+
 	(:name el-get
 	       :type git
 	       :url "git://github.com/dimitri/el-get.git"
@@ -61,9 +65,8 @@
 	      :build ("autoconf" "./configure" "make")
 	      :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
 	      :info "doc"
-	      :features "w3m-load")
-
-	))
+	      :features "w3m-load"))
+      )
 
 ;
 (el-get 'sync)
