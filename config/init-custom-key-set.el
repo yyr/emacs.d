@@ -6,7 +6,7 @@
 (global-set-key (kbd "C-c c") 'comment-region)
 (global-set-key (kbd "C-c u") 'uncomment-region)
 (global-set-key (kbd "C-c s") 'ispell-word)
-(global-set-key (kbd "C-<f4>") (lambda ()
+(global-set-key (kbd "C-<f12>") (lambda ()
 			      (interactive)
 			      (kill-buffer (buffer-name))))
 
@@ -22,7 +22,6 @@
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c C-o") 'scroll-other-window)
 (global-set-key (kbd "C-c M-f") 'load-file)
-(global-unset-key (kbd "C-z"))
 
 (global-set-key (kbd "<f9> c") 'calendar)
 (global-set-key (kbd "<f9> g") 'gnus)
