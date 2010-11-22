@@ -22,6 +22,7 @@
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
 	(:name magit
+	       :doc .
                :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
 
 	(:name org-mode
