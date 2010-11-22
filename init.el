@@ -51,8 +51,9 @@
 (require 'init-hippie-expand)
 (require 'init-auto-fill)
 
-;; window & desktop
+;; window , desktop & buffer
 (require 'init-windows)
+(require 'init-recentf)
 
 ;; File management
 (require 'init-dired)

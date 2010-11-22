@@ -1,0 +1,12 @@
+
+DEPENDENCIES ABOUT LOADING THESE PACKAGES
+you might want to look for these before you get going to use.
+
+Ofcourse emacs23.2 or later
+
+emacs : elpa , el-get (dimitri github)
+autoconf  - emacs-w3m
+git - for cloning  most package by el-get
+svn - yasnippet cloning
+cvs - emacs-w3m cloning
+buildessantilas ' build-dep emacs23' from ubuntu repos (may required to build emacs itself)
