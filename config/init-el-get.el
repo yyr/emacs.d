@@ -6,6 +6,8 @@
       '(
 
 	package
+        hl-sexp
+        auto-complete
 
 ;;	(:name fringe-helper :type elpa)
         (:name dired-plus :type git :url "git://github.com/emacsmirror/dired-plus.git")
@@ -66,6 +68,7 @@
 	      :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
 	      :info "doc"
 	      :features "w3m-load"))
+            
       )
 
 ;
