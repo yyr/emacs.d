@@ -49,8 +49,7 @@
                :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
 
         ;; Lisps
-        (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit-beta.el")
-
+        (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit.el")
 	;; web & mail
 	(:name bbdb
 	       :type git

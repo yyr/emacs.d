@@ -36,14 +36,14 @@
 ;; load emacs individual configuration files
 ;; -----------------------------------------------------------------------------
 
+;;; package managers
+(require 'init-elpa)
+(require 'init-el-get)
+
 ;; initial setup, keybindings
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-general)
-
-;;; package managers
-(require 'init-elpa)
-(require 'init-el-get)
 
 ;; help typing
 (require 'init-autopair)
@@ -66,6 +66,7 @@
 (require 'init-perl)
 (require 'init-fortran)
 (require 'init-sh)
+(require 'init-lisp)
 
 ;;subject
 (require 'init-octave)  
