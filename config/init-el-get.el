@@ -5,14 +5,22 @@
 (setq el-get-sources
       '(
 
+	;; Basics
 	package
-        hl-sexp
-        auto-complete
 
-;;	(:name fringe-helper :type elpa)
-        (:name dired-plus :type git :url "git://github.com/emacsmirror/dired-plus.git")
-		
+        hl-sexp
+
+	(:name smex
+	       :type git
+	       :url "http://github.com/nonsequitur/smex.git")
+
+	(:name dired-plus
+	       :type git
+	       :url "git://github.com/emacsmirror/dired-plus.git")
+
+	
 	;; help typing
+        auto-complete
 	highlight-parentheses
 
 	(:name autopair
@@ -23,9 +31,9 @@
 	       :type svn
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
-	(:name magit
-               :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
+        ;; Cosmetics
 
+        ;; Org
 	(:name org-mode
 	       :type git
 	       :url "git://repo.or.cz/org-mode.git"
@@ -36,20 +44,14 @@
 	       :load-path ("lisp" "contrib/lisp")
 	       :features org-install)
 
-	(:name smex
-	       :type git
-	       :url "http://github.com/nonsequitur/smex.git")
+        ;; Version control
+	(:name magit
+               :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
 
-	(:name boxquote
-	       :type git
-	       :url "https://github.com/davep/boxquote.el.git")
+        ;; Lisps
+        (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit-beta.el")
 
-	(:name el-get
-	       :type git
-	       :url "git://github.com/dimitri/el-get.git"
-	       :features el-get
-	       :load    "el-get.el")
-
+	;; web & mail
 	(:name bbdb
 	       :type git
 	       :url "git://github.com/barak/BBDB.git"
@@ -67,10 +69,31 @@
 	      :build ("autoconf" "./configure" "make")
 	      :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
 	      :info "doc"
-	      :features "w3m-load"))
-            
-      )
+	      :features "w3m-load")
 
-;
+	;; extras
+	(:name boxquote
+	       :type git
+	       :url "https://github.com/davep/boxquote.el.git")
+
+	(:name el-get
+	       :type git
+	       :url "git://github.com/dimitri/el-get.git"
+	       :features el-get
+	       :load    "el-get.el")
+
+	))
+
+
+
+(defun el-get-update-all ()
+  "Update all el-get packages"
+  (interactive)
+  (dolist (package (mapcar 'el-get-source-name el-get-sources))
+    (unless (memq (plist-get (el-get-package-def package) :type) '(http-tar elpa))
+      (el-get-update package))))
+
+
+;;
 (el-get 'sync)
 (provide 'init-el-get)
