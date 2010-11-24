@@ -1,15 +1,22 @@
-#*
-session.*
-*.elc
+# Garbage 
 *~
 \#~
 .*~
 .#~
-auto-save-list/*
-tramp
 .\#*
 \#*\#
+
+# Dirs to mask 
+el-get
+auto-save-list/*
+
+# auto generated files
 bookmarks
 history
-el-get
 custom.el
+tramp
+
+session.*
+*.elc
+*.dat
+
