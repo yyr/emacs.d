@@ -154,4 +154,17 @@
  '(org-agenda-todo-ignore-scheduled t)
  '(org-agenda-todo-ignore-with-date t))
 
+
+;;
+(defun dan/switch-to-org-scratch ()
+  "Switch to a temp Org buffer.
+If the region is active, insert it."
+  (interactive)
+  (let ((contents
+         (and (region-active-p)
+              (buffer-substring (region-beginning)
+                                (region-end)))))
+    (find-file "/tmp/org-scratch.org")
+    (if contents (insert contents))))
+
 (provide 'init-org)
