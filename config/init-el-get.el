@@ -38,7 +38,7 @@
 	       :type git
 	       :url "git://repo.or.cz/org-mode.git"
 	       :info "doc"
-	       :build ("make clean" "make" "make doc")
+	       :build ("make clean" "make" "make doc/org")
 	       :after (lambda () 
 			(setq load-path (remove "~/local/emacs-git/share/emacs/24.0.50/lisp/org" load-path)))
 	       :load-path ("lisp" "contrib/lisp")
@@ -50,6 +50,16 @@
 
         ;; Lisps
         (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit.el")
+
+	;; latex
+	(:name auctex
+	       :type cvs
+	       :module "auctex"
+	       :url ":pserver:anonymous@cvs.sv.gnu.org:/sources/auctex"
+	       :build ("./autogen.sh" "./configure" "make")
+	       :load  ("auctex.el" "preview/preview-latex.el")
+	       :info "doc")
+
 	;; web & mail
 	(:name bbdb
 	       :type git
