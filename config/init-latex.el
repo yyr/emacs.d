@@ -14,7 +14,7 @@
 
 (add-hook 'LaTeX-mode-hook
           (lambda()
-            (define-key LaTeX-mode-map (kbd "<S-tab>") 'TeX-complete-symbol)
+            (define-key LaTeX-mode-map (kbd "<M-tab>") 'TeX-complete-symbol)
             (TeX-PDF-mode t)
             (setq TeX-save-query  nil )
 	    (setq TeX-master (guess-TeX-master (buffer-file-name)))
