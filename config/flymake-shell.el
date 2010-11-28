@@ -18,13 +18,15 @@
   '(("^\\(.+\\): line \\([0-9]+\\): \\(.+\\)$" 1 2 nil 3))
   "Regexp matching JavaScript error messages.")
 
-(defun flymake-shell-init ()
-  (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		     'flymake-create-temp-inplace))
-	 (local-file (file-relative-name
-		      temp-file
-		      (file-name-directory buffer-file-name))))
-    (list flymake-shell-of-choice (append flymake-shell-arguments (list local-file)))))
+(when (load "flymake" t)
+  (defun flymake-shell-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+		       'flymake-create-temp-inplace))
+	   (local-file (file-relative-name
+			temp-file
+			(file-name-directory buffer-file-name))))
+      (list flymake-shell-of-choice (append flymake-shell-arguments (list local-file)))))
+  (push '(".+\\.sh$" flymake-shell-init) flymake-allowed-shell-file-name-masks))
 
 (defun flymake-shell-load ()
   (setq flymake-allowed-file-name-masks (append flymake-allowed-file-name-masks flymake-allowed-shell-file-name-masks))
@@ -34,4 +36,4 @@
 
 (provide 'flymake-shell)
 
-    ;;; flymake-shell.el ends here
+;; flymake-shell.el ends here
