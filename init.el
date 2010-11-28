@@ -36,7 +36,7 @@
 ;; load emacs individual configuration files
 ;; -----------------------------------------------------------------------------
 
-;;; package managers
+;; package managers
 (require 'init-elpa)
 (require 'init-el-get)
 
@@ -93,5 +93,10 @@
 (require 'init-exec-path)
 (require 'init-misc)
 
+;;----------------------------------------------------------------------------
+;; interactive customization
+;;----------------------------------------------------------------------------
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 
 ;; init ends here
