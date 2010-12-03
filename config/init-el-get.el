@@ -83,7 +83,8 @@
 	;; extras
 	(:name boxquote
 	       :type git
-	       :url "https://github.com/davep/boxquote.el.git")
+	       :url "https://github.com/davep/boxquote.el.git"
+	       :after (lambda () (require 'boxquote)))
 
 	(:name el-get
 	       :type git
