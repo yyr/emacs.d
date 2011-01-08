@@ -28,14 +28,6 @@
 
 ;; Org Agenda files and org-dir
 (setq org-directory "~/git/org/")
-(setq org-agenda-files (quote ("~/git/org/regcm.org"
-			       "~/git/org/fam.org"
-			       "~/git/org/management.org"
-			       "~/git/org/refile.org"
-			       "~/git/org/todo.org"
-			       "~/git/org/webstuff.org"
-			       "~/git/org/wrf.org"
-			       )))
 
 ;; Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
