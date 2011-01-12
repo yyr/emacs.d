@@ -28,6 +28,7 @@
 
 ;; Org Agenda files and org-dir
 (setq org-directory "~/git/org/")
+(load-file "~/git/org/agenda-files.el")
 
 ;; Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
