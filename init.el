@@ -53,6 +53,7 @@
 
 ;; window , desktop & buffer
 (require 'init-windows)
+(require 'init-frame)
 (require 'init-recentf)
 
 ;; File management
