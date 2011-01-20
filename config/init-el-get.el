@@ -4,7 +4,6 @@
 
 (setq el-get-sources
       '(
-
 	;; Basics
 	package
 
@@ -28,7 +27,7 @@
 	       :url "http://autopair.googlecode.com/svn/trunk/")
 
 	(:name yasnippet
-	       :type svn
+	       :type git-svn
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
         ;; Cosmetics
