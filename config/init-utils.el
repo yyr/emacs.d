@@ -99,11 +99,14 @@ With prefix argument, insert date and time."
     (delete-whitespace-rectangle (point) end nil)))
 
 ;; brent henson, norang.org
-(defun bh/go-to-scratch ()
+(defun yag/switch-to-scratch ()
+  "switch to scratch , take if region is active"
   (interactive)
-  (switch-to-buffer "*scratch*")
-  ;; (delete-other-windows))
-  )
-
+  (let ((contents
+         (and (region-active-p)
+              (buffer-substring (region-beginning)
+                                (region-end)))))
+      (switch-to-buffer "*scratch*")
+      (if contents (insert contents))))
 
 (provide 'init-utils)

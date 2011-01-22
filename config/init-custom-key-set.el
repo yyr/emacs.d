@@ -25,7 +25,7 @@
 
 (global-set-key (kbd "<f9> c") 'calendar)
 (global-set-key (kbd "<f9> g") 'gnus)
-(global-set-key (kbd "<f9> s") 'bh/go-to-scratch)
+(global-set-key (kbd "<f9> s") 'yag/switch-to-scratch)
 (global-set-key (kbd "<f9> f") 'boxquote-insert-file)
 (global-set-key (kbd "<f9> b") 'bbdb)
 (global-set-key (kbd "<f9> r") 'boxquote-region)
