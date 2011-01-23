@@ -145,7 +145,6 @@
 '(org-agenda-skip-deadline-if-done t)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-skip-timestamp-if-done t)
- '(org-agenda-tags-todo-honor-ignore-options t)
  '(org-agenda-todo-ignore-scheduled t)
  '(org-agenda-todo-ignore-with-date t))
 

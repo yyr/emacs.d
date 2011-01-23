@@ -93,6 +93,7 @@
 (require 'init-utils)
 (require 'init-exec-path)
 (require 'init-misc)
+(require 'init-w3m)
 
 ;;----------------------------------------------------------------------------
 ;; interactive customization

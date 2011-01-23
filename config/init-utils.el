@@ -107,6 +107,11 @@ With prefix argument, insert date and time."
               (buffer-substring (region-beginning)
                                 (region-end)))))
       (switch-to-buffer "*scratch*")
-      (if contents (insert contents))))
+      (if contents
+	  (progn
+	    (goto-char (buffer-end 1))
+	    (insert contents)))))
+
+
 
 (provide 'init-utils)
