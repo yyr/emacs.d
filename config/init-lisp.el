@@ -72,8 +72,9 @@
 
      ;; Disable kill-sentence, which is easily confused with the kill-sexp
      ;; binding, but doesn't preserve sexp structure
-     (define-key paredit-mode-map (kbd "M-K") 'warn-disabled-command)
-     (define-key paredit-mode-map (kbd "M-k") 'warn-disabled-command)))
+;;     (define-key paredit-mode-map (kbd "M-K") 'warn-disabled-command)
+;;     (define-key paredit-mode-map (kbd "M-k") 'warn-disabled-command)
+     ))
 
 ;; When editing lisp code, highlight the current sexp
 (require 'hl-sexp)
