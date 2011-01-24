@@ -1,8 +1,9 @@
 ;; w3m browser
 
+
 ;(setq w3m-key-binding 'info) ; info-like
 (setq w3m-key-binding 'nil) ; lynx-like
-
+'
 ;;(add-to-list 'load-path "~/emacs/emacs-w3m")
 ;;(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
 (setq w3m-coding-system 'utf-8
@@ -13,10 +14,6 @@
                         w3m-terminal-coding-system 'utf-8
                         w3m-use-cookies t
                         )
-(define-key w3m-mode-map [up] 'previous-line)
-(define-key w3m-mode-map [down] 'next-line)
-(define-key w3m-mode-map [left] 'backward-char)
-(define-key w3m-mode-map [right] 'forward-char)
 
 ;; (add-hook 'w3m-display-hook
 ;;           (lambda (url)

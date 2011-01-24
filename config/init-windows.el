@@ -37,4 +37,13 @@
 (global-set-key "\C-x_" 'split-window-vertically-instead)
 
 
+(global-set-key [f2] 'split-window-horizontally)
+(global-set-key (kbd "<S-f2>") 'delete-other-windows)
+(global-set-key (kbd "<f8>") 'other-window)
+
+(global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
+(global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
+(global-set-key (kbd "M-s") 'other-window) ; was center-line
+
+
 (provide 'init-windows)
