@@ -36,47 +36,47 @@
 ;; load emacs individual configuration files
 ;; -----------------------------------------------------------------------------
 
-;; package managers
+;;; package managers
 (require 'init-elpa)
 (require 'init-el-get)
 
-;; initial setup, keybindings
+;;; initial setup, keybindings
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-general)
 
-;; help typing
+;;; help typing
 (require 'init-autopair)
 (require 'init-yasnip)
 (require 'init-hippie-expand)
 (require 'init-auto-fill)
 
-;; window , desktop & buffer
+;;; window , desktop & buffer
 (require 'init-windows)
 (require 'init-frame)
 (require 'init-recentf)
 
-;; File management
+;;; File management
 (require 'init-dired)
 
 ;;; make friendly mini buffer 
 (require 'init-ido)
 (require 'init-smex)
 
-;; languages
+;;; languages
 (require 'init-perl)
 (require 'init-fortran)
 (require 'init-sh)
 (require 'init-lisp)
 
-;;subject
+;;; subject
 (require 'init-octave)  
 (require 'init-latex)   
 
-;; git
+;;; git
 (require 'init-git)
 
-;; org GTD & publishing
+;;; org GTD & publishing
 (require 'init-org)
 (require 'init-org-capture)
 (require 'init-org-clock)
@@ -84,16 +84,19 @@
 (require 'init-org-beamer)
 
 
-;; Info,  help & Doc
+;;; Info,  help & Doc
 (require 'init-info)
 
-;; 'make' help
+;;; 'make' help
 
-;; utilities & misc
+;;; utilities & misc
 (require 'init-utils)
 (require 'init-exec-path)
 (require 'init-misc)
 (require 'init-w3m)
+
+;;; server
+(require 'init-server)
 
 ;;----------------------------------------------------------------------------
 ;; interactive customization
