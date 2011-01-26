@@ -1,9 +1,8 @@
-;;; (>>FILE<<) --- 
-
-;; Copyright (C) Yagnesh Raghava. www.yagnesh.org
-;; Author: yagnesh raghava yakkala <yagnesh@live.com>
-
-
+;;; (>>FILE<<)
+;;
+;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+;;
 
 
 ;;; (>>FILE<<) ends here

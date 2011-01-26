@@ -4,26 +4,23 @@
 
 ;; -----------------------------------------------------------------------------
 ;; 
-;; define some emacs related symbols
 ;; emacs path ~/.emacs.d/
 ;; config elisps are in ~/.emamcs.d/config
 ;;
 ;; -----------------------------------------------------------------------------
+
 (setq user-full-name '"yagnesh raghava yakkala")
 (setq user-mail-address '"yagneshmsc@NOSPAMgmail.com")
 
 (defconst emacs-path "~/.emacs.d/")
 (defconst my-emacs-config "~/.emacs.d/config/")
 
-;;----------------------------------------------------------------------------
-;; Make elisp more civilised
-;;  following two from steves emacs.d git http://git.sanityinc.com/
-;;----------------------------------------------------------------------------
 (require 'cl)
 
 ;;----------------------------------------------------------------------------
 ;; Set load path (all subdirectories from el-get as well)
 ;;----------------------------------------------------------------------------
+
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/el-get/")
            (default-directory my-lisp-dir))
