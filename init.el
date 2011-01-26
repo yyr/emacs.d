@@ -50,6 +50,7 @@
 (require 'init-yasnip)
 (require 'init-hippie-expand)
 (require 'init-auto-fill)
+(require 'init-auto-insert)
 
 ;;; window , desktop & buffer
 (require 'init-windows)
