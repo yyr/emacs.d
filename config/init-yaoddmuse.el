@@ -6,8 +6,6 @@
 
 (require 'yaoddmuse)
 
-(yaoddmuse-update-pagename nil)
-
 (provide 'init-yaoddmuse)
 
 ;;; init-yaoddmuse.el ends here

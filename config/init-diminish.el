@@ -6,8 +6,8 @@
 
 (require 'diminish)
 
-(diminish 'paredit-mode "Par")
-(diminish 'eldoc-mode "ElD")
+;; (diminish 'paredit-mode "Par")		
+;; (diminish 'eldoc-mode "ElD")
 
 (provide 'init-diminish)
 ;;; init-diminish.el ends here
