@@ -1,3 +1,9 @@
+;;; General
+
+;; stop welcome screen
+(custom-set-variables
+ '(inhibit-startup-screen t))
+
 ;; Always end a file with a newline
 (setq require-final-newline t)
 
@@ -16,8 +22,6 @@
 
 (setq disabled-command-function nil)
 
-;(setq x-select-enable-clipboard nil); Ubuntu
-;;
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
