@@ -81,11 +81,15 @@
 
 ;;; 'make' help
 
+;;; web
+(require 'init-w3m)
+(require 'init-yaoddmuse)
+
 ;;; utilities & misc
 (require 'init-utils)
 (require 'init-exec-path)
 (require 'init-misc)
-(require 'init-w3m)
+
 
 ;;; server
 (require 'init-server)

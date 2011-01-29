@@ -83,6 +83,9 @@
 	       :after (lambda () (bbdb-initialize))
 	       :info "texinfo")
 
+	(:name yaoddmuse
+	       :type emacswiki)
+	
 	(:name emacs-w3m
 	       :type cvs
 	       :module "emacs-w3m"
@@ -102,8 +105,8 @@
 	       :type git
 	       :url "git://github.com/dimitri/el-get.git"
 	       :features el-get
-	       :load    "el-get.el"))
-      )
+	       :load    "el-get.el")))
+
 
 
 
