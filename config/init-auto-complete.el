@@ -2,8 +2,13 @@
 
 (require 'auto-complete)
 (require 'auto-complete-config)
+(add-to-list 'load-path "~/.emacs.d/ac")
+
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac/ac-dict")
+(ac-config-default)
+
 (global-auto-complete-mode t)
-(setq ac-auto-start nil)
+(setq ac-auto-start 2)
 (setq ac-dwim t)
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
@@ -22,14 +27,13 @@
 		tuareg-mode))
   (add-to-list 'ac-modes mode))
 
-
-;; ;; dirty fix for having AC everywhere
-;; (define-globalized-minor-mode real-global-auto-complete-mode
-;;   auto-complete-mode (lambda ()
-;;                        (if (not (minibufferp (current-buffer)))
-;;                          (auto-complete-mode 1))
-;;                        ))
-;; (real-global-auto-complete-mode t)
+;; dirty fix for having AC everywhere
+(define-globalized-minor-mode real-global-auto-complete-mode
+  auto-complete-mode (lambda ()
+                       (if (not (minibufferp (current-buffer)))
+                         (auto-complete-mode 1))
+                       ))
+(real-global-auto-complete-mode t)
 
 ;; Exclude very large buffers from dabbrev
 (defun smp-dabbrev-friend-buffer (other-buffer)
