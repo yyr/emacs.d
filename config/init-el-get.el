@@ -4,7 +4,8 @@
 
 (setq el-get-sources
       '(
-	;; Basics
+
+;;;; Basics
 	package
 
         hl-sexp
@@ -18,11 +19,10 @@
 	       :url "git://github.com/emacsmirror/dired-plus.git")
 
 	
-	;; help typing
+;;;; help typing
         auto-complete
 	highlight-parentheses
-	smart-tab
-	
+
 	(:name autopair
 	       :type git-svn
 	       :url "http://autopair.googlecode.com/svn/trunk/")
@@ -31,14 +31,14 @@
 	       :type git-svn
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
-        ;; Cosmetics
+;;;; Cosmetics
 
 	(:name diminish
 	       :type http
 	       :url "http://www.eskimo.com/~seldon/diminish.el"
 	       :features diminish)
 
-        ;; Org
+;;;; Org
 	(:name org-mode
 	       :type git
 	       :url "git://repo.or.cz/org-mode.git"
@@ -49,11 +49,18 @@
 	       :load-path ("lisp" "contrib/lisp")
 	       :features org-install)
 
-        ;; Version control
+;;;; Version control
 	(:name magit
                :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
 
-        ;; Lisps
+
+;;;; langs
+	;; html
+	(:name nxhtml
+	       :type git
+	       :url "http://github.com/emacsmirror/nxhtml.git"
+	       :load "autostart.el")
+	;; lisp
         (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit.el")
 
 	;; latex
@@ -65,7 +72,7 @@
 	       :load  ("auctex.el" "preview/preview-latex.el")
 	       :info "doc")
 
-	;; web & mail
+;;;; web & mail
 	(:name bbdb
 	       :type git
 	       :url "git://github.com/barak/BBDB.git"
@@ -77,15 +84,15 @@
 	       :info "texinfo")
 
 	(:name emacs-w3m
-	      :type cvs
-	      :module "emacs-w3m"
-	      :url ":pserver:anonymous@cvs.namazu.org:/storage/cvsroot"
-	      :build ("autoconf" "./configure" "make")
-	      :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
-	      :info "doc"
-	      :features "w3m-load")
+	       :type cvs
+	       :module "emacs-w3m"
+	       :url ":pserver:anonymous@cvs.namazu.org:/storage/cvsroot"
+	       :build ("autoconf" "./configure" "make")
+	       :build/darwin ("autoconf" "./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make")
+	       :info "doc"
+	       :features "w3m-load")
 
-	;; extras
+;;;; extras
 	(:name boxquote
 	       :type git
 	       :url "https://github.com/davep/boxquote.el.git"
