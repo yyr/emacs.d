@@ -14,7 +14,7 @@
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 
-(dolist (mode '(emacs-lisp-mode
+(dolist (mode '(emacs-lisp-mode lisp-interaction-mode
 		magit-log-edit-mode log-edit-mode org-mode text-mode
 		haml-mode sass-mode yaml-mode csv-mode espresso-mode
 		haskell-mode html-mode nxml-mode sh-mode smarty-mode

@@ -39,8 +39,7 @@
 (require 'init-auto-insert)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
-;(require 'init-smart-tab)
-;(require 'init-diminish)
+(require 'init-diminish)
 (require 'init-yasnip)
 
 ;;; window , desktop & buffer
