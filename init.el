@@ -1,12 +1,7 @@
-;; -----------------------------------------------------------------------------
-;; EMACS INIT 
-;; -----------------------------------------------------------------------------
+;;; EMACS INIT 
 
-;; -----------------------------------------------------------------------------
-;; 
 ;; emacs path ~/.emacs.d/
 ;; config elisps are in ~/.emamcs.d/config
-;;
 ;; -----------------------------------------------------------------------------
 
 (setq user-full-name '"yagnesh raghava yakkala")
@@ -16,10 +11,6 @@
 (defconst my-emacs-config "~/.emacs.d/config/")
 
 (require 'cl)
-
-;;----------------------------------------------------------------------------
-;; Set load path (all subdirectories from el-get as well)
-;;----------------------------------------------------------------------------
 
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/el-get/")
@@ -44,10 +35,13 @@
 
 ;;; help typing
 (require 'init-autopair)
-(require 'init-yasnip)
-(require 'init-hippie-expand)
 (require 'init-auto-fill)
 (require 'init-auto-insert)
+(require 'init-hippie-expand)
+(require 'init-auto-complete)
+;(require 'init-smart-tab)
+;(require 'init-diminish)
+(require 'init-yasnip)
 
 ;;; window , desktop & buffer
 (require 'init-windows)
@@ -97,7 +91,7 @@
 ;;; server
 (require 'init-server)
 
-;;----------------------------------------------------------------------------
+
 ;; interactive customization
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")

@@ -21,7 +21,8 @@
 	;; help typing
         auto-complete
 	highlight-parentheses
-
+	smart-tab
+	
 	(:name autopair
 	       :type git-svn
 	       :url "http://autopair.googlecode.com/svn/trunk/")
@@ -31,6 +32,11 @@
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
         ;; Cosmetics
+
+	(:name diminish
+	       :type http
+	       :url "http://www.eskimo.com/~seldon/diminish.el"
+	       :features diminish)
 
         ;; Org
 	(:name org-mode
@@ -89,9 +95,9 @@
 	       :type git
 	       :url "git://github.com/dimitri/el-get.git"
 	       :features el-get
-	       :load    "el-get.el")
+	       :load    "el-get.el"))
+      )
 
-	))
 
 
 
