@@ -7,8 +7,8 @@
 (setq user-full-name '"yagnesh raghava yakkala")
 (setq user-mail-address '"yagneshmsc@NOSPAMgmail.com")
 
-(defconst emacs-path "~/.emacs.d/")
-(defconst my-emacs-config "~/.emacs.d/config/")
+(defconst emacs-path "~/.emacs.d")
+(defconst my-emacs-config "~/.emacs.d/config")
 
 (require 'cl)
 
@@ -59,6 +59,7 @@
 (require 'init-fortran)
 (require 'init-sh)
 (require 'init-lisp)
+(require 'init-html)
 
 ;;; subject
 (require 'init-octave)  
