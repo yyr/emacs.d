@@ -19,6 +19,10 @@
 			      (interactive)
 			      (kill-buffer (buffer-name))))
 
+;;; scrollers
+(global-set-key "\M-n" '"\C-u1\C-v")
+(global-set-key "\M-p" '"\C-u1\M-v")
+
 ;; bs instead of buffer-menu
 (global-set-key (kbd "C-x C-b") 'bs-show)
 
