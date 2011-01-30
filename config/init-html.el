@@ -6,8 +6,8 @@
 
 (add-hook 'html-mode-hook
 	  '(lambda ()
-	     (define-key (kbd "f5")
-	       browse-url-firefox)))
+	     (define-key html-mode-map (kbd "f5")
+	       'browse-url-firefox)))
 
 (provide 'init-html)
 ;;; init-html.el ends here
