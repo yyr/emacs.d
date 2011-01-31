@@ -20,8 +20,8 @@
         (normal-top-level-add-subdirs-to-load-path))))
 (setq load-path (cons (expand-file-name emacs-path) (cons my-emacs-config load-path)))
 
-;; ----------------------------------------------------------------------------- 
-;; load emacs individual configuration files
+
+;;; load emacs individual configuration files
 ;; -----------------------------------------------------------------------------
 
 ;;; package managers
@@ -46,6 +46,7 @@
 (require 'init-windows)
 (require 'init-frame)
 (require 'init-recentf)
+(require 'init-auto-save)
 
 ;;; File management
 (require 'init-dired)
@@ -65,10 +66,7 @@
 (require 'init-octave)  
 (require 'init-latex)   
 
-;;; Documentation
-(require 'init-eldoc)
-
-;;; git
+;;; DVC
 (require 'init-git)
 
 ;;; org GTD & publishing
@@ -82,6 +80,7 @@
 
 ;;; Info,  help & Doc
 (require 'init-info)
+(require 'init-eldoc)
 
 ;;; 'make' help
 
