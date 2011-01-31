@@ -65,6 +65,9 @@
 (require 'init-octave)  
 (require 'init-latex)   
 
+;;; Documentation
+(require 'init-eldoc)
+
 ;;; git
 (require 'init-git)
 
