@@ -1,8 +1,4 @@
-
-;; ORG-Beamer
-;; ==========
-
-;; allow for export=>beamer by placing
+;;; Org-Beamer
 
 ;; #+LaTeX_CLASS: beamer in org files
 (unless (boundp 'org-export-latex-classes)
@@ -71,6 +67,7 @@
       					("=" "\\verb=%s=" nil)
       					("~" "\\verb~%s~" t)
       					("@" "\\alert{%s}" nil))))
+
 
 
 (provide 'init-org-beamer)

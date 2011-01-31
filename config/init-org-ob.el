@@ -1,14 +1,12 @@
+;;; org-babel Setup
 
-;; org-babel Setup
-;; ---------------
 (setq org-ditaa-jar-path "~/git/repos/org-mode/contrib/scripts/ditaa.jar")
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (setq org-babel-load-languages (quote ((emacs-lisp . t)
                                          (dot . t)
                                          (ditaa . t)
                                          (octave . t)
-                                         (python . t)
-                                         (perl . t)
+					 (perl . t)
                                          (gnuplot . t)
                                          (sh . t))))
 

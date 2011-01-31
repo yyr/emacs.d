@@ -72,7 +72,7 @@
 (require 'init-org)
 (require 'init-org-tags)
 (require 'init-org-capture)
-(require 'init-org-clock)
+;(require 'init-org-clock)
 (require 'init-org-ob)
 (require 'init-org-beamer)
 
