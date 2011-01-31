@@ -1,17 +1,14 @@
 ;;; EMACS INIT 
 
-;; emacs path ~/.emacs.d/
-;; config elisps are in ~/.emamcs.d/config
-;; -----------------------------------------------------------------------------
-
 (setq user-full-name '"yagnesh raghava yakkala")
-(setq user-mail-address '"yagneshmsc@NOSPAMgmail.com")
+(setq user-mail-address '"yagnesh@live.com")
 
-(defconst emacs-path "~/.emacs.d")
-(defconst my-emacs-config "~/.emacs.d/config")
+(defconst emacs-path "~/.emacs.d")             ; emacs path
+(defconst my-emacs-config "~/.emacs.d/config") ; config path
 
 (require 'cl)
 
+;;; load all subdirs of el-get 
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/el-get/")
            (default-directory my-lisp-dir))
@@ -93,10 +90,8 @@
 (require 'init-exec-path)
 (require 'init-misc)
 
-
 ;;; server
 (require 'init-server)
-
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------

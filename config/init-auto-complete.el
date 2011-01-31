@@ -2,12 +2,12 @@
 
 (require 'auto-complete)
 (require 'auto-complete-config)
-(add-to-list 'load-path "~/.emacs.d/ac")
 
+(add-to-list 'load-path "~/.emacs.d/ac")
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac/ac-dict")
 (ac-config-default)
 
-(global-auto-complete-mode t)
+;(global-auto-complete-mode t)
 (setq ac-auto-start 2)
 (setq ac-dwim t)
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
