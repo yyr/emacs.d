@@ -15,7 +15,7 @@
 (show-paren-mode 1)
 (column-number-mode 1)
 ;(blink-cursor-mode -1)
-(global-linum-mode 1)
+;(global-linum-mode 1)
 (set-face-attribute 'default nil :height 95)
 (setq visible-bell t)
 (show-paren-mode 1)
