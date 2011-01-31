@@ -101,11 +101,16 @@
 	       :url "https://github.com/davep/boxquote.el.git"
 	       :after (lambda () (require 'boxquote)))
 
+	(:name profile-dotemacs
+	       :type http
+	       :url "http://www.randomsample.de/profile-dotemacs.el")
+	
 	(:name el-get
 	       :type git
 	       :url "git://github.com/dimitri/el-get.git"
 	       :features el-get
 	       :load    "el-get.el")))
+
 
 
 
