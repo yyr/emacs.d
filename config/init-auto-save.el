@@ -4,8 +4,8 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(setq auto-save-interval 10)            
-(setq auto-save-timeout 1)              
+(setq auto-save-interval 200)            
+(setq auto-save-timeout 40)              
 (setq auto-save-visited-file-name t)    
 
 ;;save everything to a folder 

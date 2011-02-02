@@ -29,6 +29,7 @@
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-general)
+(require 'init-time)
 
 ;;; help typing
 (require 'init-autopair)
