@@ -109,6 +109,9 @@
 	       :url "https://github.com/davep/boxquote.el.git"
 	       :after (lambda () (require 'boxquote)))
 
+	(:name multi-term
+	       :type emacswiki)
+
 	(:name profile-dotemacs
 	       :type http
 	       :url "http://www.randomsample.de/profile-dotemacs.el")
@@ -118,10 +121,6 @@
 	       :url "git://github.com/dimitri/el-get.git"
 	       :features el-get
 	       :load    "el-get.el")))
-
-
-
-
 
 
 (defun el-get-update-all ()

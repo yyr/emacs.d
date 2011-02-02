@@ -92,6 +92,7 @@
 
 ;;; server
 (require 'init-server)
+(require 'init-multi-term)
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------

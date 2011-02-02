@@ -2,20 +2,23 @@ DEPENDENCIES ABOUT LOADING THESE PACKAGES
 you might want to look for these before you get going to use.
 
 
+emacs "24.0.50.1"
+elpa	        - elpa is included in emacs 24.0
+el-get  	- https://github.com/dimitri/el-get
+autoconf 	- emacs-w3m
+git		- for cloning  most package by el-get
+svn 		- yasnippet cloning
+cvs 		- emacs-w3m cloning
+buildessantilas - on ubuntu linux i need this to package to build emacs
+build-dep emacs23- from ubuntu repos (may be required to build emacs itself)
 
-emacs : elpa , el-get (dimitri github)
-autoconf  - emacs-w3m
-git - for cloning  most package by el-get
-svn - yasnippet cloning
-cvs - emacs-w3m cloning
-buildessantilas ' build-dep emacs23' from ubuntu repos (may required to build emacs itself)
 
 CREDITS:
 I copied shamelessly from so many sources.  I am believing that as emacs the configurations also must go GPLd.
-
 here I write some of the places I collected.
 
-emacswiki.org - this is where it started and continues
-alex schroeder - http://www.emacswiki.org/alex/
-Steve Purcell - Sanityinc.com
-Alex Ott (auto-insert stuff mainly)      - alexott.com <alexott@Agmail.comA>
+emacswiki.org	   - this is where it started and continues
+alex schroeder 	   - http://www.emacswiki.org/alex/
+Steve Purcell  	   - git.sanityinc.com
+Alex Ott           - alexott.com <alexott@Agmail.com>
+Andy Stewart	   - http://www.emacswiki.org/emacs-en/AndyStewart
