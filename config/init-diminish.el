@@ -6,8 +6,9 @@
 
 (require 'diminish)
 
-;; (diminish 'paredit-mode "Par")		
-;; (diminish 'eldoc-mode "ElD")
+(diminish 'paredit-mode "PE")		
+(diminish 'eldoc-mode "ED")
+(diminish 'yas/minor-mode "Y")
 
 (provide 'init-diminish)
 ;;; init-diminish.el ends here
