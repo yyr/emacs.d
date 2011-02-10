@@ -8,7 +8,8 @@
                             ("@shop" . ?S)
 			    (:endgroup)
 			    (:startgroup)
-			    ("@evening" . ?e)
+			    ("@night" . ?n)
+			    
 			    ("@weekend" . ?W)
 			    ("@day"  . ?d)
 			    (:endgroup)
@@ -21,6 +22,7 @@
                             ("HOME" . ?H)
 			    ("KIRTI" . ?k)
 			    ("CANCELLED" . ?C))))
+
 
 
 ; Allow setting single tags without the menu
