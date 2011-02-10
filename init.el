@@ -67,12 +67,16 @@
 ;;; DVC
 (require 'init-git)
 
-;;; org GTD & publishing
+;;; org GTD 
 (require 'init-org)
 (require 'init-org-tags)
 (require 'init-org-capture)
 ;(require 'init-org-clock)
 (require 'init-org-ob)
+
+;;; org publish
+(require 'init-org-html)
+(require 'init-org-latex)
 (require 'init-org-beamer)
 
 
