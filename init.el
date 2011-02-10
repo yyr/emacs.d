@@ -5,6 +5,8 @@
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
 (defconst my-emacs-config "~/.emacs.d/config") ; config path
+(setq gnus-init-file
+      (concat my-emacs-config "/init-gnus.el" )) ;gnus init file
 
 (require 'cl)
 
@@ -26,9 +28,9 @@
 (require 'init-el-get)
 
 ;;; initial setup, keybindings
+(require 'init-general)
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
-(require 'init-general)
 (require 'init-time)
 
 ;;; help typing
