@@ -5,7 +5,8 @@
 ;;
 
 ;; letter class, for formal letters
-
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
 (add-to-list 'org-export-latex-classes
 	     '("letter"
 	       "\\documentclass[11pt]{letter}\n
