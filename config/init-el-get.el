@@ -56,9 +56,9 @@
 
 ;;;; langs
 	;; html
-	(:name nxhtml
-	       :type git
-	       :url "http://github.com/emacsmirror/nxhtml.git")
+	;; (:name nxhtml
+	;;        :type git
+	;;        :url "http://github.com/emacsmirror/nxhtml.git")
 	
 	;; lisp
         (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit.el")
