@@ -71,6 +71,7 @@
 
 ;;; org GTD 
 (require 'init-org)
+(require 'init-dairy)
 (require 'init-org-tags)
 (require 'init-org-capture)
 ;(require 'init-org-clock)
