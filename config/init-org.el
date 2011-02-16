@@ -94,14 +94,6 @@
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
 
-;;;  Custom Agenda views
-;;;  -------------------
-(custom-set-variables
-'(org-agenda-skip-deadline-if-done t)
- '(org-agenda-skip-scheduled-if-done t)
- '(org-agenda-skip-timestamp-if-done t)
- '(org-agenda-todo-ignore-scheduled t)
- '(org-agenda-todo-ignore-with-date t))
 
 
 ;;; org-scratch
