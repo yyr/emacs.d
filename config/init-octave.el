@@ -8,12 +8,9 @@
 (setq auto-mode-alist 
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
-;;; auto-complete 
-(add-hook 'octave-mode-hook
-	  (lambda ()
-	    (require 'auto-complete-octave)))
-(setq octave-completion-alist
-      (nconc octave-keywords octave-completion-alist))
+(require 'auto-complete-octave)
+;; (setq octave-completion-alist
+;;       (nconc octave-keywords octave-completion-alist))
 
 
 (provide 'init-octave)

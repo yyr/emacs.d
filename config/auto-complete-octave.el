@@ -36,6 +36,13 @@
   (require 'auto-complete))
 
 
+(defmacro ac-define-dictionary-source (name list)
+  "Define dictionary source named `NAME'.
+`LIST' is a list of string.
+This is useful if you just want to define a dictionary/keywords source."
+  `(defvar ,name
+     '((candidates . (lambda () (all-completions ac-prefix ,list))))))
+
 ;;;;##########################################################################
 ;;;;  User Options, Variables
 ;;;;##########################################################################
