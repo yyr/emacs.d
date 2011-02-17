@@ -93,9 +93,6 @@
 ;;;  Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
-
-
-
 ;;; org-scratch
 (defun dan/switch-to-org-scratch ()
   "Switch to a temp Org buffer.

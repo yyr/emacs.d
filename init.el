@@ -1,6 +1,6 @@
 ;;; EMACS INIT 
 
-(setq user-full-name '"yagnesh raghava yakkala")
+(setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
