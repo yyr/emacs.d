@@ -7,7 +7,6 @@
 
 ;;;; Basics
 	package
-
         hl-sexp
 
 	(:name smex
@@ -17,12 +16,14 @@
 	(:name dired-plus
 	       :type git
 	       :url "git://github.com/emacsmirror/dired-plus.git")
-
 	
 ;;;; help typing
         auto-complete
 	highlight-parentheses
 
+	(:name auto-complete-octave
+	       :type emacswiki)
+	
 	(:name autopair
 	       :type git-svn
 	       :url "http://autopair.googlecode.com/svn/trunk/")
@@ -32,7 +33,6 @@
 	       :url "http://yasnippet.googlecode.com/svn/trunk/")
 
 ;;;; Cosmetics
-
 	(:name diminish
 	       :type http
 	       :url "http://www.eskimo.com/~seldon/diminish.el"
@@ -61,7 +61,9 @@
 	;;        :url "http://github.com/emacsmirror/nxhtml.git")
 	
 	;; lisp
-        (:name paredit :type http :url "http://mumble.net/~campbell/emacs/paredit.el")
+        (:name paredit
+	       :type http
+	       :url "http://mumble.net/~campbell/emacs/paredit.el")
 
 	;; latex
 	(:name auctex

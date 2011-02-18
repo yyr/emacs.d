@@ -21,8 +21,14 @@
 		tuareg-mode))
   (add-to-list 'ac-modes mode))
 
+(defmacro ac-define-dictionary-source (name list)
+  "Define dictionary source named `NAME'.
+`LIST' is a list of string.
+This is useful if you just want to define a dictionary/keywords source."
+  `(defvar ,name
+     '((candidates . (lambda () (all-completions ac-prefix ,list))))))
 
-;; ;; dirty fix for having AC everywhere
+;; ;; dirty fix for having AC everywhere emacswiki
 ;; (define-globalized-minor-mode real-global-auto-complete-mode
 ;;   auto-complete-mode (lambda ()
 ;;                        (if (not (minibufferp (current-buffer)))
