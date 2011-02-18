@@ -14,6 +14,30 @@
  '(org-agenda-todo-ignore-with-date t)
  '(org-agenda-include-diary t))
 
+(setq org-agenda-custom-commands
+      (quote (
+	      ;; @ nights & weekend
+	      ("w" "Works for weekend" tags "@night|@weekend!"
+	       ((org-agenda-overriding-header "weekend works")))
+
+	      ;; @ day tag
+	      ("d" "At WORK" tags "@day!"
+	       ((org-agenda-overriding-header "at Work")))
+
+	      ;; @ night tags
+	      ("n" "Evening" tags "@night!"
+	       ((org-agenda-overriding-header "Night time")))
+
+	      ;; entries to refile
+	      ("r" "Refile New Notes and Tasks" tags "LEVEL=1+REFILE"
+	       ((org-agenda-overriding-header "Tasks to Refile")))
+
+	      ;; Next items
+	      ("N" "Next" tags-todo "/!NEXT")
+
+	      ;; entries to archived
+	      ("A" "Tasks to be Archived" tags "LEVEL=2-REFILE/DONE|CANCELLED"))))
+
 
 (provide 'init-org-agenda)
 ;;; init-org-agenda.el ends here
