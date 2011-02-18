@@ -33,7 +33,6 @@
 
 ;;;  Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
-(global-set-key (kbd "C-<f8>") 'org-cycle-agenda-files)
 
 (setq org-special-ctrl-a/e t)
 (setq org-completion-use-ido t)

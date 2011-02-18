@@ -1,6 +1,6 @@
 ;;; org-babel Setup
 
-(setq org-ditaa-jar-path "~/git/repos/org-mode/contrib/scripts/ditaa.jar")
+(setq org-ditaa-jar-path "~/.emacs.d/el-get/org-mode/contrib/scripts/ditaa.jar")
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (setq org-babel-load-languages (quote ((emacs-lisp . t)
                                          (dot . t)
