@@ -71,7 +71,7 @@
 (require 'init-git)
 
 ;;; org GTD 
-(require 'init-dairy)
+(require 'init-diary)
 (require 'init-org)
 (require 'init-org-agenda)
 (require 'init-org-tags)

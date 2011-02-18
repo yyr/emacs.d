@@ -4,7 +4,7 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(setq diary-file "~/git/org/dairy") 	; I keep dairy in my org-agenda-files repo
+(setq diary-file "~/git/org/diary") 	; I keep dairy in my org-agenda-files repo
 
-(provide 'init-dairy)
+(provide 'init-diary)
 ;;; init-dairy.el ends here
