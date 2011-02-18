@@ -28,6 +28,7 @@
 (require 'init-el-get)
 
 ;;; initial setup, keybindings
+(require 'init-font)
 (require 'init-general)
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
