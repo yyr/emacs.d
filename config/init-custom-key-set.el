@@ -9,6 +9,11 @@
 (global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
 (global-set-key (kbd "M-k") 'previous-line) ; was tab-to-tab-stop
 
+(global-set-key [S-left] 'windmove-left)
+(global-set-key [S-right] 'windmove-right)
+(global-set-key [S-up] 'windmove-up)
+(global-set-key [S-down] 'windmove-down)
+
 (global-set-key (kbd "M-SPC") 'set-mark-command) ; was just-one-space
 ;; (global-set-key (kbd "M-a") execute-extended-command) ; was backward-sentence
 
