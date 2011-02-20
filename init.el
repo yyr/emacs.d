@@ -1,4 +1,4 @@
-;;; EMACS INIT 
+;;; Emacs Init 
 
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
@@ -33,6 +33,7 @@
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-time)
+(require 'init-bbdb)
 
 ;;; help typing
 (require 'init-autopair)
@@ -83,7 +84,7 @@
 (require 'init-org-html)
 (require 'init-org-latex)
 (require 'init-org-beamer)
-
+(require 'init-org-publish)
 
 ;;; Info,  help & Doc
 (require 'init-info)
@@ -102,7 +103,7 @@
 
 ;;; server
 (require 'init-server)
-(require 'init-multi-term)
+;;(require 'init-multi-term)
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------
