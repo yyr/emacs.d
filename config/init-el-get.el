@@ -49,6 +49,11 @@
 	       :load-path ("lisp" "contrib/lisp")
 	       :features org-install)
 
+	;;
+	(:name "org-jekyll"
+	       :type git
+	       :url "https://github.com/juanre/org-jekyll.git")
+	
 ;;;; Version control
 	(:name magit
                :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
@@ -90,7 +95,6 @@
 	       :build ("./configure" "make autoloads" "make")
 	       :build/darwin ("./configure --with-emacs=/Applications/Emacs.app/Contents/MacOS/Emacs" "make autoloads" "make")
 	       :features bbdb
-	       :after (lambda () (bbdb-initialize))
 	       :info "texinfo")
 
 	(:name yaoddmuse
