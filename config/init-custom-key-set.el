@@ -20,9 +20,11 @@
 
 ;;; C-M \ (indent) ;; M-; (comment & uncomment-region)
 (global-set-key (kbd "C-c s") 'ispell-word)
+
 (global-set-key (kbd "C-<f12>") (lambda ()
-			      (interactive)
-			      (kill-buffer (buffer-name))))
+				  (interactive)
+				  (unless (buffer-modified-p)
+				    (kill-buffer (current-buffer)))))
 
 ;;; scrollers
 (global-set-key "\M-n" '"\C-u1\C-v")

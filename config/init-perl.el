@@ -29,12 +29,6 @@
 ;;	  autopair-dont-activate t
           cperl-electric-parens nil)))  ;; <------ electric parens!   cperl-electric-parens t
 
-(global-set-key (kbd "M-<f9>") (lambda ()
-                                 (interactive)
-                                 (unless (buffer-modified-p)
-                                   (kill-buffer (current-buffer)))
-;;                                 (delete-frame)))
-				 ))
 
 ;;info thing
 (global-set-key (kbd "<f9> p") (lambda ()
