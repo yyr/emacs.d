@@ -24,7 +24,7 @@
 (global-set-key (kbd "C-<f12>") (lambda ()
 				  (interactive)
 				  (unless (buffer-modified-p)
-				    (kill-buffer (current-buffer)))))
+				    (kill-buffer (buffer-name)))))
 
 ;;; scrollers
 (global-set-key "\M-n" '"\C-u1\C-v")
