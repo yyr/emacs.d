@@ -35,6 +35,8 @@
 ;(setq next-line-add-newlines nil)
 
 (setq disabled-command-function nil)
+(setq browse-url-browser-function 'browse-url-firefox)
+
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
