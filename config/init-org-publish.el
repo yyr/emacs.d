@@ -7,18 +7,18 @@
 (require 'org-jekyll)
 
 (setq org-publish-yag "~/git/sites/")
-(setq org-publish-yag-blog (concat org-publish-yag "blog/"))
+(setq org-publish-yag-blog (concat org-publish-yag "yorg/"))
 
 (setq org-publish-project-alist
       '(
 
 	("org-yag"
 	 ;; Path to your org files.
-	 :base-directory "~/git/sites/org/"
+	 :base-directory "~/git/sites/yorg/org/"
 	 :base-extension "org"
 
 	 ;; Path to your Jekyll project.
-	 :publishing-directory "~/git/sites/jekyll/"
+	 :publishing-directory "~/git/sites/yorg/jekyll/"
 	 :recursive t
 	 :publishing-function org-publish-org-to-html
 	 :headline-levels 4 
@@ -27,9 +27,9 @@
 	 )
 
 	("org-static-yag"
-	 :base-directory "~/git/sites/org/"
+	 :base-directory "~/git/sites/yorg/org/"
 	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-	 :publishing-directory "~/git/sites/"
+	 :publishing-directory "~/git/sites/yorg/jekyll"
 	 :recursive t
 	 :publishing-function org-publish-attachment)
 	("yag" :components ("org-yag" "org-static-yag"))
