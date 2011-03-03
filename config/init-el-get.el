@@ -49,11 +49,6 @@
 	       :load-path ("lisp" "contrib/lisp")
 	       :features org-install)
 
-	;;
-	(:name "org-jekyll"
-	       :type git
-	       :url "https://github.com/juanre/org-jekyll.git")
-	
 ;;;; Version control
 	(:name magit
                :after (lambda () (global-set-key (kbd "C-x C-z") 'magit-status)))
@@ -112,7 +107,7 @@
 ;;;; extras
 	(:name boxquote
 	       :type git
-	       :url "https://github.com/davep/boxquote.el.git"
+	       :url "git://github.com/davep/boxquote.el.git"
 	       :after (lambda () (require 'boxquote)))
 
 	(:name multi-term
