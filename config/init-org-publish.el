@@ -4,8 +4,6 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(require 'org-jekyll)
-
 (setq org-publish-yag "~/git/sites/")
 (setq org-publish-yag-blog (concat org-publish-yag "yorg/"))
 
