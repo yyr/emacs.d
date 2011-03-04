@@ -93,6 +93,7 @@
 ;;; 'make' help
 
 ;;; web
+(require 'init-webjump)
 (require 'init-w3m)
 (require 'init-yaoddmuse)
 
