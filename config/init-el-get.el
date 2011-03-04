@@ -104,6 +104,36 @@
 	       :info "doc"
 	       :features "w3m-load")
 
+	;; textile-mode
+	(:name textile-mode
+	       :type http
+	       :url "http://dev.nozav.org/scripts/textile-mode.el"
+	       :post-init (lambda ()
+			    (autoload 'textile-mode "textile-mode" "Textile editing mode." t)
+			    (add-to-list 'auto-mode-alist '("\\.textile\\'". textile-mode))))
+
+	;; markdown-mode
+	(:name markdown-mode
+	       :type git
+	       :url "git://jblevins.org/git/markdown-mode.git"
+	       :features markdown-mode
+	       :post-init (lambda ()
+			    (add-to-list 'auto-mode-alist
+					 '("\\.\\(md\\|mdown\\|markdown\\)\\'" . markdown-mode))))
+	
+
+	;; haml-mode
+	(:name haml-mode
+	       :type git
+	       :url "https://github.com/nex3/haml-mode.git"
+	       :features haml-mode)
+	
+	;; sass mode
+	(:name sass-mode
+	       :type git
+	       :url "https://github.com/nex3/sass-mode.git"
+	       :features sass-mode)
+	
 ;;;; extras
 	(:name boxquote
 	       :type git
@@ -122,6 +152,9 @@
 	       :url "git://github.com/dimitri/el-get.git"
 	       :features el-get
 	       :load    "el-get.el")))
+
+
+
 
 
 (defun el-get-update-all ()
