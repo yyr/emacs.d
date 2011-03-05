@@ -6,7 +6,7 @@
 
 (add-hook 'html-mode-hook
 	  '(lambda ()
-	     (define-key html-mode-map (kbd "f5")
+	     (define-key html-mode-map (kbd "<f5>")
 	       'browse-url-firefox)))
 
 (provide 'init-html)
