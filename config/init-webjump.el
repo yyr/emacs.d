@@ -4,6 +4,7 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Licence: GPL v3 or later
 
+(require 'webjump)
 (setq webjump-sites
       (append '(
 		("yorg" . "yagnesh.org")
@@ -15,4 +16,5 @@
 	      webjump-sample-sites))
 (global-set-key "\C-cj" 'webjump)
 
+(provide 'init-webjump)
 ;;; init-webjump.el ends here
