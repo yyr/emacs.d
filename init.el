@@ -96,6 +96,7 @@
 (require 'init-webjump)
 (require 'init-w3m)
 (require 'init-yaoddmuse)
+(require 'init-sass-mode)
 
 ;;; utilities & misc
 (require 'init-utils)

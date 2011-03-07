@@ -1,3 +1,7 @@
+;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+;; Licence: GPL v3 or later
+
 ;;----------------------------------------------------------------------------
 ;; Handier way to add modes to auto-mode-alist
 ;;----------------------------------------------------------------------------
@@ -112,6 +116,19 @@ With prefix argument, insert date and time."
 	    (goto-char (buffer-end 1))
 	    (insert contents)))))
 
+(defun yag/copyright ()
+  "put copy right notice at the beginning of the buffer and comment it"
+  (interactive)
+  (save-excursion
+    (goto-char 1)
+    (let ((beg (point)))
+      (insert
+       "Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+Licence: GPL v3 or later
+
+")
+      (comment-region beg (point)))))
 
 
 (provide 'init-utils)
