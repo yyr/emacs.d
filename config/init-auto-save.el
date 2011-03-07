@@ -6,7 +6,7 @@
 
 (setq auto-save-interval 200)            
 (setq auto-save-timeout 40)              
-(setq auto-save-visited-file-name t)    
+;; (setq auto-save-visited-file-name t)    
 
 ;;save everything to a folder 
 (setq
