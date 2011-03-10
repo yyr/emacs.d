@@ -1,4 +1,8 @@
 ;;; Emacs Init 
+;;
+;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+;; Licence: GPL v3 or later
 
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
@@ -43,6 +47,9 @@
 (require 'init-auto-complete)
 (require 'init-diminish)
 (require 'init-yasnip)
+
+;;; help navigation
+(require 'init-bookmarks)
 
 ;;; window , desktop & buffer
 (require 'init-windows)
