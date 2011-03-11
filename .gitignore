@@ -20,3 +20,5 @@ session.*
 *.elc
 *.dat
 
+#w3m?
+url/*

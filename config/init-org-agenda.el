@@ -14,6 +14,9 @@
  '(org-agenda-todo-ignore-with-date t)
  '(org-agenda-include-diary t))
 
+;;; dont show deadlines every day
+(setq org-deadline-warning-days 2)
+
 (setq org-agenda-custom-commands
       (quote (
 	      ;; @ nights & weekend
