@@ -7,6 +7,7 @@
 ;; letter class, for formal letters
 (unless (boundp 'org-export-latex-classes)
   (setq org-export-latex-classes nil))
+
 (add-to-list 'org-export-latex-classes
 	     '("letter"
 	       "\\documentclass[11pt]{letter}\n
@@ -20,6 +21,11 @@
 	       ("\\paragraph{%s}" . "\\paragraph*{%s}")
 	       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))  
 
 ;;; emphasis set up for latex
 (setq org-export-latex-emphasis-alist (quote 
