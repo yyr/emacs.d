@@ -33,6 +33,12 @@
   (browse-url-firefox (or (w3m-anchor)
                           (w3m-image))))
 
+(add-hook 'w3m-mode-hook (lambda ()
+			  (local-set-key (kbd "<f5> o")
+					 'w3m-open-link-or-image-in-firefox)))
+
+
+
 ;; (eval-after-load 'w3m
 ;;   (progn
 ;;     (define-key w3m-mode-map "f" 'w3m-open-current-page-in-firefox)
