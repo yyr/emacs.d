@@ -29,15 +29,7 @@
 	diminish
 
 ;;;; Org
-	(:name org-mode
-	       :type git
-	       :url "git://repo.or.cz/org-mode.git"
-	       :info "doc"
-	       :build ("make clean" "make" "make doc/org")
-	       :after (lambda () 
-			(setq load-path (remove "~/local/emacs-git/share/emacs/24.0.50/lisp/org" load-path)))
-	       :load-path ("lisp" "contrib/lisp")
-	       :features org-install)
+	org-mode
 
 ;;;; Version control
 	magit
