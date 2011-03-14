@@ -74,6 +74,7 @@
 ;;; subject
 (require 'init-octave)  
 (require 'init-latex)   
+(require 'init-grads)
 
 ;;; DVC
 (require 'init-git)

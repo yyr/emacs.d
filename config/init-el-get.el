@@ -82,6 +82,12 @@
 			(autoload 'yaml-mode "yaml-mode" nil t)
 			(add-to-list 'auto-mode-alist '("\\.ya?ml\\'" . yaml-mode))))
 
+;;; sub
+	;; emacs-grads
+	(:name emacs-grads
+	       :type git
+	       :url "git://github.com/yyr/emacs-grads.git")
+	
 ;;;; web & mail
 	(:name bbdb
 	       :type git
