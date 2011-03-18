@@ -32,7 +32,7 @@
 	       ((org-agenda-overriding-header "Night time")))
 
 	      ;; entries to refile
-	      ("r" "Refile New Notes and Tasks" tags "LEVEL=1+REFILE"
+	      ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
 	       ((org-agenda-overriding-header "Tasks to Refile")))
 
 	      ;; Next items
