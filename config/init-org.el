@@ -8,16 +8,21 @@
 
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
-;;;  Make TAB the yas trigger key in the org-mode-hook and turn on flyspell mode
-(add-hook 'org-mode-hook
-          (lambda ()
-            ;;;  yasnippet
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field)
-            ;;;  flyspell mode to spell check everywhere
-            (flyspell-mode 1)))
+;;; Eric Schulte org list
+(defun yas/org-very-safe-expand ()
+  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    ;; yasnippet (using the new org-cycle hooks)
+	    (make-variable-buffer-local 'yas/trigger-key)
+	    (setq yas/trigger-key [tab])
+	    (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+	    (define-key yas/keymap [tab] 'yas/next-field)
+	    (flyspell-mode 1)
+	    ))
+
+	   
 ;;;  Org Agenda files and org-dir
 (setq org-directory "~/git/org/")
 
