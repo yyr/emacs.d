@@ -29,10 +29,4 @@
 ;;	  autopair-dont-activate t
           cperl-electric-parens nil)))  ;; <------ electric parens!   cperl-electric-parens t
 
-;;info thing
-(global-set-key (kbd "<f9> p") (lambda ()
-				 (interactive)
-				 (info "~/git/info/pickingUpPerl.info")
-				 ))
-
 (provide 'init-perl)
