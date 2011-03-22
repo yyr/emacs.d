@@ -82,6 +82,7 @@
 ;;; org GTD 
 (require 'init-diary)
 (require 'init-org)
+(require 'init-org-todo-state-tags)
 (require 'init-org-agenda)
 (require 'init-org-tags)
 (require 'init-org-capture)
