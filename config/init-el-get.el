@@ -85,17 +85,6 @@
 	))
 
 
-
-
-
-(defun el-get-update-all ()
-  "Update all el-get packages"
-  (interactive)
-  (dolist (package (mapcar 'el-get-source-name el-get-sources))
-    (unless (memq (plist-get (el-get-package-def package) :type) '(http-tar elpa))
-      (el-get-update package))))
-
-
 ;;
 (el-get 'sync)
 (provide 'init-el-get)
