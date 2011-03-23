@@ -50,6 +50,7 @@
 
 ;;; help navigation
 (require 'init-bookmarks)
+(require 'init-imenu)
 
 ;;; window , desktop & buffer
 (require 'init-windows)
