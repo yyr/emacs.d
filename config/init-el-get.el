@@ -20,10 +20,7 @@
 	       :type emacswiki)
 	
 	autopair
-	
-	(:name yasnippet
-	       :type git-svn
-	       :url "http://yasnippet.googlecode.com/svn/trunk/")
+	yasnippet
 
 ;;;; Cosmetics
 	diminish
