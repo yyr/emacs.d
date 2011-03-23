@@ -6,7 +6,7 @@
       '(
 
 ;;;; Basics
-	package
+	;; package24
         hl-sexp
 
 	smex
