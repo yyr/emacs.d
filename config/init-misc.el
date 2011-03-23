@@ -3,17 +3,25 @@
 ;;----------------------------------------------------------------------------
 
 (fset 'yes-or-no-p 'y-or-n-p)
-(add-hook 'find-file-hooks 'goto-address-prog-mode)
+;; (add-hook 'find-file-hooks 'goto-address-prog-mode)
 (add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
-;; Menu
-(global-set-key (kbd "<f10>")
-		(lambda ()
-		  (interactive)
-		  (if (window-system)
-		      (menu-bar-mode (if menu-bar-mode -1 1))
-		    (menu-bar-open))))
+(defun untabify-buffer ()
+  (interactive)
+  (untabify (point-min) (point-max)))
 
+(defun indent-buffer ()
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(defun cleanup-buffer ()
+  "Perform a bunch of operations on the whitespace content of a buffer."
+  (interactive)
+  (indent-buffer)
+  (untabify-buffer)
+  (delete-trailing-whitespace))
+
+(global-set-key (kbd "C-c n") 'cleanup-buffer)
 
 
 (provide 'init-misc)

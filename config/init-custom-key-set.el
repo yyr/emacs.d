@@ -9,11 +9,6 @@
 (global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
 (global-set-key (kbd "M-k") 'previous-line) ; was tab-to-tab-stop
 
-(global-set-key [S-left] 'windmove-left)
-(global-set-key [S-right] 'windmove-right)
-(global-set-key [S-up] 'windmove-up)
-(global-set-key [S-down] 'windmove-down)
-
 (global-set-key (kbd "M-SPC") 'set-mark-command) ; was just-one-space
 ;; (global-set-key (kbd "M-a") execute-extended-command) ; was backward-sentence
 
@@ -57,18 +52,50 @@
 ;; C-k at beginning of line takes the whole line (no need to c-k twice)
 (setq kill-whole-line t)
 
-;;; from emacs-wiki
-;; (setq ispell-command "") 
-(setq text-mode-hook '(lambda ()
-			(local-set-key "\M-\t" 'ispell-complete-word)))
-(setq tex-mode-hook '(lambda ()
-		       (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq latex-mode-hook '(lambda ()
-			 (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq html-helper-mode-hook '(lambda ()
-			       (local-set-key "\M-\t" 'ispell-complete-word)))
-(setq ispell-enable-tex-parser t)
 
+
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+(global-set-key (kbd "C-x \\") 'align-regexp)
+
+(global-set-key [f10] 'menu-bar-mode)
+
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "\C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-x C-M-f") 'find-file-in-project)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-x C-p") 'find-file-at-point)
+(global-set-key (kbd "C-c y") 'bury-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+
+(windmove-default-keybindings) ;; Shift+direction
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
+(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
+(global-set-key (kbd "C-h a") 'apropos)
+
+;;; (global-set-key (kbd "C-c e") 'eval-and-replace)
+
+(define-key isearch-mode-map (kbd "C-o")
+  (lambda () (interactive)
+    (let ((case-fold-search isearch-case-fold-search))
+      (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
+
+(define-key global-map "\C-cl" 'org-store-link)
+
+(define-key global-map "\C-x\C-r" 'rgrep)
 
 
 (provide 'init-custom-key-set)
