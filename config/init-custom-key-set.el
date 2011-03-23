@@ -25,7 +25,8 @@
 (global-set-key "\M-p" '"\C-u1\M-v")
 
 ;; bs instead of buffer-menu
-(global-set-key (kbd "C-x C-b") 'bs-show)
+;; (global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; emacs newlines and indents when enter key
 (global-set-key (kbd "C-m") 'newline-and-indent)
@@ -74,7 +75,6 @@
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (windmove-default-keybindings) ;; Shift+direction
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
@@ -83,8 +83,6 @@
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 
 (global-set-key (kbd "C-h a") 'apropos)
-
-;;; (global-set-key (kbd "C-c e") 'eval-and-replace)
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)
