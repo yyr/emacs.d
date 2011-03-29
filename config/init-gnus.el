@@ -5,7 +5,9 @@
 ;;
 
 ;; Configure incoming mail (IMAP)
-(setq gnus-select-method '(nntp "news.gmane.org"))
+;; (setq gnus-select-method '(nntp "news.gmane.org"))
+(setq gnus-select-method '(nntp "localhost"))
+;; (setq gnus-secondary-select-method '(nntp "dp-news.maxwell.syr.edu"))
 
 (require 'smtpmail)
 (require 'nnimap)
@@ -25,7 +27,7 @@
       smtpmail-smtp-service 587
       )
 
-;;(add-hook 'gnus-topic-mode-hook 'gnus-topic-mode)
+(add-hook 'gnus-topic-mode-hook 'gnus-topic-mode)
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")
 ;; (setq gnus-outgoing-message-group "[Google Mail]/Sent Mail")
