@@ -1,3 +1,8 @@
+;;; init-lisp.el
+;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+;; Licence: GPL v3 or later
+
 ;; pretty lambda (see also slime) ->  "λ"
 ;;  'greek small letter lambda' / utf8 cebb / unicode 03bb -> \u03BB / mule?!
 ;; in greek-iso8859-7 -> 107  >  86 ec
@@ -81,3 +86,5 @@
 (add-hook 'paredit-mode-hook (lambda () (hl-sexp-mode t)))
 
 (provide 'init-lisp)
+
+;;; init-lisp.el ends here
