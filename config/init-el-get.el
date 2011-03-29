@@ -27,7 +27,9 @@
 
 ;;;; Org
 	org-mode
-
+	;; org publish
+	htmlize
+	
 ;;;; Version control
 	magit
 
