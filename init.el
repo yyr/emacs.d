@@ -34,8 +34,11 @@
 (require 'init-elpa)
 (require 'init-el-get)
 
-;;; initial setup, keybindings
+;;; look
 (require 'init-font)
+(require 'init-color-theme)
+
+;;; initial setup, keybindings
 (require 'init-general)
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
