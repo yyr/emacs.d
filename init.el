@@ -14,6 +14,9 @@
 
 (require 'cl)
 
+(defvar *emacs-load-start* (current-time))
+
+
 ;;; load all subdirs of el-get 
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/el-get/")
@@ -121,5 +124,9 @@
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
+
+
+(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
+				     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
 
 ;; init ends here
