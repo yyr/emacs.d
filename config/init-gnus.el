@@ -7,7 +7,7 @@
 ;; Configure incoming mail (IMAP)
 ;; (setq gnus-select-method '(nntp "news.gmane.org"))
 (setq gnus-select-method '(nntp "localhost"))
-;; (setq gnus-secondary-select-method '(nntp "dp-news.maxwell.syr.edu"))
+(add-to-list 'gnus-secondary-select-methods '(nnml ""))
 
 (require 'smtpmail)
 (require 'nnimap)
@@ -18,6 +18,13 @@
 				  (nnimap-server-port 993)
 				  (nnimap-authinfo-file "~/.authinfo")
 				  (nnimap-stream ssl)))
+
+;; (setq smtpmail-smtp-server "smtp.hines.hokudai.ac.jp"
+;;       smtpmail-default-smtp-server "smtp.hines.hokudai.ac.jp"
+;;       send-mail-function 'smtpmail-send-it
+;;       message-send-mail-function 'smtpmail-send-it
+;;       smtpmail-smtp-service 25
+;;       )
 
 (setq smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
       smtpmail-smtp-server "smtp.gmail.com"
