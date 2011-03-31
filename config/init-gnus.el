@@ -32,5 +32,14 @@
 ;; (setq gnus-ignored-newsgroups "")
 ;; (setq gnus-outgoing-message-group "[Google Mail]/Sent Mail")
 
+;;; gravatar set up by TH from ding@gnus.org list
+(require 'gravatar)
+(require 'gnus-gravatar)
+(defun th-gnus-article-prepared ()
+  (gnus-treat-from-gravatar)
+  (gnus-treat-mail-gravatar))
+(add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
+
+
 (provide 'init-gnus)
 ;;; init-gnus.el ends here
