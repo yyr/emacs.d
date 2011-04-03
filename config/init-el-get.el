@@ -1,6 +1,7 @@
 (when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
   (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
 
+(setq el-get-is-lazy 't)
 
 (setq el-get-sources
       '(
@@ -16,11 +17,17 @@
         auto-complete
 	highlight-parentheses
 
+	(:name yasnippet
+	       :type svn
+	       :url "http://yasnippet.googlecode.com/svn/trunk/"
+	       :features "yasnippet"
+	       :autoloads t)
+
 	(:name auto-complete-octave
-	       :type emacswiki)
+	       :type emacswiki
+	       :autoloads t)
 	
 	autopair
-	yasnippet
 
 ;;;; Cosmetics
 	diminish
@@ -51,13 +58,16 @@
 	;; emacs-grads
 	(:name emacs-grads
 	       :type git
-	       :url "git://github.com/yyr/emacs-grads.git")
+	       :url "git://github.com/yyr/emacs-grads.git"
+	       :autoloads t)
 	
 ;;;; web & mail
 	bbdb
 	
 	(:name yaoddmuse
-	       :type emacswiki)
+	       :type emacswiki
+	       :autoloads t
+	       )
 	
 	emacs-w3m
 
@@ -74,16 +84,18 @@
 	boxquote
 
 	(:name multi-term
-	       :type emacswiki)
+	       :type emacswiki
+	       :autoloads t
+	       )
 
 	(:name profile-dotemacs
 	       :type http
-	       :url "http://www.randomsample.de/profile-dotemacs.el")
+	       :url "http://www.randomsample.de/profile-dotemacs.el"
+	       :autoloads t
+	       )
 
 	el-get
 	))
 
-
-;;
 (el-get 'sync)
 (provide 'init-el-get)
