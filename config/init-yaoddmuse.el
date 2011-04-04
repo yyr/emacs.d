@@ -4,8 +4,10 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(require 'yaoddmuse)
+(autoload 'yaoddmuse-mode "yaoddmuse" nil t)
 
+(setq auto-mode-alist
+      (cons '(".*/emacswiki.org/.*" . yaoddmuse-mode) auto-mode-alist))
 
 (setq yaoddmuse-browse-function 'yaoddmuse-browse-page-in-w3m)  
 (setq yaoddmuse-notify-function 'yaoddmuse-notify-popup-window) 

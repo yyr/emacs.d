@@ -13,7 +13,7 @@
 	dired-plus
 		
 ;;;; help typing
-        ;; auto-complete
+        auto-complete
 	highlight-parentheses
 
 	(:name yasnippet
@@ -94,8 +94,6 @@
 	       :url "http://www.randomsample.de/profile-dotemacs.el"
 	       :autoloads t)
 	el-get))
-
-
 
 
 (el-get 'sync)
