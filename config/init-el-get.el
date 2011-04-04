@@ -13,7 +13,7 @@
 	dired-plus
 		
 ;;;; help typing
-        auto-complete
+        ;; auto-complete
 	highlight-parentheses
 
 	(:name yasnippet

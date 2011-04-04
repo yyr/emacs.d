@@ -3,8 +3,8 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 
-(add-to-list 'load-path "~/.emacs.d/el-doc/auto-complete/dict/")
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-doc/auto-complete/dict/")
+(add-to-list 'load-path "~/.emacs.d/el-get/auto-complete/dict/")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict/")
 (ac-config-default)
 
 (setq ac-auto-start 2)
