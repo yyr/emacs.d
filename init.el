@@ -82,6 +82,7 @@
 (require 'init-octave)  
 (require 'init-latex)   
 (require 'init-grads)
+(require 'init-gnuplot)
 
 ;;; DVC
 (require 'init-git)

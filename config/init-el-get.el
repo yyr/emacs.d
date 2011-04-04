@@ -5,7 +5,6 @@
 
 (setq el-get-sources
       '(
-
 ;;;; Basics
 	;; package24
         hl-sexp
@@ -60,14 +59,16 @@
 	       :type git
 	       :url "git://github.com/yyr/emacs-grads.git"
 	       :autoloads t)
+
+	gnuplot-mode
 	
 ;;;; web & mail
 	bbdb
 	
 	(:name yaoddmuse
 	       :type emacswiki
-	       :autoloads t
-	       )
+	       :autoloads t)
+	
 	
 	emacs-w3m
 
@@ -85,17 +86,17 @@
 
 	(:name multi-term
 	       :type emacswiki
-	       :autoloads t
-	       )
+	       :autoloads t)
+	
 
 	(:name profile-dotemacs
 	       :type http
 	       :url "http://www.randomsample.de/profile-dotemacs.el"
-	       :autoloads t
-	       )
+	       :autoloads t)
+	el-get))
 
-	el-get
-	))
+
+
 
 (el-get 'sync)
 (provide 'init-el-get)
