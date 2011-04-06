@@ -119,6 +119,7 @@
 (require 'init-utils)
 (require 'init-exec-path)
 (require 'init-misc)
+(require 'init-battery)
 
 ;;; server
 (require 'init-server)

@@ -13,7 +13,6 @@
 ;(global-linum-mode 1)
 (setq visible-bell t)
 (show-paren-mode 1)
-(display-battery-mode 1)
 (setq show-paren-delay 0)
 
 (provide 'init-ess-minors)
