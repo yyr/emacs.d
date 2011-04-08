@@ -10,5 +10,8 @@
 # Description:
 #
 
+use strict;
+use warnings;
+
 
 # (>>FILE<<) ends here
