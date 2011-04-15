@@ -60,6 +60,11 @@
 	       :url "git://github.com/yyr/emacs-grads.git"
 	       :autoloads t)
 
+	(:name ncl
+	       :type http
+	       :url "http://www.ncl.ucar.edu/Applications/Files/ncl.el"
+	       :autoloads t)
+	
 	gnuplot-mode
 	
 ;;;; web & mail
