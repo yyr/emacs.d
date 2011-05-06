@@ -70,6 +70,8 @@ pIf performed over a topic line, toggle folding the topic."
 	(gnus-dribble-touch))
     (gnus-group-select-group all)))
 
+(add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
+
 
 (setq gnus-group-line-format "%M\%S\%p\%5y: %G\n")
 
@@ -100,6 +102,7 @@ pIf performed over a topic line, toggle folding the topic."
 	     (gnus-article-date-local)              ; will actually convert timestamp from other timezones to yours
              ))
 
+(setq gnus-article-update-date-headers nil)
 
 
 ;;; message mode
