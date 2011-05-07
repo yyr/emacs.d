@@ -12,9 +12,5 @@
 ;; (set-foreground-color "white")
 ;; (set-cursor-color "red")
 
-(custom-set-variables
- '(custom-enabled-themes (quote (tango))))
-
-
 (provide 'init-color-theme)
 ;;; init-color-theme.el ends here

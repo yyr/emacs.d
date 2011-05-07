@@ -30,6 +30,8 @@
 
 ;;;; Cosmetics
 	diminish
+	color-theme
+	color-theme-zenburn
 
 ;;;; Org
 	org-mode
