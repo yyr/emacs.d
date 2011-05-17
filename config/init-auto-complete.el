@@ -42,5 +42,9 @@ This is useful if you just want to define a dictionary/keywords source."
 
 (setq dabbrev-friend-buffer-function 'smp-dabbrev-friend-buffer)
 
+(define-key ac-completing-map   "\t"    'ac-expand-common)
+(define-key ac-completing-map   "\r"    'ac-complete)
+(define-key ac-completing-map   "\M-/"  'ac-stop)
+
 
 (provide 'init-auto-complete)
