@@ -96,6 +96,7 @@
 (require 'init-org-agenda)
 (require 'init-org-tags)
 (require 'init-org-capture)
+(require 'init-org-refile)
 ;(require 'init-org-clock)
 (require 'init-org-ob)
 
@@ -104,6 +105,9 @@
 (require 'init-org-latex)
 (require 'init-org-beamer)
 (require 'init-org-publish)
+
+;;; org misc
+(require 'init-org-misc)
 
 ;;; Info,  help & Doc
 (require 'init-info)
