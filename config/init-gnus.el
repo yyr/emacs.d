@@ -10,6 +10,7 @@
 (require 'smtpmail)
 (require 'nnimap)
 (require 'starttls)
+(require 'registry)
 
 ;;; Sources
 ;;; --------------------------------------------------------
@@ -41,13 +42,13 @@
 
 ;;; bbdb
 ;;; --------------------------------------------------------
-(require 'bbdb)
-(add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
-(require 'bbdb-hooks)
-(bbdb-initialize 'gnus 'message)
-(bbdb-insinuate-message)
-;; (setq bbdb-use-pop-up t)
-(setq gnus-extra-headers '(To))
+;; (require 'bbdb)
+;; (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
+;; (require 'bbdb-hooks)
+;; (bbdb-initialize 'gnus 'message)
+;; (bbdb-insinuate-message)
+;; ;; (setq bbdb-use-pop-up t)
+;; (setq gnus-extra-headers '(To))
 
 
 ;;; group mode
@@ -62,44 +63,54 @@ If ALL is a number, fetch this number of articles.
 pIf performed over a topic line, toggle folding the topic."
   (interactive "P")
   (when (and (eobp) (not (gnus-group-group-name)))
-    (forward-line -1))
+     (forward-line -1))
   (if (gnus-group-topic-p)
       (let ((gnus-group-list-mode
-	     (if all (cons (if (numberp all) all 7) t) gnus-group-list-mode)))
-	(gnus-topic-fold all)
-	(gnus-dribble-touch))
+             (if all (cons (if (numberp all) all 7) t) gnus-group-list-mode)))
+        (gnus-topic-fold all)
+        (gnus-dribble-touch))
     (gnus-group-select-group all)))
 
 (add-hook 'gnus-group-mode-hook 'gnus-topic-mode)
-
 
 (setq gnus-group-line-format "%M\%S\%p\%5y: %G\n")
 
 
 ;;; summary mode
 ;;; --------------------------------------------------------
-(setq
- gnus-sum-thread-tree-single-indent   "◎ "
- gnus-sum-thread-tree-false-root      "◯ " 
- gnus-sum-thread-tree-root            "● "
- gnus-sum-thread-tree-vertical        "│ "
- gnus-sum-thread-tree-leaf-with-other "├─► "
- gnus-sum-thread-tree-single-leaf     "╰─► "
- gnus-sum-thread-tree-indent          "  ")
 
+(setq-default
+ gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
+ ;; gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
+ gnus-user-date-format-alist '((t . "%m-%d %H:%M"))
+
+ gnus-summary-thread-gathering-function 'gnus-gather-threads-by-references
+ gnus-thread-sort-functions '(gnus-thread-sort-by-date)
+ gnus-summary-display-arrow t
+ gnus-summary-same-subject ""
+ gnus-sum-thread-tree-single-indent   "◎ "
+ gnus-sum-thread-tree-false-root      "☆ "
+ gnus-sum-thread-tree-root            "● "
+ gnus-sum-thread-tree-indent          "  "
+ gnus-sum-thread-tree-vertical        "│ "
+ gnus-sum-thread-tree-leaf-with-other "├► "
+ gnus-sum-thread-tree-single-leaf     "╰► "
+ )
+
+(defalias 'gnus-user-format-function-M 'gnus-registry-user-format-function-M)
 
 ;;; article mode
 ;;; --------------------------------------------------------
 (add-hook 'gnus-article-display-hook
           '(lambda ()
-	     (gnus-article-de-quoted-unreadable)
-	     (gnus-article-emphasize)
-	     (gnus-article-hide-boring-headers)
-	     (gnus-article-hide-headers-if-wanted)
-	     (gnus-article-hide-pgp)
-	     (gnus-article-highlight)
-	     (gnus-article-highlight-citation)
-	     (gnus-article-date-local)              ; will actually convert timestamp from other timezones to yours
+             (gnus-article-de-quoted-unreadable)
+             (gnus-article-emphasize)
+             (gnus-article-hide-boring-headers)
+             (gnus-article-hide-headers-if-wanted)
+             (gnus-article-hide-pgp)
+             (gnus-article-highlight)
+             (gnus-article-highlight-citation)
+             (gnus-article-date-local)              ; will actually convert timestamp from other timezones to yours
              ))
 
 (setq gnus-article-update-date-headers nil)
@@ -118,10 +129,10 @@ pIf performed over a topic line, toggle folding the topic."
     (previous-line 2)
     )
   (let* ((to (message-fetch-field "To"))
-	 (address-comp (mail-extract-address-components to))
-	 (name (car address-comp))
-	 (first (or (and name (concat "" (car (split-string name))))
-		    "")))
+         (address-comp (mail-extract-address-components to))
+         (name (car address-comp))
+         (first (or (and name (concat "" (car (split-string name))))
+                    "")))
     (when first
       (message-goto-body)
       (insert (concat  "\n" (capitalize first) ",\n\n")))))
@@ -131,6 +142,11 @@ pIf performed over a topic line, toggle folding the topic."
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
 
+;;; spam
+;;; --------------------------------------------------
+(spam-initialize)
+(setq gnus-spam-process-newsgroups
+      '(("^gmane\\." . (((spam spam-use-gmane))))))
 
 (provide 'init-gnus)
 
