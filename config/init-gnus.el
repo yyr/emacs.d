@@ -12,6 +12,11 @@
 (require 'starttls)
 (require 'registry)
 
+;;; folders
+(setq gnus-home-directory "~/gnus")
+(setq gnus-directory "~/gnus/News")
+(setq message-directory "~/gnus/Mail")
+
 ;;; Sources
 ;;; --------------------------------------------------------
 ;;; news
