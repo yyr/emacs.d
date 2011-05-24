@@ -153,6 +153,11 @@ pIf performed over a topic line, toggle folding the topic."
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
 
+;;; misc
+;;; --------------------------------------------------
+(setq gnus-expert-user 't) 		;dont prompt me when i want to quit gnus
+
+
 (provide 'init-gnus)
 
 ;;; Citation
