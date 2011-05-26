@@ -23,3 +23,5 @@ session.*
 #w3m?
 url/*
 TAGS
+elpa/*
+byte-cache/

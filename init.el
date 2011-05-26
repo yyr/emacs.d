@@ -4,18 +4,22 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Licence: GPL v3 or later
 
+;;; ---------------------------------------------------------------------------
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
+
+;;; for system specific
+(setq *byte-code-cache-enabled* t)
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
 (defconst my-emacs-config "~/.emacs.d/config") ; config path
 (setq gnus-init-file
       (concat my-emacs-config "/init-gnus.el" )) ;gnus init file
 
-(require 'cl)
-
 (defvar *emacs-load-start* (current-time))
+;;; ---------------------------------------------------------------------------
 
+(require 'cl) 				 ; must have
 
 ;;; load all subdirs of el-get 
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
@@ -33,6 +37,10 @@
 ;;; package managers
 (require 'init-elpa)
 (require 'init-el-get)
+
+;;; byte-compile-cache 
+(when *byte-code-cache-enabled*
+  (require 'init-byte-code-cache))
 
 ;;; look
 (require 'init-font)

@@ -9,7 +9,8 @@
 ;;;; Basics
 	;; package24
         hl-sexp
-
+	byte-code-cache
+	
 	smex
 	dired-plus
 		

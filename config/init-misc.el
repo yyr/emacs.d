@@ -11,6 +11,7 @@
   (untabify (point-min) (point-max)))
 
 (defun indent-buffer ()
+  "indent entire buffer"
   (interactive)
   (indent-region (point-min) (point-max)))
 
