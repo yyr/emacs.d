@@ -2,20 +2,29 @@
 ;; Navigate window layouts with "C-c <left>" and "C-c <right>"
 ;;----------------------------------------------------------------------------
 (winner-mode 1)
+(windmove-default-keybindings) ;; Shift+direction
 
+(global-set-key "\C-t" 'other-window)
+;;; (global-set-key (kbd "<f8>") 'other-window)
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
+(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward t
+(global-set-key (kbd "C-c C-o") 'scroll-other-window)
 
 ;;----------------------------------------------------------------------------
 ;; When splitting window, show (other-buffer) in the new window
 ;;----------------------------------------------------------------------------
 (defun split-window-func-with-other-buffer (split-function)
+  "dont just dumb split window, change buffer as well"
   (lexical-let ((s-f split-function))
     (lambda ()
       (interactive)
       (funcall s-f)
       (set-window-buffer (next-window) (other-buffer)))))
 
-(global-set-key "\C-x2" (split-window-func-with-other-buffer 'split-window-vertically))
-(global-set-key "\C-x3" (split-window-func-with-other-buffer 'split-window-horizontally))
+(global-set-key "\C-x2"
+		(split-window-func-with-other-buffer 'split-window-vertically))
+(global-set-key "\C-x3"
+		(split-window-func-with-other-buffer 'split-window-horizontally))
 
 
 ;;----------------------------------------------------------------------------
@@ -36,10 +45,8 @@
 (global-set-key "\C-x|" 'split-window-horizontally-instead)
 (global-set-key "\C-x_" 'split-window-vertically-instead)
 
-
 (global-set-key [f2] 'split-window-horizontally)
 (global-set-key (kbd "<S-f2>") 'delete-other-windows)
-(global-set-key (kbd "<f8>") 'other-window)
 
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
