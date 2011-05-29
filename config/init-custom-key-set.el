@@ -30,7 +30,6 @@
 
 ;; emacs newlines and indents when enter key
 (global-set-key (kbd "C-m") 'newline-and-indent)
-(global-set-key (kbd "C-c C-o") 'scroll-other-window)
 
 (global-set-key (kbd "<f9> c") 'calendar)
 (global-set-key (kbd "<f9> g") 'gnus)
@@ -53,8 +52,6 @@
 ;; C-k at beginning of line takes the whole line (no need to c-k twice)
 (setq kill-whole-line t)
 
-
-
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
@@ -76,20 +73,13 @@
 (global-set-key (kbd "C-c r") 'revert-buffer)
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
 
-(windmove-default-keybindings) ;; Shift+direction
-(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
-(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
-
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
-
-(global-set-key (kbd "C-h a") 'apropos)
+(global-set-key (kbd "C-h a") 'apropos)	;
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)
     (let ((case-fold-search isearch-case-fold-search))
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
-
-(define-key global-map "\C-cl" 'org-store-link)
 
 (define-key global-map "\C-x\C-r" 'rgrep)
 
