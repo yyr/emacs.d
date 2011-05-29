@@ -7,8 +7,6 @@ elpa	        - elpa is included in emacs 24.0
 el-get  	- https://github.com/dimitri/el-get 
 autoconf 	- emacs-w3m
 git		- for cloning most of the packages by el-get
-svn 		- yasnippet cloning
-cvs 		- emacs-w3m cloning
 
 to build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
 build-essantials
@@ -21,13 +19,17 @@ sudo apt-get build-dep emacs23
 make bootstrap 
 make install
 
+* change the el-get-sources
+  This configuration depend on el-get to maintain/install many emacs
+  plugins. one need to change el-get-sources which packages they want
+  to have.
 
 * CREDITS:
-I copied shamelessly from so many sources.  I am believing that as emacs the configurations also must go GPLd.
-here I write some of the places I collected.
+I copied shamelessly from so many places on the internet.  I am believing that as emacs the configurations also must go GPLd.
+here I write, some of the places I collected.
 
 emacswiki.org	   - this is where it started and continues
 alex schroeder 	   - http://www.emacswiki.org/alex/
-Steve Purcell  	   - git.sanityinc.com
+Steve Purcell  	   - git.sanityinc.com (many thanks to him)
 Alex Ott           - alexott.com <alexott@Agmail.com>
 Andy Stewart	   - http://www.emacswiki.org/emacs-en/AndyStewart
