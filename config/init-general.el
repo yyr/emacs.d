@@ -1,6 +1,5 @@
 ;;; General
 
-;;; ### Coding ###
 ;; I dont what this means. but looks imp
 (setq default-buffer-file-coding-system 'utf-8-unix)            
 (setq default-file-name-coding-system 'utf-8-unix)              
@@ -9,7 +8,6 @@
 (setq default-sendmail-coding-system 'utf-8-unix)               
 (setq default-terminal-coding-system 'utf-8-unix)               
 
-;;; ### Advice ###
 ;;; yank with indent
 (defadvice yank (after indent-region activate)
   "To make yank content indent automatically."
@@ -36,7 +34,6 @@
 
 (setq disabled-command-function nil)
 (setq browse-url-browser-function 'browse-url-firefox)
-
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

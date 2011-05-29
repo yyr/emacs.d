@@ -11,9 +11,7 @@
 
 
 ;;(set-default-font "-adobe-courier-medium-r-normal--18-180-75-75-m-110-iso8859-1")
-
 ;;(set-default-font "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
-
 ;;; (set-face-attribute 'default nil :height 95 :family "DejaVu Sans Mono")
 
 

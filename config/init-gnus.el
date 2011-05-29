@@ -147,7 +147,7 @@ pIf performed over a topic line, toggle folding the topic."
 ;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
 
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
-;; (add-hook 'message-mode-hook 'turn-on-orgtbl)
+(add-hook 'message-mode-hook 'turn-on-orgtbl)
 
 ;;; spam
 ;;; --------------------------------------------------

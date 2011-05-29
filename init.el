@@ -9,7 +9,7 @@
 (setq user-mail-address '"yagnesh@live.com")
 
 ;;; for system specific
-(setq *byte-code-cache-enabled* t)
+(setq *byte-code-cache-enabled* nil)
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
 (defconst my-emacs-config "~/.emacs.d/config") ; config path
