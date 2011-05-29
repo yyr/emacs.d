@@ -105,7 +105,7 @@
 (require 'init-org-tags)
 (require 'init-org-capture)
 (require 'init-org-refile)
-;(require 'init-org-clock)
+(require 'init-org-clock)
 (require 'init-org-ob)
 
 ;;; org publish

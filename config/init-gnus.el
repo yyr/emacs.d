@@ -140,12 +140,14 @@ pIf performed over a topic line, toggle folding the topic."
                     "")))
     (when first
       (message-goto-body)
-      (insert (concat  "\n" (capitalize first) ",\n\n")))))
+      (insert (concat  "\nHi " (capitalize first) ",\n\n")))))
 
-(setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
+(setq message-signature t
+      message-signature-file "~/.signature")
+;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
 
-(add-hook 'message-mode-hook 'turn-on-orgtbl)
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
+;; (add-hook 'message-mode-hook 'turn-on-orgtbl)
 
 ;;; spam
 ;;; --------------------------------------------------

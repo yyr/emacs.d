@@ -15,7 +15,10 @@
 	dired-plus
 		
 ;;;; help typing
-        auto-complete
+	(:name auto-complete
+	       :type git
+	       :url "http://github.com/m2ym/auto-complete.git")
+	
 	highlight-parentheses
 
 	(:name yasnippet
