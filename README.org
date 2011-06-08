@@ -31,8 +31,8 @@ make install
   I copied shamelessly from so many places on the internet.  I am believing that as emacs the configurations also must go GPLd.
   here I write, some of the places I collected.
 
-  emacswiki.org    - this is where it started and continues
-  alex schroeder           - http://www.emacswiki.org/alex/
-  Steve Purcell            - git.sanityinc.com (many thanks to him)
-  Alex Ott           - alexott.com <alexott@Agmail.com>
-  Andy Stewart     - http://www.emacswiki.org/emacs-en/AndyStewart
+  emacswiki.org	    - this is where it started and continues
+  alex schroeder    - http://www.emacswiki.org/alex/
+  Steve Purcell	    - git.sanityinc.com (many thanks to him)
+  Alex Ott          - alexott.com <alexott@Agmail.com>
+  Andy Stewart      - http://www.emacswiki.org/emacs-en/AndyStewart

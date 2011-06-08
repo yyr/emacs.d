@@ -4,7 +4,7 @@
 (winner-mode 1)
 (windmove-default-keybindings) ;; Shift+direction
 
-(global-set-key "\C-t" 'other-window)
+(global-set-key "\M-t" 'other-window) 	; was transpose words
 ;;; (global-set-key (kbd "<f8>") 'other-window)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward t

@@ -27,6 +27,7 @@
 ;;;  Custom Agenda views
 ;; dont show deadlines every day
 (setq org-deadline-warning-days 2)
+(setq org-agenda-ndays 10)
 
 (setq org-agenda-custom-commands
       (quote (
