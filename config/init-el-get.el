@@ -1,6 +1,3 @@
-(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
-  (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
-
 (setq el-get-is-lazy 't)
 (setq el-get-byte-compile-at-init 't) 	; compile at init if any source is not byte compiled 
 
@@ -94,7 +91,9 @@
 	sass-mode
 	
 ;;;; extras
-	boxquote
+	(:name boxquote
+	       :type http
+	       :url "http://www.davep.org/emacs/boxquote.el")
 
 	(:name multi-term
 	       :type emacswiki
@@ -107,6 +106,8 @@
 	       :autoloads t)
 	el-get))
 
+(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
+  (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
 
 (el-get 'sync)
 (provide 'init-el-get)
