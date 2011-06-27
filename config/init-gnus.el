@@ -7,7 +7,6 @@
 ;;; Citation
 ;; See the end
 
-(require 'smtpmail)
 (require 'nnimap)
 (require 'starttls)
 (require 'registry)
@@ -155,9 +154,20 @@ pIf performed over a topic line, toggle folding the topic."
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
 
+;; Smtp
+;;;------------------------------------------------
+
+(require 'smtpmail)
+(setq send-mail-function 'smtpmail-send-it)
+(setq message-send-mail-function 'smtpmail-send-it)
+(setq smtpmail-stream-type 'starttls)
+(setq smtpmail-debug-info t)
+(setq smtpmail-debug-verb t)
+
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't) 		;dont prompt me when i want to quit gnus
+
 
 
 (provide 'init-gnus)
