@@ -111,9 +111,7 @@
 	 sass-mode
 
 	 el-get)
-
-       (loop
-	for src in el-get-sources collect (el-get-source-name src))))
+       (mapcar 'el-get-source-name el-get-sources)))
 
 
 (el-get 'sync my-packages)
