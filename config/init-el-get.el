@@ -38,12 +38,10 @@
 	       :autoloads t)
 	
 	
-	(:name boxquote
+		(:name boxquote
 	       :type http
-	       :url "http://www.davep.org/emacs/boxquote.el"
-	       :autoloads t)
-
-	(:name multi-term
+	       :url "http://www.davep.org/emacs/boxquote.el")
+		(:name multi-term
 	       :type emacswiki
 	       :autoloads t)
 	
@@ -116,6 +114,6 @@
        (loop
 	for src in el-get-sources collect (el-get-source-name src))))
 
-(el-get 'sync my-packages)
 
+(el-get 'sync my-packages)
 (provide 'init-el-get)
