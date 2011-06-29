@@ -17,7 +17,7 @@
 		haml-mode sass-mode yaml-mode csv-mode espresso-mode
 		haskell-mode html-mode nxml-mode sh-mode smarty-mode
 		clojure-mode lisp-mode textile-mode markdown-mode
-		tuareg-mode cperl-mode sass-mode))
+		tuareg-mode cperl-mode sass-mode ncl-mode))
   (add-to-list 'ac-modes mode))
 
 (defun ac-cc-mode-setup ()

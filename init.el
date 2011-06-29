@@ -107,6 +107,7 @@
 (require 'init-org-refile)
 (require 'init-org-clock)
 (require 'init-org-ob)
+(require 'init-org-diary)
 
 ;;; org publish
 (require 'init-org-html)
