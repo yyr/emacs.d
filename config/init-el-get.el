@@ -1,3 +1,6 @@
+(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
+  (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
+
 (setq el-get-is-lazy 't)
 (setq el-get-byte-compile-at-init 't) 	; compile at init if any source is not byte compiled 
 
@@ -35,30 +38,11 @@
 	       :autoloads t)
 	
 	
-<<<<<<< HEAD
-		(:name boxquote
-	       :type http
-	       :url "http://www.davep.org/emacs/boxquote.el")
-		(:name multi-term
-=======
-	emacs-w3m
-
-	;; textile-mode
-	textile-mode
-	;; markdown-mode
-	markdown-mode
-	;; haml-mode
-	haml-mode
-	;; sass mode
-	sass-mode
-	
-;;;; extras
 	(:name boxquote
 	       :type http
 	       :url "http://www.davep.org/emacs/boxquote.el")
 
 	(:name multi-term
->>>>>>> 7f3d04899668e6b42726691f6f374e48e2ef5093
 	       :type emacswiki
 	       :autoloads t)
 	
@@ -131,8 +115,6 @@
        (loop
 	for src in el-get-sources collect (el-get-source-name src))))
 
-(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
-  (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
 
 (el-get 'sync my-packages)
 (provide 'init-el-get)
