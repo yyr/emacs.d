@@ -11,7 +11,6 @@
 (setq ac-dwim t)
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
-;(ac-start)
 
 (dolist (mode '(emacs-lisp-mode lisp-interaction-mode
 		magit-log-edit-mode log-edit-mode org-mode text-mode
@@ -21,26 +20,10 @@
 		tuareg-mode cperl-mode sass-mode))
   (add-to-list 'ac-modes mode))
 
-(defmacro ac-define-dictionary-source (name list)
-  "Define dictionary source named `NAME'.
-`LIST' is a list of string.
-This is useful if you just want to define a dictionary/keywords source."
-  `(defvar ,name
-     '((candidates . (lambda () (all-completions ac-prefix ,list))))))
+(defun ac-cc-mode-setup ()
+  (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
 
-;; ;; dirty fix for having AC everywhere emacswiki
-;; (define-globalized-minor-mode real-global-auto-complete-mode
-;;   auto-complete-mode (lambda ()
-;;                        (if (not (minibufferp (current-buffer)))
-;;                          (auto-complete-mode 1))
-;;                        ))
-;; (real-global-auto-complete-mode t)
 
-;; Exclude very large buffers from dabbrev
-(defun smp-dabbrev-friend-buffer (other-buffer)
-  (< (buffer-size other-buffer) (* 1 1024 1024)))
-
-(setq dabbrev-friend-buffer-function 'smp-dabbrev-friend-buffer)
 
 (define-key ac-completing-map   "\t"    'ac-expand-common)
 (define-key ac-completing-map   "\r"    'ac-complete)
@@ -48,3 +31,5 @@ This is useful if you just want to define a dictionary/keywords source."
 
 
 (provide 'init-auto-complete)
+
+;;; init-auto-complete.el ends here

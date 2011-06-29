@@ -8,15 +8,17 @@
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
+(defun ac-octave-mode-setup ()
+  (setq ac-sources '(ac-source-octave)))
+
 (eval-after-load "octave-mod"
   '(progn
-     (require 'auto-complete-octave)
+     (require 'ac-octave)
      (auto-complete-mode t)
-     (setq octave-completion-alist
-	   'octave-completion-alist)))
+     (add-hook 'octave-mode-hook
+	       '(lambda () (ac-octave-mode-setup)))))
 
-;;;      (setq octave-completion-alist
-;;       (nconc octave-keywords octave-completion-alist))
 
 (provide 'init-octave)
+
 ;;; init-octave.el ends here
