@@ -4,17 +4,17 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Licence: GPL v3 or later
 
-(require 'magit) 
-(autoload 'magit-status "magit" nil t)
-
-(global-set-key (kbd "M-<f12>") 'magit-status)
-(eval-after-load 'magit-mode
+(eval-after-load "vc-mode"
   '(progn
+     (require 'magit)
      (define-key (kbd "<f7> p") 'magit-push)
-     (define-key (kbd "<f7> l")
-       'magit-pull)))
+     (define-key (kbd "<f7> l") 'magit-pull)))
+
+(autoload 'magit-status "magit" nil t)
+(global-set-key (kbd "M-<f12>") 'magit-status)
 
 (autoload 'rebase-mode "rebase-mode" nil t)
 
 (provide 'init-git)
+
 ;;; init-git.el ends here
