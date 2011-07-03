@@ -82,8 +82,9 @@
      ))
 
 ;; When editing lisp code, highlight the current sexp
-(require 'hl-sexp)
-(add-hook 'paredit-mode-hook (lambda () (hl-sexp-mode t)))
+(add-hook 'paredit-mode-hook (lambda () (progn
+				     (require 'hl-sexp)
+				     (hl-sexp-mode t))))
 
 (provide 'init-lisp)
 

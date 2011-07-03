@@ -1,7 +1,12 @@
 ;;; org-mode
 
+
 (setq load-path (cons
                  (expand-file-name "~/.emacs.d/el-get/org-mode/lisp")
+                 load-path))
+
+(setq load-path (cons
+                 (expand-file-name "~/.emacs.d/el-get/org-mode/contrib/lisp/")
                  load-path))
 
 (require 'org-install)
