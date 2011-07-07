@@ -1,5 +1,6 @@
 ;; w3m browser
 
+(require 'w3m-load)
 
 ;(setq w3m-key-binding 'info) ; info-like
 (setq w3m-key-binding 'nil) ; lynx-like

@@ -6,7 +6,7 @@
 	  '(lambda ()
 	     (turn-on-auto-fill)
 	     (flyspell-mode)
-	     (highlight-parentheses-mode)
+	     ;; (highlight-parentheses-mode)
 	     ))
 
 ;; toggle with C-c q 
