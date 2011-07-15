@@ -156,13 +156,18 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;; Smtp
 ;;;------------------------------------------------
-
 (require 'smtpmail)
-(setq send-mail-function 'smtpmail-send-it)
-(setq message-send-mail-function 'smtpmail-send-it)
+
+(setq send-mail-function 'smtpmail-send-it) ; if you use `mail'
+(setq message-send-mail-function 'smtpmail-send-it) ; if you use message/Gnus
+
+;; (setq smtpmail-default-smtp-server "smtp.gmail.com")
+(setq smtpmail-smtp-server "smtp.gmail.com")
+;; (setq smtpmail-local-domain "YOUR DOMAIN NAME")
+;; (setq smtpmail-sendto-domain "YOUR DOMAIN NAME")
+(setq smtpmail-debug-info t) ; only to debug problems
 (setq smtpmail-stream-type 'starttls)
-(setq smtpmail-debug-info t)
-(setq smtpmail-debug-verb t)
+
 
 ;;; misc
 ;;; --------------------------------------------------
