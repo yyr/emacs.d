@@ -85,7 +85,9 @@
 (require 'init-sh)
 (require 'init-lisp)
 (require 'init-html)
+(require 'init-yaml)
 (require 'init-common-lisp)
+
 
 ;;; subject
 (require 'init-octave)  
