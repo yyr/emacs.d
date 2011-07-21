@@ -142,6 +142,10 @@
 (require 'init-server)
 ;;(require 'init-multi-term)
 
+;;; music
+(if (file-directory-p "/dump/MUSIC/")
+    (require 'init-emms))
+
 ;; interactive customization
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")

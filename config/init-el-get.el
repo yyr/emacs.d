@@ -57,6 +57,12 @@
                :type http
                :url "http://www.randomsample.de/profile-dotemacs.el"
                :autoloads t)
+        (:name calfw
+               :type git
+               :url "https://github.com/kiwanami/emacs-calfw.git"
+               :load-path "."
+               :description "A calendar framework for Emacs (with support for `org-mode', `howm' and iCal files)"
+               :website "https://github.com/kiwanami/emacs-calfw")
         ))
 
 (setq my-packages
@@ -86,7 +92,6 @@
 ;;;; Version control
          magit
 
-
 ;;;; langs
          ;; html
          ;; nxhtml
@@ -115,9 +120,11 @@
          ;; sass mode
          sass-mode
 
+;;;; misc
+	 emms
+	 
          el-get)
        (mapcar 'el-get-source-name el-get-sources)))
-
 
 (el-get 'sync my-packages)
 (provide 'init-el-get)
