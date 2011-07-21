@@ -9,7 +9,7 @@
 ;;; Description:
 ;;
 
-(add-to-list 'load-path "~/elisp/el-get/emms/lisp/")
+(add-to-list 'load-path "~/.emacs.d/el-get/emms/lisp/")
 
 (require 'emms-setup)
 (emms-standard)
