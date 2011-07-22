@@ -9,13 +9,12 @@
 ;;; Description:
 
 (require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
+
+;; (pymacs-load "ropemacs" "rope-")
 (add-hook 'python-mode-hook
           '(lambda () (eldoc-mode 1)) t)
 
 (setq py-python-command-args '( "--colors" "Linux"))
-
-;; (require 'ipython)
 
 (provide 'init-python)
 ;;; init-python.el ends here
