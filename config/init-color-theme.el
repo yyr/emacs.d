@@ -13,7 +13,8 @@
 ;; (set-cursor-color "red")
 
 (if (equal *system* "laptop")
-    (setq *my-theme* "zenburn"))
+    (setq *my-theme* "zenburn")
+  (setq *my-theme* "unknown"))
 
 (if (equal *my-theme* "zenburn")
     (progn

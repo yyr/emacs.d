@@ -58,7 +58,7 @@
                :autoloads t)
         (:name calfw
                :type git
-               :url "https://github.com/kiwanami/emacs-calfw.git"
+               :url "git://github.com/kiwanami/emacs-calfw"
                :load-path "."
                :description "A calendar framework for Emacs (with support for `org-mode', `howm' and iCal files)"
                :website "https://github.com/kiwanami/emacs-calfw")
@@ -106,8 +106,7 @@
 
 	 ;; python
 	 pymacs
-	 ropemacs
-	 ipython
+	 ;; ropemacs
 	 
 ;;;; web & mail
          bbdb

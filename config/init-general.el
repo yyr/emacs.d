@@ -1,12 +1,12 @@
 ;;; General
 
 ;; I dont what this means. but looks imp
-(setq default-buffer-file-coding-system 'utf-8-unix)            
-(setq default-file-name-coding-system 'utf-8-unix)              
-(setq default-keyboard-coding-system 'utf-8-unix)               
-(setq default-process-coding-system '(utf-8-unix . utf-8-unix)) 
-(setq default-sendmail-coding-system 'utf-8-unix)               
-(setq default-terminal-coding-system 'utf-8-unix)               
+(setq buffer-file-coding-system 'utf-8-unix)
+(setq default-file-name-coding-system 'utf-8-unix)
+(setq default-keyboard-coding-system 'utf-8-unix)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+(setq default-sendmail-coding-system 'utf-8-unix)
+(setq default-terminal-coding-system 'utf-8-unix)
 
 ;;; yank with indent
 (defadvice yank (after indent-region activate)
@@ -30,7 +30,7 @@
 (setq require-final-newline t)
 
 ;; Stop at the end of the file, not just add lines
-;(setq next-line-add-newlines nil)
+;;(setq next-line-add-newlines nil)
 
 (setq disabled-command-function nil)
 (setq browse-url-browser-function 'browse-url-firefox)

@@ -11,10 +11,11 @@
 ;;; Name the systems we have
 (if (equal (system-name) "raghava-note")
     (setq *system* "laptop")
-  (if (equal (system-name) "okhotsk19")
-      (setq *system* "lubu")
-    (if (equal (system-name) "amur")
-	(setq *system* "amur"))))
+  (setq *system* "amur"))
+
+(if (equal (system-name) "okhotsk19")
+    (setq *system* "lubu"))
+
 ;;; ---------------------------------------------------------------------------
 
 ;;; for system specific
