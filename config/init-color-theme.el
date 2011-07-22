@@ -12,5 +12,14 @@
 ;; (set-foreground-color "white")
 ;; (set-cursor-color "red")
 
+(if (equal *system* "laptop")
+    (setq *my-theme* "zenburn"))
+
+(if (equal *my-theme* "zenburn")
+    (progn
+      (require 'zenburn)
+      (color-theme-zenburn)))
+
+
 (provide 'init-color-theme)
 ;;; init-color-theme.el ends here
