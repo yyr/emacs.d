@@ -22,7 +22,6 @@
                :autoloads t)
 
 
-
 ;;; sub
         ;; emacs-grads
         (:name emacs-grads
@@ -80,7 +79,6 @@
          autopair
 
 
-
 ;;;; Cosmetics
          diminish
          color-theme
@@ -106,18 +104,22 @@
          yaml-mode
          gnuplot-mode
 
+	 ;; python
+	 pymacs
+	 ropemacs
+	 ipython
+	 
 ;;;; web & mail
          bbdb
-
          emacs-w3m
 
-         ;; textile-mode
+         ;; textile
          textile-mode
-         ;; markdown-mode
+         ;; markdown
          markdown-mode
-         ;; haml-mode
+         ;; haml
          haml-mode
-         ;; sass mode
+         ;; sass
          sass-mode
 
 ;;;; misc
