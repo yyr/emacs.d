@@ -87,7 +87,7 @@
 (require 'init-html)
 (require 'init-yaml)
 (require 'init-common-lisp)
-
+(require 'init-python)
 
 ;;; subject
 (require 'init-octave)  
