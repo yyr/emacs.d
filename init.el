@@ -8,6 +8,15 @@
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
 
+;;; Name the systems we have
+(if (equal (system-name) "raghava-note")
+    (setq *system* "laptop")
+  (if (equal (system-name) "okhotsk19")
+      (setq *system* "lubu")
+    (if (equal (system-name) "amur")
+	(setq *system* "amur"))))
+;;; ---------------------------------------------------------------------------
+
 ;;; for system specific
 (setq *byte-code-cache-enabled* nil)
 
