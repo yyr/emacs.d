@@ -1,4 +1,4 @@
-;;; Emacs Init 
+;;; Emacs Init
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
@@ -29,9 +29,9 @@
 (defvar *emacs-load-start* (current-time))
 ;;; ---------------------------------------------------------------------------
 
-(require 'cl) 				 ; must have
+(require 'cl)                            ; must have
 
-;;; load all subdirs of el-get 
+;;; load all subdirs of el-get
 (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
     (let* ((my-lisp-dir "~/.emacs.d/el-get/")
            (default-directory my-lisp-dir))
@@ -48,7 +48,7 @@
 (require 'init-elpa)
 (require 'init-el-get)
 
-;;; byte-compile-cache 
+;;; byte-compile-cache
 (when *byte-code-cache-enabled*
   (require 'init-byte-code-cache))
 
@@ -85,7 +85,7 @@
 ;;; File management
 (require 'init-dired)
 
-;;; make friendly mini buffer 
+;;; make friendly mini buffer
 (require 'init-ido)
 (require 'init-smex)
 
@@ -100,8 +100,8 @@
 (require 'init-python)
 
 ;;; subject
-(require 'init-octave)  
-(require 'init-latex)   
+(require 'init-octave)
+(require 'init-latex)
 (require 'init-ncl)
 (require 'init-grads)
 (require 'init-gnuplot)
@@ -109,7 +109,7 @@
 ;;; DVC
 (require 'init-git)
 
-;;; org GTD 
+;;; org GTD
 (require 'init-diary)
 (require 'init-org)
 (require 'init-org-todo-state-tags)
@@ -163,7 +163,10 @@
 (load custom-file 'noerror)
 
 
-(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
-				     (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+;;; check out howmuch time it took to load init file
+(message "My .emacs loaded in %ds"
+	 (destructuring-bind (hi lo ms) (current-time)
+	   (- (+ hi lo) (+ (first *emacs-load-start*)
+			   (second *emacs-load-start*)))))
 
 ;; init ends here
