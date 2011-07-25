@@ -1,0 +1,7 @@
+# contributor: Mads D. Kristensen 
+# name: try
+# --
+try:
+    $0
+except ${1:Exception}, ${2:e}:
+    pass
