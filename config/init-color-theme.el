@@ -12,6 +12,9 @@
 ;; (set-foreground-color "white")
 ;; (set-cursor-color "red")
 
+;;; init color-theme.el
+(color-theme-initialize)
+
 (if (equal *system* "laptop")
     (setq *my-theme* "zenburn")
   (setq *my-theme* "unknown"))
