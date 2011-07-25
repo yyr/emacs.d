@@ -129,6 +129,7 @@
 
 ;;; org misc
 (require 'init-org-misc)
+(require 'init-epresent)
 
 ;;; Info,  help & Doc
 (require 'init-info)
