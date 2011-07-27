@@ -12,7 +12,8 @@
 ;; (set-foreground-color "white")
 ;; (set-cursor-color "red")
 
-;;; init color-theme.el
+;; init color-theme.el
+(require 'color-theme-autoloads)
 (color-theme-initialize)
 
 (if (equal *system* "laptop")
