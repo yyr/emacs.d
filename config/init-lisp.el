@@ -23,14 +23,15 @@
 
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'pretty-lambdas)
-  (add-hook hook 'enable-paredit-mode))
+  ;; (add-hook hook 'enable-paredit-mode)
+  )
 
 
-(add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
-(defun conditionally-enable-paredit-mode ()
-  "Enable paredit-mode during eval-expression"
-  (if (eq this-command 'eval-expression)
-      (paredit-mode 1)))
+;; (add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
+;; (defun conditionally-enable-paredit-mode ()
+;;   "Enable paredit-mode during eval-expression"
+;;   (if (eq this-command 'eval-expression)
+;;       (paredit-mode 1)))
 
 
 (defun set-up-hippie-expand-for-elisp ()
@@ -82,9 +83,9 @@
      ))
 
 ;; When editing lisp code, highlight the current sexp
-(add-hook 'paredit-mode-hook (lambda () (progn
-				     (require 'hl-sexp)
-				     (hl-sexp-mode t))))
+(add-hook 'emacs-lisp-mode-hook (lambda () (progn
+					     (require 'hl-sexp)
+					     (hl-sexp-mode t))))
 
 (provide 'init-lisp)
 
