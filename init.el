@@ -101,7 +101,8 @@
 
 ;;; subject
 (require 'init-octave)
-(require 'init-latex)
+(require 'init-auctex)
+;; (require 'init-latex)
 (require 'init-ncl)
 (require 'init-grads)
 (require 'init-gnuplot)
