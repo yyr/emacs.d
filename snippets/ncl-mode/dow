@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: do while ( .. ) .. end while
+# key: dow
+# --
+do while ( $1 )
+$0
+end do
