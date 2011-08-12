@@ -1,4 +1,4 @@
-; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;    File: (>>FILE<<)
 ;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ; Created: (>>DATE<<)
@@ -8,6 +8,7 @@
 ;
 
 load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl"
+load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl"
 load "$NCARG_ROOT/lib/ncarg/nclscripts/wrf/WRFUserARW.ncl"
 
 begin

@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+# Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 #    File: (>>FILE<<)
 #  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 # Created: (>>DATE<<)
