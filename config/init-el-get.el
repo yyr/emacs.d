@@ -30,8 +30,8 @@
                :autoloads t)
 
         (:name ncl
-               :type http
-               :url "http://www.ncl.ucar.edu/Applications/Files/ncl.el"
+               :type git
+               :url "git://github.com/yyr/ncl.el.git"
                :autoloads t)
 
 ;;; Misc
