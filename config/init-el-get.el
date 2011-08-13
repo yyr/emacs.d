@@ -17,11 +17,6 @@
                :features "yasnippet"
                :autoloads t)
 
-        (:name ac-octave
-               :type emacswiki
-               :autoloads t)
-
-
 ;;; sub
         ;; emacs-grads
         (:name emacs-grads
@@ -48,21 +43,11 @@
                :type http
                :url "http://www.davep.org/emacs/boxquote.el")
 
-        (:name multi-term
-               :type emacswiki
-               :autoloads t)
-
-        (:name profile-dotemacs
+	(:name profile-dotemacs
                :type http
                :url "http://www.randomsample.de/profile-dotemacs.el"
                :autoloads t)
-        (:name calfw
-               :type git
-               :url "git://github.com/kiwanami/emacs-calfw"
-               :load-path "."
-               :description "A calendar framework for Emacs (with support for `org-mode', `howm' and iCal files)"
-               :website "https://github.com/kiwanami/emacs-calfw")
-        ))
+	))
 
 (setq my-packages
       (append
@@ -86,7 +71,8 @@
 
 ;;;; Org
          org-mode
-
+	 calfw
+	 
 ;;;; Version control
          magit
 
@@ -107,7 +93,10 @@
 	 ;; python
 	 pymacs
 	 ;; ropemacs
-	 
+
+;;;; Sub
+	 ac-octave 
+
 ;;;; web & mail
          bbdb
          emacs-w3m
@@ -120,6 +109,7 @@
          haml-mode
          ;; sass
          sass-mode
+	 
 
 ;;;; misc
 	 emms
