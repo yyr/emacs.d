@@ -26,7 +26,6 @@
 (setq gnus-init-file
       (concat my-emacs-config "/init-gnus.el" )) ;gnus init file
 
-(defvar *emacs-load-start* (current-time))
 ;;; ---------------------------------------------------------------------------
 
 (require 'cl)                            ; must have
@@ -163,11 +162,7 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
-
-;;; check out howmuch time it took to load init file
-(message "My .emacs loaded in %ds"
-	 (destructuring-bind (hi lo ms) (current-time)
-	   (- (+ hi lo) (+ (first *emacs-load-start*)
-			   (second *emacs-load-start*)))))
-
+(add-hook 'emacs-startup-hook '(lambda ()
+				 (message "My .emacs loaded in %s"
+					  (emacs-init-time))))
 ;; init ends here
