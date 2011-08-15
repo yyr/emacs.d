@@ -163,6 +163,13 @@
 (load custom-file 'noerror)
 
 (add-hook 'emacs-startup-hook '(lambda ()
-				 (message "My .emacs loaded in %s"
-					  (emacs-init-time))))
+				 (progn
+				   (message "My .emacs loaded in %s"
+					    (emacs-init-time))
+				   (el-get-notify
+				    "Emacs is started"
+				    (format "loding init file took %s"
+					    (emacs-init-time))))))
+
+
 ;; init ends here
