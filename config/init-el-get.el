@@ -15,39 +15,7 @@
                :type svn
                :url "http://yasnippet.googlecode.com/svn/trunk/"
                :features "yasnippet"
-               :autoloads t)
-
-;;; sub
-        ;; emacs-grads
-        (:name emacs-grads
-               :type git
-               :url "git://github.com/yyr/emacs-grads.git"
-               :autoloads t)
-
-        (:name ncl
-               :type git
-               :url "git://github.com/yyr/ncl.el.git"
-               :autoloads t)
-
-;;; Misc
-
-	(:name yaoddmuse
-               :type emacswiki
-               :autoloads t)
-
-        (:name epresent
-               :type git
-               :url "git://github.com/eschulte/epresent.git")
-
-        (:name boxquote
-               :type http
-               :url "http://www.davep.org/emacs/boxquote.el")
-
-	(:name profile-dotemacs
-               :type http
-               :url "http://www.randomsample.de/profile-dotemacs.el"
-               :autoloads t)
-	))
+               :autoloads t)))
 
 (setq my-packages
       (append
@@ -71,8 +39,8 @@
 
 ;;;; Org
          org-mode
-	 calfw
-	 
+         calfw
+
 ;;;; Version control
          magit
 
@@ -85,17 +53,18 @@
 
          ;; latex
          auctex
+         ncl
 
          ;;yaml-mode
          yaml-mode
          gnuplot-mode
 
-	 ;; python
-	 pymacs
-	 ;; ropemacs
+         ;; python
+         pymacs
+         ;; ropemacs
 
 ;;;; Sub
-	 ac-octave 
+         ac-octave
 
 ;;;; web & mail
          bbdb
@@ -109,11 +78,15 @@
          haml-mode
          ;; sass
          sass-mode
-	 
+         yaoddmuse
+         profile-dotemacs
+         epresent
+         emacs-grads
 
 ;;;; misc
-	 emms
-	 
+         emms
+         boxquote
+
          el-get)
        (mapcar 'el-get-source-name el-get-sources)))
 
