@@ -4,11 +4,13 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(require 'diminish)
+(autoload 'diminish "diminish" nil t)
 
-(diminish 'paredit-mode "PE")		
-(diminish 'eldoc-mode "ED")
-(diminish 'yas/minor-mode "Y")
+(eval-after-load "eldoc"
+  '(diminish 'eldoc-mode "ed"))
+
+(eval-after-load "paredit"
+  '(diminish 'paredit-mode "pe"))
 
 (provide 'init-diminish)
 ;;; init-diminish.el ends here

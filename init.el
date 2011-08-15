@@ -60,7 +60,8 @@
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-time)
-(require 'init-bbdb)
+(require 'init-diminish)
+;; (require 'init-bbdb)
 
 ;;; help typing
 (require 'init-autopair)
@@ -68,7 +69,6 @@
 (require 'init-auto-insert)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
-;; (require 'init-diminish)
 (require 'init-yasnip)
 
 ;;; help navigation
