@@ -8,6 +8,7 @@
 
 ;;; Description:
 
+(autoload 'epresent "epresent.el")
 (require 'epresent)
 
 (provide 'init-epresent)
