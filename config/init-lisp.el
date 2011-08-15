@@ -13,8 +13,6 @@
                                     ,(make-char 'greek-iso8859-7 107))
                     'font-lock-keyword-face))))))
 
-(autoload 'paredit-mode "paredit"
-  "Minor mode for pseudo-structurally editing Lisp code." t)
 (autoload 'enable-paredit-mode "paredit" "Turn on paredit mode" t)
 
 (defadvice enable-paredit-mode (before disable-autopair activate)
@@ -23,15 +21,15 @@
 
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'pretty-lambdas)
-  ;; (add-hook hook 'enable-paredit-mode)
-  )
+  (add-hook hook 'enable-paredit-mode))
 
 
-;; (add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
-;; (defun conditionally-enable-paredit-mode ()
-;;   "Enable paredit-mode during eval-expression"
-;;   (if (eq this-command 'eval-expression)
-;;       (paredit-mode 1)))
+
+(add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
+(defun conditionally-enable-paredit-mode ()
+  "Enable paredit-mode during eval-expression"
+  (if (eq this-command 'eval-expression)
+      (paredit-mode 1)))
 
 
 (defun set-up-hippie-expand-for-elisp ()
