@@ -1,9 +1,13 @@
-(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t)) ;;from steves emacs.d git http://git.sanityinc.com/
-  (error "Please bootstrap el-get using the instructions here: http://github.com/dimitri/el-get/, then restart Emacs"))
+;;from steves emacs.d git http://git.sanityinc.com/
+(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t))
+  (error
+   "Please bootstrap el-get using the instructions here:
+   http://github.com/dimitri/el-get/, then restart Emacs"))
 
 (setq el-get-is-lazy 't)
-(setq el-get-byte-compile-at-init 't)   ; compile at init if any source is not byte compiled
+;; (setq el-get-byte-compile-at-init 't)   ; compile at init if any source is not byte compiled
 
+;; local sources
 (setq el-get-sources
       '(
 ;;;; help typing
@@ -17,6 +21,8 @@
                :features "yasnippet"
                :autoloads t)))
 
+
+;; provided sources
 (setq my-packages
       (append
        '(
@@ -31,7 +37,6 @@
          dired-plus
          autopair
 
-
 ;;;; Cosmetics
          diminish
          color-theme
@@ -41,23 +46,13 @@
          org-mode
          calfw
 
-;;;; Version control
+;;;; DVC
          magit
+         epresent
 
 ;;;; langs
-         ;; html
-         ;; nxhtml
-
          ;; lisp
          paredit
-
-         ;; latex
-         auctex
-         ncl
-
-         ;;yaml-mode
-         yaml-mode
-         gnuplot-mode
 
          ;; python
          pymacs
@@ -65,30 +60,35 @@
 
 ;;;; Sub
          ac-octave
+	 gnuplot-mode
+	 ncl
+	 auctex
+	 emacs-grads
 
 ;;;; web & mail
          bbdb
          emacs-w3m
-
-         ;; textile
-         textile-mode
-         ;; markdown
-         markdown-mode
-         ;; haml
-         haml-mode
-         ;; sass
-         sass-mode
          yaoddmuse
-         profile-dotemacs
-         epresent
-         emacs-grads
+
+         textile-mode
+         markdown-mode
+         haml-mode
+         sass-mode
+         yaml-mode
 
 ;;;; misc
          emms
          boxquote
+         profile-dotemacs
 
          el-get)
+       
        (mapcar 'el-get-source-name el-get-sources)))
+
+
+
 
 (el-get 'sync my-packages)
 (provide 'init-el-get)
+
+;; init-el-get.el ends here
