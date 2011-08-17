@@ -45,7 +45,7 @@
 (global-set-key "\C-x|" 'split-window-horizontally-instead)
 (global-set-key "\C-x_" 'split-window-vertically-instead)
 
-(global-set-key [f2] 'split-window-horizontally)
+(global-set-key [f2] (split-window-func-with-other-buffer 'split-window-horizontally))
 (global-set-key (kbd "<S-f2>") 'delete-other-windows)
 
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
