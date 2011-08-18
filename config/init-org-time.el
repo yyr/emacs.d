@@ -11,9 +11,9 @@
 (add-to-list 'org-modules 'org-timer)
 (setq org-timer-default-timer 25)
 
-(add-hook 'org-clock-in-hook '(lambda () 
-				(if (not org-timer-current-timer) 
-				    (org-timer-set-timer '(16)))))
+(add-hook 'org-clock-in-hook '(lambda ()
+                                (if (not org-timer-current-timer)
+                                    (org-timer-set-timer '(16)))))
 
 
 ;;; init-org-time.el ends here

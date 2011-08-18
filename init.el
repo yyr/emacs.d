@@ -26,6 +26,10 @@
 (setq gnus-init-file
       (concat my-emacs-config "/init-gnus.el" )) ;gnus init file
 
+(setq load-path (cons
+                 (expand-file-name emacs-path)
+                 (cons my-emacs-config load-path)))
+
 ;;; ---------------------------------------------------------------------------
 
 (require 'cl)                            ; must have
@@ -162,14 +166,15 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
-(add-hook 'emacs-startup-hook '(lambda ()
-				 (progn
-				   (message "My .emacs loaded in %s"
-					    (emacs-init-time))
-				   (el-get-notify
-				    "Emacs is started"
-				    (format "loding init file took %s"
-					    (emacs-init-time))))))
+(add-hook 'emacs-startup-hook
+          '(lambda ()
+             (progn
+               (message "My .emacs loaded in %s"
+                        (emacs-init-time))
+               (el-get-notify
+                "Emacs is started"
+                (format "loding init file took %s"
+                        (emacs-init-time))))))
 
 
 ;; init ends here

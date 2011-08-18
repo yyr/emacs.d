@@ -8,8 +8,8 @@
 
 ;;; Description:
 
-(autoload 'epresent "epresent.el")
-(require 'epresent)
+(autoload 'epresent "epresent" nil t)
+
 
 (provide 'init-epresent)
 ;;; init-epresent.el ends here
