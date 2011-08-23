@@ -59,12 +59,15 @@
          ;; ropemacs
 
 ;;;; Sub
-         ac-octave
-	 gnuplot-mode
-	 ncl
 	 auctex
-	 emacs-grads
+         ac-math
+         ac-octave
 
+	 ncl
+         emacs-grads
+
+         gnuplot-mode
+         
 ;;;; web & mail
          bbdb
          emacs-w3m
