@@ -27,37 +27,53 @@
 ;;;  Custom Agenda views
 ;; dont show deadlines every day
 (setq org-deadline-warning-days 2)
-(setq org-agenda-ndays 10)
+(setq org-agenda-ndays 7)
 
 (setq org-agenda-custom-commands
       (quote (
               ;; @ nights & weekend
               ("w" "Works for weekend" tags "@night|@weekend!"
                ((org-agenda-overriding-header "weekend works")
-		(org-tags-match-list-sublevels 'indented)))
+                (org-tags-match-list-sublevels 'indented)))
 
               ;; @ day tag
               ("d" "At WORK" tags "@day!"
                ((org-agenda-overriding-header "at Work")
-		(org-tags-match-list-sublevels 'indented)))
+                (org-tags-match-list-sublevels 'indented)))
 
               ;; @ night tags
               ("n" "Evening" tags "@night!"
                ((org-agenda-overriding-header "Night time")
-		(org-tags-match-list-sublevels 'indented)))
+                (org-tags-match-list-sublevels 'indented)))
 
               ;; entries to refile
-              ("r" "Refile New Notes and Tasks" tags "LEVEL>1+REFILE"
+              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
                ((org-agenda-overriding-header "Tasks to Refile")
-		(org-tags-match-list-sublevels 'indented)))
-	      
+                (org-tags-match-list-sublevels 'indented)))
+
 
               ;; Next items
               ("N" "Next" tags-todo "/!NEXT"
-	       ((org-tags-match-list-sublevels 'indented)))
+               ((org-tags-match-list-sublevels 'indented)))
 
               ;; entries to archived
-              ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED"))))
+              ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED")
+
+              ;; Block Agenda
+              (" " "Block Agends"
+               ((agenda " " nil )
+                (tags-todo "/!NEXT"
+                           ((org-tags-match-list-sublevels 'indented))
+                           (org-agenda-overriding-header "Next Tasks"))
+		(tags "LEVEL=2+REFILE"
+		      ((org-agenda-overriding-header "Entries to be Refiled")))
+		
+                ;; (todo "TODO"
+                ;;       ((org-tags-match-list-sublevels 'indented)
+                ;;        (org-agenda-overriding-header "All Global TODOS")))
+
+                (tags "LEVEL>1-REFILE/DONE|CANCELLED"
+                      ((org-agenda-overriding-header "Entires can be Archived"))))))))
 
 
 
