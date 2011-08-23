@@ -33,25 +33,32 @@
       (quote (
               ;; @ nights & weekend
               ("w" "Works for weekend" tags "@night|@weekend!"
-               ((org-agenda-overriding-header "weekend works")))
+               ((org-agenda-overriding-header "weekend works")
+		(org-tags-match-list-sublevels 'indented)))
 
               ;; @ day tag
               ("d" "At WORK" tags "@day!"
-               ((org-agenda-overriding-header "at Work")))
+               ((org-agenda-overriding-header "at Work")
+		(org-tags-match-list-sublevels 'indented)))
 
               ;; @ night tags
               ("n" "Evening" tags "@night!"
-               ((org-agenda-overriding-header "Night time")))
+               ((org-agenda-overriding-header "Night time")
+		(org-tags-match-list-sublevels 'indented)))
 
               ;; entries to refile
-              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
-               ((org-agenda-overriding-header "Tasks to Refile")))
+              ("r" "Refile New Notes and Tasks" tags "LEVEL>1+REFILE"
+               ((org-agenda-overriding-header "Tasks to Refile")
+		(org-tags-match-list-sublevels 'indented)))
+	      
 
               ;; Next items
-              ("N" "Next" tags-todo "/!NEXT")
+              ("N" "Next" tags-todo "/!NEXT"
+	       ((org-tags-match-list-sublevels 'indented)))
 
               ;; entries to archived
-              ("A" "Tasks to be Archived" tags "LEVEL=2-REFILE/DONE|CANCELLED"))))
+              ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED"))))
+
 
 
 (provide 'init-org-agenda)
