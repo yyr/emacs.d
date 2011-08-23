@@ -22,12 +22,13 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTeX t)
 
+
 (add-hook 'LaTeX-mode-hook
           (lambda()
-            (define-key LaTeX-mode-map (kbd "<M-tab>") 'TeX-complete-symbol)
+            (define-key LaTeX-mode-map (kbd "<M-.>") 'TeX-complete-symbol)
             (TeX-PDF-mode t)
             (setq TeX-save-query  nil )
-	    (setq TeX-master (guess-TeX-master (buffer-file-name)))
+            (setq TeX-master (guess-TeX-master (buffer-file-name)))
             (setq TeX-show-compilation t)))
 
 (add-hook 'LaTeX-mode-hook
@@ -36,27 +37,40 @@
             (turn-on-reftex)
             (turn-on-auto-fill)))
 
+
 ;; from emacs wiki
 (defun guess-TeX-master (filename)
   "Guess the master file for FILENAME from currently open .tex files."
   (let ((candidate nil)
-	(filename (file-name-nondirectory filename)))
+        (filename (file-name-nondirectory filename)))
     (save-excursion
       (dolist (buffer (buffer-list))
-	(with-current-buffer buffer
-	  (let ((name (buffer-name))
-		(file buffer-file-name))
-	    (if (and file (string-match "\\.tex$" file))
-		(progn
-		  (goto-char (point-min))
-		  (if (re-search-forward (concat "\\\\input{" filename "}") nil t)
-		      (setq candidate file))
-		  (if (re-search-forward (concat "\\\\include{" (file-name-sans-extension filename) "}") nil t)
-		      (setq candidate file))))))))
+        (with-current-buffer buffer
+          (let ((name (buffer-name))
+                (file buffer-file-name))
+            (if (and file (string-match "\\.tex$" file))
+                (progn
+                  (goto-char (point-min))
+                  (if (re-search-forward (concat "\\\\input{" filename "}") nil t)
+                      (setq candidate file))
+                  (if (re-search-forward (concat "\\\\include{" (file-name-sans-extension filename) "}") nil t)
+                      (setq candidate file))))))))
     (if candidate
-	(message "TeX master document: %s" (file-name-nondirectory candidate)))
+        (message "TeX master document: %s" (file-name-nondirectory candidate)))
     candidate))
 
-(provide 'init-auctex)
 
+;;; auto completion support
+(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+  (setq ac-sources
+        (append '(ac-source-math-latex ac-source-latex-commands  ac-source-math-unicode)
+                ac-sources)))
+
+(add-hook 'LaTeX-mode-hook
+	  (lambda ()
+	    (require 'ac-math)
+	    (ac-latex-mode-setup)))
+
+
+(provide 'init-auctex)
 ;;; init-auctex.el ends here
