@@ -19,16 +19,20 @@
 		haml-mode sass-mode yaml-mode csv-mode espresso-mode
 		haskell-mode html-mode nxml-mode sh-mode smarty-mode
 		clojure-mode lisp-mode textile-mode markdown-mode
-		tuareg-mode cperl-mode sass-mode ncl-mode))
+		tuareg-mode cperl-mode sass-mode ncl-mode latex-mode))
   (add-to-list 'ac-modes mode))
 
 (defun ac-cc-mode-setup ()
   (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
 
+(add-hook 'auto-complete-mode-hook (lambda ()
+				     (ac-flyspell-workaround)))
 
 (define-key ac-completing-map   "\t"    'ac-expand-common)
 (define-key ac-completing-map   "\r"    'ac-complete)
 (define-key ac-completing-map   "\M-/"  'ac-stop)
+
+
 
 
 (provide 'init-auto-complete)
