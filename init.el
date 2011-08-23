@@ -146,6 +146,7 @@
 (require 'init-w3m)
 (require 'init-yaoddmuse)
 (require 'init-sass-mode)
+(require 'init-erc)
 
 ;;; utilities & misc
 (require 'init-utils)
