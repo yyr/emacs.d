@@ -82,6 +82,6 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (define-key global-map "\C-x\C-r" 'rgrep)
-
+(global-unset-key "\C-z")
 
 (provide 'init-custom-key-set)

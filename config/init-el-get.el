@@ -37,6 +37,9 @@
          dired-plus
          autopair
 
+         ;; general
+         dictem
+
 ;;;; Cosmetics
          diminish
          color-theme

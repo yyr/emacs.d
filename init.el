@@ -74,6 +74,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-yasnip)
+(require 'init-dictem)
 
 ;;; help navigation
 (require 'init-bookmarks)
