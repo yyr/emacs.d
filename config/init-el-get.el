@@ -83,6 +83,9 @@
          sass-mode
          yaml-mode
 
+;;; sys
+	 crontab-mode
+	 
 ;;;; misc
          emms
          boxquote
