@@ -40,4 +40,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;;; dont use M-TAB for flyspell
+(setq flyspell-use-meta-tab nil)
+
 (provide 'init-general)
