@@ -57,7 +57,7 @@
 
 ;;; look
 (require 'init-font)
-(require 'init-color-theme)
+;; (require 'init-color-theme)
 
 ;;; initial setup, keybindings
 (require 'init-general)
