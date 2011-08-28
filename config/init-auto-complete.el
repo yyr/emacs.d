@@ -9,6 +9,7 @@
 
 (ac-config-default)
 
+
 (setq ac-auto-start 2)
 (setq ac-dwim t)
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
@@ -32,8 +33,10 @@
 (define-key ac-completing-map   "\r"    'ac-complete)
 (define-key ac-completing-map   "\M-/"  'ac-stop)
 
-
-
+;; Use Emacs' built-in TAB completion hooks to trigger AC (Emacs >= 23.2)
+(setq tab-always-indent
+      'complete) ;; use 'complete when auto-complete is disabled
+(add-to-list 'completion-styles 'initials t)
 
 (provide 'init-auto-complete)
 
