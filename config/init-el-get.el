@@ -35,22 +35,21 @@
        '(
 ;;;; Basics
          ;; package24
-         hl-sexp
-         byte-code-cache
-
-         highlight-parentheses
-
-         smex
-         dired-plus
-         autopair
+	 byte-code-cache
 
 ;;;; general
          dictem
+
+;;;; navigation
+	 smex
+         dired-plus
 
 ;;;; help typing
          yasnippet
          ac-math
          ac-octave
+         highlight-parentheses
+         autopair
 
 ;;;; Cosmetics
          diminish
@@ -67,12 +66,19 @@
          magit
 
 ;;;; langs
-         ;; lisp
+         ;; elisp
          paredit
-
+         hl-sexp
+         
          ;; python
          pymacs
          ;; ropemacs
+
+         textile-mode
+         markdown-mode
+         haml-mode
+         sass-mode
+         yaml-mode
 
 ;;;; Sub
          auctex
@@ -87,12 +93,6 @@
          emacs-w3m
          yaoddmuse
 
-         textile-mode
-         markdown-mode
-         haml-mode
-         sass-mode
-         yaml-mode
-
 ;;; sys
          crontab-mode
          screenshot
@@ -102,8 +102,9 @@
 	 profile-dotemacs
 
          el-get)
-
+       
        (mapcar 'el-get-source-name el-get-sources)))
+
 
 (el-get 'sync my-packages)
 
