@@ -1,3 +1,14 @@
+;;; init-el-get.el
+;; 
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;;    File: init-el-get.el
+;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;; Created: 
+;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
+
+;;; Description:
+;;
+
 ;;from steves emacs.d git http://git.sanityinc.com/
 (when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t))
   (error
@@ -5,28 +16,24 @@
    http://github.com/dimitri/el-get/, then restart Emacs"))
 
 (setq el-get-is-lazy 't)
-;; (setq el-get-byte-compile-at-init 't)   ; compile at init if any source is not byte compiled
 
-;; local sources
+;; compile at init if any source is not byte compiled
+;; (setq el-get-byte-compile-at-init 't)
+
+;; my sources
 (setq el-get-sources
       '(
 ;;;; help typing
         (:name auto-complete
                :type git
                :url "git://github.com/m2ym/auto-complete.git")
+        ))
 
-        (:name yasnippet
-               :type svn
-               :url "http://yasnippet.googlecode.com/svn/trunk/"
-               :features "yasnippet"
-               :autoloads t)))
-
-
-;; provided sources
+;; el-get provided sources
 (setq my-packages
       (append
        '(
-         ;;;; Basics
+;;;; Basics
          ;; package24
          hl-sexp
          byte-code-cache
@@ -37,21 +44,27 @@
          dired-plus
          autopair
 
-         ;; general
+;;;; general
          dictem
+
+;;;; help typing
+         yasnippet
+         ac-math
+         ac-octave
 
 ;;;; Cosmetics
          diminish
          color-theme
          color-theme-zenburn
-
+         boxquote
+         
 ;;;; Org
          org-mode
          calfw
+         epresent
 
 ;;;; DVC
          magit
-         epresent
 
 ;;;; langs
          ;; lisp
@@ -64,9 +77,6 @@
 ;;;; Sub
          auctex
          ebib
-
-         ac-math
-         ac-octave
 
          ncl
          emacs-grads
@@ -84,21 +94,18 @@
          yaml-mode
 
 ;;; sys
-	 crontab-mode
-	 
+         crontab-mode
+         screenshot
+
 ;;;; misc
          emms
-         boxquote
-         profile-dotemacs
+	 profile-dotemacs
 
          el-get)
-       
+
        (mapcar 'el-get-source-name el-get-sources)))
 
-
-
-
 (el-get 'sync my-packages)
-(provide 'init-el-get)
 
+(provide 'init-el-get)
 ;; init-el-get.el ends here
