@@ -43,4 +43,30 @@
 ;;; dont use M-TAB for flyspell
 (setq flyspell-use-meta-tab nil)
 
+;; highlight-sloppy-grammar
+;; ------------------------
+;; This uses the font lock mechanism to highlight some potential
+;; grammatical trouble spots.  It checks against a small list of common
+;; problems such as duplicate words and instances of the passive voice.
+;; It's not fool-proof but it does help when taking a pass over a paper.
+;;
+(defun highlight-sloppy-grammar ()
+  "Highlight areas potentially containing sloppy grammar."
+  (interactive)
+  (make-face 'grammar-warning-face "Face to display grammar warnings in.")
+  (face-spec-set 'grammar-warning-face
+                 '((t (:bold t :foreground "orange" :underline t))))
+  (font-lock-add-keywords
+   nil
+   '(("\\<\\(?:were\\|was\\|is\\|are\\|has been\\|be\\)\\(?:[ \t\r\n]+[a-zA-Z]+\\)?[ \t\r\n]+[a-zA-Z]+ed\\>"
+      0 'grammar-warning-face t)        ; passive voice
+     ("\\<\\([a-zA-Z]+\\)[ \t\r\n]+\\1\\>" 0 'grammar-warning-face t)
+     ("[,-][ \t\r\n]+that\\>" 0 'grammar-warning-face t)
+     ("[a-zA-Z]+[ \t\r\n]+which\\>" 0 'grammar-warning-face t)
+     ("\\<[a-z]+\\(?:n't\\|d've\\)\\>" 0 'grammar-warning-face t)
+     ("\\<by[ \t\r\n]+[a-z]+ing\\>" 0 'grammar-warning-face t)
+     ("\\<which[ \t\r\n]+was\\>" 0 'grammar-warning-face t)
+     ("\\<the[ \t\r\n]+[a-zA-Z]+[ \t\r\n]+of[ \t\r\n]+the\\>" 0 'grammar-warning-face t)))
+  (font-lock-fontify-buffer))
+
 (provide 'init-general)
