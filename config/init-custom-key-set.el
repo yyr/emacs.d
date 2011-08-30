@@ -82,6 +82,18 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (define-key global-map "\C-x\C-r" 'rgrep)
+
+;;; unset C-z first
 (global-unset-key "\C-z")
+;; C-z f toggles auto-fill
+(define-key global-map [(control ?z) ?f] 'auto-fill-mode)
+;; C-z t to clear trailing whitespace
+(define-key global-map [(control ?z) ?t] 'delete-trailing-whitespace)
+;; C-z TAB cycles through buffers
+(define-key global-map [(control ?z) tab] 'bury-buffer)
+;; C-TAB also cycles through buffers
+(define-key global-map [(control tab)] 'bury-buffer)
+;; I like XEmacs' M-g for goto-line, use it GNU too
+(define-key global-map [(meta ?g)] 'goto-line)
 
 (provide 'init-custom-key-set)
