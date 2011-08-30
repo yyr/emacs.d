@@ -35,4 +35,4 @@ make install
   alex schroeder    - http://www.emacswiki.org/alex/
   Steve Purcell	    - git.sanityinc.com (many thanks to him)
   Alex Ott          - alexott.com <alexott@Agmail.com>
-  Andy Stewart      - http://www.emacswiki.org/emacs-en/AndyStewart
+  Andrew Kensler    - http://www.cs.utah.edu/~aek/code/init.el.html
