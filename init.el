@@ -55,17 +55,20 @@
 (when *byte-code-cache-enabled*
   (require 'init-byte-code-cache))
 
-;;; look
-(require 'init-font)
-;; (require 'init-color-theme)
 
 ;;; initial setup, keybindings
 (require 'init-general)
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
+(require 'init-point)
+(require 'init-buffers)
 (require 'init-time)
 (require 'init-diminish)
 ;; (require 'init-bbdb)
+
+;;; look
+(require 'init-font)
+(require 'init-color-theme)
 
 ;;; help typing
 (require 'init-autopair)
@@ -176,7 +179,9 @@
                (el-get-notify
                 "Emacs is started"
                 (format "loding init file took %s"
-                        (emacs-init-time))))))
-
+                        (emacs-init-time)))
+               (sit-for 0.5)
+               ;; bit intersting startup
+               (message "%s" "As always by your command... "))))
 
 ;; init ends here
