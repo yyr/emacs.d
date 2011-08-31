@@ -63,6 +63,7 @@
 (require 'init-buffers)
 (require 'init-time)
 (require 'init-diminish)
+(require 'init-linum)
 ;; (require 'init-bbdb)
 
 ;;; look
