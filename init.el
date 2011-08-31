@@ -55,7 +55,6 @@
 (when *byte-code-cache-enabled*
   (require 'init-byte-code-cache))
 
-
 ;;; initial setup, keybindings
 (require 'init-general)
 (require 'init-ess-minors)

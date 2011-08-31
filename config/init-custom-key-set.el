@@ -85,8 +85,6 @@
 
 ;;; unset C-z first
 (global-unset-key "\C-z")
-;; C-z f toggles auto-fill
-(define-key global-map [(control ?z) ?f] 'auto-fill-mode)
 ;; C-z t to clear trailing whitespace
 (define-key global-map [(control ?z) ?t] 'delete-trailing-whitespace)
 ;; C-z TAB cycles through buffers

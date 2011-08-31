@@ -23,9 +23,7 @@
             (make-variable-buffer-local 'yas/trigger-key)
             (setq yas/trigger-key [tab])
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-            (define-key yas/keymap [tab] 'yas/next-field)
-            (flyspell-mode 1)))
-
+            (define-key yas/keymap [tab] 'yas/next-field)))
 
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)

@@ -36,7 +36,5 @@
 (display-time)                                                ; Display the time of day
 
 (pending-delete-mode t)                                       ; Typed text replaces selection
-(auto-fill-mode t)                                            ; Automatically wrap lines
-
 
 (provide 'init-ess-minors)

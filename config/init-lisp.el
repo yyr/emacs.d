@@ -21,9 +21,9 @@
 
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'pretty-lambdas)
+  (add-hook hook 'set-up-hippie-expand-for-elisp)
+  (add-hook hook 'turn-on-eldoc-mode)
   (add-hook hook 'enable-paredit-mode))
-
-
 
 (add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
 (defun conditionally-enable-paredit-mode ()
@@ -43,11 +43,6 @@
     (local-set-key (kbd "RET") 'paredit-newline)))
 
 (add-hook 'paredit-mode-hook 'maybe-map-paredit-newline)
-
-(dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
-  (add-hook hook 'set-up-hippie-expand-for-elisp)
-;  (add-hook hook 'set-up-ac-for-elisp)
-  (add-hook hook 'turn-on-eldoc-mode))
 
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 
@@ -76,14 +71,14 @@
 
      ;; Disable kill-sentence, which is easily confused with the kill-sexp
      ;; binding, but doesn't preserve sexp structure
-;;     (define-key paredit-mode-map (kbd "M-K") 'warn-disabled-command)
-;;     (define-key paredit-mode-map (kbd "M-k") 'warn-disabled-command)
+     ;;     (define-key paredit-mode-map (kbd "M-K") 'warn-disabled-command)
+     ;;     (define-key paredit-mode-map (kbd "M-k") 'warn-disabled-command)
      ))
 
 ;; When editing lisp code, highlight the current sexp
 (add-hook 'emacs-lisp-mode-hook (lambda () (progn
-					     (require 'hl-sexp)
-					     (hl-sexp-mode t))))
+                                        (require 'hl-sexp)
+                                        (hl-sexp-mode t))))
 
 (provide 'init-lisp)
 
