@@ -11,6 +11,10 @@
 (require 'starttls)
 (require 'registry)
 
+;;; load my bbdb settings
+(require 'init-bbdb)
+
+
 ;;; folders
 (setq gnus-home-directory "~/gnus")
 (setq gnus-directory "~/gnus/News")
@@ -44,17 +48,6 @@
 (add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
 
 
-;;; bbdb
-;;; --------------------------------------------------------
-;; (require 'bbdb)
-;; (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
-;; (require 'bbdb-hooks)
-;; (bbdb-initialize 'gnus 'message)
-;; (bbdb-insinuate-message)
-;; ;; (setq bbdb-use-pop-up t)
-;; (setq gnus-extra-headers '(To))
-
-
 ;;; group mode
 ;;; --------------------------------------------------------
 (defun gnus-topic-select-group (&optional all)
@@ -67,7 +60,7 @@ If ALL is a number, fetch this number of articles.
 pIf performed over a topic line, toggle folding the topic."
   (interactive "P")
   (when (and (eobp) (not (gnus-group-group-name)))
-     (forward-line -1))
+    (forward-line -1))
   (if (gnus-group-topic-p)
       (let ((gnus-group-list-mode
              (if all (cons (if (numberp all) all 7) t) gnus-group-list-mode)))
@@ -84,7 +77,7 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; --------------------------------------------------------
 
 (setq-default
- gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
+ ;; gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
  ;; gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
  gnus-user-date-format-alist '((t . "%m-%d %H:%M"))
 
@@ -100,6 +93,20 @@ pIf performed over a topic line, toggle folding the topic."
  gnus-sum-thread-tree-leaf-with-other "├► "
  gnus-sum-thread-tree-single-leaf     "╰► "
  )
+
+(setq gnus-summary-line-format
+      (concat
+       "%0{%U%R%z%}"
+       "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
+       "  "
+       "%4{%-20,20f%}"               ;; name
+       "  "
+       "%3{│%}"
+       " "
+       "%1{%B%}"
+       "%s\n"))
+(setq gnus-summary-display-arrow t)
+
 
 (defalias 'gnus-user-format-function-M 'gnus-registry-user-format-function-M)
 
@@ -171,7 +178,7 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;;; misc
 ;;; --------------------------------------------------
-(setq gnus-expert-user 't) 		;dont prompt me when i want to quit gnus
+(setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
 
 
 
