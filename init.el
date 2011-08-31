@@ -73,6 +73,7 @@
 (require 'init-autopair)
 (require 'init-auto-fill)
 (require 'init-auto-insert)
+(require 'init-flyspell)
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-yasnip)
