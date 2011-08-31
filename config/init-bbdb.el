@@ -4,7 +4,7 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(require 'bbdb)
+;; (require 'bbdb)
 (require 'bbdb-autoloads)
 
 (setq bbdb-file "~/git/org/.bbdb")
