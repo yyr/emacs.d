@@ -16,13 +16,12 @@
 (global-set-key (kbd "<f12>") 'org-agenda)
 
 ;;; agenda props
-(custom-set-variables
- '(org-agenda-skip-deadline-if-done t)
- '(org-agenda-skip-scheduled-if-done t)
- '(org-agenda-skip-timestamp-if-done t)
- '(org-agenda-todo-ignore-scheduled t)
- '(org-agenda-todo-ignore-with-date t)
- '(org-agenda-include-diary t))
+(setq org-agenda-skip-deadline-if-done t)
+(setq org-agenda-skip-scheduled-if-done t)
+(setq org-agenda-skip-timestamp-if-done t)
+(setq org-agenda-todo-ignore-scheduled t)
+(setq org-agenda-todo-ignore-with-date t)
+(setq org-agenda-include-diary t)
 
 ;;;  Custom Agenda views
 ;; dont show deadlines every day

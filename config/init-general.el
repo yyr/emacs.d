@@ -22,10 +22,6 @@
                            plain-tex-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
-;; stop welcome screen
-(custom-set-variables
- '(inhibit-startup-screen t))
-
 ;; Always end a file with a newline
 (setq require-final-newline t)
 
