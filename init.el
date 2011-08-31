@@ -160,7 +160,6 @@
 
 ;;; server
 (require 'init-server)
-;;(require 'init-multi-term)
 
 ;;; music
 (if (file-directory-p "/dump/MUSIC/")
