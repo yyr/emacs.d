@@ -1,5 +1,7 @@
 ;;; init-linum.el
 
+;; (global-linum-mode 1)
+
 (dolist (hook (list
                'c-mode-hook
                'emacs-lisp-mode-hook
