@@ -37,4 +37,7 @@
 (setq org-completion-use-ido t)
 (setq font-lock-verbose nil)
 
+;;; activate speed commands
+(setq org-use-speed-commands t)
+
 (provide 'init-org)
