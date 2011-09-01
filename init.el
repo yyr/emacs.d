@@ -31,21 +31,11 @@
                  (cons my-emacs-config load-path)))
 
 ;;; ---------------------------------------------------------------------------
-
 (require 'cl)                            ; must have
-
-;;; load all subdirs of el-get
-(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-    (let* ((my-lisp-dir "~/.emacs.d/el-get/")
-           (default-directory my-lisp-dir))
-      (progn
-        (setq load-path (cons my-lisp-dir load-path))
-        (normal-top-level-add-subdirs-to-load-path))))
-(setq load-path (cons (expand-file-name emacs-path) (cons my-emacs-config load-path)))
-
+;;; ---------------------------------------------------------------------------
 
 ;;; load emacs individual configuration files
-;; -----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
 
 ;;; package managers
 (require 'init-elpa)
