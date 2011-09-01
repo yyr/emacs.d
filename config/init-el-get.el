@@ -53,8 +53,6 @@
 
 ;;;; Cosmetics
          diminish
-         color-theme
-         color-theme-zenburn
          boxquote
          
 ;;;; Org
