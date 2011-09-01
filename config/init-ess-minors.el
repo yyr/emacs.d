@@ -14,8 +14,7 @@
 (show-paren-mode 1)
 (setq show-paren-delay 0)
 
-(display-time)                                                ; Display the time of day
-
-(pending-delete-mode t)                                       ; Typed text replaces selection
+(display-time)                          ; Display the time of day
+;; (pending-delete-mode t)                ; Typed text replaces selection
 
 (provide 'init-ess-minors)

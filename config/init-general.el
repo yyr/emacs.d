@@ -54,9 +54,6 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;;; dont use M-TAB for flyspell
-(setq flyspell-use-meta-tab nil)
-
 ;; highlight-sloppy-grammar
 ;; ------------------------
 ;; This uses the font lock mechanism to highlight some potential

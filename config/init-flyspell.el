@@ -1,6 +1,10 @@
 ;;----------------------------------------------------------------------------
 ;; Add spell-checking in comments for all programming language modes
 ;;----------------------------------------------------------------------------
+
+;;; dont use M-TAB for flyspell
+(setq flyspell-use-meta-tab nil)
+
 (dolist (hook '(lisp-mode-hook
                 emacs-lisp-mode-hook
                 ruby-mode-hook
