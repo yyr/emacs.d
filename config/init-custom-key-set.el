@@ -4,7 +4,7 @@
 
 ;;; ergoemacs xahlee.org
 ;; make cursor movement keys under right hand's home-row.
-(global-set-key (kbd "M-j") 'next-line) ; was kill-sentence
+(global-set-key (kbd "M-j") 'next-line)     ; was kill-sentence
 (global-set-key (kbd "M-l") 'forward-char)  ; was downcase-word
 (global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
 (global-set-key (kbd "M-k") 'previous-line) ; was tab-to-tab-stop
@@ -16,13 +16,14 @@
 ;;; C-M \ (indent) ;; M-; (comment & uncomment-region)
 (global-set-key (kbd "C-c s") 'ispell-word)
 
+;;; kill current buffer
 (global-set-key (kbd "C-<f12>") (lambda ()
-				  (interactive)
-				  (kill-buffer (buffer-name))))
+                                  (interactive)
+                                  (kill-buffer (buffer-name))))
 
 ;;; scrollers
-(global-set-key "\M-n" '"\C-u1\C-v")
-(global-set-key "\M-p" '"\C-u1\M-v")
+;; (global-set-key "\M-n" '"\C-u1\C-v")
+;; (global-set-key "\M-p" '"\C-u1\M-v")
 
 ;; bs instead of buffer-menu
 ;; (global-set-key (kbd "C-x C-b") 'bs-show)
@@ -74,7 +75,7 @@
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
-(global-set-key (kbd "C-h a") 'apropos)	;
+(global-set-key (kbd "C-h a") 'apropos) ;
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)

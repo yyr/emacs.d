@@ -9,7 +9,12 @@
 (global-set-key (kbd "<f5> l") 'bookmark-bmenu-list)
 (global-set-key (kbd "<f5> d") 'bookmark-delete)
 
+;;; for fast navigation to bookmarks add more simple key
+(global-set-key (kbd "M-n" ) 'bookmark-set)
+(global-set-key (kbd "M-p" ) 'bookmark-jump)
+
 ;;; emacswiki
+;;; Put last accessed bookmark on top of the list
 (defadvice bookmark-jump (after bookmark-jump activate)
   (let ((latest (bookmark-get-bookmark bookmark)))
     (setq bookmark-alist (delq latest bookmark-alist))
