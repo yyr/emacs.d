@@ -5,6 +5,10 @@
 ;; Licence: GPL v3 or later
 
 ;;; ---------------------------------------------------------------------------
+(require 'cl)                            ; must have
+;;; ---------------------------------------------------------------------------
+
+;;; ---------------------------------------------------------------------------
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
 
@@ -17,22 +21,16 @@
     (setq *system* "lubu"))
 
 ;;; ---------------------------------------------------------------------------
-
 ;;; for system specific
 (setq *byte-code-cache-enabled* nil)
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
-(defconst my-emacs-config "~/.emacs.d/config") ; config path
-(setq gnus-init-file
-      (concat my-emacs-config "/init-gnus.el" )) ;gnus init file
+(setq gnus-init-file (concat emacs-path "/init-gnus.el" )) ;gnus init file
 
-(setq load-path (cons
-                 (expand-file-name emacs-path)
-                 (cons my-emacs-config load-path)))
+(setq load-path (cons (expand-file-name emacs-path) load-path))
+;; ----------------------------------------------------------------------------
 
-;;; ---------------------------------------------------------------------------
-(require 'cl)                            ; must have
-;;; ---------------------------------------------------------------------------
+
 
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
