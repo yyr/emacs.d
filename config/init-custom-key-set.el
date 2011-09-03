@@ -4,9 +4,9 @@
 
 ;;; ergoemacs xahlee.org
 ;; make cursor movement keys under right hand's home-row.
-(global-set-key (kbd "M-j") 'next-line)     ; was kill-sentence
-(global-set-key (kbd "M-l") 'forward-char)  ; was downcase-word
-(global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
+;; (global-set-key (kbd "M-j") 'next-line)     ; was kill-sentence
+;; (global-set-key (kbd "M-l") 'forward-char)  ; was downcase-word
+;; (global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
 (global-set-key (kbd "M-k") 'previous-line) ; was tab-to-tab-stop
 
 (global-set-key (kbd "M-SPC") 'set-mark-command) ; was just-one-space
