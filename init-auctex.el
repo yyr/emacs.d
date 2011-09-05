@@ -4,7 +4,8 @@
 ;;    File: init-auctex.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Created: Tuesday, August  2 2011
-;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
+;; Licence: GPL v3 or later.
+;; You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 
@@ -27,7 +28,8 @@
             (TeX-PDF-mode t)
             (setq TeX-save-query  nil )
             (setq TeX-master (guess-TeX-master (buffer-file-name)))
-            (setq TeX-show-compilation t)))
+            (setq TeX-show-compilation t) ; show the compilation buffer
+            ))
 
 (add-hook 'LaTeX-mode-hook
           (lambda ()
@@ -47,25 +49,33 @@
             (if (and file (string-match "\\.tex$" file))
                 (progn
                   (goto-char (point-min))
-                  (if (re-search-forward (concat "\\\\input{" filename "}") nil t)
+                  (if (re-search-forward
+                       (concat "\\\\input{" filename "}") nil t)
                       (setq candidate file))
-                  (if (re-search-forward (concat "\\\\include{" (file-name-sans-extension filename) "}") nil t)
-                      (setq candidate file))))))))
+                  (if (re-search-forward
+                       (concat
+                        "\\\\include{" (file-name-sans-extension
+                                        filename) "}") nil t)
+                      (setq
+                       candidate file))))))))
     (if candidate
-        (message "TeX master document: %s" (file-name-nondirectory candidate)))
+        (message
+         "TeX master document: %s" (file-name-nondirectory candidate)))
     candidate))
 
 
 ;;; auto completion support
 (defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
   (setq ac-sources
-        (append '(ac-source-math-latex ac-source-latex-commands  ac-source-math-unicode)
-                ac-sources)))
+        (append
+         '(ac-source-math-latex
+           ac-source-latex-commands  ac-source-math-unicode)
+         ac-sources)))
 
 (add-hook 'LaTeX-mode-hook
-	  (lambda ()
-	    (require 'ac-math)
-	    (ac-latex-mode-setup)))
+          (lambda ()
+            (require 'ac-math)
+            (ac-latex-mode-setup)))
 
 
 (provide 'init-auctex)

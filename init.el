@@ -97,6 +97,7 @@
 ;;; subject
 (require 'init-octave)
 (require 'init-auctex)
+(require 'init-bib)
 ;; (require 'init-latex)
 (require 'init-ncl)
 (require 'init-grads)
@@ -122,6 +123,7 @@
 (require 'init-org-latex)
 (require 'init-org-beamer)
 (require 'init-org-publish)
+(require 'init-org-s5)
 
 ;;; org misc
 (require 'init-org-misc)
