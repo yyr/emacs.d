@@ -12,16 +12,20 @@
 (setq user-full-name '"Yagnesh Raghava Yakkala")
 (setq user-mail-address '"yagnesh@live.com")
 
-;;; Name the systems we have
-(if (equal (system-name) "raghava-note")
-    (setq *system* "laptop")
-  (setq *system* "amur"))
+;;; ---------------------------------------------------------------------------
+;;; check emacs running on which system (to load config differently for different computers)
+;; I go by hostnames which are fixed 
+;; for system specific
+(defvar on-laptop          ; on my laptop, mostly I can run everything
+  (string-match "rag" (system-name)))
 
-(if (equal (system-name) "okhotsk19")
-    (setq *system* "lubu"))
+(defvar on-lab-computer
+  (string-match "okho" (system-name)))
+
+(defvar on-lab-server
+  (string-match "amu" (system-name)))
 
 ;;; ---------------------------------------------------------------------------
-;;; for system specific
 (setq *byte-code-cache-enabled* nil)
 
 (defconst emacs-path "~/.emacs.d")             ; emacs path
@@ -29,9 +33,6 @@
 
 (setq load-path (cons (expand-file-name emacs-path) load-path))
 ;; ----------------------------------------------------------------------------
-
-
-
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
 
@@ -65,7 +66,8 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-yasnip)
-(require 'init-dictem)
+(when (not on-lab-server)            ; dict is not available on server
+  (require 'init-dictem))
 
 ;;; help navigation
 (require 'init-bookmarks)
@@ -152,8 +154,8 @@
 (require 'init-server)
 
 ;;; music
-(if (file-directory-p "/dump/MUSIC/")
-    (require 'init-emms))
+(when on-laptop                     ; I listen music only on my laptop
+  (require 'init-emms))
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------

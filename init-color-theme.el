@@ -78,19 +78,6 @@
 
 ;; (dark-on-light-theme)
 
-;; init color-theme.el
-;; (require 'color-theme-autoloads)
-;; (color-theme-initialize)
-
-(if (equal *system* "laptop")
-    (setq *my-theme* "zenburn")
-  (setq *my-theme* "unknown"))
-
-;; (if (equal *my-theme* "zenburn")
-;;     (progn
-;;       (require 'zenburn)
-;;       (color-theme-zenburn)))
-
-
 (provide 'init-color-theme)
+
 ;;; init-color-theme.el ends here
