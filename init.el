@@ -98,8 +98,9 @@
 
 ;;; subject
 (require 'init-octave)
-(require 'init-auctex)
-(require 'init-bib)
+(when (not on-lab-server)
+  (require 'init-auctex)
+  (require 'init-bib))
 ;; (require 'init-latex)
 (require 'init-ncl)
 (require 'init-grads)
