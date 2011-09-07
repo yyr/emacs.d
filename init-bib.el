@@ -13,6 +13,11 @@
 (add-hook 'LaTeX-mode-hook #'(lambda ()
                                (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
 
+(setq-default
+ ebib-file-search-dirs '("~/git/bib/")
+ ebib-insertion-commands                ; which cite commands you wanna use
+ '(("cite" 1 nil) ("citep" 1 nil) ("citet" 1 nil))
+ ebib-preload-bib-files '("~/git/bib/cld.bib"))
 
 (provide 'init-bib)
 ;;; init-bib.el ends here
