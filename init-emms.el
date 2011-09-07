@@ -15,10 +15,11 @@
 (emms-standard)
 (emms-default-players)
 
-(setq emms-info-asynchronously nil)
-(setq emms-playlist-buffer-name "*Music*")
-
-(setq emms-source-file-default-directory "/dump/MUSIC/Telugu/")
+(setq-default
+ emms-info-asynchronously nil
+ emms-playlist-buffer-name "*Music*"
+ emms-source-file-default-directory "/dump/MUSIC/Telugu/"
+ emms-directory "~/.emms/")
 
 (provide 'init-emms)
 ;;; init-emms.el ends here
