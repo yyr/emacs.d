@@ -20,7 +20,8 @@
 ;; compile at init if any source is not byte compiled
 ;; (setq el-get-byte-compile-at-init 't)
 
-;; my sources
+;;; ---------------------------------------------------------------------------
+;; packages are defined by me
 (setq el-get-sources
       '(
 ;;;; help typing
@@ -29,19 +30,19 @@
                :url "git://github.com/m2ym/auto-complete.git")
         ))
 
-;; el-get provided sources
+;;; ---------------------------------------------------------------------------
+;; COMMON packages all the systems I have
 (setq my-packages
       (append
        '(
 ;;;; Basics
          ;; package24
-	 byte-code-cache
+         byte-code-cache
 
 ;;;; general
-         dictem
 
 ;;;; navigation
-	 smex
+         smex
          dired-plus
 
 ;;;; help typing
@@ -54,7 +55,7 @@
 ;;;; Cosmetics
          diminish
          boxquote
-         
+
 ;;;; Org
          org-mode
          calfw
@@ -67,21 +68,13 @@
          ;; elisp
          paredit
          hl-sexp
-         
+
          ;; python
          pymacs
          ;; ropemacs
 
-         textile-mode
-         markdown-mode
-         haml-mode
-         sass-mode
-         yaml-mode
 
 ;;;; Sub
-         auctex
-         ebib
-
          ncl
          emacs-grads
          gnuplot-mode
@@ -96,13 +89,31 @@
          screenshot
 
 ;;;; misc
-         emms
-	 profile-dotemacs
-
+         profile-dotemacs
          el-get)
-       
        (mapcar 'el-get-source-name el-get-sources)))
 
+;;; ---------------------------------------------------------------------------
+;; add these packages if I am not server
+(when (not on-lab-server)
+  (setq my-packages
+        (append
+         '(auctex
+           ebib
+           dictem
+           markdown-mode
+           haml-mode
+           sass-mode
+           yaml-mode)
+         my-packages)))
+
+;;; ---------------------------------------------------------------------------
+;; package needed for only my laptop
+(when on-laptop
+  (setq my-packages
+        (append
+         '(emms textile-mode)
+         my-packages)))
 
 (el-get 'sync my-packages)
 
