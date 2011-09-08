@@ -53,4 +53,14 @@
 (global-set-key (kbd "M-s") 'other-window) ; was center-line
 
 
+;;; I want a key to open the current buffer all over the screen.
+;; http://stackoverflow.com/questions/970292/emacs-multiple-columns-one-buffer
+(defun all-over-the-screen ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally)
+  (split-window-horizontally)
+  (balance-windows)
+  (follow-mode t))
+
 (provide 'init-windows)
