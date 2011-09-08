@@ -21,5 +21,11 @@
  emms-source-file-default-directory "/dump/MUSIC/Telugu/"
  emms-directory "~/.emms/")
 
+(global-set-key (kbd "<f7> p") 'emms-play-directory-tree)
+(global-set-key (kbd "<f7> t") 'emms-toggle-repeat-playlist)
+(global-set-key (kbd "<f7> o") '(lambda ()
+                                  (interactive)
+                                  (switch-to-buffer "*Music*")))
+
 (provide 'init-emms)
 ;;; init-emms.el ends here
