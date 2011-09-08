@@ -26,6 +26,7 @@
 (global-set-key (kbd "<f7> o") '(lambda ()
                                   (interactive)
                                   (switch-to-buffer "*Music*")))
+(global-set-key (kbd "<f7> P") 'emms-pause)
 
 (provide 'init-emms)
 ;;; init-emms.el ends here
