@@ -6,9 +6,10 @@
 
 ;; (require 'bbdb)
 (require 'bbdb-autoloads)
+(require 'bbdb)
 
 (setq bbdb-file "~/git/org/.bbdb")
-(bbdb-initialize)
+(bbdb-initialize 'gnus)
 
 (setq
  bbdb-offer-save 'auto
@@ -18,6 +19,18 @@
  bbdb-always-add-addresses t
  bbdb-complete-name-allow-cycling t
  )
+
+
+(defun bbdb/gnus-update-selectively ()
+  "Update BBDB record selectively"
+  (interactive)
+  (if
+      (gnus-news-group-p gnus-newsgroup-name)
+      (setq bbdb/gnus-update-records-p nil)
+    (setq bbdb/gnus-update-records-p 'query)
+    ))
+
+(add-hook 'gnus-summary-prepare-hook 'bbdb/gnus-update-selectively)
 
 ;; (require 'bbdb)
 ;; (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
