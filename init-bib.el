@@ -17,7 +17,8 @@
  ebib-file-search-dirs '("~/git/bib/")
  ebib-insertion-commands                ; which cite commands you wanna use
  '(("cite" 1 nil) ("citep" 1 nil) ("citet" 1 nil))
- ebib-preload-bib-files '("~/git/bib/cld.bib"))
+ ebib-preload-bib-files '("~/git/bib/cld.bib" "~/git/bib/jrShortname.bib" "~/git/bib/jrFullname.bib")
+ )
 
 (provide 'init-bib)
 ;;; init-bib.el ends here
