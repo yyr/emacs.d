@@ -56,18 +56,18 @@
 (eval-after-load "paredit"
   '(progn
      ;; These are handy everywhere, not just in lisp modes
-     (global-set-key (kbd "M-(") 'paredit-wrap-round)
-     (global-set-key (kbd "M-[") 'paredit-wrap-square)
-     (global-set-key (kbd "M-{") 'paredit-wrap-curly)
+     (define-key lisp-mode-map (kbd "M-(") 'paredit-wrap-round)
+     (define-key lisp-mode-map (kbd "M-[") 'paredit-wrap-square)
+     (define-key lisp-mode-map (kbd "M-{") 'paredit-wrap-curly)
 
-     (global-set-key (kbd "M-)") 'paredit-close-round-and-newline)
-     (global-set-key (kbd "M-]") 'paredit-close-square-and-newline)
-     (global-set-key (kbd "M-}") 'paredit-close-curly-and-newline)
+     (define-key lisp-mode-map (kbd "M-)") 'paredit-close-round-and-newline)
+     (define-key lisp-mode-map (kbd "M-]") 'paredit-close-square-and-newline)
+     (define-key lisp-mode-map (kbd "M-}") 'paredit-close-curly-and-newline)
 
-     (global-set-key (kbd "C-<right>") 'paredit-forward-slurp-sexp)
-     (global-set-key (kbd "C-<left>") 'paredit-forward-barf-sexp)
-     (global-set-key (kbd "C-M-<left>") 'paredit-backward-slurp-sexp)
-     (global-set-key (kbd "C-M-<right>") 'paredit-backward-barf-sexp)
+     (define-key lisp-mode-map (kbd "C-<right>") 'paredit-forward-slurp-sexp)
+     (define-key lisp-mode-map (kbd "C-<left>") 'paredit-forward-barf-sexp)
+     (define-key lisp-mode-map (kbd "C-M-<left>") 'paredit-backward-slurp-sexp)
+     (define-key lisp-mode-map (kbd "C-M-<right>") 'paredit-backward-barf-sexp)
 
      ;; Disable kill-sentence, which is easily confused with the kill-sexp
      ;; binding, but doesn't preserve sexp structure
