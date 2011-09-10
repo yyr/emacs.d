@@ -1,5 +1,5 @@
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 ;; Licence: GPL v3 or later
 
 ;;----------------------------------------------------------------------------
@@ -120,15 +120,19 @@ With prefix argument, insert date and time."
   "put copy right notice at the beginning of the buffer and comment it"
   (interactive)
   (save-excursion
-    (goto-char 1)
-    (let ((beg (point)))
-      (insert
-       "Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
+    (let ((beg (point))
+          (notice  "Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 Licence: GPL v3 or later
 
-")
+"))
+      (goto-char 1)
+      (if (string-match "#!"  (thing-at-point 'line))
+          (next-line))
+      (setq beg (point))
+      (insert   notice)
       (comment-region beg (point)))))
 
 
 (provide 'init-utils)
+;;; init-utils-el ends here
