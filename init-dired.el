@@ -2,7 +2,10 @@
 ;; Dired Mode
 ;; -----------------------------------------------------------------------------
 
-;; (require 'dired+)
+(require 'dired+)
+(define-key ctl-x-map   "d" 'diredp-dired-files)
+(define-key ctl-x-4-map "d" 'diredp-dired-files-other-window)
+
 (setq dired-recursive-deletes 'top)
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
