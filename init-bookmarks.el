@@ -10,8 +10,9 @@
 (global-set-key (kbd "<f5> d") 'bookmark-delete)
 
 ;;; for fast navigation to bookmarks add more simple key
-(global-set-key (kbd "M-n" ) 'bookmark-set)
-(global-set-key (kbd "M-p" ) 'bookmark-jump)
+(global-set-key (kbd "C-#" ) 'bookmark-jump)
+(global-set-key (kbd "C-$" ) 'bookmark-set)
+
 
 ;;; emacswiki
 ;;; Put last accessed bookmark on top of the list

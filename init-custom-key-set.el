@@ -2,13 +2,6 @@
 ;; Custom Bindings
 ;; -----------------------------------------------------------------------------
 
-;;; ergoemacs xahlee.org
-;; make cursor movement keys under right hand's home-row.
-;; (global-set-key (kbd "M-j") 'next-line)     ; was kill-sentence
-;; (global-set-key (kbd "M-l") 'forward-char)  ; was downcase-word
-;; (global-set-key (kbd "M-h") 'backward-char) ; was mark paragraph
-(global-set-key (kbd "M-k") 'previous-line) ; was tab-to-tab-stop
-
 (global-set-key (kbd "M-SPC") 'set-mark-command) ; was just-one-space
 ;; (global-set-key (kbd "M-a") execute-extended-command) ; was backward-sentence
 
@@ -76,6 +69,7 @@
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-h a") 'apropos) ;
+;(global-unset-key "\C-x\C-c")           ;unset kill Emacs 
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)
