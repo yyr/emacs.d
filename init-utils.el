@@ -3,37 +3,14 @@
 ;; Licence: GPL v3 or later
 
 ;;----------------------------------------------------------------------------
-;; Handier way to add modes to auto-mode-alist
-;;----------------------------------------------------------------------------
-(defun add-auto-mode (mode &rest patterns)
-  (dolist (pattern patterns)
-    (add-to-list 'auto-mode-alist (cons pattern mode))))
-
-
-;;----------------------------------------------------------------------------
 ;; Find the directory containing a given library
 ;;----------------------------------------------------------------------------
 (require 'find-func)
 (defun directory-of-library (library-name)
-  (file-name-as-directory (file-name-directory (find-library-name library-name))))
-
-
-;;----------------------------------------------------------------------------
-;; Easy way to check that we're operating on a specific file type
-;;----------------------------------------------------------------------------
-(defun filename-has-extension-p (extensions)
-  (and buffer-file-name
-       (string-match (concat "\\." (regexp-opt extensions t) "\\($\\|\\.\\)") buffer-file-name)))
-
-
-;;----------------------------------------------------------------------------
-;; Locate executables
-;;----------------------------------------------------------------------------
-(defun find-executable (name)
-  "Return the full path of an executable file name `name'
-in `exec-path', or nil if no such command exists"
-  (locate-file name exec-path nil 'file-executable-p))
-
+  "open directory with dired which contains the give library"
+  (interactive "M")
+  (dired (file-name-as-directory
+          (file-name-directory (find-library-name library-name)))))
 
 ;;----------------------------------------------------------------------------
 ;; Delete the current file
@@ -46,14 +23,12 @@ in `exec-path', or nil if no such command exists"
     (delete-file (buffer-file-name))
     (kill-this-buffer)))
 
-
 ;;----------------------------------------------------------------------------
 ;; Browse current HTML file
 ;;----------------------------------------------------------------------------
 (defun browse-current-file ()
   (interactive)
   (browse-url (concat "file://" (buffer-file-name))))
-
 
 ;;----------------------------------------------------------------------------
 ;; date insert with arg
@@ -66,13 +41,6 @@ With prefix argument, insert date and time."
   (when arg
     (insert (format-time-string " %H:%M"))))
 ;; (global-set-key (kbd "C-c d") 'insert-date)
-
-;;----------------------------------------------------------------------------
-;; fixme highlight
-;;----------------------------------------------------------------------------
-(defun highlight-fixme ()
-  (font-lock-add-keywords nil'(("\\<\\(FIXME!?\\)"
-				1 font-lock-warning-face prepend))))
 
 ;;----------------------------------------------------------------------------
 ;; transpose buffers
@@ -110,12 +78,13 @@ With prefix argument, insert date and time."
          (and (region-active-p)
               (buffer-substring (region-beginning)
                                 (region-end)))))
-      (switch-to-buffer "*scratch*")
-      (if contents
-	  (progn
-	    (goto-char (buffer-end 1))
-	    (insert contents)))))
+    (switch-to-buffer "*scratch*")
+    (if contents
+        (progn
+          (goto-char (buffer-end 1))
+          (insert contents)))))
 
+;;; put copyright notice on top of the file;(watches for shebang also)
 (defun yag/copyright ()
   "put copy right notice at the beginning of the buffer and comment it"
   (interactive)
@@ -127,12 +96,22 @@ Licence: GPL v3 or later
 
 "))
       (goto-char 1)
-      (if (string-match "#!"  (thing-at-point 'line))
+      ;; watch out if shebang is present
+      (if (string-match "#!"  (thing-at-point 'line))  
           (next-line))
       (setq beg (point))
       (insert   notice)
       (comment-region beg (point)))))
 
+;;; FIXME: put that asynchronous
+(defun gnome-open ()
+  "open file buffer with gnome associated program"
+  (interactive)
+  (let ((bname  (buffer-file-name)))
+    (if bname
+        (shell-command (concat "gnome-open" " " (expand-file-name bname)))
+      (message "No associated buffer exist for \"%s\" buffer "
+               (buffer-name)))))
 
 (provide 'init-utils)
 ;;; init-utils-el ends here
