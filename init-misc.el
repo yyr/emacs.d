@@ -15,12 +15,22 @@
   (interactive)
   (indent-region (point-min) (point-max)))
 
+(defun delete-trailing-blank-lines ()
+  "Deletes all blank lines at the end of the file."
+  (interactive)
+  (save-excursion
+    (save-restriction
+      (widen)
+      (goto-char (point-max))
+      (delete-blank-lines))))
+
 (defun cleanup-buffer ()
   "Perform a bunch of operations on the whitespace content of a buffer."
   (interactive)
   (indent-buffer)
   (untabify-buffer)
-  (delete-trailing-whitespace))
+  (delete-trailing-whitespace)
+  (delete-trailing-blank-lines))
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
@@ -61,3 +71,4 @@
 (define-key global-map [(control ?z) ?p] 'goto-matching-paren) ; Bind to C-z p
 
 (provide 'init-misc)
+;;; init-misc.el ends here
