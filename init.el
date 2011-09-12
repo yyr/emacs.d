@@ -49,10 +49,10 @@
 (require 'init-ess-minors)
 (require 'init-custom-key-set)
 (require 'init-point)
-(require 'init-buffers)
 (require 'init-time)
 (require 'init-diminish)
-(require 'init-linum)
+(require 'init-auto-save)
+;; (require 'init-linum)
 
 ;;; look
 (require 'init-font)
@@ -72,12 +72,12 @@
 ;;; help navigation
 (require 'init-bookmarks)
 (require 'init-imenu)
+(require 'init-buffers)
+(require 'init-recentf)
 
-;;; window , desktop & buffer
+;;; window , frame
 (require 'init-windows)
 (require 'init-frame)
-(require 'init-recentf)
-(require 'init-auto-save)
 
 ;;; File management
 (require 'init-dired)
