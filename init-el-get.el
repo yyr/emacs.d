@@ -1,9 +1,9 @@
 ;;; init-el-get.el
-;; 
+;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;    File: init-el-get.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
-;; Created: 
+;; Created:
 ;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
@@ -101,10 +101,7 @@
          '(auctex
            ebib
            dictem
-           markdown-mode
-           haml-mode
-           sass-mode
-           yaml-mode)
+           edit-server)
          my-packages)))
 
 ;;; ---------------------------------------------------------------------------
@@ -112,7 +109,11 @@
 (when on-laptop
   (setq my-packages
         (append
-         '(emms textile-mode)
+         '(emms textile-mode
+                markdown-mode
+                haml-mode
+                sass-mode
+                yaml-mode)
          my-packages)))
 
 (el-get 'sync my-packages)
