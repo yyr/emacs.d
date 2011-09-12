@@ -26,6 +26,8 @@
               case-fold-search t                              ; Fold case on searches
               )
 
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
 ;;; yank with indent
 (defadvice yank (after indent-region activate)
   "To make yank content indent automatically."
