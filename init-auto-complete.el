@@ -38,6 +38,20 @@
       'complete) ;; use 'complete when auto-complete is disabled
 (add-to-list 'completion-styles 'initials t)
 
-(provide 'init-auto-complete)
 
+;;; http://www.masteringemacs.org/articles/2010/11/29/evaluating-elisp-emacs/
+;; define  sources for ielm
+(defun ielm-auto-complete ()
+  "Enables `auto-complete' support in \\[ielm]."
+  (setq ac-sources '(ac-source-functions
+                     ac-source-variables
+                     ac-source-features
+                     ac-source-symbols
+                     ac-source-words-in-same-mode-buffers))
+  (add-to-list 'ac-modes 'inferior-emacs-lisp-mode)
+  (auto-complete-mode 1))
+(add-hook 'ielm-mode-hook 'ielm-auto-complete)
+
+
+(provide 'init-auto-complete)
 ;;; init-auto-complete.el ends here
