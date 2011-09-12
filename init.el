@@ -74,6 +74,7 @@
 (require 'init-imenu)
 (require 'init-buffers)
 (require 'init-recentf)
+(require 'init-anything)
 
 ;;; window , frame
 (require 'init-windows)

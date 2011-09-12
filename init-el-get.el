@@ -44,6 +44,7 @@
 ;;;; navigation
          smex
          dired-plus
+         anything
 
 ;;;; help typing
          yasnippet
