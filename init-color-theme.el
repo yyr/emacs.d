@@ -4,13 +4,10 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; License: GPL v3 or later
 
-;; (set-background-color "black")
-;; (set-face-background 'default "black")
-;; (set-face-background 'region "black")
-;; (set-face-foreground 'default "white")
-;; (set-face-foreground 'region "gray60")
-;; (set-foreground-color "white")
-;; (set-cursor-color "red")
+;;; Commentary
+;; don't need to clutter repository time to time by changing choice of which
+;; color-theme to use. So put it in custom.el
+;;
 
 (defun set-colour-theme (theme)
   "Helper function to set a bunch of faces and ignore potential errors from missing faces."
@@ -76,8 +73,8 @@
      (isearch-lazy-highlight-face . ((((type tty)) (:foreground "red" :background "white")) (t (:foreground "red3" :background "grey"))))
      (trailing-spaces-face . ((((type tty)) (:background "magenta")) (t (:background "mistyrose")))))))
 
-;; (dark-on-light-theme)
+;; (dark-on-light-theme)  ;this should go in custom.el
+
 
 (provide 'init-color-theme)
-
 ;;; init-color-theme.el ends here
