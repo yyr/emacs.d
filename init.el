@@ -14,7 +14,7 @@
 
 ;;; ---------------------------------------------------------------------------
 ;;; check emacs running on which system (to load config differently for different computers)
-;; I go by hostnames which are fixed 
+;; I go by hostnames which are fixed
 ;; for system specific
 (defvar on-laptop          ; on my laptop, mostly I can run everything
   (string-match "rag" (system-name)))
@@ -153,6 +153,9 @@
 
 ;;; server
 (require 'init-server)
+(when (not on-lab-server)
+  (require 'init-edit-server))
+
 
 ;;; music
 (when on-laptop                     ; I listen music only on my laptop
