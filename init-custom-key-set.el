@@ -18,10 +18,6 @@
 ;; (global-set-key "\M-n" '"\C-u1\C-v")
 ;; (global-set-key "\M-p" '"\C-u1\M-v")
 
-;; bs instead of buffer-menu
-;; (global-set-key (kbd "C-x C-b") 'bs-show)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 ;; emacs newlines and indents when enter key
 (global-set-key (kbd "C-m") 'newline-and-indent)
 

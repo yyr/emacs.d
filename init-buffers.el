@@ -14,9 +14,32 @@
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
 
+;;; Ibuffer 
+;; bs instead of buffer-menu
+;; (global-set-key (kbd "C-x C-b") 'bs-show)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(setq ibuffer-expert t)
+(setq ibuffer-show-empty-filter-groups nil)
+
+(setq ibuffer-saved-filter-groups
+      '(("home"
+         ("emacs-config" (or (filename . ".emacs.d")
+                             (filename . "init")))
+         ("Org" (or (mode . org-mode)
+                    (filename . "OrgMode")))
+         ("Help" (or (name . "\*Help\*")
+                     (name . "\*Apropos\*")
+                     (name . "\*info\*"))))))
+
+(add-hook 'ibuffer-mode-hook 
+          '(lambda ()
+             (ibuffer-auto-mode 1)
+             (ibuffer-switch-to-saved-filter-groups "home")))
+
+
+
 ;; kill-other-buffers
 ;; ------------------
-
 ;; Emacs buffers multiply faster than rabbits.  They were
 ;; regenerating faster than I could kill them so I wrote this.  Run this
 ;; macro to kill all but the active buffer and the unsplit the window if
@@ -30,6 +53,13 @@
   (delete-other-windows)           ; And then unsplit the current window...
   (delete-other-frames))           ; ...and remove other frames, too.
 (define-key global-map [(control ?z) ?k] 'kill-other-buffers) ; Bind to C-z k
+
+
+(defun kill-star-buffers
+  "kill those automatically generated buffers looks like *foo info for you* "
+  (interactive)
+  (let ((sbuf (string-)))))
+
 
 (provide 'init-buffers)
 ;;; init-buffers.el ends here
