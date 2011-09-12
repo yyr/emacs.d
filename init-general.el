@@ -8,24 +8,26 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
-(setq-default inhibit-startup-screen t                        ; Skip the startup screens
-              initial-scratch-message nil
-              frame-title-format '(buffer-file-name "%f" "%b") ; I already know this is Emacs
-              truncate-lines t                                ; Truncate lines, don't wrap
-              paren-mode 'sexp                                ; Highlight parenthesis
-              ;; blink-cursor-alist '((t . hollow))              ; Cursor blinks solid and hollow
-              disabled-command-function nil                   ; Don't second-guess advanced commands
-              kill-read-only-ok t                             ; Silently copy in read-only buffers
-              tab-width 4                                     ; Set tab stops
-              tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44
-                                48 52 56 60 64 68 72 76 80 84)
-              indent-tabs-mode nil                            ; Use spaces only, no tabs
-              page-delimiter "^\\s *\n\\s *"                  ; Page delim one or more blank lines
-              minibuffer-max-depth nil                        ; Mini-buffer settings
-              display-time-day-and-date t                     ; Display the time and date on the mode line
-              case-fold-search t                              ; Fold case on searches
-              )
+(setq-default
+ inhibit-startup-screen t               ; Skip the startup screens
+ initial-scratch-message nil
+ frame-title-format '(buffer-file-name "%f" "%b") ; I already know this is Emacs
+ truncate-lines t                     ; Truncate lines, don't wrap
+ paren-mode 'sexp                     ; Highlight parenthesis
+ blink-cursor-alist '((t . hollow))   ; Cursor blinks solid and hollow
+ disabled-command-function nil  ; Don't second-guess advanced commands
+ kill-read-only-ok t            ; Silently copy in read-only buffers
+ tab-width 4                    ; Set tab stops
+ tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44
+                   48 52 56 60 64 68 72 76 80 84)
+ indent-tabs-mode nil             ; Use spaces only, no tabs
+ page-delimiter "^\\s *\n\\s *"   ; Page delim one or more blank lines
+ minibuffer-max-depth nil         ; Mini-buffer settings
+ display-time-day-and-date t ; Display the time and date on the mode line
+ case-fold-search t          ; Fold case on searches
+ )
 
+;;; delete nasty hidden white spaces at the end of lines
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 
 ;;; yank with indent
@@ -47,14 +49,21 @@
 
 ;; Stop at the end of the file, not just add lines
 ;;(setq next-line-add-newlines nil)
-
 (setq disabled-command-function nil)
+
+;;; Ubuntu needs this(?)
 (setq browse-url-browser-function 'browse-url-firefox)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;;; Dont ask me when a process is alive while I kill a buffer
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
 
 ;; highlight-sloppy-grammar
 ;; ------------------------
@@ -79,7 +88,11 @@
      ("\\<[a-z]+\\(?:n't\\|d've\\)\\>" 0 'grammar-warning-face t)
      ("\\<by[ \t\r\n]+[a-z]+ing\\>" 0 'grammar-warning-face t)
      ("\\<which[ \t\r\n]+was\\>" 0 'grammar-warning-face t)
-     ("\\<the[ \t\r\n]+[a-zA-Z]+[ \t\r\n]+of[ \t\r\n]+the\\>" 0 'grammar-warning-face t)))
+     ("\\<the[ \t\r\n]+[a-zA-Z]+[ \t\r\n]+of[ \t\r\n]+the\\>" 0
+      'grammar-warning-face t)))
   (font-lock-fontify-buffer))
 
 (provide 'init-general)
+
+
+
