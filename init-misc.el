@@ -1,10 +1,11 @@
+;;; init-misc.el
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;; Licence: GPL v3 or later
+
 ;;----------------------------------------------------------------------------
 ;; Misc config - yet to be placed in separate files
 ;;----------------------------------------------------------------------------
-
-(fset 'yes-or-no-p 'y-or-n-p)
-;; (add-hook 'find-file-hooks 'goto-address-prog-mode)
-(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
 
 (defun untabify-buffer ()
   (interactive)
