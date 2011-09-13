@@ -1,4 +1,9 @@
-;;; General
+;;; init-general.el
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;; Licence: GPL v3 or later
+
+;;; General settings
 
 ;; I dont what this means. but looks imp
 (setq buffer-file-coding-system 'utf-8-unix)
@@ -92,7 +97,11 @@
       'grammar-warning-face t)))
   (font-lock-fontify-buffer))
 
+
+;;; make executable if shebang is present
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
+
 (provide 'init-general)
-
-
-
+;;; init-general.el ends here
