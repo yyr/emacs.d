@@ -1,8 +1,11 @@
-;; -----------------------------------------------------------------------------
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;; Licence: GPL v3 or later
+;;
+
 ;; org capture settings
 ;; -----------------------------------------------------------------------------
-;; Load Org capture Stuff
-;; ------------------------
+
 (global-set-key (kbd "C-M-r") 'org-capture)
 (global-set-key (kbd "<f6>") 'org-capture)
 
@@ -16,11 +19,8 @@
   ;; note --> refile/Notes
   ("n" "note" entry (file+headline "~/git/org/refile.org" "Notes") "* %?
   %U   %a" )
-  ;; log --> refile/LOG
-  ("l" "log" entry (file+headline "~/git/org/refile.org" "LOG") "* %?
-    %T %a")
-  ;; log --> wrfstff-log/LOG
-  ("W" "Webstuff log" entry (file+headline "~/git/org/webstuff-log.org" "LOG") "* %?
+    ;; log --> wrfstff-log/LOG
+  ("N" "notes" entry (file+headline "~/git/org/test.org" "notes") "* %?
     %T %a" :prepand t)))
 
 ;; capture Templages
@@ -28,8 +28,6 @@
 
 ;; C-c C-c stores the note immediately
 (setq org-capture-store-without-prompt t)
-
-;; I don't use this -- but set it in case I forget to specify a location in a future template
 (setq org-capture-default-headline "Tasks")
 
 (provide 'init-org-capture)
