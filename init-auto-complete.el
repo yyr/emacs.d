@@ -30,8 +30,9 @@
 				     (ac-flyspell-workaround)))
 
 (define-key ac-completing-map   "\t"    'ac-expand-common)
-(define-key ac-completing-map   "\r"    'ac-complete)
-(define-key ac-completing-map   "\M-/"  'ac-stop)
+(define-key ac-completing-map (kbd "RET") 'ac-complete)
+;; (define-key ac-completing-map   "\r"    'ac-complete)
+;; (define-key ac-completing-map   "\M-/"  'ac-stop)
 
 ;; Use Emacs' built-in TAB completion hooks to trigger AC (Emacs >= 23.2)
 (setq tab-always-indent
