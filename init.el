@@ -75,6 +75,7 @@
 (require 'init-buffers)
 (require 'init-recentf)
 (require 'init-anything)
+(require 'init-help)
 
 ;;; window , frame
 (require 'init-windows)
