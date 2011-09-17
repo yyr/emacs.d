@@ -77,7 +77,6 @@
 (require 'init-buffers)
 (require 'init-recentf)
 (require 'init-anything)
-(require 'init-help)
 
 ;;; window , frame
 (require 'init-windows)
@@ -136,11 +135,12 @@
 (require 'init-org-misc)
 (require 'init-epresent)
 
-;;; Info,  help & Doc
+;;; Info,  help, doc , man(woman) etc..
 (require 'init-info)
 (require 'init-eldoc)
+(require 'init-help)
 
-;;; 'make' help
+;;; make
 
 ;;; web
 (require 'init-webjump)
