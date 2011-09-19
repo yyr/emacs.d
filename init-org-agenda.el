@@ -59,14 +59,14 @@
               ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED")
 
               ;; Block Agenda
-              (" " "Block Agends"
-               ((agenda " " nil )
+              (" " "Block Agenda"
+               ((agenda " " nil)
                 (tags-todo "/!NEXT"
                            ((org-tags-match-list-sublevels 'indented))
                            (org-agenda-overriding-header "Next Tasks"))
-		(tags "LEVEL=2+REFILE"
-		      ((org-agenda-overriding-header "Entries to be Refiled")))
-		
+                (tags "LEVEL=2+REFILE"
+                      ((org-agenda-overriding-header "Entries to be Refiled")))
+
                 ;; (todo "TODO"
                 ;;       ((org-tags-match-list-sublevels 'indented)
                 ;;        (org-agenda-overriding-header "All Global TODOS")))
