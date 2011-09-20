@@ -9,12 +9,12 @@
 ;;; Description:
 ;;
 
-(require 'uniquify)                                           ; Smarter buffer naming than x<1>, x<2>, ...
-(setq uniquify-buffer-name-style 'post-forward
+(require 'uniquify)       ; Smarter buffer naming than x<1>, x<2>, ...
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
 
-;;; Ibuffer 
+;;; Ibuffer
 ;; bs instead of buffer-menu
 ;; (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -31,7 +31,7 @@
                      (name . "\*Apropos\*")
                      (name . "\*info\*"))))))
 
-(add-hook 'ibuffer-mode-hook 
+(add-hook 'ibuffer-mode-hook
           '(lambda ()
              (ibuffer-auto-mode 1)
              (ibuffer-switch-to-saved-filter-groups "home")))
