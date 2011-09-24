@@ -1,6 +1,6 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
-;; Licence: GPL v3 or later
+;; License: GPL v3 or later
 
 ;;----------------------------------------------------------------------------
 ;; Find the directory containing a given library
@@ -92,7 +92,7 @@ With prefix argument, insert date and time."
     (let ((beg (point))
           (notice  "Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
-Licence: GPL v3 or later
+License: GPL v3 or later
 
 "))
       (goto-char 1)

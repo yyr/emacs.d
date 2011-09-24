@@ -4,7 +4,7 @@
 #    File: (>>FILE<<)
 #  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 # Created: (>>DATE<<)
-# Licence: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
+# License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 #
 
 # Description:

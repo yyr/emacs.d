@@ -4,7 +4,7 @@
 ;;    File: init-auctex.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Created: Tuesday, August  2 2011
-;; Licence: GPL v3 or later.
+;; License: GPL v3 or later.
 ;; You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:

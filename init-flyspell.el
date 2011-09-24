@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
-;; Licence: GPL v3 or later
+;; License: GPL v3 or later
 
 ;;; dont use M-TAB for flyspell , I reserve it for other LaTex mode
 (setq flyspell-use-meta-tab nil)

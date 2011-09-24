@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
-;; Licence: GPL v3 or later
+;; License: GPL v3 or later
 ;;
 
 ;;; http://stackoverflow.com/questions/5562974/emacs-is-it-running-on-laptop-or-on-desktop

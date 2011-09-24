@@ -4,7 +4,7 @@
 ;;    File: init-byte-code-cache.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Created: Thursday, May 26 2011
-;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
+;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 

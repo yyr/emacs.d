@@ -4,7 +4,7 @@
 ;;    File: init-bib.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 ;; Created: Sunday, September  4 2011
-;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
+;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; managing bibliography modes

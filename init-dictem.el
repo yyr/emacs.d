@@ -4,7 +4,7 @@
 ;;    File: init-dictem.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Created: Thursday, August 25 2011
-;; Licence: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
+;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; ubuntu packages needed

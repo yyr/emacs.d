@@ -1,7 +1,7 @@
 ;;; init-lisp.el
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
-;; Licence: GPL v3 or later
+;; License: GPL v3 or later
 
 ;; pretty lambda (see also slime) ->  "λ"
 ;;  'greek small letter lambda' / utf8 cebb / unicode 03bb -> \u03BB / mule?!
