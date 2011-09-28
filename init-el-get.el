@@ -9,6 +9,9 @@
 ;;; Description:
 ;;
 
+;;; add el-get load-path
+(setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
+
 ;;from steves emacs.d git http://git.sanityinc.com/
 (when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t))
   (error
