@@ -50,7 +50,7 @@
 
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
-(global-set-key (kbd "M-s") 'other-window) ; was center-line
+;; (global-set-key (kbd "M-s") 'other-window) ; was center-line
 
 
 ;;; I want a key to open the current buffer all over the screen.

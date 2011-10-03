@@ -12,12 +12,15 @@
 ;;; add el-get load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
 
-;;from steves emacs.d git http://git.sanityinc.com/
-(when (not (load "~/.emacs.d/el-get/el-get/el-get.el" t))
-  (error
-   "Please bootstrap el-get using the instructions here:
-   http://github.com/dimitri/el-get/, then restart Emacs"))
+;;; from el-get readme
+(unless (require 'el-get nil t)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    (end-of-buffer)
+    (eval-print-last-sexp)))
 
+;;; el-get-is-lazy
 (setq el-get-is-lazy 't)
 
 ;; compile at init if any source is not byte compiled
