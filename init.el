@@ -140,7 +140,9 @@
 (require 'init-eldoc)
 (require 'init-help)
 
-;;; make
+;;; IDE , make
+;;(require 'init-cedet)
+;; (require 'init-ecb)
 
 ;;; web
 (require 'init-webjump)
