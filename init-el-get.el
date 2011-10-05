@@ -7,12 +7,12 @@
 ;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;;
+;; install/load packages using el-get package manager
 
 ;;; add el-get load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
 
-;;; from el-get readme
+;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
   (with-current-buffer
       (url-retrieve-synchronously
