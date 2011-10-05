@@ -87,9 +87,9 @@ pIf performed over a topic line, toggle folding the topic."
  gnus-thread-sort-functions '(gnus-thread-sort-by-date)
  gnus-summary-display-arrow t
  gnus-summary-same-subject ""
- gnus-sum-thread-tree-single-indent   "◎ "
+ gnus-sum-thread-tree-single-indent   "● "
  gnus-sum-thread-tree-false-root      "☆ "
- gnus-sum-thread-tree-root            "● "
+ gnus-sum-thread-tree-root            "◎ "
  gnus-sum-thread-tree-indent          "  "
  gnus-sum-thread-tree-vertical        "│ "
  gnus-sum-thread-tree-leaf-with-other "├► "
@@ -190,4 +190,3 @@ pIf performed over a topic line, toggle folding the topic."
 ;; nibrahim https://github.com/nibrahim/Config-files/raw/master/emacs/.gnus
 
 ;;; init-gnus.el ends here
-
