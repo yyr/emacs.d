@@ -1,21 +1,28 @@
 ;;; Tags stuff
 
 ;; Tags with fast selection keys
-(setq org-tag-alist '((:startgroup)
+(setq org-tag-alist '(
+                      ;; where
+                      (:startgroup)
                       ("@home" . ?h)
                       ("@lab" . ?l)
-                      ("@xhome" . ?x)
                       ("@shop" . ?S)
+                      ("@out" . ?o)
                       (:endgroup)
 
+                      ;; when
                       (:startgroup)
                       ("@night" . ?n)
                       ("@weekend" . ?W)
                       ("@day"  . ?d)
                       (:endgroup)
+
+                      ;; type
                       ("EMAIL" . ?m)
-                      ("WORK" . ?w)
-                      ("READ" . ?r)))
+                      ("READ" . ?r)
+                      ("WRITE" . ?w)
+                      ("WORK" . ?W)
+                      ))
 
 ;; Allow setting single tags without the menu
 (setq org-fast-tag-selection-single-key (quote expert))
