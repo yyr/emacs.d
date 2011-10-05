@@ -10,6 +10,11 @@
 ;;; Description:
 ;; Emacs help related settings
 
+;;; help-map additional keys
+;;; jump to source of `key`
+(define-key help-map (kbd "C-k") 'find-function-on-key)
+
+;;; help-mode buffer
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
 
