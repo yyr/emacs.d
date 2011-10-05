@@ -9,7 +9,7 @@
 (global-set-key (kbd "C-M-r") 'org-capture)
 (global-set-key (kbd "<f6>") 'org-capture)
 
-;; 3 capture templates for TODO tasks, Notes, and org-protocol (untested)
+;; Capture Templates
 (setq
  org-capture-templates
  '(
@@ -19,9 +19,7 @@
   ;; note --> refile/Notes
   ("n" "note" entry (file+headline "~/git/org/refile.org" "Notes") "* %?
   %U   %a" )
-    ;; log --> wrfstff-log/LOG
-  ("N" "notes" entry (file+headline "~/git/org/test.org" "notes") "* %?
-    %T %a" :prepand t)))
+))
 
 ;; capture Templages
 (setq org-default-notes-file "~/git/org/refile.org")
