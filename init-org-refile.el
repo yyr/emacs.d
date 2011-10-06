@@ -21,6 +21,10 @@
 ;;;  Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
-(provide 'init-org-refile)
+;;; goto/navigate with org-refile (C-u c-c c-w)
+(setq org-goto-max-level 4)
+(setq org-goto-interface 'outline-path-completion)
+(setq org-outline-path-complete-in-steps nil)
 
+(provide 'init-org-refile)
 ;;; init-org-refile.el ends here
