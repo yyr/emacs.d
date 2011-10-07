@@ -1,4 +1,7 @@
-;;; org-mode
+;;; init-org.el --
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
+;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;; License: GPL v3 or later
 
 
 (setq load-path (cons
@@ -41,3 +44,4 @@
 (setq org-use-speed-commands t)
 
 (provide 'init-org)
+;;; init-org.el ends here

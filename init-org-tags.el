@@ -13,16 +13,17 @@
                       ;; when
                       (:startgroup)
                       ("@night" . ?n)
-                      ("@weekend" . ?w)
+                      ("@wend" . ?w)    ; weekend
                       ("@day"  . ?d)
                       (:endgroup)
 
                       ;; type
-                      ("EMAIL" . ?E)
+                      ("MAIL" . ?E)
                       ("READ" . ?r)
                       ("WRITE" . ?R)
                       ("WORK" . ?W)
                       ("PHONE" . ?P)
+                      ("HOME" . ?H)
                       ))
 
 ;; Allow setting single tags without the menu

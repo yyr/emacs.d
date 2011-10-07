@@ -30,8 +30,22 @@
 
 (setq org-agenda-custom-commands
       (quote (
+              ;; Next items
+              ("N" "Next" tags-todo "/!NEXT"
+               ((org-tags-match-list-sublevels 'indented)))
+
+              ;; entries to refile
+              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
+               ((org-agenda-overriding-header "Tasks to Refile")
+                (org-tags-match-list-sublevels 'indented)))
+
+              ;; tags WORK
+              ("w" "WORK related" tags "LEVEL>1+WORK"
+               ((org-agenda-overriding-header "weekend works")
+                (org-tags-match-list-sublevels 'indented)))
+
               ;; @ nights & weekend
-              ("w" "Works for weekend" tags "@night|@weekend!"
+              ("W" "Works for weekend" tags "LEVEL>1+@night|@weekend!"
                ((org-agenda-overriding-header "weekend works")
                 (org-tags-match-list-sublevels 'indented)))
 
@@ -41,19 +55,9 @@
                 (org-tags-match-list-sublevels 'indented)))
 
               ;; @ night tags
-              ("n" "Evening" tags "@night!"
+              ("n" "Evening" tags "LEVEL>1+@night!"
                ((org-agenda-overriding-header "Night time")
                 (org-tags-match-list-sublevels 'indented)))
-
-              ;; entries to refile
-              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
-               ((org-agenda-overriding-header "Tasks to Refile")
-                (org-tags-match-list-sublevels 'indented)))
-
-
-              ;; Next items
-              ("N" "Next" tags-todo "/!NEXT"
-               ((org-tags-match-list-sublevels 'indented)))
 
               ;; entries to archived
               ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED")
@@ -73,7 +77,6 @@
 
                 (tags "LEVEL>1-REFILE/DONE|CANCELLED"
                       ((org-agenda-overriding-header "Entires can be Archived"))))))))
-
 
 
 (provide 'init-org-agenda)
