@@ -6,22 +6,23 @@
                       (:startgroup)
                       ("@home" . ?h)
                       ("@lab" . ?l)
-                      ("@shop" . ?S)
+                      ("@shop" . ?s)
                       ("@out" . ?o)
                       (:endgroup)
 
                       ;; when
                       (:startgroup)
                       ("@night" . ?n)
-                      ("@weekend" . ?W)
+                      ("@weekend" . ?w)
                       ("@day"  . ?d)
                       (:endgroup)
 
                       ;; type
-                      ("EMAIL" . ?m)
+                      ("EMAIL" . ?E)
                       ("READ" . ?r)
-                      ("WRITE" . ?w)
+                      ("WRITE" . ?R)
                       ("WORK" . ?W)
+                      ("PHONE" . ?P)
                       ))
 
 ;; Allow setting single tags without the menu
