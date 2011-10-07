@@ -18,11 +18,15 @@
 ;;
 (defvar point-stack nil
   "Stack to store point locations")
+
 (defun push-point ()
   "Push the current point onto the stack."
   (interactive)
-  (setq point-stack (cons (point-marker) point-stack)))
+  (setq point-stack (cons (point-marker) point-stack))
+  (message "point pushed"))
+
 (define-key global-map [(control ?z) ?,] 'push-point)         ; Bind to C-z ,
+
 (defun pop-point ()
   "Try to pop a point from the stack and return to it."
   (interactive)
@@ -32,7 +36,10 @@
         (if (not (marker-buffer m))
             (pop-point)
           (switch-to-buffer (marker-buffer m))
-          (goto-char m)))))
+          (goto-char m))
+        (message "point poped"))
+    (message "No point in the stack")))
+
 (define-key global-map [(control ?z) ?.] 'pop-point)          ; Bind to C-z .
 
 
