@@ -9,11 +9,6 @@
 ;;; C-M \ (indent) ;; M-; (comment & uncomment-region)
 (global-set-key (kbd "C-c s") 'ispell-word)
 
-;;; kill current buffer
-(global-set-key (kbd "C-<f12>") (lambda ()
-                                  (interactive)
-                                  (kill-buffer (buffer-name))))
-
 ;;; scrollers
 ;; (global-set-key "\M-n" '"\C-u1\C-v")
 ;; (global-set-key "\M-p" '"\C-u1\M-v")
@@ -66,7 +61,7 @@
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-h a") 'apropos) ;
-;(global-unset-key "\C-x\C-c")           ;unset kill Emacs 
+;(global-unset-key "\C-x\C-c")           ;unset kill Emacs
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)

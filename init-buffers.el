@@ -60,6 +60,16 @@
   (interactive)
   (let ((sbuf (string-)))))
 
+;;; kill current buffer
+(global-set-key (kbd "C-<f12>") (lambda ()
+                                  (interactive)
+                                  (kill-buffer (buffer-name))))
+(global-set-key (kbd "M-k") (lambda ()
+                                  (interactive)
+                                  (kill-buffer (buffer-name))))
+
+
+
 
 (provide 'init-buffers)
 ;;; init-buffers.el ends here

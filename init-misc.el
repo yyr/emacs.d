@@ -36,7 +36,7 @@
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
 (defun reload-init-file ()
-  "reloads init file .emacs.d/"
+  "reloads init file .emacs.d/init.el"
   (interactive)
   (load-file "~/.emacs.d/init.el"))
 
