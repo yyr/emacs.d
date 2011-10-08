@@ -1,8 +1,8 @@
 
 * Caution
-  Any configuration are mostly depends on taste. All the settings here
-  are not suitable for your needs. best thing to do is copy bits and
-  pieces from organized(?) individual files.
+  configurations are mostly depends on taste. You may not
+  like/suitable all the provided settings here. Probably best thing to
+  do is copy bits and pieces from organized(?) individual files.
 
 * Dependencies.
   if you want to use all of these settings you might want to look for
