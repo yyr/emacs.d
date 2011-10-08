@@ -1,8 +1,9 @@
 
 * Caution
   configurations are mostly depends on taste. You may not
-  like/suitable all the provided settings here. Probably best thing to
-  do is copy bits and pieces from organized(?) individual files.
+  like/suitable all the provided settings here. Probably the best
+  thing to do is copy bits and pieces from different individual files
+  named by the packages/context.
 
 * Dependencies.
   if you want to use all of these settings you might want to look for
@@ -10,15 +11,15 @@
 
 ** Dependencies
   - emacs 23.3
-  - elpa          - elpa is included in emacs 24.0
-  - el-get        - https://github.com/dimitri/el-get
-  - autoconf      - emacs-w3m
-  - git           - for cloning most of the packages by el-get
+  - elpa (included in emacs 24.0)
+  - git (cloning most of the packages by [[https://github.com/dimitri/el-get][el-get]] (package manager))
+  - CVS (optional which is needed emacs-w3m by el-get I guess)
 
 ** Building emacs from bzr/git HEAD
-   to build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
+   To build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
   - build-essantial
   - build-dep emacs23
+  - autoconf
 
    #+BEGIN_SRC sh
 sudo apt-get build-essentials
@@ -28,16 +29,12 @@ make bootstrap
 make install
    #+END_SRC
 
-* use
+* Use
   - download through git or a [[https://github.com/yyr/emacsd/zipball/master][zip file]]
   - rename the folder .emacs.d in the home
-  - change the el-get-sources in init-el-get.el
-    This configuration depend on el-get to maintain/install many emacs
-    plugins. one need to change el-get-sources which packages they want
-    to have.
-  - may comment out few lines in init.el
+  - (optionally) comment out lines are needed for you in "init.el".
   - fire up a emacs
-    el-get should start installing your plugins
+    el-get should start installing your additional external packages
 
 * License.
   GPL v3 or later.
