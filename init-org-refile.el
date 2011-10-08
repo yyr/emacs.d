@@ -22,9 +22,12 @@
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
 
 ;;; goto/navigate with org-refile (C-u c-c c-w)
-(setq org-goto-max-level 4)
+(setq org-goto-max-level 3)
 (setq org-goto-interface 'outline-path-completion)
 (setq org-outline-path-complete-in-steps nil)
+
+(global-set-key (kbd "C-c C-w") 'org-refile)  ; make it global
+
 
 (provide 'init-org-refile)
 ;;; init-org-refile.el ends here

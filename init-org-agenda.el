@@ -31,7 +31,7 @@
 (setq org-agenda-custom-commands
       (quote (
               ;; Next items
-              ("N" "Next" tags-todo "/!NEXT"
+              ("n" "Next" tags-todo "/!NEXT"
                ((org-tags-match-list-sublevels 'indented)))
 
               ;; entries to refile
@@ -55,7 +55,7 @@
                 (org-tags-match-list-sublevels 'indented)))
 
               ;; @ night tags
-              ("n" "Evening" tags "LEVEL>1+@night!"
+              ("N" "Evening" tags "LEVEL>1+@night!"
                ((org-agenda-overriding-header "Night time")
                 (org-tags-match-list-sublevels 'indented)))
 
