@@ -1,22 +1,21 @@
-
 * Caution
-  configurations are mostly depends on taste. You may not
-  like/suitable all the provided settings here. Probably the best
-  thing to do is copy bits and pieces from different individual files
-  named by the packages/context.
+  Configurations are mostly depends on taste. You may not like all the
+  provided settings here. Probably the best thing to do is copy bits
+  and pieces from different individual files named by the
+  packages/context.
 
 * Dependencies.
   if you want to use all of these settings you might want to look for
   these before you get going to use.
 
-** Dependencies
-  - emacs 23.3
-  - elpa (included in emacs 24.0)
+  - GNU Emacs 23.3
+  - elpa (included in Emacs 24.0)
   - git (cloning most of the packages by [[https://github.com/dimitri/el-get][el-get]] (package manager))
   - CVS (optional which is needed emacs-w3m by el-get I guess)
 
-** Building emacs from bzr/git HEAD
-   To build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
+** Building Emacs from bzr/git HEAD
+   To build emacs on ubuntu (I follow bzr/git HEAD) I needed the
+   following OS packages.
   - build-essantial
   - build-dep emacs23
   - autoconf
@@ -33,7 +32,7 @@ make install
   - download through git or a [[https://github.com/yyr/emacsd/zipball/master][zip file]]
   - rename the folder .emacs.d in the home
   - (optionally) comment out lines are needed for you in "init.el".
-  - fire up a emacs
+  - fire up a Emacs
     el-get should start installing your additional external packages
 
 * License.
