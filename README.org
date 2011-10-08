@@ -1,38 +1,46 @@
-* Dependencies to look for to use these configuration
-  you might want to look for these before you get going to use.
+
+* Caution
+  Any configuration are mostly depends on taste. All the settings here
+  are not suitable for your needs. best thing to do is copy bits and
+  pieces from organized(?) individual files.
+
+* Dependencies.
+  if you want to use all of these settings you might want to look for
+  these before you get going to use.
 
 ** Dependencies
-  - emacs 24.0.50.1
+  - emacs 23.3
   - elpa          - elpa is included in emacs 24.0
-  - el-get        - https://github.com/dimitri/el-get 
+  - el-get        - https://github.com/dimitri/el-get
   - autoconf      - emacs-w3m
   - git           - for cloning most of the packages by el-get
 
-
-* Building emacs from bzr/git HEAD
-  to build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
+** Building emacs from bzr/git HEAD
+   to build emacs on ubuntu (I follow bzr/git HEAD) I needed following.
   - build-essantial
   - build-dep emacs23
 
-  #+BEGIN_SRC sh
+   #+BEGIN_SRC sh
 sudo apt-get build-essentials
 sudo apt-get build-dep emacs23
 ./configure --prefix="/home/username/local/emacs-git" #install directory ~/local/emacs-git
 make bootstrap
 make install
-  #+END_SRC
+   #+END_SRC
 
-* change the el-get-sources
-  This configuration depend on el-get to maintain/install many emacs
-  plugins. one need to change el-get-sources which packages they want
-  to have.
+* use
+  - download through git or a [[https://github.com/yyr/emacsd/zipball/master][zip file]]
+  - rename the folder .emacs.d in the home
+  - change the el-get-sources in init-el-get.el
+    This configuration depend on el-get to maintain/install many emacs
+    plugins. one need to change el-get-sources which packages they want
+    to have.
+  - may comment out few lines in init.el
+  - fire up a emacs
+    el-get should start installing your plugins
 
-* CREDITS:
-  I copied shamelessly from so many places on the internet.  I am believing that as emacs the configurations also must go GPLd.
-  here I write, some of the places I collected.
+* License.
+  GPL v3 or later.
 
-  emacswiki.org	    - this is where it started and continues
-  alex schroeder    - http://www.emacswiki.org/alex/
-  Steve Purcell	    - git.sanityinc.com (many thanks to him)
-  Alex Ott          - alexott.com <alexott@Agmail.com>
-  Andrew Kensler    - http://www.cs.utah.edu/~aek/code/init.el.html
+* references
+  see the cite file
