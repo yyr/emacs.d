@@ -79,15 +79,18 @@
                       ((org-agenda-overriding-header "Entires can be Archived"))))))))
 
 (defun org-agenda-quit-and-bury ()
-  "while quitting agenda, bury all the agenda file buffers to make agenda-file to be last choices to  ."
+  "while quitting agenda, bury all the agenda file buffers to make agenda-file
+   to be last choice when switching buffer."
   (interactive)
   (progn
+    (org-agenda-quit)
     (mapcar (lambda (f)
               (find-file-noselect (file-truename f)))
-            org-agenda-files)
-    (org-agenda-quit)))
+            org-agenda-files)))
 
-(define-key org-agenda-mode-map (kbd "q") 'org-agenda-quit-and-bury)
+(eval-after-load "org-agenda"
+  `(let ((map org-agenda-mode-map))
+     (define-key map "Q" 'org-agenda-quit-and-bury)))
 
 (provide 'init-org-agenda)
 ;;; init-org-agenda.el ends here
