@@ -61,7 +61,7 @@
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-h a") 'apropos) ;
-;(global-unset-key "\C-x\C-c")           ;unset kill Emacs
+;; (global-unset-key "\C-x\C-c")           ;unset kill Emacs
 
 (define-key isearch-mode-map (kbd "C-o")
   (lambda () (interactive)

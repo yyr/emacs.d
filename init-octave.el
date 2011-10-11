@@ -16,7 +16,7 @@
      (require 'ac-octave)
      (auto-complete-mode t)
      (add-hook 'octave-mode-hook
-	       '(lambda () (ac-octave-mode-setup)))))
+               '(lambda () (ac-octave-mode-setup)))))
 
 
 (provide 'init-octave)

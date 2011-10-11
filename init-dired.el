@@ -11,7 +11,7 @@
 
 ;; dired-x
 (add-hook 'dired-load-hook
-	  (function (lambda () (load "dired-x"))))
+          (function (lambda () (load "dired-x"))))
 
 (autoload 'dired-jump "dired-x"
   "Jump to dired buffer corresponding to current buffer."

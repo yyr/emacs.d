@@ -7,13 +7,13 @@
 (require 'webjump)
 (setq webjump-sites
       (append '(
-		("yorg" . "yagnesh.org")
-		("wv" . "www.webvanitha.com ")
-		("sk" . "surabhikirti.com")
-		("sap" . "sapporoindians.net")
-		("huisa"   . "huisa.net")
-		)
-	      webjump-sample-sites))
+                ("yorg" . "yagnesh.org")
+                ("wv" . "www.webvanitha.com ")
+                ("sk" . "surabhikirti.com")
+                ("sap" . "sapporoindians.net")
+                ("huisa"   . "huisa.net")
+                )
+              webjump-sample-sites))
 (global-set-key "\C-cj" 'webjump)
 
 (provide 'init-webjump)

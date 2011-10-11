@@ -65,10 +65,8 @@
                                   (interactive)
                                   (kill-buffer (buffer-name))))
 (global-set-key (kbd "M-k") (lambda ()
-                                  (interactive)
-                                  (kill-buffer (buffer-name))))
-
-
+                              (interactive)
+                              (kill-buffer (buffer-name))))
 
 
 (provide 'init-buffers)

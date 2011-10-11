@@ -97,7 +97,7 @@ License: GPL v3 or later
 "))
       (goto-char 1)
       ;; watch out if shebang is present
-      (if (string-match "#!"  (thing-at-point 'line))  
+      (if (string-match "#!"  (thing-at-point 'line))
           (next-line))
       (setq beg (point))
       (insert   notice)

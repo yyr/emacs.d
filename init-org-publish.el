@@ -10,28 +10,28 @@
 (setq org-publish-project-alist
       '(
 
-	("org-yag"
-	 ;; Path to your org files.
-	 :base-directory "~/git/sites/yorg/org/"
-	 :base-extension "org"
+        ("org-yag"
+         ;; Path to your org files.
+         :base-directory "~/git/sites/yorg/org/"
+         :base-extension "org"
 
-	 ;; Path to your Jekyll project.
-	 :publishing-directory "~/git/sites/yorg/jekyll/"
-	 :recursive t
-	 :publishing-function org-publish-org-to-html
-	 :headline-levels 4 
-	 :html-extension "html"
-	 :body-only t ;; Only export section between <body> </body>
-	 )
+         ;; Path to your Jekyll project.
+         :publishing-directory "~/git/sites/yorg/jekyll/"
+         :recursive t
+         :publishing-function org-publish-org-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t ;; Only export section between <body> </body>
+         )
 
-	("org-static-yag"
-	 :base-directory "~/git/sites/yorg/org/"
-	 :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-	 :publishing-directory "~/git/sites/yorg/jekyll"
-	 :recursive t
-	 :publishing-function org-publish-attachment)
-	("yag" :components ("org-yag" "org-static-yag"))
-	))
+        ("org-static-yag"
+         :base-directory "~/git/sites/yorg/org/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+         :publishing-directory "~/git/sites/yorg/jekyll"
+         :recursive t
+         :publishing-function org-publish-attachment)
+        ("yag" :components ("org-yag" "org-static-yag"))
+        ))
 
 
 (provide 'init-org-publish)

@@ -7,12 +7,12 @@
   (interactive)
   (insert (format "#---------------------------------------------------------------------------
 # Author: %s  Email: %s
-# DATE: 
+# DATE:
 # Purpose:
 #
-# 
+#
 # Current Version: 0.1
-# Latest change by on 
+# Latest change by on
 #---------------------------------------------------------------------------
 "(user-full-name)
 (message user-mail-address))))
@@ -24,20 +24,20 @@
 ;; -----------------------------------------------------------------------------
 
 (add-to-list 'auto-mode-alist
-           '("\\.[fF]\\(03\\|95\\)\\'" . f90-mode))
-;(defalias 'fortran-mode 'f90-mode)
+             '("\\.[fF]\\(03\\|95\\)\\'" . f90-mode))
+                                        ;(defalias 'fortran-mode 'f90-mode)
 
 
 (defun f-header ()
   (interactive)
   (insert (format "!--------------------------------------------------------------------------
 ! Author: %s Email:%s
-! DATE: 
+! DATE:
 ! Dialect: f95/f03
 ! Purpose:
 !
 ! Current Version: 0.1
-! Latest change by on 
+! Latest change by on
 !--------------------------------------------------------------------------
 "(user-full-name)
 (message user-mail-address))))
@@ -95,44 +95,44 @@
   (insert "ALLOCATABLE"))
 
 (add-hook 'f90-mode-hook
-	  '(lambda ()
-	     (define-key f90-mode-map"\C-c\M-h" 'f-header)
-	     (define-key f90-mode-map"\C-c\M-p" 'f-new-line)
-	     (define-key f90-mode-map"\C-c\M-m" 'f-i-none)
-	     (define-key f90-mode-map"\C-c\M-i" 'f-i-in)
-	     (define-key f90-mode-map"\C-c\M-o" 'f-i-out)
-	     (define-key f90-mode-map"\C-c\M-1" 'f-d-1)
-	     (define-key f90-mode-map"\C-c\M-2" 'f-d-2)
-	     (define-key f90-mode-map"\C-c\M-3" 'f-d-3)
-	     (define-key f90-mode-map"\C-c\M-4" 'f-d-4)
-	     (define-key f90-mode-map"\C-c\M-n" 'f-int)
-	     (define-key f90-mode-map"\C-c\M-d" 'f-real-d)
-	     (define-key f90-mode-map"\C-c\M-s" 'f-real-s)
-	     (define-key f90-mode-map"\C-c\M-o" 'f-opt)
-	     (define-key f90-mode-map"\C-c\M-a" 'f-alloc)
-;	     (f90-abbrev-start)
-;; 	     (highlight-parentheses-mode)
-;	     (compile-bookmarks-mode)
-	     ))
+          '(lambda ()
+             (define-key f90-mode-map"\C-c\M-h" 'f-header)
+             (define-key f90-mode-map"\C-c\M-p" 'f-new-line)
+             (define-key f90-mode-map"\C-c\M-m" 'f-i-none)
+             (define-key f90-mode-map"\C-c\M-i" 'f-i-in)
+             (define-key f90-mode-map"\C-c\M-o" 'f-i-out)
+             (define-key f90-mode-map"\C-c\M-1" 'f-d-1)
+             (define-key f90-mode-map"\C-c\M-2" 'f-d-2)
+             (define-key f90-mode-map"\C-c\M-3" 'f-d-3)
+             (define-key f90-mode-map"\C-c\M-4" 'f-d-4)
+             (define-key f90-mode-map"\C-c\M-n" 'f-int)
+             (define-key f90-mode-map"\C-c\M-d" 'f-real-d)
+             (define-key f90-mode-map"\C-c\M-s" 'f-real-s)
+             (define-key f90-mode-map"\C-c\M-o" 'f-opt)
+             (define-key f90-mode-map"\C-c\M-a" 'f-alloc)
+                                        ;        (f90-abbrev-start)
+             ;;          (highlight-parentheses-mode)
+                                        ;        (compile-bookmarks-mode)
+             ))
 
 (add-hook 'fortran-mode-hook
-	  '(lambda ()
-	     (define-key fortran-mode-map"\C-c\M-p" 'f-header)
-	     (define-key fortran-mode-map"\C-c\M-p" 'f-new-line)
-	     (define-key fortran-mode-map"\C-c\M-m" 'f-i-none)
-	     (define-key fortran-mode-map"\C-c\M-i" 'f-i-in)
-	     (define-key fortran-mode-map"\C-c\M-o" 'f-i-out)
-	     (define-key fortran-mode-map"\C-c\M-1" 'f-d-1)
-	     (define-key fortran-mode-map"\C-c\M-2" 'f-d-2)
-	     (define-key fortran-mode-map"\C-c\M-3" 'f-d-3)
-	     (define-key fortran-mode-map"\C-c\M-4" 'f-d-4)
-	     (define-key fortran-mode-map"\C-c\M-n" 'f-int)
-	     (define-key fortran-mode-map"\C-c\M-d" 'f-real-d)
-	     (define-key fortran-mode-map"\C-c\M-s" 'f-real-s)
-	     (define-key fortran-mode-map"\C-c\M-o" 'f-opt)
-	     (define-key fortran-mode-map"\C-c\M-a" 'f-alloc)
-;;	     (highlight-parentheses-mode)
-;	     (compile-bookmarks-mode)
-	     ))
+          '(lambda ()
+             (define-key fortran-mode-map"\C-c\M-p" 'f-header)
+             (define-key fortran-mode-map"\C-c\M-p" 'f-new-line)
+             (define-key fortran-mode-map"\C-c\M-m" 'f-i-none)
+             (define-key fortran-mode-map"\C-c\M-i" 'f-i-in)
+             (define-key fortran-mode-map"\C-c\M-o" 'f-i-out)
+             (define-key fortran-mode-map"\C-c\M-1" 'f-d-1)
+             (define-key fortran-mode-map"\C-c\M-2" 'f-d-2)
+             (define-key fortran-mode-map"\C-c\M-3" 'f-d-3)
+             (define-key fortran-mode-map"\C-c\M-4" 'f-d-4)
+             (define-key fortran-mode-map"\C-c\M-n" 'f-int)
+             (define-key fortran-mode-map"\C-c\M-d" 'f-real-d)
+             (define-key fortran-mode-map"\C-c\M-s" 'f-real-s)
+             (define-key fortran-mode-map"\C-c\M-o" 'f-opt)
+             (define-key fortran-mode-map"\C-c\M-a" 'f-alloc)
+             ;;      (highlight-parentheses-mode)
+                                        ;        (compile-bookmarks-mode)
+             ))
 
 (provide 'init-fortran)

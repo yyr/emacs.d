@@ -12,21 +12,21 @@
  (append auto-mode-alist interpreter-mode-alist))
 
 (add-hook 'cperl-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-h f") 'cperl-perldoc)))
+          (lambda ()
+            (local-set-key (kbd "C-h f") 'cperl-perldoc)))
 
 (add-hook 'cperl-mode-hook
-  (lambda ()
-    (setq cperl-hairy nil
-          cperl-highlight-variables-indiscriminately t
-          cperl-auto-newline t
-	  cperl-electric-keywords t
-          cperl-auto-newline-after-colon t
-          cperl-electric-keywords t
-          cperl-electric-linefeed t
-	  abbrev-mode nil
-          cperl-regexp-scan nil
-;;	  autopair-dont-activate t
-          cperl-electric-parens nil)))  ;; <------ electric parens!   cperl-electric-parens t
+          (lambda ()
+            (setq cperl-hairy nil
+                  cperl-highlight-variables-indiscriminately t
+                  cperl-auto-newline t
+                  cperl-electric-keywords t
+                  cperl-auto-newline-after-colon t
+                  cperl-electric-keywords t
+                  cperl-electric-linefeed t
+                  abbrev-mode nil
+                  cperl-regexp-scan nil
+                  ;;      autopair-dont-activate t
+                  cperl-electric-parens nil)))  ;; <------ electric parens!   cperl-electric-parens t
 
 (provide 'init-perl)

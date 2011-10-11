@@ -7,17 +7,17 @@
 ;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;;; 
+;;;
 
 ;;; http://delysid.org/emacs/erc.html
 (eval-after-load "erc"
   '(progn
      (setq erc-auto-query t
            erc-bbdb-auto-create-on-whois-p t
-	   erc-fill-column (- (window-width) 2)
-	   erc-pals '("" "")
-	   erc-notify-list erc-pals)
-					;    (require 'erc-bbdb)
+           erc-fill-column (- (window-width) 2)
+           erc-pals '("" "")
+           erc-notify-list erc-pals)
+                                        ;    (require 'erc-bbdb)
      (require 'erc-imenu)
      (require 'erc-menu)
      (require 'erc-notify)

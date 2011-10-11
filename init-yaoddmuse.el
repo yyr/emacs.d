@@ -9,9 +9,9 @@
 (setq auto-mode-alist
       (cons '(".*/emacswiki.org/.*" . yaoddmuse-mode) auto-mode-alist))
 
-(setq yaoddmuse-browse-function 'yaoddmuse-browse-page-in-w3m)  
-(setq yaoddmuse-notify-function 'yaoddmuse-notify-popup-window) 
-(setq yaoddmuse-wikis                                           
+(setq yaoddmuse-browse-function 'yaoddmuse-browse-page-in-w3m)
+(setq yaoddmuse-notify-function 'yaoddmuse-notify-popup-window)
+(setq yaoddmuse-wikis
       '(("EmacsWiki" "http://www.emacswiki.org/cgi-bin/emacs" utf-8 "uihnscuskc=1;")))
 
 (provide 'init-yaoddmuse)

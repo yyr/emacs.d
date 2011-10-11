@@ -4,11 +4,11 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(setq auto-save-interval 200)            
-(setq auto-save-timeout 40)              
-;; (setq auto-save-visited-file-name t)    
+(setq auto-save-interval 200)
+(setq auto-save-timeout 40)
+;; (setq auto-save-visited-file-name t)
 
-;;save everything to a folder 
+;;save everything to a folder
 (setq
  backup-by-copying t ; don't clobber symlinks
  backup-directory-alist

@@ -4,7 +4,7 @@
 (winner-mode 1)
 (windmove-default-keybindings) ;; Shift+direction
 
-(global-set-key "\M-t" 'other-window) 	; was transpose words
+(global-set-key "\M-t" 'other-window)   ; was transpose words
 ;;; (global-set-key (kbd "<f8>") 'other-window)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward t
@@ -22,9 +22,9 @@
       (set-window-buffer (next-window) (other-buffer)))))
 
 (global-set-key "\C-x2"
-		(split-window-func-with-other-buffer 'split-window-vertically))
+                (split-window-func-with-other-buffer 'split-window-vertically))
 (global-set-key "\C-x3"
-		(split-window-func-with-other-buffer 'split-window-horizontally))
+                (split-window-func-with-other-buffer 'split-window-horizontally))
 
 
 ;;----------------------------------------------------------------------------

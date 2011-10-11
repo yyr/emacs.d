@@ -77,8 +77,8 @@
 
 ;; When editing lisp code, highlight the current sexp
 (add-hook 'emacs-lisp-mode-hook (lambda () (progn
-                                        (require 'hl-sexp)
-                                        (hl-sexp-mode t))))
+                                             (require 'hl-sexp)
+                                             (hl-sexp-mode t))))
 
 (provide 'init-lisp)
 

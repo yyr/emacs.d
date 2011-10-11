@@ -9,9 +9,9 @@
 (add-to-list 'auto-mode-alist '("\\.cl$" . lisp-mode))
 
 (setq load-path (cons
-		 (expand-file-name
-		  "~/.emacs.d/el-get/slime/contrib/")
-		 load-path))
+                 (expand-file-name
+                  "~/.emacs.d/el-get/slime/contrib/")
+                 load-path))
 
 (setq inferior-lisp-program "/usr/bin/sbcl") ; your Lisp system
 (add-hook 'lisp-mode-hook (lambda ()
@@ -23,9 +23,9 @@
 (eval-after-load "slime"
   '(progn
      (add-to-list 'slime-lisp-implementations
-		  '(sbcl ("sbcl") :coding-system utf-8-unix))
+                  '(sbcl ("sbcl") :coding-system utf-8-unix))
      (add-to-list 'slime-lisp-implementations
-		  '(cmucl ("cmucl") :coding-system iso-latin-1-unix))
+                  '(cmucl ("cmucl") :coding-system iso-latin-1-unix))
      (require 'slime-fancy)
      (require 'slime-banner)
      (require 'slime-asdf)

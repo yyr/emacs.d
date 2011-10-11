@@ -2,19 +2,19 @@
 
 (require 'w3m-load)
 
-;(setq w3m-key-binding 'info) ; info-like
+                                        ;(setq w3m-key-binding 'info) ; info-like
 (setq w3m-key-binding 'nil) ; lynx-like
 '
 ;;(add-to-list 'load-path "~/emacs/emacs-w3m")
 ;;(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
 (setq w3m-coding-system 'utf-8
-                        w3m-file-coding-system 'utf-8
-                        w3m-file-name-coding-system 'utf-8
-                        w3m-input-coding-system 'utf-8
-                        w3m-output-coding-system 'utf-8
-                        w3m-terminal-coding-system 'utf-8
-                        w3m-use-cookies t
-                        )
+      w3m-file-coding-system 'utf-8
+      w3m-file-name-coding-system 'utf-8
+      w3m-input-coding-system 'utf-8
+      w3m-output-coding-system 'utf-8
+      w3m-terminal-coding-system 'utf-8
+      w3m-use-cookies t
+      )
 
 ;; (add-hook 'w3m-display-hook
 ;;           (lambda (url)
@@ -35,8 +35,8 @@
                           (w3m-image))))
 
 (add-hook 'w3m-mode-hook (lambda ()
-			  (local-set-key (kbd "<f5> o")
-					 'w3m-open-link-or-image-in-firefox)))
+                           (local-set-key (kbd "<f5> o")
+                                          'w3m-open-link-or-image-in-firefox)))
 
 
 

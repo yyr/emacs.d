@@ -1,5 +1,5 @@
 * Caution
-  Configurations are mostly depends on taste. You may not like all the
+  Configurations are mostly depend on taste. You may not like all the
   provided settings here. Probably the best thing to do is copy bits
   and pieces from different individual files named by the
   packages/context.
@@ -20,13 +20,13 @@
   - build-dep emacs23
   - autoconf
 
-   #+BEGIN_SRC sh
+    #+BEGIN_SRC sh
 sudo apt-get build-essentials
 sudo apt-get build-dep emacs23
 ./configure --prefix="/home/username/local/emacs-git" #install directory ~/local/emacs-git
 make bootstrap
 make install
-   #+END_SRC
+    #+END_SRC
 
 * Use
   - download through git or a [[https://github.com/yyr/emacsd/zipball/master][zip file]]

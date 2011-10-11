@@ -1,5 +1,5 @@
 ;; -----------------------------------------------------------------------------
-;; yasnippet 
+;; yasnippet
 ;; -----------------------------------------------------------------------------
 
 (require 'yasnippet) ;; yasnippet-bundle
@@ -7,7 +7,7 @@
 (yas/initialize)
 
 (setq yas/root-directory '( "~/.emacs.d/snippets/"))
-; Map `yas/load-dir/")ectory' to every element
+                                        ; Map `yas/load-dir/")ectory' to every element
 (mapc 'yas/load-directory yas/root-directory)
 
 (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))

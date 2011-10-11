@@ -6,10 +6,10 @@
 
 
 (setq auto-insert-alist '(("\\.sh$" . ["insert.sh" alexott/auto-update-defaults])
-			  ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
-			  ("\\.pl$" . ["insert.pl" alexott/auto-update-defaults])
-			  ("\\.ncl$" . ["insert.ncl" alexott/auto-update-defaults])
-			  ))
+                          ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
+                          ("\\.pl$" . ["insert.pl" alexott/auto-update-defaults])
+                          ("\\.ncl$" . ["insert.ncl" alexott/auto-update-defaults])
+                          ))
 
 
 (defun alexott/auto-replace-header-name ()
