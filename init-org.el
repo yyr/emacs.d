@@ -31,7 +31,7 @@
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
-;; (global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;;;  Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)

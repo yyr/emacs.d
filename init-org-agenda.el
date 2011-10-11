@@ -78,6 +78,16 @@
                 (tags "LEVEL>1-REFILE/DONE|CANCELLED"
                       ((org-agenda-overriding-header "Entires can be Archived"))))))))
 
+(defun org-agenda-quit-and-bury ()
+  "while quitting agenda, bury all the agenda file buffers to make agenda-file to be last choices to  ."
+  (interactive)
+  (progn
+    (mapcar (lambda (f)
+              (find-file-noselect (file-truename f)))
+            org-agenda-files)
+    (org-agenda-quit)))
+
+(define-key org-agenda-mode-map (kbd "q") 'org-agenda-quit-and-bury)
 
 (provide 'init-org-agenda)
 ;;; init-org-agenda.el ends here
