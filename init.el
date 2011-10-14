@@ -166,6 +166,8 @@
 (when on-laptop                     ; I listen music only on my laptop
   (require 'init-emms))
 
+;;; for tests
+(require 'init-scratch)
 ;; interactive customization
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")
