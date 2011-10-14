@@ -36,12 +36,15 @@
 (defun insert-date (arg)
   "Insert date at point.
 With prefix argument, insert date and time."
-  (interactive "P")
-  (insert (format-time-string "%Y-%m-%d"))
-  (when arg
-    (insert (format-time-string " %H:%M"))))
-;; (global-set-key (kbd "C-c d") 'insert-date)
+  (interactive "p")
+  (if (= arg 16)
+      (insert (format-time-string "%A, %B %e %Y" (current-time)))
+    (progn
+      (insert (format-time-string "%Y-%m-%d"))
+      (when arg
+        (insert (format-time-string " %H:%M"))))))
 
+;; (global-set-key (kbd "C-c d") 'insert-date)
 ;;----------------------------------------------------------------------------
 ;; transpose buffers
 ;;----------------------------------------------------------------------------
