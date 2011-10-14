@@ -27,11 +27,13 @@
             (setq yas/trigger-key [tab])
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)
-            (if (symbolp 'electric-pair-mode)
-                (progn
-                  (setq autopair-dont-activate t)
-                  (autopair-mode -1)
-                  (electric-pair-mode)))))
+            (autopair-mode -1)))
+
+;; (if (symbolp 'electric-pair-mode)
+;;     (progn
+;;       (setq autopair-dont-activate t)
+;;       (autopair-mode -1)
+;;       (electric-pair-mode)))
 
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
