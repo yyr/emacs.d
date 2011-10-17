@@ -26,7 +26,9 @@
 ;;; --------------------------------------------------------
 (when on-laptop
   ;; only laptop has leafnode installed
-  (setq gnus-select-method '(nntp "localhost")))
+  (setq gnus-select-method '(nntp "news.gmane.org"))
+;  (setq gnus-select-method '(nntp "localhost"))
+  )
 
 ;;; Mail
 ;;; --------------------------------------------------------
