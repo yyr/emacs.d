@@ -25,6 +25,7 @@
             ;; yasnippet (using the new org-cycle hooks)
             (make-variable-buffer-local 'yas/trigger-key)
             (setq yas/trigger-key [tab])
+            (org-indent-mode 1)
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)
             (autopair-mode -1)))
