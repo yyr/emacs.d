@@ -4,10 +4,12 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(set-face-attribute 'default nil
-                    :height 108
-                    :width 'extra-condensed
-                    :family "DejaVu Sans Mono")
+(when on-laptop
+  (set-face-attribute 'default nil
+                      :height 108
+                      :width 'extra-condensed
+                      :family "DejaVu Sans Mono"
+                      ))
 
 ;; (set-default-font
 ;; "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
