@@ -51,5 +51,4 @@
 ;;; activate speed commands
 (setq org-use-speed-commands t)
 
-(provide 'init-org)
 ;;; init-org.el ends here

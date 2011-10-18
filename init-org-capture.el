@@ -27,5 +27,3 @@
 ;; C-c C-c stores the note immediately
 (setq org-capture-store-without-prompt t)
 (setq org-capture-default-headline "Tasks")
-
-(provide 'init-org-capture)

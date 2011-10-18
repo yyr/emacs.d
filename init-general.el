@@ -103,5 +103,4 @@
           'executable-make-buffer-file-executable-if-script-p)
 
 
-(provide 'init-general)
 ;;; init-general.el ends here

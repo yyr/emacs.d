@@ -10,5 +10,4 @@
 ;;
 
 
-(provide 'init-color-theme)
 ;;; init-color-theme.el ends here

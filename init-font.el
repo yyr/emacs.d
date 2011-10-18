@@ -50,5 +50,4 @@
 (define-key global-map [(control ?z) ?-] 'font-decrease)      ; Bind to C-z -
 
 
-(provide 'init-font)
 ;;; init-font.el ends here

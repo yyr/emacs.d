@@ -18,7 +18,6 @@
                       "/\\.emacs-project$" "/\\.emacs\\.desktop$" "/custom\\.el$" "/init\\.el$"
                       "/\\.ido\\.last$" "/\\.ecb-tip-of-day\\.el$" "/\\.viper$" "/\\.recentf$"))
 
-(provide 'init-byte-code-cache)
 
 ;; Cite:  steve (sanityinc) emacsd
 

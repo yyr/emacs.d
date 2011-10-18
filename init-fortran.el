@@ -134,5 +134,3 @@
              ;;      (highlight-parentheses-mode)
                                         ;        (compile-bookmarks-mode)
              ))
-
-(provide 'init-fortran)

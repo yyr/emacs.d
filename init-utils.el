@@ -116,5 +116,4 @@ License: GPL v3 or later
       (message "No associated buffer exist for \"%s\" buffer "
                (buffer-name)))))
 
-(provide 'init-utils)
 ;;; init-utils-el ends here

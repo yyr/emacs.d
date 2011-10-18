@@ -29,5 +29,4 @@
 (global-set-key (kbd "C-c C-w") 'org-refile)  ; make it global
 
 
-(provide 'init-org-refile)
 ;;; init-org-refile.el ends here

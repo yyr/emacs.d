@@ -44,5 +44,3 @@
 ;;   (progn
 ;;     (define-key w3m-mode-map "f" 'w3m-open-current-page-in-firefox)
 ;;     (define-key w3m-mode-map "F" 'w3m-open-link-or-image-in-firefox)))
-
-(provide 'init-w3m)

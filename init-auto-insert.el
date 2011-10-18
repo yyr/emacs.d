@@ -81,6 +81,3 @@
   (alexott/auto-replace-file-name-no-ext)
   (alexott/auto-replace-date-time)
   )
-
-
-(provide 'init-auto-insert)

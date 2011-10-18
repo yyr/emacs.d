@@ -19,7 +19,6 @@
                          '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 
 (when (window-system)
-   (max-emacs-x-window))
+  (max-emacs-x-window))
 
-(provide 'init-frame)
 ;;; init-frame.el ends here

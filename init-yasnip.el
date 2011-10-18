@@ -11,5 +11,3 @@
 (mapc 'yas/load-directory yas/root-directory)
 
 (add-to-list 'auto-mode-alist '("\\.yasnippet$" . snippet-mode))
-
-(provide 'init-yasnip)

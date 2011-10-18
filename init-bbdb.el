@@ -40,5 +40,4 @@
 ;; ;; (setq bbdb-use-pop-up t)
 ;; (setq gnus-extra-headers '(To))
 
-(provide 'init-bbdb)
 ;;; init-bbdb.el ends here

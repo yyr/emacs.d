@@ -41,5 +41,4 @@
 
 
 
-(provide 'init-org-latex)
 ;;; init-org-latex.el ends here

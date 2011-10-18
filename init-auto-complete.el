@@ -54,5 +54,4 @@
 (add-hook 'ielm-mode-hook 'ielm-auto-complete)
 
 
-(provide 'init-auto-complete)
 ;;; init-auto-complete.el ends here

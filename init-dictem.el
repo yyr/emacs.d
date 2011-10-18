@@ -92,5 +92,4 @@
 (global-set-key "\C-cd" 'dictem-run-define-at-point)
 (global-set-key "\C-zd" 'dictem-run-define-at-point-with-query)
 
-(provide 'init-dictem)
 ;;; init-dictem.el ends here

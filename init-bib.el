@@ -20,5 +20,4 @@
  ebib-preload-bib-files '("~/git/bib/cld.bib" "~/git/bib/jrShortname.bib" "~/git/bib/jrFullname.bib")
  )
 
-(provide 'init-bib)
 ;;; init-bib.el ends here

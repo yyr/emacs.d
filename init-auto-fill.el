@@ -16,5 +16,3 @@
 (global-set-key (kbd "C-c q") 'auto-fill-mode)
 ;; C-z f toggles auto-fill
 (define-key global-map [(control ?z) ?f] 'auto-fill-mode)
-
-(provide 'init-auto-fill)

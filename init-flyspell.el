@@ -35,5 +35,4 @@
           (lambda ()
             (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
 
-(provide 'init-flyspell)
 ;;; init-flyspell.el ends here

@@ -13,5 +13,4 @@
 ;; (setq org-s5-theme "default")     ; the default S5 theme
 (setq org-s5-theme "i18n")        ; the i18n theme by the author of S5
 
-(provide 'init-org-s5)
 ;;; init-org-s5.el ends here

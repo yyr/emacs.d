@@ -16,5 +16,3 @@
     (delete-frame)))
 
 (global-set-key (kbd "C-c C-x q") 'exit-emacs-client)
-
-(provide 'init-server)

@@ -34,5 +34,4 @@
         ))
 
 
-(provide 'init-org-publish)
 ;;; init-org-publish.el ends here

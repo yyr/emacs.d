@@ -16,5 +16,4 @@
               webjump-sample-sites))
 (global-set-key "\C-cj" 'webjump)
 
-(provide 'init-webjump)
 ;;; init-webjump.el ends here

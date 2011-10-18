@@ -20,6 +20,5 @@ If the region is active, insert it."
     (find-file "/tmp/org-scratch.org")
     (if contents (insert contents))))
 
-(provide 'init-org-misc)
 
 ;;; init-org-misc.el ends here

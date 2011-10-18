@@ -17,5 +17,4 @@
 
 (global-set-key (kbd "s-<f10>") 'ecb-activate)
 
-(provide 'init-ecb)
 ;;; init-ecb.el ends here

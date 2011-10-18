@@ -60,5 +60,4 @@
          anything-c-source-emacs-functions-with-abbrevs
          anything-c-source-info-emacs))))))
 
-(provide 'init-anything)
 ;;; init-anything.el ends here

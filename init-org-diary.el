@@ -39,5 +39,4 @@
       (buffer-substring start end))))
 
 
-(provide 'init-org-diary)
 ;;; init-org-diary.el ends here

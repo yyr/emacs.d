@@ -39,135 +39,135 @@
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
 ;;; package managers
-;(require 'init-elpa)
-(require 'init-el-get)
+                                        ;(load 'init-elpa)
+(load "init-el-get")
 
 ;;; byte-compile-cache
 (when *byte-code-cache-enabled*
-  (require 'init-byte-code-cache))
+  (load "init-byte-code-cache"))
 
 ;;; initial setup, keybindings
-(require 'init-general)
-(require 'init-ess-minors)
-(require 'init-custom-key-set)
-(require 'init-point)
-(require 'init-time)
-(require 'init-diminish)
-(require 'init-auto-save)
-;; (require 'init-linum)
+(load "init-general")
+(load "init-ess-minors")
+(load "init-custom-key-set")
+(load "init-point")
+(load "init-time")
+(load "init-diminish")
+(load "init-auto-save")
+;; (load "init-linum")
 
 ;;; look
-(require 'init-font)
-(require 'init-color-theme)
+(load "init-font")
+(load "init-color-theme")
 
 ;;; help typing
-(require 'init-autopair)
-(require 'init-auto-fill)
-(require 'init-auto-insert)
-(require 'init-flyspell)
-(require 'init-hippie-expand)
-(require 'init-auto-complete)
-(require 'init-yasnip)
+(load "init-autopair")
+(load "init-auto-fill")
+(load "init-auto-insert")
+(load "init-flyspell")
+(load "init-hippie-expand")
+(load "init-auto-complete")
+(load "init-yasnip")
 (when (executable-find "dictd")            ; dict is not available on server
-  (require 'init-dictem))
+  (load "init-dictem"))
 
 ;;; help navigation
-(require 'init-bookmarks)
-(require 'init-imenu)
-(require 'init-buffers)
-(require 'init-recentf)
-(require 'init-anything)
+(load "init-bookmarks")
+(load "init-imenu")
+(load "init-buffers")
+(load "init-recentf")
+(load "init-anything")
 
 ;;; window , frame
-(require 'init-windows)
-(require 'init-frame)
+(load "init-windows")
+(load "init-frame")
 
 ;;; File management
-(require 'init-dired)
+(load "init-dired")
 
 ;;; make friendly mini buffer
-(require 'init-ido)
-(require 'init-smex)
+(load "init-ido")
+(load "init-smex")
 
 ;;; languages
-(require 'init-perl)
-(require 'init-fortran)
-(require 'init-sh)
-(require 'init-lisp)
-(require 'init-html)
-(require 'init-yaml)
-(require 'init-common-lisp)
-(require 'init-python)
+(load "init-perl")
+(load "init-fortran")
+(load "init-sh")
+(load "init-lisp")
+(load "init-html")
+(load "init-yaml")
+(load "init-common-lisp")
+(load "init-python")
 
 ;;; subject
-(require 'init-octave)
+(load "init-octave")
 (when (executable-find "latex")         ; auctex is no use  without latex
-  (require 'init-auctex)
-  (require 'init-bib))
-;; (require 'init-latex)
-(require 'init-ncl)
-(require 'init-grads)
-(require 'init-gnuplot)
+  (load "init-auctex")
+  (load "init-bib"))
+;; (load "init-latex")
+(load "init-ncl")
+(load "init-grads")
+(load "init-gnuplot")
 
 ;;; DVC
-(require 'init-git)
+(load "init-git")
 
 ;;; org GTD
-(require 'init-diary)
-(require 'init-org)
-(require 'init-org-todo-state-tags)
-(require 'init-org-agenda)
-(require 'init-org-tags)
-(require 'init-org-capture)
-(require 'init-org-refile)
-(require 'init-org-clock)
-(require 'init-org-ob)
-(require 'init-org-diary)
+(load "init-diary")
+(load "init-org")
+(load "init-org-todo-state-tags")
+(load "init-org-agenda")
+(load "init-org-tags")
+(load "init-org-capture")
+(load "init-org-refile")
+(load "init-org-clock")
+(load "init-org-ob")
+(load "init-org-diary")
 
 ;;; org publish
-(require 'init-org-html)
-(require 'init-org-latex)
-(require 'init-org-beamer)
-(require 'init-org-publish)
-(require 'init-org-s5)
+(load "init-org-html")
+(load "init-org-latex")
+(load "init-org-beamer")
+(load "init-org-publish")
+(load "init-org-s5")
 
 ;;; org misc
-(require 'init-org-misc)
-(require 'init-epresent)
+(load "init-org-misc")
+(load "init-epresent")
 
 ;;; Info,  help, doc , man(woman) etc..
-(require 'init-info)
-(require 'init-eldoc)
-(require 'init-help)
+(load "init-info")
+(load "init-eldoc")
+(load "init-help")
 
 ;;; IDE , make
-;;(require 'init-cedet)
-;; (require 'init-ecb)
+;;(load "init-cedet")
+;; (load "init-ecb")
 
 ;;; web
-(require 'init-webjump)
-(require 'init-w3m)
-(require 'init-yaoddmuse)
-(require 'init-sass-mode)
-(require 'init-erc)
+(load "init-webjump")
+(load "init-w3m")
+(load "init-yaoddmuse")
+(load "init-sass-mode")
+(load "init-erc")
 
 ;;; utilities & misc
-(require 'init-utils)
-(require 'init-exec-path)
-(require 'init-misc)
-(require 'init-battery)
+(load "init-utils")
+(load "init-exec-path")
+(load "init-misc")
+(load "init-battery")
 
 ;;; server
-(require 'init-server)
+(load "init-server")
 (when (not on-lab-server)
-  (require 'init-edit-server))
+  (load "init-edit-server"))
 
 ;;; music
 (when on-laptop                     ; I listen music only on my laptop
-  (require 'init-emms))
+  (load "init-emms"))
 
 ;;; for tests
-(require 'init-scratch)
+(load "init-scratch")
 ;; interactive customization
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")

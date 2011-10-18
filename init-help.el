@@ -18,5 +18,4 @@
 (define-key help-mode-map (kbd "n") 'next-line)
 (define-key help-mode-map (kbd "p") 'previous-line)
 
-(provide 'init-help)
 ;;; init-help.el ends here

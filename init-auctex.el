@@ -78,5 +78,4 @@
             (ac-latex-mode-setup)))
 
 
-(provide 'init-auctex)
 ;;; init-auctex.el ends here

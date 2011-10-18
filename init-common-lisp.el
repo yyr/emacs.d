@@ -63,7 +63,6 @@
 (define-key lisp-mode-map (kbd "C-c l") 'lispdoc)
 
 
-(provide 'init-common-lisp)
 
 ;;; Sources
 ;; ch.coop/blog/070927.html

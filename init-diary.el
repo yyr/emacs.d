@@ -6,5 +6,4 @@
 
 (setq diary-file "~/git/org/diary")     ; I keep dairy in my org-agenda-files repo
 
-(provide 'init-diary)
 ;;; init-dairy.el ends here

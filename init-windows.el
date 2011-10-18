@@ -62,5 +62,3 @@
   (split-window-horizontally)
   (balance-windows)
   (follow-mode t))
-
-(provide 'init-windows)

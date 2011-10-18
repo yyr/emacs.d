@@ -6,5 +6,4 @@
 
 (add-hook 'sass-mode-hook 'ac-css-mode-setup)
 
-(provide 'init-sass-mode)
 ;;; init-sass-mode.el ends here

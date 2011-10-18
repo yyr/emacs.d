@@ -15,6 +15,5 @@
 
 (autoload 'rebase-mode "rebase-mode" nil t)
 
-(provide 'init-git)
 
 ;;; init-git.el ends here

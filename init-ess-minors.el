@@ -19,5 +19,3 @@
 
 ;;; buttonize addresses
 (add-hook 'find-file-hooks 'goto-address-prog-mode)
-
-(provide 'init-ess-minors)

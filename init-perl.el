@@ -28,5 +28,3 @@
                   cperl-regexp-scan nil
                   ;;      autopair-dont-activate t
                   cperl-electric-parens nil)))  ;; <------ electric parens!   cperl-electric-parens t
-
-(provide 'init-perl)

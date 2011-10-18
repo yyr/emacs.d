@@ -33,5 +33,4 @@
         ("NEXT" ("WAITING"))
         ("DONE" ("WAITING") ("CANCELLED"))))
 
-(provide 'init-org-todo-state-tags)
 ;;; init-org-todo-state-tags.el ends here

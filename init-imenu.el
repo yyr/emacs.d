@@ -52,6 +52,5 @@ Symbols matching the text at point are put first in the completion list."
 
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
-(provide 'init-imenu)
 
 ;;; init-imenu.el ends here

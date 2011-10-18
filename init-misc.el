@@ -71,5 +71,4 @@
            (looking-at "\\s\)")) (forward-char 1) (backward-list 1))))
 (define-key global-map [(control ?z) ?p] 'goto-matching-paren) ; Bind to C-z p
 
-(provide 'init-misc)
 ;;; init-misc.el ends here

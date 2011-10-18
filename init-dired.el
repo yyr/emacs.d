@@ -22,5 +22,3 @@
 (setq dired-bind-jump t)
 (global-set-key "\C-x\C-j" 'dired-jump)
 (global-set-key "\C-x4\C-j" 'dired-jump-other-window)
-
-(provide 'init-dired)

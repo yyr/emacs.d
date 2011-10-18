@@ -25,5 +25,4 @@
 (define-key Apropos-Prefix (kbd "v")   'apropos-variable)
 (define-key Apropos-Prefix (kbd "C-v") 'apropos-value)
 
-(provide 'init-info)
 ;;; init-info.el ends here

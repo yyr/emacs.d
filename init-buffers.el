@@ -69,5 +69,4 @@
                               (kill-buffer (buffer-name))))
 
 
-(provide 'init-buffers)
 ;;; init-buffers.el ends here

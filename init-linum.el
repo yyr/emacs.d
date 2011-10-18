@@ -19,6 +19,5 @@
                ))
   (add-hook hook (lambda () (linum-mode 1))))
 
-(provide 'init-linum)
 
 ;;; init-linum.el ends here

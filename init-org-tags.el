@@ -34,5 +34,3 @@
 
 ;; Use IDO for target completion
 (setq org-completion-use-ido t)
-
-(provide 'init-org-tags)

@@ -17,5 +17,3 @@
 
 ;; Helps when debugging which try-function expanded
 (setq hippie-expand-verbose t)
-
-(provide 'init-hippie-expand)

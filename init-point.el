@@ -43,5 +43,4 @@
 (define-key global-map [(control ?z) ?.] 'pop-point)          ; Bind to C-z .
 
 
-(provide 'init-point)
 ;;; init-point.el ends here

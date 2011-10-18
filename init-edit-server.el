@@ -13,5 +13,4 @@
 (require 'edit-server)
 (edit-server-start)
 
-(provide 'init-edit-server)
 ;;; init-edit-server.el ends here

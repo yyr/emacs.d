@@ -14,6 +14,5 @@
 (setq yaoddmuse-wikis
       '(("EmacsWiki" "http://www.emacswiki.org/cgi-bin/emacs" utf-8 "uihnscuskc=1;")))
 
-(provide 'init-yaoddmuse)
 
 ;;; init-yaoddmuse.el ends here

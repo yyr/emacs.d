@@ -27,7 +27,7 @@
 (when on-laptop
   ;; only laptop has leafnode installed
   (setq gnus-select-method '(nntp "news.gmane.org"))
-;  (setq gnus-select-method '(nntp "localhost"))
+                                        ;  (setq gnus-select-method '(nntp "localhost"))
   )
 
 ;;; Mail
@@ -186,7 +186,6 @@ pIf performed over a topic line, toggle folding the topic."
 
 
 
-(provide 'init-gnus)
 
 ;;; Citation
 ;; nibrahim https://github.com/nibrahim/Config-files/raw/master/emacs/.gnus

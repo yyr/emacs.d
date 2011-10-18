@@ -30,5 +30,4 @@
 (global-set-key (kbd "<f7> a") 'emms-add-playlist-directory)
 (global-set-key (kbd "<f7> A") 'emms-add-playlist-directory-tree)
 
-(provide 'init-emms)
 ;;; init-emms.el ends here

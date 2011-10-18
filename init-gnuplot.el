@@ -14,6 +14,5 @@
               auto-mode-alist))
 ;; (global-set-key [(f9)] ’gnuplot-make-buffer)
 
-(provide 'init-gnuplot)
 
 ;;; init-gnuplot.el ends here

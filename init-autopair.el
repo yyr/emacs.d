@@ -11,5 +11,4 @@
 (add-hook 'emacs-lisp-mode-hook #'(lambda ()
                                     (setq autopair-dont-activate t)))
 
-(provide 'init-autopair)
 ;;; init-autopair.el ends here

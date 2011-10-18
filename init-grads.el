@@ -10,5 +10,4 @@
 (add-to-list 'auto-mode-alist '("\\.gs$" . gs-mode))
 (add-to-list 'auto-mode-alist '("\\.ctl$" . ctl-mode))
 
-(provide 'init-grads)
 ;;; init-grads.el ends here

@@ -9,5 +9,4 @@
 ;;; Description:
 ;; test purposes
 
-(provide 'init-scratch)
 ;;; init-scratch.el ends here

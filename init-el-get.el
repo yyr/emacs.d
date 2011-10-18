@@ -125,5 +125,4 @@
 
 (el-get 'sync my-packages)
 
-(provide 'init-el-get)
 ;; init-el-get.el ends here

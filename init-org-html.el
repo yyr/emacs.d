@@ -14,5 +14,4 @@
                                  ("@" org-warning "<b>" "</b>"))))
 
 
-(provide 'init-org-html)
 ;;; init-org-html.el ends here

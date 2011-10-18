@@ -22,5 +22,4 @@
     (add-to-list 'bookmark-alist latest)))
 
 
-(provide 'init-bookmarks)
 ;;; init-bookmarks.el ends here

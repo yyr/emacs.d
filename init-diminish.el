@@ -12,5 +12,4 @@
 (eval-after-load "paredit"
   '(diminish 'paredit-mode "pe"))
 
-(provide 'init-diminish)
 ;;; init-diminish.el ends here

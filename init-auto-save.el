@@ -18,6 +18,5 @@
  kept-old-versions 2
  version-control t) ; use versioned backups
 
-(provide 'init-auto-save)
 
 ;;; init-auto-save.el ends here

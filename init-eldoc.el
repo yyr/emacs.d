@@ -53,6 +53,5 @@
     ad-do-it))
 
 
-(provide 'init-eldoc)
 
 ;;; init-eldoc.el ends here

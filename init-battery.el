@@ -13,5 +13,4 @@
                                                 (funcall battery-status-function)))))
   (display-battery-mode 1))
 
-(provide 'init-battery)
 ;;; init-battery.el ends here

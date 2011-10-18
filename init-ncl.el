@@ -12,5 +12,4 @@
 ;; this line associates ncl-mode with the lisp package that defines it.
 (autoload 'ncl-mode "ncl" "ncl-mode for editing ncar graphics" t)
 
-(provide 'init-ncl)
 ;;; init-ncl.el ends here

@@ -34,5 +34,4 @@
 
 
 
-(provide 'init-erc)
 ;;; init-erc.el ends here

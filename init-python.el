@@ -16,5 +16,4 @@
 
 (setq py-python-command-args '( "--colors" "Linux"))
 
-(provide 'init-python)
 ;;; init-python.el ends here

@@ -40,5 +40,4 @@
                 "\\begin{frame}[fragile]\\frametitle{%s}"
                 "\\end{frame}")))
 
-(provide 'init-org-beamer)
 ;;; Org-Beamer.el ends here

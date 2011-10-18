@@ -19,6 +19,5 @@
                '(lambda () (ac-octave-mode-setup)))))
 
 
-(provide 'init-octave)
 
 ;;; init-octave.el ends here
