@@ -39,7 +39,7 @@
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
 ;;; package managers
-(require 'init-elpa)
+;(require 'init-elpa)
 (require 'init-el-get)
 
 ;;; byte-compile-cache
@@ -68,7 +68,7 @@
 (require 'init-hippie-expand)
 (require 'init-auto-complete)
 (require 'init-yasnip)
-(when (not on-lab-server)            ; dict is not available on server
+(when (executable-find "dictd")            ; dict is not available on server
   (require 'init-dictem))
 
 ;;; help navigation
@@ -101,7 +101,7 @@
 
 ;;; subject
 (require 'init-octave)
-(when (not on-lab-server)
+(when (executable-find "latex")         ; auctex is no use  without latex
   (require 'init-auctex)
   (require 'init-bib))
 ;; (require 'init-latex)

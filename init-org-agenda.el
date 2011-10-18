@@ -85,7 +85,7 @@
   (progn
     (org-agenda-quit)
     (mapcar (lambda (f)
-              (find-file-noselect (file-truename f)))
+              (bury-buffer (find-file-noselect (file-truename f))))
             org-agenda-files)))
 
 (eval-after-load "org-agenda"
