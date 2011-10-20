@@ -83,10 +83,12 @@
    to be last choice when switching buffer."
   (interactive)
   (progn
-    (org-agenda-quit)
-    (mapcar (lambda (f)
-              (bury-buffer (find-file-noselect (file-truename f))))
-            org-agenda-files)))
+    (save-excursion
+      (mapcar (lambda (f)
+                (bury-buffer (find-file-noselect (file-truename f))))
+              org-agenda-files))
+    (org-agenda-quit)))
+
 
 (eval-after-load "org-agenda"
   `(let ((map org-agenda-mode-map))
