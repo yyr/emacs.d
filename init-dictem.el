@@ -67,12 +67,13 @@
                                  (if default-word
                                      (concat "(" default-word ")") nil)
                                  ": "))
-         (dictem-query (funcall #'(lambda (str)
-                                    "Remove Whitespace from beginning and end of a string."
-                                    (replace-regexp-in-string "^[ \n\t]*\\(.*?\\)[ \n\t]*$"
-                                                              "\\1"
-                                                              str))
-                                (read-string default-prompt nil nil default-word))))
+         (dictem-query
+          (funcall #'(lambda (str)
+                       "Remove Whitespace from beginning and end of a string."
+                       (replace-regexp-in-string "^[ \n\t]*\\(.*?\\)[ \n\t]*$"
+                                                 "\\1"
+                                                 str))
+                   (read-string default-prompt nil nil default-word))))
     (if (= (length dictem-query) 0) nil
       (dictem-run 'dictem-base-search "*" dictem-query "."))))
 
@@ -80,12 +81,13 @@
   "dictem look up for thing at point"
   (interactive)
   (let* ((default-word (thing-at-point 'symbol))
-         (dictem-query (funcall #'(lambda (str)
-                                    "Remove Whitespace from beginning and end of a string."
-                                    (replace-regexp-in-string "^[ \n\t]*\\(.*?\\)[ \n\t]*$"
-                                                              "\\1"
-                                                              str))
-                                default-word)))
+         (dictem-query
+          (funcall #'(lambda (str)
+                       "Remove Whitespace from beginning and end of a string."
+                       (replace-regexp-in-string "^[ \n\t]*\\(.*?\\)[ \n\t]*$"
+                                                 "\\1"
+                                                 str))
+                   default-word)))
     (if (= (length dictem-query) 0) nil
       (dictem-run 'dictem-base-search "*" dictem-query "."))))
 
