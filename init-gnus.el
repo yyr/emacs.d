@@ -12,8 +12,7 @@
 (require 'registry)
 
 ;;; load my bbdb settings
-(require 'init-bbdb)
-
+(load "init-bbdb")
 
 ;;; folders
 (setq gnus-home-directory "~/gnus")

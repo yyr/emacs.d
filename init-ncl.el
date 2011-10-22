@@ -5,11 +5,13 @@
 ;;
 
 ;;; http://www.ncl.ucar.edu/Applications/editor.shtml
-(setq auto-mode-alist (cons '("\.ncl$" . ncl-mode) auto-mode-alist))
-
-(setq ncl-startup-message nil)
-
 ;; this line associates ncl-mode with the lisp package that defines it.
 (autoload 'ncl-mode "ncl" "ncl-mode for editing ncar graphics" t)
+
+(setq auto-mode-alist (cons '("\.ncl$" . ncl-mode) auto-mode-alist))
+(require 'ncl-doc)
+
+(setq ncl-startup-message nil)
+(add-hook 'ncl-mode-hook 'ncl-doc)
 
 ;;; init-ncl.el ends here
