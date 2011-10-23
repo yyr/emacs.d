@@ -157,7 +157,8 @@
 (load "init-misc")
 (load "init-battery")
 
-;;; server
+;;; sys & server
+(load "init-crontab")
 (load "init-server")
 (when (not on-lab-server)
   (load "init-edit-server"))
