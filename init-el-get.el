@@ -21,7 +21,7 @@
     (eval-print-last-sexp)))
 
 ;;; el-get-is-lazy
-(setq el-get-is-lazy 't)
+;(setq el-get-is-lazy nil)
 
 ;; compile at init if any source is not byte compiled
 ;; (setq el-get-byte-compile-at-init 't)
