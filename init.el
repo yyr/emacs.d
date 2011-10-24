@@ -143,6 +143,7 @@
 ;;; IDE , make
 ;;(load "init-cedet")
 ;; (load "init-ecb")
+(load "init-etags")
 
 ;;; web
 (load "init-webjump")
