@@ -8,7 +8,7 @@
 
 ;; minor modes
 (tool-bar-mode -1)
-(column-number-mode 1)
+(column-number-mode t)
 (blink-cursor-mode -1)
 (setq visible-bell t)
 (show-paren-mode 1)
