@@ -13,7 +13,9 @@
   "find out tag at point with out confirmation"
   (interactive)
   (let ((tap (thing-at-point 'symbol)))
-    (find-tag tap)))
+    (if tap
+        (find-tag tap)
+      (call-interactively 'find-tag))))
 
 (global-set-key (kbd "M-.") 'find-tag-at-point)
 

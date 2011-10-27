@@ -25,7 +25,7 @@
 
 (add-to-list 'auto-mode-alist
              '("\\.[fF]\\(03\\|95\\)\\'" . f90-mode))
-                                        ;(defalias 'fortran-mode 'f90-mode)
+(defalias 'fortran-mode 'f90-mode)
 
 
 (defun f-header ()
