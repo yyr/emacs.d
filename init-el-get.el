@@ -21,7 +21,7 @@
     (eval-print-last-sexp)))
 
 ;;; el-get-is-lazy
-;(setq el-get-is-lazy nil)
+(setq el-get-is-lazy t)
 
 ;; compile at init if any source is not byte compiled
 ;; (setq el-get-byte-compile-at-init 't)
@@ -77,9 +77,10 @@
          hl-sexp
 
          ;; python
+         python
          pymacs
-         ;; ropemacs
-
+;;         ropemacs
+         yaml-mode
 
 ;;;; Sub
          ncl
@@ -87,7 +88,6 @@
          gnuplot-mode
 
 ;;;; web & mail
-         bbdb
          emacs-w3m
          yaoddmuse
 
@@ -108,8 +108,11 @@
          '(auctex
            ebib
            dictem
-           edit-server)
-         my-packages)))
+           edit-server
+           bbdb
+           )
+         my-packages
+         )))
 
 ;;; ---------------------------------------------------------------------------
 ;; package needed for only my laptop
@@ -119,8 +122,7 @@
          '(emms textile-mode
                 markdown-mode
                 haml-mode
-                sass-mode
-                yaml-mode)
+                sass-mode)
          my-packages)))
 
 (el-get 'sync my-packages)

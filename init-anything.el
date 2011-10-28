@@ -60,4 +60,5 @@
          anything-c-source-emacs-functions-with-abbrevs
          anything-c-source-info-emacs))))))
 
+(global-set-key [f8] 'anything)
 ;;; init-anything.el ends here

@@ -12,7 +12,7 @@
                ;;               'org-mode-hook
                ))
   (add-hook hook 'turn-on-eldoc-mode))
-                                        ;(setq eldoc-argument-case 'eldoc-argument-list)
+;;(setq eldoc-argument-case 'upcase)
 
 (defadvice eldoc-highlight-function-argument
   (around my-formatting (sym args index) compile activate preactivate)

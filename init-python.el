@@ -8,12 +8,22 @@
 
 ;;; Description:
 
-(require 'pymacs)
-
-;; (pymacs-load "ropemacs" "rope-")
+(require 'python)
+(setq python-shell-interpreter "python3")
 (add-hook 'python-mode-hook
-          '(lambda () (eldoc-mode 1)) t)
+          '(lambda ()
+             (eldoc-mode 1)
+            (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
-(setq py-python-command-args '( "--colors" "Linux"))
+
+;;; FIXME
+;;; pymacs
+
+;;(require 'pymacs)
+;;(setq py-python-command-args '( "--colors" "Linux"))
+
+;;; ropemacs
+;;(pymacs-load "ropemacs" "rope-")
+
 
 ;;; init-python.el ends here
