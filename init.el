@@ -141,8 +141,9 @@
 (load "init-help")
 
 ;;; IDE , make
-;;(load "init-cedet")
+(load "init-cedet")
 ;; (load "init-ecb")
+(load "init-flymake")
 (load "init-etags")
 
 ;;; web
