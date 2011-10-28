@@ -1,5 +1,8 @@
-# contributor: Mads D. Kristensen 
+# -*- mode: snippet -*-
 # name: with
+# key: with
+# group : control structure
+# contributor: Andrea crotti
 # --
-with ${1:lock}:
+with ${1:expr}${2: as ${3:alias}}:
      $0

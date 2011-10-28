@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: docstring
+# key: ds
+# contributor: Andrea crotti
+# --
+"""
+$0
+"""

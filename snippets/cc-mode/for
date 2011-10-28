@@ -1,6 +1,8 @@
-#name : for (...; ...; ...) { ... }
+# -*- mode: snippet -*-
+# name: for
+# key: for
+# contributor: Andrea crotti
 # --
-for (${1:int i = 0}; ${2:i < N}; ${3:++i})
-{
+for (${1:i = 0}; ${2:i < N}; ${3:i++}) {
     $0
 }

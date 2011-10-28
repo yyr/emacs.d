@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: elisp
+# key: `
+# contributor: Andrea crotti
+# --
+\`$0\`

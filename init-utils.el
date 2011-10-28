@@ -116,4 +116,55 @@ License: GPL v3 or later
       (message "No associated buffer exist for \"%s\" buffer "
                (buffer-name)))))
 
+;;; closing chars
+(defconst default-closing-char ";"
+  "default closing char, change in newline-force-close-alist if needed")
+
+(setq newline-force-close-alist
+      '((python-mode . ":")
+        (prolog-mode . ".")
+        (latex-mode . " \\\\")
+        (html-mode . " <br>")))
+
+(defun newline-force()
+  "Goes to newline leaving untouched the rest of the line"
+  (interactive)
+  (progn
+    (end-of-line)
+    (newline-and-indent)))
+
+(defun newline-force-close()
+  (interactive)
+  (end-of-line)
+  (let ((closing-way (assoc major-mode newline-force-close-alist))
+        closing-char)
+    ;; Setting the user defined or the constant if not found
+    (if (not closing-way)
+        (progn
+          (message "closing char not defined for this mode, using default")
+          (setq closing-char default-closing-char))
+      (setq closing-char (cdr closing-way)))
+    (when (not (bobp))
+      ;; if we're at beginning of buffer, the backward-char will beep
+      ;; :( This works even in the case of narrowing (e.g. we don't
+      ;; look outside of the narrowed area.
+      (when (not (looking-at closing-char))
+        (insert closing-char))
+      (newline-force))))
+
+(global-set-key (kbd "M-RET") 'newline-force)
+(global-set-key [M-S-return] 'newline-force-close)
+
+(defun ca-with-comment (str)
+  (format "%s%s%s" comment-start str comment-end))
+
+(defun ca-all-asscs (asslist query)
+  "returns a list of all corresponding values (like rassoc)"
+  (cond
+   ((null asslist) nil)
+   (t
+    (if (equal (cdr (car asslist)) query)
+        (cons (car (car asslist)) (ca-all-asscs (cdr asslist) query))
+      (ca-all-asscs (cdr asslist) query)))))
+
 ;;; init-utils-el ends here
