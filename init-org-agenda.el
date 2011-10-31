@@ -94,4 +94,6 @@
   `(let ((map org-agenda-mode-map))
      (define-key map "Q" 'org-agenda-quit-and-bury)))
 
+(setq org-agenda-tags-column -105)
+
 ;;; init-org-agenda.el ends here

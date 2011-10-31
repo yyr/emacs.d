@@ -14,12 +14,23 @@
  org-capture-templates
  '(
    ;; todo --> refile/Tasks
-   ("t" "todo" entry (file+headline "~/git/org/refile.org" "Tasks") "* TODO %?
-  %U   %a" )
+   ("t" "todo" entry (file+headline "~/git/org/refile.org" "Tasks")
+    "* TODO %?\n%U   %a%i" )
+
+   ("c" "todo under current clock" entry (clock)
+    "* TODO %?\n%U   %a%i" )
+
    ;; note --> refile/Notes
-   ("n" "note" entry (file+headline "~/git/org/refile.org" "Notes") "* %?
-  %U   %a" )
-   ))
+   ("n" "note" entry (file+headline "~/git/org/refile.org" "Notes")
+    "* %?\n%U   %a%i" )
+
+   ;; journal notes --> diary.org
+   ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
+    "* %?\n%U\n%i%a")
+
+   ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
+    "* TODO %?\n%U   %a%i" )
+))
 
 ;; capture Templages
 (setq org-default-notes-file "~/git/org/refile.org")

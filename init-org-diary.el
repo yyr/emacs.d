@@ -11,6 +11,9 @@
 (setq org-agenda-include-diary nil)
 (setq org-agenda-diary-file "~/git/org/diary.org")
 
+;; put diary in org notes folder instead of home folder
+(setq diary-file "~/git/org/diary")
+
 ;;; diary supplement Nick Dokos org-mode mailing list
 ;;; location: sapporo
 (setq calendar-latitude +43.0)

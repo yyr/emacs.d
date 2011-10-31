@@ -113,7 +113,6 @@
 (load "init-git")
 
 ;;; org GTD
-(load "init-diary")
 (load "init-org")
 (load "init-org-todo-state-tags")
 (load "init-org-agenda")

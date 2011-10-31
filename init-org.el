@@ -51,4 +51,10 @@
 ;;; activate speed commands
 (setq org-use-speed-commands t)
 
+;;; disable priorities
+(setq org-enable-priority-commands nil)
+
+;;; save org-buffers every hour
+(run-at-time "00:59" 3600 'org-save-all-org-buffers)
+
 ;;; init-org.el ends here
