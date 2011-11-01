@@ -15,6 +15,7 @@ bookmarks
 history
 custom.el
 tramp
+abbrev_defs
 
 session.*
 *.elc
@@ -27,3 +28,7 @@ elpa/*
 byte-cache/
 .org-id-locations
 emms/
+
+# ede
+semanticdb/*
+ede-projects.el

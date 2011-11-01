@@ -29,5 +29,7 @@
 (global-set-key (kbd "<f7> P") 'emms-pause)
 (global-set-key (kbd "<f7> a") 'emms-add-playlist-directory)
 (global-set-key (kbd "<f7> A") 'emms-add-playlist-directory-tree)
+(global-set-key (kbd "<f7> n") 'emms-next)
+(global-set-key (kbd "<f7> p") 'emms-previous)
 
 ;;; init-emms.el ends here

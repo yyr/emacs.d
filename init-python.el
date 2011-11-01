@@ -13,14 +13,13 @@
 (add-hook 'python-mode-hook
           '(lambda ()
              (eldoc-mode 1)
-            (define-key python-mode-map "\C-m" 'newline-and-indent)))
+             (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
 
 ;;; FIXME
 ;;; pymacs
-
-;;(require 'pymacs)
-;;(setq py-python-command-args '( "--colors" "Linux"))
+(require 'pymacs)
+(setq py-python-command-args '( "--colors" "Linux"))
 
 ;;; ropemacs
 ;;(pymacs-load "ropemacs" "rope-")
