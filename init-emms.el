@@ -21,7 +21,7 @@
  emms-source-file-default-directory "/dump/MUSIC/Telugu/"
  emms-directory "~/.emms/")
 
-(global-set-key (kbd "<f7> p") 'emms-play-directory-tree)
+(global-set-key (kbd "<f7> s") 'emms-play-directory-tree)  ;s stands for start
 (global-set-key (kbd "<f7> t") 'emms-toggle-repeat-playlist)
 (global-set-key (kbd "<f7> o") '(lambda ()
                                   (interactive)

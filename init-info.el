@@ -6,6 +6,8 @@
 ;;; Commentary:
 ;; info , searching docs, short cuts
 
+(require 'info-look)
+
 ;;; FIXME
 (add-hook 'Info-mode-hook       ; After Info-mode has started
           (lambda ()
