@@ -77,7 +77,7 @@
          hl-sexp
 
          ;; python
-         python
+         python-mode
          pymacs
 ;;         ropemacs
          yaml-mode

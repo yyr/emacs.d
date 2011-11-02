@@ -8,21 +8,29 @@
 
 ;;; Description:
 
-(require 'python)
-(setq python-shell-interpreter "python3")
+(setq load-path
+      (append (list nil
+                    "~/.emacs.d/el-get/python-mode"
+                    "~/.emacs.d/el-get/pymacs"
+                    "~/.emacs.d/el-get/ipython"
+                    )
+              load-path))
+
+;;; load python-mode.el for python3
+(require 'python-mode)
+
+;;; ipython
+(setq ipython-command "ipython3")
+(require 'ipython)
+
+
+;;; pymacs
+(require 'pymacs)
+
+
 (add-hook 'python-mode-hook
           '(lambda ()
              (eldoc-mode 1)
              (define-key python-mode-map "\C-m" 'newline-and-indent)))
-
-
-;;; FIXME
-;;; pymacs
-(require 'pymacs)
-(setq py-python-command-args '( "--colors" "Linux"))
-
-;;; ropemacs
-;;(pymacs-load "ropemacs" "rope-")
-
 
 ;;; init-python.el ends here
