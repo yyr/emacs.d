@@ -81,6 +81,7 @@
          pymacs
 ;;         ropemacs
          yaml-mode
+         ipython
 
 ;;;; Sub
          ncl

@@ -1,12 +1,13 @@
 * Credits
-  I copied shamelessly from so many places on the internet.
-  here I write, some of the places I collected.
+I copied shamelessly from so many places on the internet.
+here I write, some of the places I collected.
 
-  emacswiki.org	    - this is where it started and continues
-  alex schroeder    - http://www.emacswiki.org/alex/
-  Steve Purcell	    - git.sanityinc.com (many thanks to him)
-  Alex Ott          - alexott.com <alexott@Agmail.com>
-  Andrew Kensler    - http://www.cs.utah.edu/~aek/code/init.el.html
+emacswiki.org  - this is where it started and continues
+alex schroeder - http://www.emacswiki.org/alex/
+Steve Purcell  - git.sanityinc.com
+Alex Ott       - alexott.com <alexott@Agmail.com>
+Andrew Kensler - http://www.cs.utah.edu/~aek/code/init.el.html
+Brent Henson   - org setup
 
 # Local Variables:
 # mode: org
