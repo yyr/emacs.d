@@ -78,6 +78,7 @@
 
          ;; python
          python-mode
+         pylookup
          pymacs
 ;;         ropemacs
          yaml-mode
