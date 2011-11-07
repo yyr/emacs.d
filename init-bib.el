@@ -9,15 +9,21 @@
 ;;; Description:
 ;; managing bibliography modes
 
-(autoload 'ebib "ebib" "Ebib, a BibTeX database manager." t)
-(add-hook 'LaTeX-mode-hook #'(lambda ()
-                               (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
+(autoload 'ebib "ebib"
+  "Ebib, a BibTeX database manager." t)
+
+(add-hook 'LaTeX-mode-hook
+          #'(lambda ()
+              (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
+
+(global-set-key (kbd "C-c B") 'ebib)
 
 (setq-default
  ebib-file-search-dirs '("~/git/bib/")
  ebib-insertion-commands                ; which cite commands you wanna use
  '(("cite" 1 nil) ("citep" 1 nil) ("citet" 1 nil))
- ebib-preload-bib-files '("~/git/bib/cld.bib" "~/git/bib/jrShortname.bib" "~/git/bib/jrFullname.bib")
- )
+ ebib-preload-bib-files '("~/git/bib/jrFullname.bib" "~/git/bib/cld.bib"
+                          "~/git/bib/jrShortname.bib"))
+
 
 ;;; init-bib.el ends here
