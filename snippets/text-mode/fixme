@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: fixme
-# key: fi
-# contributor: Andrea crotti
-# --
-`(ca-with-comment "FIXME: $0")`

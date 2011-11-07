@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: html imgage 
-# key: himg
-# --
- #+ATTR_HTML: style="float:right; margin:10px;" width=${1:"500px"}
- [[file:./$2]]

@@ -1,6 +1,0 @@
-#name : Ruby Source Code Block
-#contributor : Martyn Jago <martyn.jago@btinternet.com>
-# --
-#+BEGIN_SRC ruby
-$0$>
-#+END_SRC$>
