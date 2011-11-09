@@ -26,7 +26,7 @@
 (when on-laptop
   ;; only laptop has leafnode installed
   (setq gnus-select-method '(nntp "news.gmane.org"))
-                                        ;  (setq gnus-select-method '(nntp "localhost"))
+;;  (setq gnus-select-method '(nntp "localhost"))
   )
 
 ;;; Mail
@@ -164,29 +164,8 @@ pIf performed over a topic line, toggle folding the topic."
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
 
-;; Smtp
-;;;------------------------------------------------
-(require 'smtpmail)
-
-(setq send-mail-function 'smtpmail-send-it) ; if you use `mail'
-(setq message-send-mail-function 'smtpmail-send-it) ; if you use message/Gnus
-
-;; (setq smtpmail-default-smtp-server "smtp.gmail.com")
-(setq smtpmail-smtp-server "smtp.gmail.com")
-;; (setq smtpmail-local-domain "YOUR DOMAIN NAME")
-;; (setq smtpmail-sendto-domain "YOUR DOMAIN NAME")
-(setq smtpmail-debug-info t) ; only to debug problems
-(setq smtpmail-stream-type 'starttls)
-
-
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
-
-
-
-
-;;; Citation
-;; nibrahim https://github.com/nibrahim/Config-files/raw/master/emacs/.gnus
 
 ;;; init-gnus.el ends here
