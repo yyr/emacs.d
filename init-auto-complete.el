@@ -9,23 +9,21 @@
 
 (ac-config-default)
 
-
 (setq ac-auto-start 2)
+
 (setq ac-dwim t)
 (define-key ac-completing-map (kbd "C-n") 'ac-next)
 (define-key ac-completing-map (kbd "C-p") 'ac-previous)
 
-(dolist (mode '(emacs-lisp-mode lisp-interaction-mode
-                                magit-log-edit-mode log-edit-mode org-mode text-mode
-                                haml-mode sass-mode yaml-mode csv-mode espresso-mode
-                                haskell-mode html-mode nxml-mode sh-mode smarty-mode
-                                clojure-mode lisp-mode textile-mode markdown-mode
-                                tuareg-mode cperl-mode sass-mode ncl-mode latex-mode
-                                fortran-mode f90-mode))
+(dolist (mode
+         '(emacs-lisp-mode   lisp-interaction-mode
+           magit-log-edit-mode log-edit-mode org-mode text-mode
+           haml-mode sass-mode yaml-mode csv-mode espresso-mode
+           haskell-mode html-mode nxml-mode sh-mode smarty-mode
+           clojure-mode lisp-mode textile-mode markdown-mode
+           tuareg-mode cperl-mode sass-mode ncl-mode latex-mode
+           fortran-mode f90-mode))
   (add-to-list 'ac-modes mode))
-
-(defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-yasnippet ac-source-gtags) ac-sources)))
 
 (add-hook 'auto-complete-mode-hook (lambda ()
                                      (ac-flyspell-workaround)))
@@ -54,5 +52,14 @@
   (auto-complete-mode 1))
 (add-hook 'ielm-mode-hook 'ielm-auto-complete)
 
+
+;;; ncl-mode
+(defun ac-ncl-mode-setup ()
+  (setq ac-sources
+        (append '(ac-source-yasnippet
+                  ac-source-words-in-buffer)
+                ac-sources)))
+
+(add-hook 'ncl-mode-hook 'ac-ncl-mode-setup)
 
 ;;; init-auto-complete.el ends here
