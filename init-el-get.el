@@ -31,10 +31,9 @@
 (setq el-get-sources
       '(
 ;;;; help typing
-        (:name auto-complete
+        (:name autopair
                :type git
-               :url "git://github.com/m2ym/auto-complete.git")
-        ))
+               :url "git://github.com/m2ym/autopair-el.git")))
 
 ;;; ---------------------------------------------------------------------------
 ;; COMMON packages all the systems I have
@@ -57,7 +56,7 @@
          ac-math
          ac-octave
          highlight-parentheses
-         autopair
+         auto-complete
 
 ;;;; Cosmetics
          diminish
@@ -80,7 +79,7 @@
          python-mode
          pylookup
          pymacs
-;;         ropemacs
+         ;;         ropemacs
          yaml-mode
          ipython
 

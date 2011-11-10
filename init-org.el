@@ -28,7 +28,8 @@
             (org-indent-mode 1)
             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
             (define-key yas/keymap [tab] 'yas/next-field)
-            (autopair-mode -1)))
+;            (autopair-mode -1)
+            ))
 
 ;; (if (symbolp 'electric-pair-mode)
 ;;     (progn
