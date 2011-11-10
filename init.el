@@ -159,6 +159,7 @@
 (load "init-battery")
 
 ;;; sys & server
+(load "init-mail")
 (load "init-crontab")
 (load "init-server")
 (when (not on-lab-server)
