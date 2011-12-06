@@ -21,4 +21,5 @@
 ;(setq smtpmail-debug-info t) ; only to debug problems
 (setq smtpmail-stream-type 'starttls)
 
+(add-to-list 'auto-mode-alist '("\\.eml$" . message-mode))
 ;;; init-mail.el ends here
