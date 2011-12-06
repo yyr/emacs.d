@@ -9,7 +9,7 @@
 # Dirs to mask
 el-get
 auto-save-list/*
-snippets/                       #downloaded snippets here
+snippets/
 
 # auto generated files
 bookmarks
