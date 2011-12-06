@@ -1,14 +1,13 @@
 # -*- mode: snippet -*-
-# name: function
-# key: fun
+# name: procedure
+# key: proc
 # --
 ;---------------------------------------------------------------------
-; Fuction: ${1:fun_name}
+; procedure: ${1:procedure_name}
 ; Doc:
-;
 ;---------------------------------------------------------------------
 undef("$1")
-function $1($0)
+procedure $1($0)
 local $2
 
 begin
@@ -16,4 +15,4 @@ begin
 
 return
 end
-;- "$1" ends here --
+;- |$1| ends here --
