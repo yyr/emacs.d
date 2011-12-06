@@ -65,7 +65,6 @@
 ;;;; Org
          org-mode
          calfw
-         epresent
 
 ;;;; DVC
          magit
@@ -111,7 +110,8 @@
            dictem
            edit-server
            bbdb
-           )
+                    epresent
+)
          my-packages
          )))
 
@@ -125,6 +125,7 @@
                 haml-mode
                 sass-mode)
          my-packages)))
+
 
 (el-get 'sync my-packages)
 

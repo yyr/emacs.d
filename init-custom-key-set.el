@@ -56,7 +56,11 @@
 (global-set-key (kbd "C-x f") 'ffap)
 (global-set-key (kbd "C-x C-p") 'find-file-at-point)
 (global-set-key (kbd "C-c y") 'bury-buffer)
-(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "C-c r") (lambda ()
+                                (interactive)
+                                (revert-buffer t t t)
+                                (message "buffer is reverted")))
+
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
 
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)

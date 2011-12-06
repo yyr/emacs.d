@@ -60,5 +60,8 @@
          anything-c-source-emacs-functions-with-abbrevs
          anything-c-source-info-emacs))))))
 
+;;; custom keys
 (global-set-key [f8] 'anything)
+(global-set-key (kbd "M-K") 'anything-bookmarks)
+
 ;;; init-anything.el ends here
