@@ -32,6 +32,10 @@
  case-fold-search t          ; Fold case on searches
  )
 
+;;; remove crap offerings when finding something
+(setq completion-ignored-extensions
+      '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod"))
+
 ;;; delete nasty hidden white spaces at the end of lines
 (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
 

@@ -62,18 +62,16 @@ With prefix argument, insert date and time."
 
 (global-set-key (kbd "C-<f7>") 'transpose-buffers)
 
-
-;;----------------------------------------------------------------------------
-;; delete leading white spaces from emacswiki
-;;----------------------------------------------------------------------------
-(defun my-delete-leading-whitespace (start end)
+;;; -----
+(defun delete-leading-whitespace (start end)
   "Delete whitespace at the beginning of each line in region."
   (interactive "*r")
   (save-excursion
+    (goto-char (point-min))
     (if (not (bolp)) (forward-line 1))
-    (delete-whitespace-rectangle (point) end nil)))
+    (delete-whitespace-rectangle (point) end nil))
+  (widen))
 
-;; brent henson, norang.org
 (defun yag/switch-to-scratch ()
   "switch to scratch , take if region is active"
   (interactive)
@@ -94,9 +92,7 @@ With prefix argument, insert date and time."
   (save-excursion
     (let ((beg (point))
           (notice  "Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 License: GPL v3 or later
-
 "))
       (goto-char 1)
       ;; watch out if shebang is present

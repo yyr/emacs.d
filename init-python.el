@@ -27,9 +27,10 @@
 (require 'pymacs)
 
 (add-hook 'python-mode-hook
-          '(lambda ()
-             ;; (eldoc-mode 1)
-             (define-key python-mode-map "\C-m" 'newline-and-indent)))
+          (lambda ()
+            (eldoc-mode 1)
+            ))
+
 
 ;;; Pymacs
 (setq pylookup-dir "~/.emacs.d/el-get/pylookup")
