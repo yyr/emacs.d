@@ -13,6 +13,7 @@
 
 ;;; load my bbdb settings
 (load "init-bbdb")
+(load "init-message")
 
 ;;; folders
 (setq gnus-home-directory "~/gnus")
@@ -23,7 +24,7 @@
 ;;; --------------------------------------------------------
 ;;; news
 ;;; --------------------------------------------------------
-(when (not (on-lab-server))
+(when (not on-lab-server)
   ;; only laptop has leafnode installed
   ;;  (setq gnus-select-method '(nntp "localhost"))
   (setq gnus-select-method '(nntp "news.gmane.org")))
@@ -127,35 +128,6 @@ pIf performed over a topic line, toggle folding the topic."
              ))
 
 (setq gnus-article-update-date-headers nil)
-
-
-;;; message mode
-;;; --------------------------------------------------------
-;;; auto hello thank you
-(defadvice gnus-summary-reply (after formalities () activate)
-  (de-add-formalities))
-
-(defun de-add-formalities ()
-  "Add hello and Thank you to my emails"
-  (save-excursion
-    (message-goto-signature)
-    (previous-line 2)
-    )
-  (let* ((to (message-fetch-field "To"))
-         (address-comp (mail-extract-address-components to))
-         (name (car address-comp))
-         (first (or (and name (concat "" (car (split-string name))))
-                    "")))
-    (when first
-      (message-goto-body)
-      (insert (concat  "\nHi " (capitalize first) ",\n\n")))))
-
-(setq message-signature t
-      message-signature-file "~/.signature")
-;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
-
-(add-hook 'message-mode-hook 'turn-on-orgstruct++)
-(add-hook 'message-mode-hook 'turn-on-orgtbl)
 
 ;;; spam
 ;;; --------------------------------------------------
