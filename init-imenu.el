@@ -52,5 +52,15 @@ Symbols matching the text at point are put first in the completion list."
 
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
 
+;;; mail mode
+(setq message-imenu-generic-expression
+      '(("Subject"  "^\\(Subject:\\).*" 1)
+        ("Cc"     "^\\(C[Cc]:\\).*" 1)
+        ("To"     "^\\(To:\\).*" 1)
+        ("From"  "^\\(From:\\).*" 1)))
+
+(add-hook 'message-mode-hook
+          (lambda ()
+            (setq imenu-generic-expression message-imenu-generic-expression)))
 
 ;;; init-imenu.el ends here
