@@ -50,6 +50,7 @@
          smex
          dired-plus
          anything
+         ace-jump-mode
 
 ;;;; help typing
          yasnippet
