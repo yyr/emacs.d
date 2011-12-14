@@ -5,11 +5,14 @@
 (setq auto-insert-query nil)
 
 
-(setq auto-insert-alist '(("\\.sh$" . ["insert.sh" alexott/auto-update-defaults])
-                          ("\\.el$" . ["insert.el" alexott/auto-update-defaults])
-                          ("\\.pl$" . ["insert.pl" alexott/auto-update-defaults])
-                          ("\\.ncl$" . ["insert.ncl" alexott/auto-update-defaults])
-                          ))
+(setq auto-insert-alist
+      '(("\\.sh$"  . ["insert . sh" alexott/auto-update-defaults])
+        ("\\.el$"  . ["insert.el" alexott/auto-update-defaults])
+        ("\\.pl$"  . ["insert.pl" alexott/auto-update-defaults])
+        ("\\.ncl$" . ["insert.ncl" alexott/auto-update-defaults])
+        ("\\.py$"  . ["insert.py" alexott/auto-update-defaults])
+        ("\\.py3$" . ["insert.py3" alexott/auto-update-defaults])
+        ))
 
 
 (defun alexott/auto-replace-header-name ()
@@ -63,8 +66,7 @@
 
 (defun alexott/auto-update-header-file ()
   (alexott/auto-replace-header-name)
-  (alexott/auto-replace-file-name)
-  )
+  (alexott/auto-replace-file-name))
 
 (defun alexott/auto-update-c-source-file ()
   (save-excursion
@@ -79,5 +81,4 @@
 (defun alexott/auto-update-defaults ()
   (alexott/auto-replace-file-name)
   (alexott/auto-replace-file-name-no-ext)
-  (alexott/auto-replace-date-time)
-  )
+  (alexott/auto-replace-date-time))

@@ -72,6 +72,7 @@
   (load "init-dictem"))
 
 ;;; help navigation
+(load "init-navigation")
 (load "init-bookmarks")
 (load "init-imenu")
 (load "init-buffers")

@@ -12,8 +12,6 @@
              "~/.emacs.d/el-get/ncl/dict")
 
 (setq auto-mode-alist (cons '("\.ncl$" . ncl-mode) auto-mode-alist))
-(require 'ncl-doc)
-
 (setq ncl-startup-message nil)
 
 ;;; (add-hook 'ncl-mode-hook 'ncl-doc)
@@ -21,6 +19,10 @@
 ;;; imenu support for ncl-mode
 (add-hook 'ncl-mode-hook
           (lambda ()
+            (require 'ncl-doc)
             (ncl-doc-minor-mode 1)))
+
+(setq ncl-doc-url-base "http://www.ncl.ucar.edu")
+;(setq ncl-doc-url-base (directory-file-name "file:///home/yagnesh/docs/ncl"))
 
 ;;; init-ncl.el ends here
