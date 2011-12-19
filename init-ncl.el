@@ -11,6 +11,10 @@
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/el-get/ncl/dict")
 
+;;; append to the last
+(setq yas/snippet-dirs
+      (append yas/snippet-dirs '("~/.emacs.d/el-get/ncl/snippets/")))
+
 (setq auto-mode-alist (cons '("\.ncl$" . ncl-mode) auto-mode-alist))
 (setq ncl-startup-message nil)
 
