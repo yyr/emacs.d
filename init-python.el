@@ -20,8 +20,8 @@
 (require 'python-mode)
 
 ;;; ipython
-(setq ipython-command "ipython3")
-(require 'ipython)
+;(setq ipython-command "ipython3")
+;(require 'ipython)
 
 ;;; pymacs
 (require 'pymacs)

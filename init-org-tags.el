@@ -31,6 +31,3 @@
 
 ;; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
-
-;; Use IDO for target completion
-(setq org-completion-use-ido t)

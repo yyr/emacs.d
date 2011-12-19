@@ -22,6 +22,8 @@
 
 ;;; el-get-is-lazy
 (setq el-get-is-lazy t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 
 ;; compile at init if any source is not byte compiled
 ;; (setq el-get-byte-compile-at-init 't)
@@ -111,7 +113,7 @@
            dictem
            edit-server
            bbdb
-                    epresent
+           ;; epresent
 )
          my-packages
          )))
