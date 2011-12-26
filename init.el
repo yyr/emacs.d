@@ -91,13 +91,16 @@
 (load "init-smex")
 
 ;;; languages
+(load "init-lispy")
+(load "init-lisp")
+(load "init-common-lisp")
+(load "init-scheme")
+
 (load "init-perl")
 (load "init-fortran")
 (load "init-sh")
-(load "init-lisp")
 (load "init-html")
 (load "init-yaml")
-(load "init-common-lisp")
 (load "init-python")
 
 ;;; subject
