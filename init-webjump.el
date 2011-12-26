@@ -14,6 +14,6 @@
                 ("huisa"   . "huisa.net")
                 )
               webjump-sample-sites))
-(global-set-key "\C-cj" 'webjump)
+;(global-set-key "\C-cj" 'webjump)
 
 ;;; init-webjump.el ends here

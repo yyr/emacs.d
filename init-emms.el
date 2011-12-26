@@ -23,9 +23,8 @@
 
 (global-set-key (kbd "<f7> s") 'emms-play-directory-tree)  ;s stands for start
 (global-set-key (kbd "<f7> t") 'emms-toggle-repeat-playlist)
-(global-set-key (kbd "<f7> o") '(lambda ()
-                                  (interactive)
-                                  (switch-to-buffer "*Music*")))
+(global-set-key (kbd "<f7> o") 'emms)
+
 (global-set-key (kbd "<f7> P") 'emms-pause)
 (global-set-key (kbd "<f7> a") 'emms-add-playlist-directory)
 (global-set-key (kbd "<f7> A") 'emms-add-playlist-directory-tree)
