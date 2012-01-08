@@ -4,6 +4,9 @@
 ;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
-(add-hook 'sass-mode-hook 'ac-css-mode-setup)
+(add-hook
+ 'sass-mode-hook 'ac-css-mode-setup)
+
+(setq scss-compile-at-save nil)
 
 ;;; init-sass-mode.el ends here
