@@ -3,10 +3,15 @@
 # key: blog
 # --
 #+TITLE: $1
-#+KEYWORDS: ${2:tags}
-#+LAYOUT:  ${3:layout please}
-#+PUBLISHED: False
-#+CATEGORY: ${4}
-#+EXCERPT: ${5}
+#+DATE: `(format-time-string "%Y-%m-%d" (current-time))`
+#+CATEGORY: $2
+#+KEYWORDS: ${3:tags}
+#+LAYOUT: ${4:$$(yas/choose-value '("default" "page" "post"))}
+#+PUBLISHED: true
+#+COMMENTS: true
+#+SUMMARY:
 
 $0
+
+
+#+HTML: <!-- more -->
