@@ -34,9 +34,9 @@
 (setq el-get-sources
       '(
 ;;;; help typing
-        (:name autopair
+        (:name org2jekyll
                :type git
-               :url "git://github.com/m2ym/autopair-el.git")))
+               :url "http://github.com/yyr/org2jekyll.git")))
 
 ;;; ---------------------------------------------------------------------------
 ;; COMMON packages all the systems I have
@@ -61,6 +61,7 @@
          ac-octave
          highlight-parentheses
          auto-complete
+         autopair
 
 ;;;; Cosmetics
          diminish
@@ -82,7 +83,7 @@
          python-mode
          pylookup
          pymacs
-         ;;         ropemacs
+         ropemacs
          yaml-mode
          ipython
 
@@ -115,7 +116,7 @@
            edit-server
            bbdb
            ;; epresent
-)
+           )
          my-packages
          )))
 
