@@ -73,6 +73,9 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (define-key global-map "\C-x\C-r" 'rgrep)
+(define-key global-map (kbd "C-|") (lambda ()
+                                     (interactive)
+                                     (just-one-space -1)))
 
 ;;; unset C-z first
 (global-unset-key "\C-z")
