@@ -107,4 +107,7 @@
           'executable-make-buffer-file-executable-if-script-p)
 
 
+;;; search
+(setq search-whitespace-regexp "[ \t\r\n]+")
+
 ;;; init-general.el ends here
