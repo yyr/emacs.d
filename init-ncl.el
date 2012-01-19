@@ -29,4 +29,12 @@
 (setq ncl-doc-url-base "http://www.ncl.ucar.edu")
 ;(setq ncl-doc-url-base (directory-file-name "file:///home/yagnesh/docs/ncl"))
 
+
+(defun ncl-del-comment-indentation ()
+  "remove line beginning comment indentation"
+  (interactive "r")
+  (save-excursion
+    (goto-char (point-min))
+    (replace-regexp "^[ \t]*;*" ";")))
+
 ;;; init-ncl.el ends here
