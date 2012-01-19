@@ -129,6 +129,39 @@ pIf performed over a topic line, toggle folding the topic."
 
 (setq gnus-article-update-date-headers nil)
 
+;;; Philipp Haselwarter from ding mailing list
+(defcustom my-citation-look '("" "│" "")
+  "(prefix citation-string suffix)" :group 'my)
+
+(defun my-citation-style nil
+  (let ((inhibit-read-only t)
+        (alist gnus-cite-face-list)
+        cflist face gnus-cite-prefix-alist)
+    (save-excursion
+      (gnus-narrow-to-body)
+      (gnus-cite-parse)
+      (dolist (prefix gnus-cite-prefix-alist) ;(reverse
+        (setq cflist (append cflist (list (car alist)))
+              alist (cdr alist))
+        (let* ((current-cflist cflist)
+               (depth (length cflist))
+               (len (length (car prefix)))
+               (look
+                (concat
+                 (car my-citation-look)
+                 (mapconcat
+                  (lambda (s) (propertize s 'face (pop current-cflist)))
+                  (make-vector depth (cadr my-citation-look)) "")
+                 (caddr my-citation-look))))
+          (dolist (line (cdr prefix))
+            (goto-char (point-min)) (forward-line (1- line))
+            (put-text-property (point) (+ (point) len) 'display look)))))
+    (widen)))
+
+(add-hook 'gnus-article-prepare-hook
+          'my-citation-style)
+
+
 ;;; spam
 ;;; --------------------------------------------------
 (spam-initialize)
