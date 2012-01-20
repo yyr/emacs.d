@@ -1,6 +1,5 @@
 ;;; init-misc.el
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 ;; License: GPL v3 or later
 
 ;;----------------------------------------------------------------------------

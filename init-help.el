@@ -2,7 +2,6 @@
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;    File: init-help.el
-;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 ;; Created: Friday, September 16 2011
 ;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 

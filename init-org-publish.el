@@ -1,7 +1,6 @@
 ;;; init-org-publish.el
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
 (setq org-publish-yag "~/git/sites/")

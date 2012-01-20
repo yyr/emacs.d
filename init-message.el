@@ -1,7 +1,6 @@
 ;;; init-message.el
 ;;
 ;;    File: init-message.el
-;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
 ;; Created: Wednesday, December  7 2011
 
 ;;; Description:

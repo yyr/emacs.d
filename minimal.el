@@ -7,10 +7,6 @@
 ;; emacs -Q -l ~/.emacs.d/minimal.el
 
 (setq user-full-name "Yagnesh Raghava Yakkala")
-(setq user-mail-address "yagnesh@live.com")
-
 (ido-mode)
-
-
 
 ;;; minimal.el ends here

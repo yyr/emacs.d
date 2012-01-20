@@ -1,7 +1,6 @@
 ;;; init-ncl.el
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
 ;;; http://www.ncl.ucar.edu/Applications/editor.shtml

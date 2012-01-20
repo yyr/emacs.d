@@ -2,7 +2,6 @@
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;;    File: init-byte-code-cache.el
-;;  Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; Created: Thursday, May 26 2011
 ;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 

@@ -1,7 +1,6 @@
 ;;: init-git.el
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;; License: GPL v3 or later
 
 (eval-after-load "vc-mode"

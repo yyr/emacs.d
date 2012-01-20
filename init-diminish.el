@@ -1,7 +1,6 @@
 ;;; init-diminish.el
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; Author: Yagnesh Raghava Yakkala <yagnesh@live.com>
 ;;
 
 (autoload 'diminish "diminish" nil t)
