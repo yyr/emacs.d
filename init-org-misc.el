@@ -20,4 +20,7 @@ If the region is active, insert it."
     (if contents (insert contents))))
 
 
+;;; org2jekyll
+(setq org2jekyll-basedir "~/blog")
+
 ;;; init-org-misc.el ends here

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: post-headers
+# key: post
+# --
+#+TITLE: $1
+#+DATE: `(format-time-string "%Y-%m-%d" (current-time))`
+#+CATEGORY: $2
+#+KEYWORDS: ${3:tags}
+#+LAYOUT: post
+#+PUBLISHED: true
+#+COMMENTS: true
+#+SUMMARY:
+#+OPTIONS: ^:nil
+
+$0
+
+#+HTML: <!-- more -->
