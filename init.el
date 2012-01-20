@@ -107,7 +107,6 @@
 (when (executable-find "latex")         ; auctex is no use  without latex
   (load "init-auctex")
   (load "init-bib"))
-;; (load "init-latex")
 (load "init-ncl")
 (load "init-grads")
 (load "init-gnuplot")
