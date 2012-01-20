@@ -9,30 +9,19 @@
 ;;; Description:
 
 (setq load-path
-      (append (list nil
-                    "~/.emacs.d/el-get/python-mode"
-                    "~/.emacs.d/el-get/pymacs"
-                    "~/.emacs.d/el-get/ipython"
-                    )
+      (append (list "~/.emacs.d/el-get/python-mode"
+                    "~/.emacs.d/el-get/pymacs")
               load-path))
 
-;;; load python-mode.el for python3
+;;; --------------------------------------------------------------------
+;; PYTHON-MODE.EL
 (require 'python-mode)
 
-;;; ipython
-;(setq ipython-command "ipython3")
-;(require 'ipython)
-
-;;; pymacs
-(require 'pymacs)
-
-(add-hook 'python-mode-hook
-          (lambda ()
-            (eldoc-mode 1)
-            ))
 
 
-;;; Pymacs
+;;; --------------------------------------------------------------------
+;; PYLOOKUP
+
 (setq pylookup-dir "~/.emacs.d/el-get/pylookup")
 (add-to-list 'load-path pylookup-dir)
 
@@ -40,8 +29,10 @@
 (require 'pylookup)
 
 ;; set executable file and db file
-(setq pylookup-program (concat pylookup-dir "/pylookup.py"))
-(setq pylookup-db-file (concat pylookup-dir "/pylookup.db"))
+(setq pylookup-program
+      (concat pylookup-dir "/pylookup.py"))
+(setq pylookup-db-file
+      (concat pylookup-dir "/pylookup.db"))
 
 ;; to speedup, just load it on demand
 (autoload 'pylookup-lookup "pylookup"
@@ -49,6 +40,5 @@
 
 (autoload 'pylookup-update "pylookup"
   "Run pylookup-update and create the database at `pylookup-db-file'." t)
-
 
 ;;; init-python.el ends here

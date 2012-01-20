@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 #    File: (>>FILE<<)

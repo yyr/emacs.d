@@ -82,10 +82,7 @@
          ;; python
          python-mode
          pylookup
-         pymacs
-         ropemacs
          yaml-mode
-         ipython
 
 ;;;; Sub
          ncl
