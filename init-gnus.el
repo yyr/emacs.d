@@ -114,6 +114,8 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;;; article mode
 ;;; --------------------------------------------------------
+(require 'gnus-cite)
+
 (add-hook 'gnus-article-display-hook
           '(lambda ()
              (gnus-article-de-quoted-unreadable)
@@ -123,7 +125,8 @@ pIf performed over a topic line, toggle folding the topic."
              (gnus-article-hide-pgp)
              (gnus-article-highlight)
              (gnus-article-highlight-citation)
-             (gnus-article-date-local)              ; will actually convert timestamp from other timezones to yours
+             ;; will actually convert timestamp from other timezones to yours
+             (gnus-article-date-local)
              ))
 
 (setq gnus-article-update-date-headers nil)
@@ -160,6 +163,7 @@ pIf performed over a topic line, toggle folding the topic."
 (add-hook 'gnus-article-prepare-hook
           'my-citation-style)
 
+(add-hook 'gnus-article-prepare-hook 'my-citation-style)
 
 ;;; spam
 ;;; --------------------------------------------------

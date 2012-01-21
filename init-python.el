@@ -7,16 +7,12 @@
 
 ;;; Description:
 
-(setq load-path
-      (append (list "~/.emacs.d/el-get/python-mode"
-                    "~/.emacs.d/el-get/pymacs")
-              load-path))
+(add-to-list 'load-path  "~/.emacs.d/el-get/python-mode")
 
 ;;; --------------------------------------------------------------------
 ;; PYTHON-MODE.EL
+(setq py-install-directory  "~/.emacs.d/el-get/python-mode")
 (require 'python-mode)
-
-
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
