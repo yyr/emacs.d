@@ -35,23 +35,6 @@
 (setq completion-ignored-extensions
       '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod"))
 
-;;; delete nasty hidden white spaces at the end of lines
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
-
-;;; yank with indent
-(defadvice yank (after indent-region activate)
-  "To make yank content indent automatically."
-  (if (member major-mode '(emacs-lisp-mode
-                           scheme-mode
-                           lisp-mode
-                           lisp-interaction-mode
-                           c-mode
-                           c++-mode
-                           objc-mode
-                           latex-mode
-                           plain-tex-mode))
-      (indent-region (region-beginning) (region-end) nil)))
-
 ;; Always end a file with a newline
 (setq require-final-newline t)
 
@@ -73,40 +56,39 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
-;; highlight-sloppy-grammar
-;; ------------------------
-;; This uses the font lock mechanism to highlight some potential
-;; grammatical trouble spots.  It checks against a small list of common
-;; problems such as duplicate words and instances of the passive voice.
-;; It's not fool-proof but it does help when taking a pass over a paper.
-;;
-(defun highlight-sloppy-grammar ()
-  "Highlight areas potentially containing sloppy grammar."
-  (interactive)
-  (make-face 'grammar-warning-face "Face to display grammar warnings in.")
-  (face-spec-set 'grammar-warning-face
-                 '((t (:bold t :foreground "orange" :underline t))))
-  (font-lock-add-keywords
-   nil
-   '(("\\<\\(?:were\\|was\\|is\\|are\\|has been\\|be\\)\\(?:[ \t\r\n]+[a-zA-Z]+\\)?[ \t\r\n]+[a-zA-Z]+ed\\>"
-      0 'grammar-warning-face t)        ; passive voice
-     ("\\<\\([a-zA-Z]+\\)[ \t\r\n]+\\1\\>" 0 'grammar-warning-face t)
-     ("[,-][ \t\r\n]+that\\>" 0 'grammar-warning-face t)
-     ("[a-zA-Z]+[ \t\r\n]+which\\>" 0 'grammar-warning-face t)
-     ("\\<[a-z]+\\(?:n't\\|d've\\)\\>" 0 'grammar-warning-face t)
-     ("\\<by[ \t\r\n]+[a-z]+ing\\>" 0 'grammar-warning-face t)
-     ("\\<which[ \t\r\n]+was\\>" 0 'grammar-warning-face t)
-     ("\\<the[ \t\r\n]+[a-zA-Z]+[ \t\r\n]+of[ \t\r\n]+the\\>" 0
-      'grammar-warning-face t)))
-  (font-lock-fontify-buffer))
-
-
 ;;; make executable if shebang is present
 (add-hook 'after-save-hook
           'executable-make-buffer-file-executable-if-script-p)
 
+;;;---------------------------------------------------------------------
+;;; change behavious of builtins
+
+(defadvice kill-line (around kill-region-if-active activate)
+  "kill region if active with C-k"
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    ad-do-it))
+
+(defadvice yank (after indent-region activate)
+  "To make yank content indent automatically."
+  (if (member major-mode '(emacs-lisp-mode
+                           scheme-mode
+                           lisp-mode
+                           lisp-interaction-mode
+                           c-mode
+                           c++-mode
+                           objc-mode
+                           latex-mode
+                           plain-tex-mode))
+      (indent-region (region-beginning) (region-end) nil)))
 
 ;;; search
 (setq search-whitespace-regexp "[ \t\r\n]+")
+
+;;; delete nasty hidden white spaces at the end of lines
+(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+
+;;; buttonize addresses
+(add-hook 'find-file-hooks 'goto-address-prog-mode)
 
 ;;; init-general.el ends here

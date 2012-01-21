@@ -16,6 +16,3 @@
 
 (display-time)                          ; Display the time of day
 ;; (pending-delete-mode t)                ; Typed text replaces selection
-
-;;; buttonize addresses
-(add-hook 'find-file-hooks 'goto-address-prog-mode)

@@ -57,7 +57,6 @@
 
 ;;; look
 (load "init-font")
-(load "init-color-theme")
 
 ;;; help typing
 (load "init-autopair")

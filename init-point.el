@@ -7,7 +7,6 @@
 
 ;;; Description:
 
-
 ;; point-stack
 ;; -----------
 ;; Alternative *simple* mechanism for recording points and buffers and

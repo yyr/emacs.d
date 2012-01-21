@@ -150,19 +150,7 @@ License: GPL v3 or later
 (global-set-key (kbd "M-RET") 'newline-force)
 (global-set-key [M-S-return] 'newline-force-close)
 
-(defun ca-with-comment (str)
-  (format "%s%s%s" comment-start str comment-end))
-
-(defun ca-all-asscs (asslist query)
-  "returns a list of all corresponding values (like rassoc)"
-  (cond
-   ((null asslist) nil)
-   (t
-    (if (equal (cdr (car asslist)) query)
-        (cons (car (car asslist)) (ca-all-asscs (cdr asslist) query))
-      (ca-all-asscs (cdr asslist) query)))))
-
-;;; ----
+;;; --------------------------------------------------------------------
 (defun shell-command-on-buffer-file ()
   "prompts for a command and executes that command on to the associated
  file of current buffer. if no buffer is associated gives an error"
@@ -171,6 +159,34 @@ License: GPL v3 or later
   (let* ((my-cmd (read-shell-command "Command to run: "))
          (cmd-to-run (concat my-cmd " " (buffer-file-name))))
     (shell-command cmd-to-run)))
+
+
+;; highlight-sloppy-grammar
+;; ------------------------
+;; This uses the font lock mechanism to highlight some potential
+;; grammatical trouble spots.  It checks against a small list of common
+;; problems such as duplicate words and instances of the passive voice.
+;; It's not fool-proof but it does help when taking a pass over a paper.
+;;
+(defun highlight-sloppy-grammar ()
+  "Highlight areas potentially containing sloppy grammar."
+  (interactive)
+  (make-face 'grammar-warning-face "Face to display grammar warnings in.")
+  (face-spec-set 'grammar-warning-face
+                 '((t (:bold t :foreground "orange" :underline t))))
+  (font-lock-add-keywords
+   nil
+   '(("\\<\\(?:were\\|was\\|is\\|are\\|has been\\|be\\)\\(?:[ \t\r\n]+[a-zA-Z]+\\)?[ \t\r\n]+[a-zA-Z]+ed\\>"
+      0 'grammar-warning-face t)        ; passive voice
+     ("\\<\\([a-zA-Z]+\\)[ \t\r\n]+\\1\\>" 0 'grammar-warning-face t)
+     ("[,-][ \t\r\n]+that\\>" 0 'grammar-warning-face t)
+     ("[a-zA-Z]+[ \t\r\n]+which\\>" 0 'grammar-warning-face t)
+     ("\\<[a-z]+\\(?:n't\\|d've\\)\\>" 0 'grammar-warning-face t)
+     ("\\<by[ \t\r\n]+[a-z]+ing\\>" 0 'grammar-warning-face t)
+     ("\\<which[ \t\r\n]+was\\>" 0 'grammar-warning-face t)
+     ("\\<the[ \t\r\n]+[a-zA-Z]+[ \t\r\n]+of[ \t\r\n]+the\\>" 0
+      'grammar-warning-face t)))
+  (font-lock-fontify-buffer))
 
 
 ;;; init-utils-el ends here
