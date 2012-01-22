@@ -41,16 +41,21 @@
                                         ;(load 'init-elpa)
 (load "init-el-get")
 
-;;; byte-compile-cache
-(when *byte-code-cache-enabled*
-  (load "init-byte-code-cache"))
-
 ;;; initial setup, keybindings
 (load "init-general")
 (load "init-ess-minors")
 (load "init-custom-key-set")
 (load "init-point")
 (load "init-time")
+
+;;; make friendly mini buffer
+(load "init-ido")
+(load "init-smex")
+
+;;; byte-compile-cache
+(when *byte-code-cache-enabled*
+  (load "init-byte-code-cache"))
+
 (load "init-diminish")
 (load "init-auto-save")
 ;; (load "init-linum")
@@ -75,7 +80,6 @@
 (load "init-imenu")
 (load "init-buffers")
 (load "init-recentf")
-(load "init-anything")
 
 ;;; window , frame
 (load "init-windows")
@@ -83,10 +87,6 @@
 
 ;;; File management
 (load "init-dired")
-
-;;; make friendly mini buffer
-(load "init-ido")
-(load "init-smex")
 
 ;;; languages
 (load "init-lispy")
@@ -171,6 +171,8 @@
 
 ;;; for tests
 (load "init-scratch")
+(load "init-anything")                  ; kind of loading everything
+
 ;; interactive customization
 ;;----------------------------------------------------------------------------
 (setq custom-file "~/.emacs.d/custom.el")
