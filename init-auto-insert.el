@@ -2,7 +2,7 @@
 (add-hook 'find-file-hooks 'auto-insert)
 (setq auto-insert-directory (concat (getenv "HOME") "/.emacs.d/insert/"))
 (setq auto-insert 'other)
-(setq auto-insert-query nil)
+(setq auto-insert-query t)
 
 
 (setq auto-insert-alist
