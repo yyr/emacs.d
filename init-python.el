@@ -36,4 +36,9 @@
 (autoload 'pylookup-update "pylookup"
   "Run pylookup-update and create the database at `pylookup-db-file'." t)
 
+(add-hook 'python-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
+            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)))
+
 ;;; init-python.el ends here
