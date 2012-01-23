@@ -50,6 +50,14 @@
 (add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
 
 
+;;; -----------------------------------------------------------------------
+(defadvice gnus-group-get-new-news (around gnus-timeout activate)
+  "Timeout for Gnus."
+  (with-timeout
+      (5 (message "Gnus timed out.") (debug))
+    ad-do-it))
+
+
 ;;; group mode
 ;;; --------------------------------------------------------
 (defun gnus-topic-select-group (&optional all)
