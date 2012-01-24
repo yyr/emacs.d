@@ -12,6 +12,12 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
+;;; for stupid programs
+(setenv "LC_COLLATE" "en_US.UTF-8")
+(setenv "LC_CTYPE" "en_US.UTF-8")
+(setenv "LC_MESSAGES" "en_US.UTF-8")
+(setenv "TERM" "xterm")
+
 (setq-default
  inhibit-startup-screen t               ; Skip the startup screens
  initial-scratch-message nil

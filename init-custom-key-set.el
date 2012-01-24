@@ -87,6 +87,3 @@
 (define-key global-map [(control tab)] 'bury-buffer)
 ;; I like XEmacs' M-g for goto-line, use it GNU too
 ;; (define-key global-map [(meta ?g)] 'goto-line)
-
-;;; for stupid programs
-(setenv "TERM" "xterm")
