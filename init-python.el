@@ -16,7 +16,7 @@
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq py-shell-name "ipython")))
+            (setq py-shell-name "ipython3")))
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP

@@ -17,6 +17,7 @@
 (setenv "LC_CTYPE" "en_US.UTF-8")
 (setenv "LC_MESSAGES" "en_US.UTF-8")
 (setenv "TERM" "xterm")
+(setenv "TMPDIR" "/tmp")
 
 (setq-default
  inhibit-startup-screen t               ; Skip the startup screens
