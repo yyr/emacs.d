@@ -14,6 +14,10 @@
 (setq py-install-directory  "~/.emacs.d/el-get/python-mode")
 (require 'python-mode)
 
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq py-shell-name "ipython")))
+
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
 
