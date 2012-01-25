@@ -10,8 +10,8 @@
 (global-set-key (kbd "C-c s") 'ispell-word)
 
 ;;; scrollers
-;; (global-set-key "\M-n" '"\C-u1\C-v")
-;; (global-set-key "\M-p" '"\C-u1\M-v")
+;; (global-set-key "\M-n" "\C-u1\C-v")
+;; (global-set-key "\M-p" "\C-u1\M-v")
 
 ;; emacs newlines and indents when enter key
 (global-set-key (kbd "C-m") 'newline-and-indent)
