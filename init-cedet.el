@@ -8,13 +8,14 @@
 ;;; Description:
 ;;
 
-(when (file-directory-p "~/.emacs.d/el-get/cedet")
-  (progn
-    (add-to-list 'load-path  "~/.emacs.d/el-get/cedet")
-    (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
-    (semantic-mode 1)
-    (global-ede-mode 1)
-    (require 'semantic/sb)
-    (semantic-mode 1)))
+(unless (featurep 'cedet)
+  (when (file-directory-p "~/.emacs.d/el-get/cedet")
+    (progn
+      (add-to-list 'load-path  "~/.emacs.d/el-get/cedet")
+      (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
+      (semantic-mode 1)
+      (global-ede-mode 1)
+      (require 'semantic/sb)
+      (semantic-mode 1))))
 
 ;;; init-cedet.el ends here
