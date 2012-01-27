@@ -13,6 +13,7 @@
 ;; PYTHON-MODE.EL
 (setq py-install-directory  "~/.emacs.d/el-get/python-mode")
 (require 'python-mode)
+(add-to-list 'auto-mode-alist '("\\.\\(py\\|pyc\\)$" . python-mode))
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -20,7 +21,6 @@
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
-
 (setq pylookup-dir "~/.emacs.d/el-get/pylookup")
 (add-to-list 'load-path pylookup-dir)
 
