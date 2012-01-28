@@ -23,7 +23,10 @@
 (add-hook 'ncl-mode-hook
           (lambda ()
             (require 'ncl-doc)
-            (ncl-doc-minor-mode 1)))
+            (ncl-doc-minor-mode 1)
+            (make-local-variable browse-url-browser-function)
+            (setq browse-url-browser-function 'w3m)
+            ))
 
 (setq ncl-doc-url-base "http://www.ncl.ucar.edu")
 ;(setq ncl-doc-url-base (directory-file-name "file:///home/yagnesh/docs/ncl"))

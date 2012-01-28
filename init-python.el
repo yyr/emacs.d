@@ -17,7 +17,11 @@
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (setq py-shell-name "ipython3")))
+            (progn
+              (setq py-shell-name "ipython3")
+              (make-local-variable browse-url-browser-function)
+              (setq browse-url-browser-function 'w3m))
+            ))
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
