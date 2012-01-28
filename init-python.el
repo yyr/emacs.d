@@ -13,7 +13,7 @@
 ;; PYTHON-MODE.EL
 (setq py-install-directory  "~/.emacs.d/el-get/python-mode")
 (require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.\\(py\\|pyc\\)$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\|pyc\\)$" . python-mode))
 
 (add-hook 'python-mode-hook
           (lambda ()
