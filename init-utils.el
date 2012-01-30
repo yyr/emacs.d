@@ -188,5 +188,29 @@ License: GPL v3 or later
       'grammar-warning-face t)))
   (font-lock-fontify-buffer))
 
+;;; Eric Schulte posted this in emacs-devel list
+(defun cat-command ()
+  "A command for cats."
+  (interactive)
+  (require 'animate)
+  (let ((mouse "
+           ___00
+        ~~/____'>
+          \"  \"")
+        (h-pos (floor (/ (window-height) 2)))
+        (contents (buffer-string))
+        (mouse-buffer (generate-new-buffer "*mouse*")))
+    (save-excursion
+      (switch-to-buffer mouse-buffer)
+      (insert contents)
+      (setq truncate-lines t)
+      (animate-string mouse h-pos 0)
+      (dotimes (_ (window-width))
+        (sit-for 0.02)
+        (dotimes (n 3)
+          (goto-line (+ h-pos n 2))
+          (move-to-column 0)
+          (insert " "))))
+    (kill-buffer mouse-buffer)))
 
 ;;; init-utils-el ends here
