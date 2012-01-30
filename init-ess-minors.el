@@ -4,7 +4,7 @@
 
 ;; put off menu bar scroll bar
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 
 ;; minor modes
 (tool-bar-mode -1)
