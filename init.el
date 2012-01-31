@@ -47,7 +47,7 @@
 (load "init-custom-key-set")
 (load "init-point")
 (load "init-time")
-(load "init-untiles")
+(load "init-utils")
 
 ;; (my-debugger-on 'org)
 
