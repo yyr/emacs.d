@@ -7,12 +7,15 @@
 
 ;;; Description:
 
-(add-to-list 'load-path  "~/.emacs.d/el-get/python-mode")
+(setq load-path (cons
+                 (expand-file-name "~/.emacs.d/el-get/python-mode")
+                 load-path))
 
 ;;; --------------------------------------------------------------------
 ;; PYTHON-MODE.EL
 (setq py-install-directory  "~/.emacs.d/el-get/python-mode")
 (require 'python-mode)
+
 (add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\|pyc\\)$" . python-mode))
 
 (add-hook 'python-mode-hook

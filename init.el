@@ -47,6 +47,9 @@
 (load "init-custom-key-set")
 (load "init-point")
 (load "init-time")
+(load "init-untiles")
+
+;; (my-debugger-on 'org)
 
 ;;; make friendly mini buffer
 (load "init-ido")
@@ -152,8 +155,7 @@
 (load "init-sass-mode")
 (load "init-erc")
 
-;;; utilities & misc
-(load "init-utils")
+;;;  misc
 (load "init-exec-path")
 (load "init-misc")
 (load "init-battery")

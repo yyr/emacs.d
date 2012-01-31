@@ -2,6 +2,16 @@
 ;; License: GPL v3 or later
 
 ;;----------------------------------------------------------------------------
+;; stupid debugger assistant
+(defmacro my-debugger-on (&optional pkg)
+  "Find out who is loading a PKG if the argument is available or
+mark a check point"
+  (setq debug-on-error t)
+  (if pkg
+      (eval-after-load pkg `(error ,pkg " is just loaded"))
+    (message "%s" "I am here")))
+
+;;----------------------------------------------------------------------------
 ;; Find the directory containing a given library
 ;;----------------------------------------------------------------------------
 (require 'find-func)
