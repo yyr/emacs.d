@@ -13,11 +13,15 @@
 (setq default-terminal-coding-system 'utf-8-unix)
 
 ;;; for stupid programs
+(setenv "LANG" "C")
 (setenv "LC_COLLATE" "en_US.UTF-8")
 (setenv "LC_CTYPE" "en_US.UTF-8")
 (setenv "LC_MESSAGES" "en_US.UTF-8")
 (setenv "TERM" "xterm")
 (setenv "TMPDIR" "/tmp")
+
+;;; increase message log
+(setq message-log-max 5000)
 
 (setq-default
  inhibit-startup-screen t               ; Skip the startup screens
