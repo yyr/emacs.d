@@ -8,7 +8,7 @@
 
 (require 'nnimap)
 (require 'starttls)
-(require 'registry)
+;;(require 'registry)
 
 ;;; load my bbdb settings
 (load "init-bbdb")

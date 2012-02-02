@@ -12,33 +12,43 @@
   (when (file-directory-p "~/.emacs.d/el-get/cedet")
     (progn
       (add-to-list 'load-path  "~/.emacs.d/el-get/cedet")
-      (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el"))))
 
-(setq semantic-default-submodes
-      (append semantic-default-submodes
-              '(
-                ;; cache(?)
-                global-semanticdb-minor-mode
+      ;; trunk setup
+      (if (file-regular-p "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
+          (progn
+            (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
+            (global-ede-mode 1)
+            (semantic-load-enable-minimum-features)
+            (semantic-load-enable-code-helpers)))
 
-                ;; code helpers
-                global-semantic-idle-scheduler-mode
-                global-semantic-idle-summary-mode
-                global-semantic-idle-completions-mode
-                global-semantic-highlight-func-mode
-                global-semantic-decoration-mode
 
-                global-semantic-stickyfunc-mode
-                global-semantic-highlight-edits-mode
-                global-cedet-m3-minor-mode
-                global-semantic-idle-local-symbol-highlight-mode
+      ;; newtrunk setup
+      (if (file-regular-p  "~/.emacs.d/el-get/cedet//common/cedet.el")
+          (progn
+            (load-file "~/.emacs.d/el-get/cedet/common/cedet.el")
+            (setq semantic-default-submodes
+                  (append semantic-default-submodes
+                          '(
+                            ;; cache(?)
+                            global-semanticdb-minor-mode
 
-                ;; debugging semantic itself
-                global-semantic-show-parser-state-mode
-                global-semantic-show-unmatched-syntax-mode
-                global-semantic-highlight-edits-mode)))
+                            ;; code helpers
+                            global-semantic-idle-scheduler-mode
+                            global-semantic-idle-summary-mode
+                            global-semantic-idle-completions-mode
+                            global-semantic-highlight-func-mode
+                            global-semantic-decoration-mode
 
-(global-ede-mode 1)
-(semantic-mode 1)
+                            global-semantic-stickyfunc-mode
+                            global-semantic-highlight-edits-mode
+                            global-cedet-m3-minor-mode
+                            global-semantic-idle-local-symbol-highlight-mode
 
+                            ;; debugging semantic itself
+                            global-semantic-show-parser-state-mode
+                            global-semantic-show-unmatched-syntax-mode
+                            global-semantic-highlight-edits-mode)))
+            (global-ede-mode 1)
+            )))))
 
 ;;; init-cedet.el ends here
