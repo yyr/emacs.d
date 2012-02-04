@@ -172,7 +172,6 @@
   (load "init-emms"))
 
 ;;; for tests
-(load "init-scratch")
 (load "init-anything")                  ; kind of loading everything
 
 ;; interactive customization
