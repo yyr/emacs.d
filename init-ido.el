@@ -1,9 +1,9 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; License: GPL v3 or later
 
-;; -----------------------------------------------------------------------------
+;;; -----------------------------------------------------------------------------
 ;; IDO-minor-mode
-;; -----------------------------------------------------------------------------
+;;; -----------------------------------------------------------------------------
 
 (ido-mode t)  ; use 'buffer rather than t to use only buffer switching
 (ido-everywhere t)
@@ -20,16 +20,6 @@
 
 (add-hook 'ido-setup-hook 'ido-my-keys)
 
-
-;; Allow the same buffer to be open in different frames
-(setq ido-default-buffer-method 'selected-window)
-
-(defun steve-ido-choose-from-recentf ()
-  "Use ido to select a recently opened file from the `recentf-list'"
-  (interactive)
-  (find-file (ido-completing-read "Open file: " recentf-list nil t)))
-(global-set-key [(meta f11)] 'steve-ido-choose-from-recentf)
-
 ;; dont ask me again, for non existent file
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq ido-create-new-buffer 'always)
@@ -40,5 +30,20 @@
   (lambda()
     (interactive)
     (ido-initiate-auto-merge (current-buffer))))
+
+;; Allow the same buffer to be open in different frames
+(setq ido-default-buffer-method 'selected-window)
+
+;;; -----------------------------------------------------------------------------
+;; ido-ubiquitous
+(ido-ubiquitous)
+
+;;; -----------------------------------------------------------------------------
+;; recentf
+(defun steve-ido-choose-from-recentf ()
+  "Use ido to select a recently opened file from the `recentf-list'"
+  (interactive)
+  (find-file (ido-completing-read "Open file: " recentf-list nil t)))
+(global-set-key [(meta f11)] 'steve-ido-choose-from-recentf)
 
 ;;; init-ido.el ends here
