@@ -12,28 +12,35 @@
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
+(setq
+ TeX-electric-escape t
+ TeX-parse-self t
+ TeX-auto-save t
+ TeX-insert-braces nil
+ TeX-display-help t
+ TeX-master nil
+ LaTeX-version "2e"
+ LaTeX-indent-environment-check t
+ )
 
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(setq reftex-plug-into-AUCTeX t)
-
-
 (add-hook 'LaTeX-mode-hook
           (lambda()
             (define-key LaTeX-mode-map (kbd "<M-.>") 'TeX-complete-symbol)
             (TeX-PDF-mode t)
-            (setq TeX-save-query  nil )
+            (setq TeX-save-query nil)
             (setq TeX-master (guess-TeX-master (buffer-file-name)))
             (setq TeX-show-compilation t) ; show the compilation buffer
-            ))
+            (imenu-add-menubar-index)
+            (outline-minor-mode)))
 
+;;; add additional environments
 (add-hook 'LaTeX-mode-hook
           (lambda ()
-            (imenu-add-menubar-index)
-            (turn-on-reftex)))
+            (LaTeX-add-environments
+             '("algorithm" LaTeX-env-label)
+             '("example" LaTeX-env-label)
+             '("proposition" LaTeX-env-label))))
 
 ;; from emacs wiki
 (defun guess-TeX-master (filename)
@@ -62,7 +69,7 @@
          "TeX master document: %s" (file-name-nondirectory candidate)))
     candidate))
 
-
+;;; --------------------------------------------------------
 ;;; auto completion support
 (defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
   (setq ac-sources
@@ -75,6 +82,43 @@
           (lambda ()
             (require 'ac-math)
             (ac-latex-mode-setup)
-            (outline-minor-mode)))
+            ))
+
+(setq outline-minor-mode-prefix "\C-c\C-o")
+
+
+;;; --------------------------------------------------------
+;;; Reftex
+(setq LaTeX-mode-hook
+      '(lambda ()
+         (turn-on-reftex)))
+
+(setq reftex-plug-into-AUCTeX t
+      reftex-guess-label-type t
+      reftex-plug-into-AUCTeX t
+      reftex-bibfile-ignore-list nil
+      reftex-toc-follow-mode nil
+      reftex-extra-bindings t
+      reftex-enable-partial-scans t
+      reftex-save-parse-info t
+      reftex-use-multiple-selection-buffers t
+      reftex-use-fonts t
+      ;; reftex-cite-format 'natbib
+      )
+
+;;; not sure how this works
+(add-hook 'reftex-mode-hook
+          (function
+           (lambda ()
+             (setq reftex-section-regexp   ;; standard setting ...
+                   (concat
+                    "\\(\\`\\|[\n
+]\\)[   ]*\\\\\\"
+                    "(part\\|chapter\\|"
+                    "section\\|subsection\\|subsubsection\\|"
+                    "paragraph\\|subparagraph\\|subsubparagraph\\|"
+                    "sfoil\\|foil"         ;; private addition
+                    "\\)"
+                    "\\*?\\(\\[[^]]*\\]\\)?{")))))
 
 ;;; init-auctex.el ends here
