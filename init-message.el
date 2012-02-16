@@ -33,6 +33,23 @@
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
 
+(add-hook 'message-mode-hook
+          (lambda ()
+            (setq fill-column 78)
+            (turn-on-auto-fill)))
+
+(setq gnus-confirm-mail-reply-to-news t
+      message-kill-buffer-on-exit t
+      message-elide-ellipsis "\n[snipped %l lines]\n\n")
+
+;;; --------------------------------------------------------
+;; sent copy
+(setq gnus-message-archive-group
+      '((if (message-news-p)
+            "nnml:mail.sent.news"
+          "nnml:mail.sent.mail")))
+
+
 ;;; footnotes
 (autoload 'footnote-mode "footnote" nil t)
 (add-hook 'message-mode-hook 'footnote-mode)

@@ -87,7 +87,6 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; --------------------------------------------------------
 
 (setq-default
- ;; gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
  ;; gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
  gnus-user-date-format-alist '((t . "%m-%d %H:%M"))
 
@@ -104,6 +103,8 @@ pIf performed over a topic line, toggle folding the topic."
  gnus-sum-thread-tree-single-leaf     "╰► "
  )
 
+;; (setq gnus-summary-line-format ":%U%R %B %s %-60=| %5L |%-10,8f |%&user-date; \n")
+;; gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
 (setq gnus-summary-line-format
       (concat
        "%0{%U%R%z%}"

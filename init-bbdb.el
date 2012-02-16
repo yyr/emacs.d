@@ -3,8 +3,6 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;;
 
-;; (require 'bbdb)
-(require 'bbdb-autoloads)
 (require 'bbdb)
 
 (setq bbdb-file "~/git/org/.bbdb")
