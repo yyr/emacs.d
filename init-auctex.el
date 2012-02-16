@@ -74,7 +74,7 @@
 (add-hook 'LaTeX-mode-hook
           (lambda ()
             (require 'ac-math)
-            (ac-latex-mode-setup)))
-
+            (ac-latex-mode-setup)
+            (outline-minor-mode)))
 
 ;;; init-auctex.el ends here
