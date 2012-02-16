@@ -50,10 +50,13 @@
 ;;;; general
 
 ;;;; navigation
-         smex
          dired-plus
          anything
          ace-jump-mode
+
+;;; mini buffer
+         smex
+         ido-ubiquitous
 
 ;;;; help typing
          yasnippet
