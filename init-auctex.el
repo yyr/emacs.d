@@ -7,8 +7,7 @@
 ;; You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-
-(add-to-list 'load-path "~/.emacs.d/el-get/auctex/preview/")
+(add-to-list 'load-path "~/.emacs.d/el-get/auctex/preview")
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
@@ -89,9 +88,9 @@
 
 ;;; --------------------------------------------------------
 ;;; Reftex
-(setq LaTeX-mode-hook
-      '(lambda ()
-         (turn-on-reftex)))
+(add-hook 'LaTeX-mode-hook
+          '(lambda ()
+             (turn-on-reftex)))
 
 (setq reftex-plug-into-AUCTeX t
       reftex-guess-label-type t
