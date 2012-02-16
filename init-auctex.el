@@ -28,7 +28,7 @@
             (define-key LaTeX-mode-map (kbd "<M-.>") 'TeX-complete-symbol)
             (TeX-PDF-mode t)
             (setq TeX-save-query nil)
-            (setq TeX-master (guess-TeX-master (buffer-file-name)))
+;            (setq TeX-master (guess-TeX-master (buffer-file-name)))
             (setq TeX-show-compilation t) ; show the compilation buffer
             (imenu-add-menubar-index)
             (outline-minor-mode)))
