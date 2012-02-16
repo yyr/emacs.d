@@ -20,6 +20,13 @@ If the region is active, insert it."
     (if contents (insert contents))))
 
 
+;;; just like pretty lambda (Jambunathan from org-mode list)
+(font-lock-add-keywords
+ 'org-mode
+ '(("\\[\\(X\\)\\]"
+    (0 (progn (compose-region (match-beginning 1) (match-end 1) "✔") nil)))
+   ))
+
 ;;; org2jekyll
 (setq org2jekyll-basedir "~/blog")
 
