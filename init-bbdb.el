@@ -16,9 +16,6 @@
 
  bbdb-notice-auto-save-file t
  bbdb-expand-mail-aliases t
- bbdb-canonicalize-redundant-nets-p t
- bbdb-always-add-addresses t
- bbdb-complete-name-allow-cycling t
 
  bbdb-use-pop-up t                        ;; allow popups for addresses
  bbdb-electric-p t                        ;; be disposable with SPC
@@ -43,7 +40,7 @@
  bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook
  bbdb-ignore-some-messages-alist  ;; don't ask about fake addresses
  '(( "From" . "no.?reply\\|DAEMON\\|daemon\\|facebookmail"))
-)
+ )
 
 (defun bbdb/gnus-update-selectively ()
   "Update BBDB record selectively"
