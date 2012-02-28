@@ -1,14 +1,10 @@
 ;;; init-gnus.el
+;; http://yagnesh.org
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
-
-;;; Citation
-;; See the end
 
 (require 'nnimap)
 (require 'starttls)
-;;(require 'registry)
+;; (require 'registry)
 
 ;;; load my bbdb settings
 (load "init-bbdb")
@@ -139,6 +135,7 @@ pIf performed over a topic line, toggle folding the topic."
              ))
 
 (setq gnus-article-update-date-headers nil)
+(setq gnus-extra-headers '(To))
 
 ;;; Philipp Haselwarter from ding mailing list
 (defcustom my-citation-look '("" "│" "")
@@ -168,9 +165,6 @@ pIf performed over a topic line, toggle folding the topic."
             (goto-char (point-min)) (forward-line (1- line))
             (put-text-property (point) (+ (point) len) 'display look)))))
     (widen)))
-
-(add-hook 'gnus-article-prepare-hook
-          'my-citation-style)
 
 (add-hook 'gnus-article-prepare-hook 'my-citation-style)
 
