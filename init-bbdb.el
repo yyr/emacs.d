@@ -4,10 +4,7 @@
 ;;
 
 (setq bbdb-file "~/git/org/.bbdb")
-
 (require 'bbdb)
-(require 'bbdb-hooks)
-
 (bbdb-initialize 'gnus 'message)
 
 (setq
