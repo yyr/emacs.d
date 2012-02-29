@@ -205,28 +205,31 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;;; url
 
+(defun gnus-summary-guess-article-url ()
+  "guess url of the article"
+  (interactive)
+  (let ((url
+         (with-current-buffer gnus-article-buffer
+           (let ((msgids (split-string (aref gnus-current-headers 8) "[ :]")))
+             (cond ((and (equal (substring (second msgids) 0 6)
+                                "gwene.")
+                         (goto-char (point-max))
+                         (search-backward "Link" (point-min) 'noerror))
+                    (w3m-active-region-or-url-at-point))
+                   ((equal (substring (second msgids) 0 6)
+                           "gmane.")
+                    (concat "http://comments.gmane.org/" (second msgids) "/" (third msgids))))))))
+    (if url
+        (browse-url (message url))
+      (message "Couldn't find any likely url"))))
+
 (add-hook 'gnus-startup-hook
-          (lambda nil
-            (define-key gnus-summary-mode-map (kbd "C-c C-o")
-              (lambda () (interactive)
-                (let ((url
-                       (with-current-buffer gnus-article-buffer
-                         (let ((msgids (split-string (aref gnus-current-headers 8) "[ :]")))
-                           (cond ((and (equal (substring (second msgids) 0 6)
-                                              "gwene.")
-                                       (goto-char (point-max))
-                                       (search-backward "Link" (point-min) 'noerror))
-                                  (w3m-active-region-or-url-at-point))
-                                 ((equal (substring (second msgids) 0 6)
-                                         "gmane.")
-                                  (concat "http://comments.gmane.org/" (second msgids) "/" (third msgids))))))))
-                  (if url
-                      (browse-url (message url))
-                    (message "Couldn't find any likely url")))))))
+          (lambda ()
+            (define-key gnus-summary-mode-map
+              (kbd "C-c C-o") 'gnus-summary-guess-article-url)))
 
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
-
 
 ;;; init-gnus.el ends here
