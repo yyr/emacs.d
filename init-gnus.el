@@ -53,14 +53,6 @@
       (5 (message "Gnus timed out.") (debug))
     ad-do-it))
 
-
-;;; archive
-;;; --------------------------------------------------------
-setq gnus-message-archive-group
-'((if (message-news-p)
-      "sent-news"
-    "sent-mail")))
-
 ;;; group mode
 ;;; --------------------------------------------------------
 (defun gnus-topic-select-group (&optional all)
