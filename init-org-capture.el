@@ -25,7 +25,7 @@
 
    ;; journal notes --> diary.org
    ("j" "Journal" entry (file+datetree "~/git/org/diary.org")
-    "* %?\n%U\n%i%a")
+    )
 
    ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
     "* TODO %?\n%U   %a%i" )
