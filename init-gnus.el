@@ -168,6 +168,9 @@ pIf performed over a topic line, toggle folding the topic."
 
 (add-hook 'gnus-article-prepare-hook 'my-citation-style)
 
+(setq gnus-visible-headers
+      "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^[BGF]?Cc:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Mail-Followup-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^Resent-From:\\|^X-Sent:\\|^User-Agent:\\|^X-Mailer:\\|^X-Newsreader:")
+
 ;;; layout
 ;;; --------------------------------------------------
 ;; (gnus-add-configuration '(article (vertical 1.0 (summary .35 point) (article 1.0))))
