@@ -114,8 +114,9 @@ pIf performed over a topic line, toggle folding the topic."
        "%s\n"))
 (setq gnus-summary-display-arrow t)
 
-
 (defalias 'gnus-user-format-function-M 'gnus-registry-user-format-function-M)
+
+(setq gnus-summary-gather-subject-limit 'fuzzy)
 
 ;;; article mode
 ;;; --------------------------------------------------------
@@ -168,14 +169,62 @@ pIf performed over a topic line, toggle folding the topic."
 
 (add-hook 'gnus-article-prepare-hook 'my-citation-style)
 
+;;; layout
+;;; --------------------------------------------------
+;; (gnus-add-configuration '(article (vertical 1.0 (summary .35 point) (article 1.0))))
+
+(gnus-add-configuration
+ '(article
+   (horizontal 1.0
+               (vertical 25
+                         (group 1.0))
+               (vertical 1.0
+                         (summary 0.25 point)
+                         (article 1.0)))))
+
+(gnus-add-configuration
+ '(summary
+   (horizontal 1.0
+               (vertical 25
+                         (group 1.0))
+               (vertical 1.0
+                         (summary 1.0 point)))))
+
+;;; gnus daemon
+;;; --------------------------------------------------
+(gnus-demon-add-handler 'gnus-demon-scan-news 15 t)
+
 ;;; spam
 ;;; --------------------------------------------------
 (spam-initialize)
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
 
+
+;;; url
+
+(add-hook 'gnus-startup-hook
+          (lambda nil
+            (define-key gnus-summary-mode-map (kbd "C-c C-o")
+              (lambda () (interactive)
+                (let ((url
+                       (with-current-buffer gnus-article-buffer
+                         (let ((msgids (split-string (aref gnus-current-headers 8) "[ :]")))
+                           (cond ((and (equal (substring (second msgids) 0 6)
+                                              "gwene.")
+                                       (goto-char (point-max))
+                                       (search-backward "Link" (point-min) 'noerror))
+                                  (w3m-active-region-or-url-at-point))
+                                 ((equal (substring (second msgids) 0 6)
+                                         "gmane.")
+                                  (concat "http://comments.gmane.org/" (second msgids) "/" (third msgids))))))))
+                  (if url
+                      (browse-url (message url))
+                    (message "Couldn't find any likely url")))))))
+
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
+
 
 ;;; init-gnus.el ends here
