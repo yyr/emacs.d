@@ -37,7 +37,7 @@
                                         ("@" "\\alert{%s}" nil))))
 
 
-
+(setq org-export-latex-hyperref-format "\\ref{%s}")
 
 
 ;;; init-org-latex.el ends here
