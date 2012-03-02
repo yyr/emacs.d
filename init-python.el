@@ -8,23 +8,15 @@
 ;;; Description:
 
 (setq load-path (cons
-                 (expand-file-name "~/.emacs.d/el-get/python-mode")
+                 (expand-file-name "~/.emacs.d/el-get/python")
                  load-path))
 
 ;;; --------------------------------------------------------------------
-;; PYTHON-MODE.EL
-(setq py-install-directory  "~/.emacs.d/el-get/python-mode")
-(require 'python-mode)
+;; PYTHON.EL
+(require 'python)
 
-(add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\|pyc\\)$" . python-mode))
-
-(add-hook 'python-mode-hook
-          (lambda ()
-            (progn
-              (setq py-shell-name "ipython3")
-              (make-local-variable browse-url-browser-function)
-              (setq browse-url-browser-function 'w3m))
-            ))
+(autoload 'python-mode "python.el" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\)$" . python-mode))
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
@@ -51,5 +43,10 @@
           (lambda ()
             (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
             (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)))
+
+(add-hook 'pylookup-mode-hook
+          (lambda ()
+            (make-local-variable browse-url-browser-function)
+            (setq browse-url-browser-function 'w3m)))
 
 ;;; init-python.el ends here
