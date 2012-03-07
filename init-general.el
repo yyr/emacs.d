@@ -78,7 +78,8 @@
 
 (defadvice kill-line (around kill-region-if-active activate)
   "kill region if active with C-k"
-  (if (and (called-interactively-p) (region-active-p))
+  (if (and (called-interactively-p 'any)
+           (region-active-p))
       (kill-region (region-beginning) (region-end))
     ad-do-it))
 
