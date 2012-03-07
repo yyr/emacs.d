@@ -268,8 +268,13 @@ pIf performed over a topic line, toggle folding the topic."
             (define-key gnus-summary-mode-map
               (kbd "C-c C-o") 'gnus-summary-guess-article-url)))
 
+;;; MIME
+;;; --------------------------------------------------
+(add-to-list 'mm-attachment-override-types "image/.*")
+
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
+
 
 ;;; init-gnus.el ends here
