@@ -21,7 +21,7 @@
     (eval-print-last-sexp)))
 
 ;;; el-get-is-lazy
-(setq el-get-is-lazy t)
+;;(setq el-get-is-lazy t)
 (if (symbolp "package-archives")
     (add-to-list 'package-archives
                  '("marmalade" . "http://marmalade-repo.org/packages/")))
@@ -45,7 +45,7 @@
        '(
 ;;;; Basics
          ;; package24
-         byte-code-cache
+;;         byte-code-cache
 
 ;;;; general
 
@@ -56,7 +56,7 @@
 
 ;;; mini buffer
          smex
-         ido-ubiquitous
+;;         ido-ubiquitous
 
 ;;;; help typing
          yasnippet
