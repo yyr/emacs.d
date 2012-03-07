@@ -12,6 +12,8 @@
 ;;; help-map additional keys
 ;;; jump to source of `key`
 (define-key help-map (kbd "C-k") 'find-function-on-key)
+(define-key help-map (kbd "C-f") 'find-function-at-point)
+(define-key help-map (kbd "C-v") 'find-variable-at-point)
 
 ;;; help-mode buffer
 (define-key help-mode-map (kbd "n") 'next-line)
