@@ -7,6 +7,8 @@
 ;; You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
+;; settings for auctex and reftex .. etc
+
 (add-to-list 'load-path "~/.emacs.d/el-get/auctex/preview")
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
@@ -17,29 +19,115 @@
  TeX-auto-save t
  TeX-insert-braces nil
  TeX-display-help t
- TeX-master nil
  LaTeX-version "2e"
+ TeX-save-query nil
  LaTeX-indent-environment-check t
+ TeX-show-compilation t ; show the compilation buffer
  )
 
+(setq-default  TeX-master nil)
+
+;;; main
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 (add-hook 'LaTeX-mode-hook
           (lambda()
-            (define-key LaTeX-mode-map (kbd "<M-.>") 'TeX-complete-symbol)
             (TeX-PDF-mode t)
-            (setq TeX-save-query nil)
-;            (setq TeX-master (guess-TeX-master (buffer-file-name)))
-            (setq TeX-show-compilation t) ; show the compilation buffer
+                                        ;            (setq TeX-master (guess-TeX-master (buffer-file-name)))
             (imenu-add-menubar-index)
-            (outline-minor-mode)))
+            (define-key LaTeX-mode-map (kbd "M-.") 'TeX-complete-symbol)
 
 ;;; add additional environments
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
             (LaTeX-add-environments
              '("algorithm" LaTeX-env-label)
              '("example" LaTeX-env-label)
              '("proposition" LaTeX-env-label))))
+
+;;; --------------------------------------------------------
+;;; auto completion support
+(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+  (setq ac-sources
+        (append
+         '(ac-source-math-latex
+           ac-source-latex-commands  ac-source-math-unicode)
+         ac-sources)))
+
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (require 'ac-math)
+            (ac-latex-mode-setup)))
+
+;;; --------------------------------------------------------
+;;; Reftex
+(autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
+(autoload 'reftex-citation "reftex-cite" "Make citation" nil)
+(autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
+
+(add-hook 'LaTeX-mode-hook
+          '(lambda ()
+             (reftex-mode 1)
+             (define-key LaTeX-mode-map (kbd "C-c p") 'reftex-parse-all)
+             (setq )
+             (setq reftex-section-levels
+                   '(("part" . 0) ("chapter" . 1) ("section" . 2) ("subsection" . 3)
+                     ("frametitle" . 4) ("subsubsection" . 4) ("paragraph" . 5)
+                     ("subparagraph" . 6) ("addchap" . -1) ("addsec" . -2)))
+
+             (setq reftex-plug-into-AUCTeX t ;activate
+                   reftex-extra-bindings t
+                   reftex-bibfile-ignore-list nil
+                   reftex-guess-label-type t
+                   reftex-revisit-to-follow t ; watch out!! bibs are changing
+
+                   reftex-use-fonts t   ; make colorful toc
+                   reftex-toc-follow-mode nil ; don't follow other toc(s)
+                   reftex-toc-split-windows-horizontally t
+                   reftex-auto-recenter-toc t
+                   ;; reftex-toc-split-windows-fraction 0.2
+
+                   reftex-enable-partial-scans t
+                   reftex-save-parse-info t
+                   reftex-use-multiple-selection-buffers t
+                   ;; reftex-cite-format 'natbib
+                   )
+
+;;; not sure how this works
+             (setq reftex-section-regexp   ;; standard setting ...
+                   (concat
+                    "\\(\\`\\|[\n
+]\\)[   ]*\\\\\\"
+                    "(part\\|chapter\\|"
+                    "section\\|subsection\\|subsubsection\\|"
+                    "paragraph\\|subparagraph\\|subsubparagraph\\|"
+                    "sfoil\\|foil"         ;; private addition
+                    "\\)"
+                    "\\*?\\(\\[[^]]*\\]\\)?{"))
+             (setq reftex-section-levels
+                   '(("part" . 0) ("chapter" . 1) ("section" . 2) ("subsection" . 3)
+                     ("frametitle" . 4) ("subsubsection" . 4) ("paragraph" . 5)
+                     ("subparagraph" . 6) ("addchap" . -1) ("addsec" . -2)))))
+
+
+;;; --------------------------------------------------------
+;;; folding
+(add-hook 'LaTeX-mode-hook (lambda ()
+                             (TeX-fold-mode 1)
+                                        ;                             (outline-mode 1)
+                             (setq TeX-fold-env-spec-list
+                                   (quote (("[comment]" ("comment"))
+                                           ("[figure]" ("figure"))
+                                           ("[table]" ("table"))
+                                           ("[itemize]" ("itemize"))
+                                           ("[enumerate]" ("enumerate"))
+                                           ("[description]" ("description"))
+                                           ("[overpic]" ("overpic"))
+                                           ("[tabularx]" ("tabularx"))
+                                           ("[code]" ("code"))
+                                           ("[shell]" ("shell")))))))
+
+;;(setq outline-minor-mode-prefix "\C-c\C-o")
+
+;;; --------------------------------------------------------
+;;; util functions
 
 ;; from emacs wiki
 (defun guess-TeX-master (filename)
@@ -68,59 +156,6 @@
          "TeX master document: %s" (file-name-nondirectory candidate)))
     candidate))
 
-;;; --------------------------------------------------------
-;;; auto completion support
-(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
-  (setq ac-sources
-        (append
-         '(ac-source-math-latex
-           ac-source-latex-commands  ac-source-math-unicode)
-         ac-sources)))
-
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (require 'ac-math)
-            (ac-latex-mode-setup)
-            ))
-
-(setq outline-minor-mode-prefix "\C-c\C-o")
-
-
-;;; --------------------------------------------------------
-;;; Reftex
-(add-hook 'LaTeX-mode-hook
-          '(lambda ()
-             (turn-on-reftex)))
-
-(setq reftex-plug-into-AUCTeX t
-      reftex-guess-label-type t
-      reftex-plug-into-AUCTeX t
-      reftex-bibfile-ignore-list nil
-      reftex-toc-follow-mode nil
-      reftex-extra-bindings t
-      reftex-enable-partial-scans t
-      reftex-save-parse-info t
-      reftex-use-multiple-selection-buffers t
-      reftex-use-fonts t
-      ;; reftex-cite-format 'natbib
-      )
-
-;;; not sure how this works
-(add-hook 'reftex-mode-hook
-          (function
-           (lambda ()
-             (setq reftex-section-regexp   ;; standard setting ...
-                   (concat
-                    "\\(\\`\\|[\n
-]\\)[   ]*\\\\\\"
-                    "(part\\|chapter\\|"
-                    "section\\|subsection\\|subsubsection\\|"
-                    "paragraph\\|subparagraph\\|subsubparagraph\\|"
-                    "sfoil\\|foil"         ;; private addition
-                    "\\)"
-                    "\\*?\\(\\[[^]]*\\]\\)?{")))))
-
-
 ;;; http://www.emacswiki.org/emacs/TN
 (require 'tex-buf)
 (defun TeX-command-default (name)
@@ -143,7 +178,7 @@
                                    TeX-command-Show))
         (TeX-command-Show)))
 
-
+;;;  from wiki
 (defcustom TeX-texify-Show t
   "Start view-command at end of TeX-texify?"
   :type 'boolean
@@ -192,7 +227,6 @@ If there is still something left do do start the next latex-command."
 
 (add-hook 'LaTeX-mode-hook
           '(lambda ()
-             (local-set-key
-              (kbd "C-c C-a") 'TeX-texify)))
+             (define-key LaTeX-mode-map (kbd "C-c C-a") 'TeX-texify)))
 
 ;;; init-auctex.el ends here
