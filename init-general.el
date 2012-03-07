@@ -100,7 +100,7 @@
 (setq search-whitespace-regexp "[ \t\r\n]+")
 
 ;;; delete nasty hidden white spaces at the end of lines
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;; buttonize addresses
 (add-hook 'find-file-hooks 'goto-address-prog-mode)
