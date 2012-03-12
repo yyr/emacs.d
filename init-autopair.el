@@ -7,7 +7,7 @@
 
 (require 'autopair)
 (autopair-global-mode 1) ;; enable autopair in all buffers
-(add-hook 'emacs-lisp-mode-hook #'(lambda ()
-                                    (setq autopair-dont-activate t)))
+
+(put 'autopair-newline 'disabled t)
 
 ;;; init-autopair.el ends here
