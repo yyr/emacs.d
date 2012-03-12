@@ -34,4 +34,27 @@
 (define-key Apropos-Prefix (kbd "C-v") 'apropos-value)
 (define-key Apropos-Prefix (kbd "C-a")   'about-emacs)
 
+
+;;; http://stackoverflow.com/a/9620373/399964
+(defun locate-feature (feature)
+  "Return file name as string where `feature' was provided"
+  (interactive "Sfeature: ")
+  (dolist (file-info load-history)
+    (mapc (lambda (element)
+            (when (and (consp element)
+                       (eq (car element) 'provide)
+                       (eq (cdr element) feature))
+              (when (called-interactively-p 'any)
+                (message "%s defined in %s" feature (car file-info)))
+              (return (car file-info))))
+          (cdr file-info))))
+
+(defun locate-function (func)
+  "Return file-name as string where `func' was defined or will be autoloaded"
+  (interactive "Ccommand: ")
+  (let ((res (find-lisp-object-file-name func (symbol-function func))))
+    (when (called-interactively-p 'any)
+      (message "%s defined in %s" func res))
+    res))
+
 ;;; init-help.el ends here
