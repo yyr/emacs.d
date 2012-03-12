@@ -27,6 +27,17 @@ If the region is active, insert it."
     (0 (progn (compose-region (match-beginning 1) (match-end 1) "✔") nil)))
    ))
 
+
+;;; misc settings
+(setq font-lock-verbose nil             ; to speed up org
+      org-special-ctrl-a/e t            ; don't go to bol
+      org-completion-use-ido t
+      org-use-speed-commands t          ; activate speed commands
+      org-return-follows-link t         ; RET dwim on links
+
+      org-enable-priority-commands nil  ; I dont use org priorities
+      )
+
 ;;; org2jekyll
 (setq org2jekyll-basedir "~/blog")
 
