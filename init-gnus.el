@@ -45,6 +45,22 @@
   (gnus-treat-mail-gravatar))
 (add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
 
+;;; -----------------------------------------------------------------------
+;;; posting
+;;; -----------------------------------------------------------------------
+
+(setq gnus-post-method '())
+
+(setq gnus-posting-styles
+      '(("gmane*"
+         (address "yagnesh@live.com"))))
+
+
+;;; -----------------------------------------------------------------------
+;;; search
+;;; -----------------------------------------------------------------------
+(require 'nnir)
+
 
 ;;; -----------------------------------------------------------------------
 (defadvice gnus-group-get-new-news (around gnus-timeout activate)
