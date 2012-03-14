@@ -8,6 +8,8 @@
 (require 'autopair)
 (autopair-global-mode 1) ;; enable autopair in all buffers
 
-(put 'autopair-newline 'disabled t)
+;; (defadvice autopair-on (after autopair-newline-disable activate)
+;;   (local-unset-key (kbd "RET")))
+
 
 ;;; init-autopair.el ends here

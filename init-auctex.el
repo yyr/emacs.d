@@ -112,7 +112,7 @@
 ;;; folding
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (TeX-fold-mode 1)
-                                        ;                             (outline-mode 1)
+                             (outline-mode 1)
                              (setq TeX-fold-env-spec-list
                                    (quote (("[comment]" ("comment"))
                                            ("[figure]" ("figure"))
@@ -125,7 +125,7 @@
                                            ("[code]" ("code"))
                                            ("[shell]" ("shell")))))))
 
-;;(setq outline-minor-mode-prefix "\C-c\C-o")
+(setq outline-minor-mode-prefix (kbd "\C-co"))
 
 ;;; --------------------------------------------------------
 ;;; util functions

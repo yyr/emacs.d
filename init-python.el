@@ -44,9 +44,4 @@
             (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
             (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)))
 
-(add-hook 'pylookup-mode-hook
-          (lambda ()
-            (make-local-variable browse-url-browser-function)
-            (setq browse-url-browser-function 'w3m)))
-
 ;;; init-python.el ends here
