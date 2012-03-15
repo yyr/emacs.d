@@ -112,7 +112,7 @@
 ;;; folding
 (add-hook 'LaTeX-mode-hook (lambda ()
                              (TeX-fold-mode 1)
-                             (outline-mode 1)
+                             (outline-minor-mode 1)
                              (setq TeX-fold-env-spec-list
                                    (quote (("[comment]" ("comment"))
                                            ("[figure]" ("figure"))
