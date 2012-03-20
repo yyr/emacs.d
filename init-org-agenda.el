@@ -88,6 +88,10 @@
               org-agenda-files))
     (org-agenda-quit)))
 
+(global-set-key (kbd "C-<f12>") (lambda ()
+                                  (interactive)
+                                  (org-agenda nil "t" t)))
+
 
 (eval-after-load "org-agenda"
   `(let ((map org-agenda-mode-map))
