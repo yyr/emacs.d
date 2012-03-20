@@ -12,6 +12,7 @@
 ;; dict-wn - Wordnet dictinory
 ;; any other dicts you want
 
+(el-get 'sync '(dictem))
 
 (require 'dictem)
 

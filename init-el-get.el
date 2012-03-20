@@ -110,15 +110,9 @@
 (when (not on-lab-server)
   (setq my-packages
         (append
-         '(auctex
-           ebib
-           dictem
-           edit-server
-           bbdb
-           ;; epresent
-           )
-         my-packages
-         )))
+         '(edit-server
+           bbdb)
+         my-packages)))
 
 ;;; ---------------------------------------------------------------------------
 ;; package needed for only my laptop
@@ -131,7 +125,5 @@
                 sass-mode)
          my-packages)))
 
-
 (el-get 'sync my-packages)
-
 ;; init-el-get.el ends here

@@ -74,7 +74,9 @@
 (load "init-hippie-expand")
 (load "init-auto-complete")
 (load "init-yasnip")
-(when (executable-find "dictd")            ; dict is not available on server
+
+;; dict is not available on server
+(when (executable-find "dictd")
   (load "init-dictem"))
 
 ;;; help navigation

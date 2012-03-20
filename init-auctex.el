@@ -9,6 +9,8 @@
 ;;; Description:
 ;; settings for auctex and reftex .. etc
 
+(el-get 'sync '(auctex))
+
 (add-to-list 'load-path "~/.emacs.d/el-get/auctex/preview")
 (add-to-list 'load-path "~/.emacs.d/el-get/auctex")
 (load "auctex.el" nil t t)

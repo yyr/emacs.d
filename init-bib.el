@@ -8,6 +8,8 @@
 ;;; Description:
 ;; managing bibliography modes
 
+(el-get 'sync '(ebib))
+
 (autoload 'ebib "ebib"
   "Ebib, a BibTeX database manager." t)
 
