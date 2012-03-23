@@ -14,11 +14,13 @@
 
 ;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
+  (setq el-get-install-branch "master")
   (with-current-buffer
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (end-of-buffer)
-    (eval-print-last-sexp)))
+    (eval-print-last-sexp))
+  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
 
 ;;; el-get-is-lazy
 ;;(setq el-get-is-lazy t)
@@ -45,7 +47,7 @@
        '(
 ;;;; Basics
          ;; package24
-;;         byte-code-cache
+         ;; byte-code-cache
 
 ;;;; general
 
@@ -56,7 +58,7 @@
 
 ;;; mini buffer
          smex
-;;         ido-ubiquitous
+         ;;         ido-ubiquitous
 
 ;;;; help typing
          yasnippet
