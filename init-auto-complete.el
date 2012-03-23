@@ -61,4 +61,7 @@
 
 (add-hook 'ncl-mode-hook 'ac-ncl-mode-setup)
 
+;;; work around for autopair autocomplete
+(define-key ac-completing-map [return] 'ac-complete)
+
 ;;; init-auto-complete.el ends here
