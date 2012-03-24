@@ -100,7 +100,23 @@
 (setq search-whitespace-regexp "[ \t\r\n]+")
 
 ;;; delete nasty hidden white spaces at the end of lines
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; le weng from emacs.help
+(defun my-save-buffer-dtws (arg)
+  "save buffer delete trailing white space, preserve white space
+before point if point is past text"
+  (interactive "p")
+  (let ((save (when (and (looking-at "\\s-*$")
+                         (looking-back "\\s-+"
+                                       (line-beginning-position) t))
+                (match-string 0))))
+    (delete-trailing-whitespace)
+    (save-buffer arg)
+    (when save
+      (insert save)
+      (set-buffer-modified-p nil))))
+
+(global-set-key [remap save-buffer] 'my-save-buffer-dtws)
+;;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;; buttonize addresses
 (add-hook 'find-file-hooks 'goto-address-prog-mode)

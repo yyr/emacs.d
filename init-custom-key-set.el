@@ -79,8 +79,7 @@
 
 ;;; unset C-z first
 (global-unset-key "\C-z")
-;; C-z t to clear trailing whitespace
-(define-key global-map [(control ?z) ?t] 'delete-trailing-whitespace)
+
 ;; C-z TAB cycles through buffers
 (define-key global-map [(control ?z) tab] 'bury-buffer)
 ;; C-TAB also cycles through buffers
