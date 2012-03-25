@@ -253,6 +253,10 @@ pIf performed over a topic line, toggle folding the topic."
 (gnus-demon-add-handler 'gnus-demon-scan-news 15 t)
 
 
+;;; gnus agent
+(setq gnus-plugged t)
+
+
 ;;; Spam related
 ;;; --------------------------------------------------
 (spam-initialize)
