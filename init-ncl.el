@@ -6,6 +6,9 @@
 ;;; http://www.ncl.ucar.edu/Applications/editor.shtml
 ;; this line associates ncl-mode with the lisp package that defines it.
 
+;;; load ncl
+(el-get 'sync '(ncl))
+
 (autoload 'ncl-mode "ncl" "ncl-mode for editing ncar graphics" t)
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/el-get/ncl/dict")

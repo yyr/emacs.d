@@ -70,7 +70,6 @@
          yaml-mode
 
 ;;;; Sub
-         ncl
          emacs-grads
          gnuplot-mode
 
