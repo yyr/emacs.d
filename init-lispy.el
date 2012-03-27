@@ -8,6 +8,12 @@
 ;;; Description:
 ;; common things to load to all lispies
 
+;;; load some minor modes first
+(el-get 'sync '(paredit
+                hl-sexp
+                highlight-parentheses))
+
+
 ;; pretty lambda (see also slime) ->  "λ"
 ;;  'greek small letter lambda' / utf8 cebb / unicode 03bb -> \u03BB / mule?!
 ;; in greek-iso8859-7 -> 107  >  86 ec
@@ -49,19 +55,15 @@
      (define-key lisp-mode-map (kbd "C-<right>") 'paredit-forward-slurp-sexp)
      (define-key lisp-mode-map (kbd "C-<left>") 'paredit-forward-barf-sexp)
      (define-key lisp-mode-map (kbd "C-M-<left>") 'paredit-backward-slurp-sexp)
-     (define-key lisp-mode-map (kbd "C-M-<right>") 'paredit-backward-barf-sexp)
+     (define-key lisp-mode-map (kbd "C-M-<right>") 'paredit-backward-barf-sexp)))
 
-     ;; Disable kill-sentence, which is easily confused with the kill-sexp
-     ;; binding, but doesn't preserve sexp structure
-     ;;     (define-key paredit-mode-map (kbd "M-K") 'warn-disabled-command)
-     ;;     (define-key paredit-mode-map (kbd "M-k") 'warn-disabled-command)
-     ))
 
 ;; When editing lisp code, highlight the current sexp
 (dolist (hook '(emacs-lisp-mode-hook scheme-mode-hook))
   (add-hook hook (lambda ()
                    (progn
                      (require 'hl-sexp)
-                     (hl-sexp-mode t)))))
+                     (hl-sexp-mode 1)
+                     (highlight-parentheses-mode 1)))))
 
 ;;; init-lispy.el ends here

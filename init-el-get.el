@@ -47,10 +47,8 @@
       (append
        '(
 ;;;; help typing
-         yasnippet
          ac-math
          ac-octave
-         highlight-parentheses
          auto-complete
 
 ;;;; Cosmetics
@@ -62,8 +60,6 @@
 
 ;;;; languages
          ;; elisp
-         paredit
-         hl-sexp
 
          ;; python
          python-mode
