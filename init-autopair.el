@@ -1,11 +1,9 @@
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
+;;; loading
+(el-get 'sync '(autopair))
 
-;; -----------------------------------------------------------------------------
-;; autopair.el
-;; -----------------------------------------------------------------------------
+;;; setup
+(setq autopair-wrap-action t)
 
-(require 'autopair)
 (autopair-global-mode 1) ;; enable autopair in all buffers
 
 ;;; init-autopair.el ends here

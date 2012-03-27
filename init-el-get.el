@@ -66,7 +66,6 @@
          ac-octave
          highlight-parentheses
          auto-complete
-         autopair
 
 ;;;; Cosmetics
          diminish
