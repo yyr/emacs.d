@@ -2,6 +2,9 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; License: GPL v3 or later
 
+;;; load org
+(el-get 'sync (org-mode
+               calfw))
 
 (add-to-list 'load-path
              (expand-file-name "~/.emacs.d/el-get/org-mode/lisp"))

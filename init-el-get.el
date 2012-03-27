@@ -46,14 +46,8 @@
 (setq my-packages
       (append
        '(
-;;;; help typing
-
 ;;;; Cosmetics
          boxquote
-
-;;;; Org
-         org-mode
-         calfw
 
          ;; python
          python-mode
@@ -61,7 +55,6 @@
          yaml-mode
 
 ;;;; Sub
-         emacs-grads
          gnuplot-mode
 
 ;;;; web & mail
