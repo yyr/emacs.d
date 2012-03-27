@@ -47,9 +47,6 @@
       (append
        '(
 ;;;; help typing
-         ac-math
-         ac-octave
-         auto-complete
 
 ;;;; Cosmetics
          boxquote
@@ -57,9 +54,6 @@
 ;;;; Org
          org-mode
          calfw
-
-;;;; languages
-         ;; elisp
 
          ;; python
          python-mode

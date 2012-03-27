@@ -1,5 +1,9 @@
 ;;; auto-complete mode
 
+(el-get 'sync '(auto-complete
+                ac-math
+                ac-octave))
+
 (require 'auto-complete)
 (require 'auto-complete-config)
 
