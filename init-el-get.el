@@ -96,7 +96,6 @@
          yaoddmuse
 
 ;;; sys
-         crontab-mode
          screenshot
 
 ;;;; misc
