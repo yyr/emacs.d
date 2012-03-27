@@ -66,17 +66,13 @@
          auto-complete
 
 ;;;; Cosmetics
-         diminish
          boxquote
 
 ;;;; Org
          org-mode
          calfw
 
-;;;; DVC
-         magit
-
-;;;; langs
+;;;; languages
          ;; elisp
          paredit
          hl-sexp
