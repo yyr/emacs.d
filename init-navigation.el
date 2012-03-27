@@ -6,10 +6,14 @@
 ;;; Description:
 ;; navigation with in buffer related setup
 
-(require 'ace-jump-mode)
-(define-key global-map
-  (kbd "M-l") 'ace-jump-mode)
+;;; loading
+;; ace-jump-mode - navigation by searching
+;; jump-char - char type navigation
 
+(el-get 'sync '(ace-jump-mode
+                jump-char))
+
+(define-key global-map (kbd "M-l") 'ace-jump-mode)
 
 ;;; faster C-n C-p
 (global-set-key (kbd "C-S-n") (kbd "C-6 C-n"))

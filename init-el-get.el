@@ -53,8 +53,6 @@
 
 ;;;; navigation
          dired-plus
-         anything
-         ace-jump-mode
 
 ;;; mini buffer
          smex
