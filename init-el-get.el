@@ -45,19 +45,6 @@
 (setq my-packages
       (append
        '(
-;;;; Basics
-         ;; package24
-         ;; byte-code-cache
-
-;;;; general
-
-;;;; navigation
-         dired-plus
-
-;;; mini buffer
-         smex
-         ;;         ido-ubiquitous
-
 ;;;; help typing
          yasnippet
          ac-math
