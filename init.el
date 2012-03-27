@@ -10,8 +10,7 @@
 
 ;;; ---------------------------------------------------------------------------
 ;; check emacs running on which system (to load config differently
-;; for different computers)
-;; I go by hostnames which are all fixed
+;; for different computers). I go by hostnames which are all fixed
 
 (defvar on-laptop          ; on my laptop, mostly I can run everything
   (string-match "rag" (system-name)))
@@ -19,7 +18,7 @@
 (defvar on-lab-computer                 ; main lab desktop
   (string-match "okho" (system-name)))
 
-(defvar on-lab-server        ; lab cluster (hu hu built emacs24 there)
+(defvar on-lab-server        ; lab cluster (hehe built emacs24 on it)
   (string-match "amu" (system-name)))
 
 ;;; ---------- PATH -----------------------------------------------------------
@@ -32,7 +31,6 @@
 ;; ----------------------------------------------------------------------------
 ;;; any reservations in loading individual configurations (down below)
 (setq gnus-init-file (concat emacs-path "/init-gnus.el" )) ;gnus init file
-(setq *byte-code-cache-enabled* nil)
 
 ;; ----------------------------------------------------------------------------
 ;;; load emacs individual configuration files
@@ -54,10 +52,6 @@
 ;;; make friendly mini buffer
 (load "init-ido")
 (load "init-smex")
-
-;;; byte-compile-cache
-(when *byte-code-cache-enabled*
-  (load "init-byte-code-cache"))
 
 (load "init-diminish")
 (load "init-auto-save")
@@ -174,7 +168,7 @@
   (load "init-emms"))
 
 ;;; for tests
-(load "init-anything")                  ; kind of loading everything
+
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------

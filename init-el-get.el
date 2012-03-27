@@ -1,13 +1,11 @@
 ;;; init-el-get.el
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;    File: init-el-get.el
 ;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
-;; Created:
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;; install/load packages using el-get package manager
+;; load el-get package manager, install/load few packages here. this
+;; file should be loaded first
 
 ;;; add el-get load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
