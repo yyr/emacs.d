@@ -1,6 +1,8 @@
 ;;; auto-complete mode
 
-(el-get 'sync '(auto-complete
+(el-get 'sync '(popup
+                fuzzy
+                auto-complete
                 ac-math
                 ac-octave))
 
