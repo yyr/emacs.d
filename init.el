@@ -150,6 +150,7 @@
 (load "init-yaoddmuse")
 (load "init-sass-mode")
 (load "init-erc")
+(load "init-mediawiki")
 
 ;;;  misc
 (load "init-exec-path")
