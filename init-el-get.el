@@ -47,9 +47,6 @@
 ;;;; Cosmetics
          boxquote
 
-         ;; python
-         python-mode
-         pylookup
          yaml-mode
 
 ;;;; Sub

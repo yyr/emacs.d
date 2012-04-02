@@ -7,6 +7,10 @@
 
 ;;; Description:
 
+(el-get 'sync '(python
+                pylookup))
+
+
 (setq load-path (cons
                  (expand-file-name "~/.emacs.d/el-get/python")
                  load-path))
