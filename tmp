@@ -1,0 +1,55 @@
+;;; init-python.el
+;;
+;;    File: init-python.el
+;; Created: Friday, July 22 2011
+
+;;; Description:
+;;
+
+;;; --------------------------------------------------------------------
+;; PYTHON.EL
+(add-to-list 'load-path
+             (expand-file-name "~/.emacs.d/el-get/python"))
+(require 'python)
+
+(autoload 'python-mode "python.el" "Python Mode." t)
+(add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\)$" . python-mode))
+
+;;; --------------------------------------------------------------------
+;; PYTHON-MODE.EL
+(setenv "PYMACS_PYTHON" "python3")
+(require 'pymacs)
+
+(autoload 'pymacs-apply "pymacs")
+(autoload 'pymacs-call "pymacs")
+(autoload 'pymacs-eval "pymacs" nil t)
+(autoload 'pymacs-exec "pymacs" nil t)
+(autoload 'pymacs-load "pymacs" nil t)
+
+;;; --------------------------------------------------------------------
+;; PYLOOKUP
+(setq pylookup-dir "~/.emacs.d/el-get/pylookup")
+(add-to-list 'load-path pylookup-dir)
+
+;; load pylookup when compile time
+(require 'pylookup)
+
+;; set executable file and db file
+(setq pylookup-program
+      (concat pylookup-dir "/pylookup.py"))
+(setq pylookup-db-file
+      (concat pylookup-dir "/pylookup.db"))
+
+;; to speedup, just load it on demand
+(autoload 'pylookup-lookup "pylookup"
+  "Lookup SEARCH-TERM in the Python HTML indexes." t)
+
+(autoload 'pylookup-update "pylookup"
+  "Run pylookup-update and create the database at `pylookup-db-file'." t)
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
+            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)))
+
+;;; init-python.el ends here

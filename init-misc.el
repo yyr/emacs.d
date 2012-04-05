@@ -52,7 +52,7 @@
                  (search-forward (char-to-string char) nil nil arg)
                  (forward-char (if (>= arg 0) -1 1))
                  (point))))
-;;(define-key global-map [(meta ?z)] 'zap-up-to-char)           ; Rebind M-z to our version
+(define-key global-map [(meta ?z)] 'zap-up-to-char)           ; Rebind M-z to our version
 
 
 ;; goto-matching-paren
