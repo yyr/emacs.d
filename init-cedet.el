@@ -17,7 +17,6 @@
       (if (file-regular-p "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
           (progn
             (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
-            (global-ede-mode 1)
             (semantic-load-enable-minimum-features)
             (semantic-load-enable-code-helpers)))
 
@@ -25,30 +24,52 @@
       ;; newtrunk setup
       (if (file-regular-p  "~/.emacs.d/el-get/cedet//common/cedet.el")
           (progn
-            (load-file "~/.emacs.d/el-get/cedet/common/cedet.el")
-            (setq semantic-default-submodes
-                  (append semantic-default-submodes
-                          '(
-                            ;; cache(?)
-                            global-semanticdb-minor-mode
+            (load-file "~/.emacs.d/el-get/cedet/common/cedet.el"))))))
 
-                            ;; code helpers
-                            global-semantic-idle-scheduler-mode
-                            global-semantic-idle-summary-mode
-                            global-semantic-idle-completions-mode
-                            global-semantic-highlight-func-mode
-                            global-semantic-decoration-mode
+;;; ede
+(setq semantic-default-submodes
+      '(;; cache(?)
+        global-semanticdb-minor-mode
 
-                            global-semantic-stickyfunc-mode
-                            global-semantic-highlight-edits-mode
-                            global-cedet-m3-minor-mode
-                            global-semantic-idle-local-symbol-highlight-mode
+        global-semantic-highlight-edits-mode
+        global-semantic-idle-local-symbol-highlight-mode
+        ;; global-cedet-m3-minor-mode
 
-                            ;; debugging semantic itself
-                            global-semantic-show-parser-state-mode
-                            global-semantic-show-unmatched-syntax-mode
-                            global-semantic-highlight-edits-mode)))
-            (global-ede-mode 1)
-            )))))
+        global-semantic-stickyfunc-mode))
+
+(global-ede-mode 1)
+
+(semantic-add-system-include
+ "~/local/python/lib/python3.2/" 'python-mode)
+
+(defun my-cedet-hook ()
+  (local-set-key [(control return)] 'semantic-ia-complete-symbol)
+  (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
+  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+
+  ;; code helpers
+  (global-semantic-idle-scheduler-mode)
+  (global-semantic-idle-summary-mode)
+  (global-semantic-idle-completions-mode)
+
+
+  ;; eye candy
+  (global-semantic-decoration-mode)
+  (global-semantic-highlight-func-mode)
+  (global-semantic-highlight-edits-mode)
+
+  ;; debugging semantic itself
+  ;;(global-semantic-show-parser-state-mode 1)   ;; show the parsing state in the mode line
+  ;;(global-semantic-show-unmatched-syntax-mode 1)
+  )
+
+
+  (dolist (hook '(python-mode-hook
+                c-mode-hook
+                fortran-mode-hook
+                f90-mode-hook))
+  (add-hook hook 'my-cedet-hook))
+
 
 ;;; init-cedet.el ends here
