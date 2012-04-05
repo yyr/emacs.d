@@ -16,7 +16,15 @@
            erc-fill-column (- (window-width) 2)
            erc-pals '("" "")
            erc-notify-list erc-pals)
+
                                         ;    (require 'erc-bbdb)
+     ;; Set personal information
+     (setq erc-nick "kindahero")
+     (setq erc-user-full-name "dontknow")
+
+     ;; Set autojoin channels
+     (setq erc-autojoin-channels-alist
+           '(("freenode.net" "#emacs")))
      (require 'erc-imenu)
      (require 'erc-menu)
      (require 'erc-notify)
@@ -31,6 +39,12 @@
      (erc-track-mode 1)
      (add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)))
 
+;; Set autoconnect networks
+(defun my-erc ()
+  "Connect to my default ERC servers."
+
+  (interactive)
+  (erc-tls :server "irc.freenode.net" :port 7000))
 
 
 ;;; init-erc.el ends here
