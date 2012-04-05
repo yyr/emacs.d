@@ -53,13 +53,9 @@
 
 ;; Stop at the end of the file, not just add lines
 ;;(setq next-line-add-newlines nil)
-(setq disabled-command-function nil)
 
 ;;; Ubuntu needs this(?)
 (setq browse-url-browser-function 'browse-url-firefox)
-
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
 
 ;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)
