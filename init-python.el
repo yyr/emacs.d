@@ -53,7 +53,12 @@
 
 (add-hook 'python-mode-hook
           (lambda ()
+            ;; pylookup
             (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
-            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)))
+            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
+            ;; indentation
+            (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
+            (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
+
 
 ;;; init-python.el ends here
