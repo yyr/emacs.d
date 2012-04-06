@@ -8,8 +8,8 @@
 ;;; Description:
 
 (el-get 'sync '(python
-                pylookup))
-
+                pylookup
+                highlight-indentation))
 
 (setq load-path (cons
                  (expand-file-name "~/.emacs.d/el-get/python")
@@ -21,6 +21,14 @@
 
 (autoload 'python-mode "python.el" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\)$" . python-mode))
+
+;;; highlight indentation mode
+(defvaralias 'py-indent-offset 'python-indent-offset)
+
+(add-hook 'python-mode-hook (lambda ()
+                             (highlight-indentation-mode)))
+
+
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
