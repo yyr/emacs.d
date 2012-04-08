@@ -24,8 +24,10 @@
   ;;  (setq gnus-select-method '(nntp "localhost"))
   (setq gnus-select-method '(nntp "news.gmane.org")))
 
+
+;;; -----------------------------------------------------------------------
 ;;; Mail
-;;; --------------------------------------------------------
+;;; -----------------------------------------------------------------------
 ;; Configure incoming mail (IMAP)
 (add-to-list 'gnus-secondary-select-methods '(nnml ""))
 
@@ -48,13 +50,22 @@
 ;;; -----------------------------------------------------------------------
 ;;; posting
 ;;; -----------------------------------------------------------------------
+(setq gnus-post-method 'current)
 
-(setq gnus-post-method '())
+(setq gnus-parameters
+      ;; gmane live mail id
+      '((".*news\\.gmane\\.org.*"
+         (posting-style
+          (address "yagnesh@live.com")
+          (name "Yagnesh")
+          (user-mail-address "yagnesh@live.com")))
 
-(setq gnus-posting-styles
-      '(("gmane*"
-         (address "yagnesh@live.com"))))
-
+        ;; any mail
+        ("yagmsc"
+         (posting-style
+          (address "yagneshmsc@gmail.com")
+          (name "Yagnesh")
+          (user-mail-address "yagneshmsc@gmail.com")))))
 
 ;;; -----------------------------------------------------------------------
 ;;; search
@@ -63,14 +74,19 @@
 
 
 ;;; -----------------------------------------------------------------------
+;;;DEBUG
+;;; --------------------------------------------------------
 (defadvice gnus-group-get-new-news (around gnus-timeout activate)
   "Timeout for Gnus."
   (with-timeout
       (5 (message "Gnus timed out.") (debug))
     ad-do-it))
 
-;;; group buffer
-;;; --------------------------------------------------------
+
+
+;;; -----------------------------------------------------------------------
+;;; Group buffer
+;;; -----------------------------------------------------------------------
 (defun gnus-topic-select-group (&optional all)
   "Select this newsgroup.
 No article is selected automatically.
@@ -134,8 +150,9 @@ pIf performed over a topic line, toggle folding the topic."
 (add-hook 'gnus-group-prepare-hook 'DE-collapse-group-names)
 (add-hook 'gnus-group-update-group-hook 'DE-collapse-group-names)
 
-;;; summary buffer
-;;; --------------------------------------------------------
+;;; -----------------------------------------------------------------------
+;;; Summary Buffer
+;;; -----------------------------------------------------------------------
 
 (setq-default
  ;; gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
@@ -173,8 +190,9 @@ pIf performed over a topic line, toggle folding the topic."
 
 (setq gnus-summary-gather-subject-limit 'fuzzy)
 
-;;; article buffer
-;;; --------------------------------------------------------
+;;; -----------------------------------------------------------------------
+;;; Article Buffer
+;;; -----------------------------------------------------------------------
 (require 'gnus-cite)
 
 (add-hook 'gnus-article-display-hook
@@ -227,8 +245,9 @@ pIf performed over a topic line, toggle folding the topic."
 (setq gnus-visible-headers
       "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^[BGF]?Cc:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Mail-Followup-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^Resent-From:\\|^X-Sent:\\|^User-Agent:\\|^X-Mailer:\\|^X-Newsreader:")
 
+;;; -----------------------------------------------------------------------
 ;;; Gnus layout
-;;; --------------------------------------------------
+;;; -----------------------------------------------------------------------
 ;; (gnus-add-configuration '(article (vertical 1.0 (summary .35 point) (article 1.0))))
 
 (gnus-add-configuration
@@ -248,23 +267,36 @@ pIf performed over a topic line, toggle folding the topic."
                (vertical 1.0
                          (summary 1.0 point)))))
 
-;;; gnus daemon
-;;; --------------------------------------------------
+;;; -----------------------------------------------------------------------
+;;; Gnus Daemon
+;;; -----------------------------------------------------------------------
 (gnus-demon-add-handler 'gnus-demon-scan-news 15 t)
 
 
-;;; gnus agent
+;;; -----------------------------------------------------------------------
+;;; Gnus Agent
+;;; -----------------------------------------------------------------------
 (setq gnus-plugged t)
 
 
-;;; Spam related
-;;; --------------------------------------------------
+;;; -----------------------------------------------------------------------
+;;; Spam
+;;; -----------------------------------------------------------------------
 (spam-initialize)
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
 
 
-;;; url
+;;; MIME
+;;; --------------------------------------------------
+(add-to-list 'mm-attachment-override-types "image/.*")
+
+;;; misc
+;;; --------------------------------------------------
+(setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
+
+
+;;; Guess url of gnus news article
 (defun gnus-summary-guess-article-url ()
   "guess url of the article"
   (interactive)
@@ -278,7 +310,8 @@ pIf performed over a topic line, toggle folding the topic."
                     (w3m-active-region-or-url-at-point))
                    ((equal (substring (second msgids) 0 6)
                            "gmane.")
-                    (concat "http://comments.gmane.org/" (second msgids) "/" (third msgids))))))))
+                    (concat "http://news.gmane.org/"
+                            (second msgids) "/" (third msgids))))))))
     (if url
         (browse-url (message url))
       (message "Couldn't find any likely url"))))
@@ -287,14 +320,5 @@ pIf performed over a topic line, toggle folding the topic."
           (lambda ()
             (define-key gnus-summary-mode-map
               (kbd "C-c C-o") 'gnus-summary-guess-article-url)))
-
-;;; MIME
-;;; --------------------------------------------------
-(add-to-list 'mm-attachment-override-types "image/.*")
-
-;;; misc
-;;; --------------------------------------------------
-(setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
-
 
 ;;; init-gnus.el ends here
