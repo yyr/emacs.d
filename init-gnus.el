@@ -2,6 +2,14 @@
 ;; http://yagnesh.org
 ;;
 
+;;; --------------------------------------------------------
+;;; Keep everything under ~/gnus folder for easy synchronization (unison)
+;;; --------------------------------------------------------
+(setq gnus-home-directory "~/gnus")
+(setq gnus-startup-file "~/gnus/.newsrc")
+(setq gnus-directory "~/gnus/News")
+(setq message-directory "~/gnus/Mail")
+
 (require 'nnimap)
 (require 'starttls)
 ;; (require 'registry)
@@ -10,10 +18,6 @@
 (load "init-bbdb")
 (load "init-message")
 
-;;; folders
-(setq gnus-home-directory "~/gnus")
-(setq gnus-directory "~/gnus/News")
-(setq message-directory "~/gnus/Mail")
 
 ;;; Sources
 ;;; --------------------------------------------------------
@@ -85,8 +89,6 @@
   (with-timeout
       (5 (message "Gnus timed out.") (debug))
     ad-do-it))
-
-
 
 ;;; -----------------------------------------------------------------------
 ;;; Group buffer
