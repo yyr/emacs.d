@@ -36,6 +36,9 @@
                       (nnir-search-engine imap)
                       (nnimap-address "imap.gmail.com")))
 
+(setq mail-sources '((pop :server "pop.hines.hokudai.ac.jp"
+                          :user "vh0004")))
+
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")
 
@@ -52,26 +55,27 @@
 ;;; -----------------------------------------------------------------------
 (setq gnus-post-method 'current)
 
-(setq gnus-parameters
-      ;; gmane live mail id
-      '((".*news\\.gmane\\.org.*"
-         (posting-style
-          (address "yagnesh@live.com")
-          (name "Yagnesh")
-          (user-mail-address "yagnesh@live.com")))
+(setq gnus-posting-styles
+      '((".*"
+         (From (with-current-buffer gnus-article-buffer
+                 (message-fetch-field "to")))
+         (signature-file "~/.signature")
+         (name "Yagnesh"))
 
-        ;; any mail
-        ("yagmsc"
-         (posting-style
-          (address "yagneshmsc@gmail.com")
-          (name "Yagnesh")
-          (user-mail-address "yagneshmsc@gmail.com")))))
+        (".*news\\.gmane\\.org.*"
+         (address "yagnesh@live.com")
+         (name "Yagnesh")
+         (user-mail-address "yagnesh@live.com"))
+
+        (".*mail\\.misc"
+         (From (with-current-buffer gnus-article-buffer
+                 (message-fetch-field "to")))
+         (name "Yagnesh"))))
 
 ;;; -----------------------------------------------------------------------
 ;;; search
 ;;; -----------------------------------------------------------------------
 (require 'nnir)
-
 
 ;;; -----------------------------------------------------------------------
 ;;;DEBUG
