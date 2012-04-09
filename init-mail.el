@@ -17,8 +17,10 @@
 ;; we substitute sendmail with msmtp
 (setq sendmail-program "/usr/bin/msmtp")
 
-(defun cg-feed-msmtp ()
-  "Switch msmtp args by looking at the `From' address in the mail headers,
+(defun msmtp-switch-args ()
+  "Switches msmtp args by looking at the `From' address in the mail headers,
+NOTE: for a \"gmail\" switch there should be corresponding
+\"gmail\" account in your ~/.msmtprc.
 "
   (if (message-mail-p)
       (save-excursion
@@ -33,11 +35,14 @@
                   "live")
                  ;; CHANGE HERE according to your mail id
                  ((string-match "yagneshmsc" from)
-                  "gmail"))))
+                  "gmail")
+                 ;; lab mail
+                 ((string-match "hokudai" from)
+                  "hokudai"))))
           (message "mstmp args given: -a %s" account)
           (setq message-sendmail-extra-arguments (list '"-a" account))))))
 
-(add-hook 'message-send-mail-hook 'cg-feed-msmtp)
+(add-hook 'message-send-mail-hook 'msmtp-switch-args)
 (setq message-sendmail-envelope-from 'header)
 
 
