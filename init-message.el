@@ -16,7 +16,8 @@
   (save-excursion
     (message-goto-signature)
     (previous-line 2)
-    )
+    (insert "\n\nThanks.,"))
+
   (let* ((to (message-fetch-field "To"))
          (address-comp (mail-extract-address-components to))
          (name (car address-comp))
@@ -24,7 +25,7 @@
                     "")))
     (when first
       (message-goto-body)
-      (insert (concat  "\nHi " (capitalize first) ",\n\n")))))
+      (insert (concat  "\nHello " (capitalize first) ",\n\n")))))
 
 (setq message-signature t
       message-signature-file "~/.signature")
@@ -42,7 +43,7 @@
 
 (setq gnus-confirm-mail-reply-to-news t
       message-kill-buffer-on-exit t
-      message-elide-ellipsis "\n[snipped %l lines]\n\n")
+      message-elide-ellipsis "\n[snip]\n")
 
 ;;; --------------------------------------------------------
 ;; sent copy
