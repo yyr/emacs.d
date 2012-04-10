@@ -40,7 +40,7 @@
 (global-ede-mode 1)
 
 (semantic-add-system-include
- "~/local/python/lib/python3.2/" 'python-mode)
+ "/home/yagnesh/local/python/lib/python3.2/" 'python-mode)
 
 (defun my-cedet-hook ()
   (local-set-key [(control return)] 'semantic-ia-complete-symbol)
