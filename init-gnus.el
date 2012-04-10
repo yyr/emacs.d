@@ -40,19 +40,19 @@
                       (nnir-search-engine imap)
                       (nnimap-address "imap.gmail.com")))
 
-(setq mail-sources '((pop :server "pop.hines.hokudai.ac.jp"
-                          :user "vh0004")))
+(setq pop3-leave-mail-on-server t)
+
+(when on-lab-computer
+  (setq mail-sources '((pop :server "pop.hines.hokudai.ac.jp"
+                            :user "vh0004"))))
 
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")
 
-;;; gravatar set up by TH from ding@gnus.org list
-(require 'gravatar)
-(require 'gnus-gravatar)
-(defun th-gnus-article-prepared ()
-  (gnus-treat-from-gravatar)
-  (gnus-treat-mail-gravatar))
-(add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
+;;; -----------------------------------------------------------------------
+;;; Splitting
+;;; -----------------------------------------------------------------------
+(setq nnmail-crosspost nil)
 
 ;;; -----------------------------------------------------------------------
 ;;; posting
@@ -60,11 +60,12 @@
 (setq gnus-post-method 'current)
 
 (setq gnus-posting-styles
-      '((".*"
-         (From (with-current-buffer gnus-article-buffer
-                 (message-fetch-field "to")))
-         (signature-file "~/.signature")
-         (name "Yagnesh"))
+      '(
+        ;; (".*"
+        ;;  (From (with-current-buffer gnus-article-buffer
+        ;;          (message-fetch-field "to")))
+        ;;  (signature-file "~/.signature")
+        ;;  (name "Yagnesh"))
 
         (".*news\\.gmane\\.org.*"
          (address "yagnesh@live.com")
@@ -75,6 +76,20 @@
          (From (with-current-buffer gnus-article-buffer
                  (message-fetch-field "to")))
          (name "Yagnesh"))))
+
+
+;;; -----------------------------------------------------------------------
+;;; Gravatar
+;;; -----------------------------------------------------------------------
+;;; gravatar set up by TH from ding@gnus.org list
+(require 'gravatar)
+(require 'gnus-gravatar)
+
+(defun th-gnus-article-prepared ()
+  (gnus-treat-from-gravatar)
+  (gnus-treat-mail-gravatar))
+(add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
+
 
 ;;; -----------------------------------------------------------------------
 ;;; search
