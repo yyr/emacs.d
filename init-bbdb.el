@@ -32,6 +32,7 @@
  bbbd-message-caching-enabled t           ;; be fast
  bbdb-use-alternate-names t               ;; use AKA
  bbdb-elided-display t                    ;; single-line addresses
+ bbdb-completion-display-record nil     ; don't display window after completion
 
  ;; auto-create addresses from mail
  bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook
