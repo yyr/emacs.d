@@ -43,8 +43,8 @@
 (setq pop3-leave-mail-on-server t)
 
 (when on-lab-computer
-  (setq mail-sources '((pop :server "pop.hines.hokudai.ac.jp"
-                            :user "vh0004"))))
+  (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
+                                   :user "vh0004")))
 
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")
@@ -53,6 +53,14 @@
 ;;; Splitting
 ;;; -----------------------------------------------------------------------
 (setq nnmail-crosspost nil)
+
+(setq nnmail-split-methods
+      '(("mail.live" "^Resent-From: srs-list@wipd.com")
+        ("mail.live" "^To:.*yagnesh@live.com")
+        ("mail.live" "^Cc:.*yagnesh@live.com")
+        ("mail.hokudai" "^To:.*yagnesh@.*hokudai.ac.jp")
+        ("mail.hokudai" "^Cc:.*yagnesh@.*hokudai.ac.jp.*")
+        ("mail.misc" "")))
 
 ;;; -----------------------------------------------------------------------
 ;;; posting
