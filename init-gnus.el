@@ -55,8 +55,7 @@
 (setq nnmail-crosspost nil)
 
 (setq nnmail-split-methods
-      '(("mail.live" "^Resent-From: srs-list@wipd.com")
-        ("mail.live" "^To:.*yagnesh@live.com")
+      '(("mail.live" "^To:.*yagnesh@live.com")
         ("mail.live" "^Cc:.*yagnesh@live.com")
         ("mail.hokudai" "^To:.*yagnesh@.*hokudai.ac.jp")
         ("mail.hokudai" "^Cc:.*yagnesh@.*hokudai.ac.jp.*")
