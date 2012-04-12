@@ -40,8 +40,6 @@
                       (nnir-search-engine imap)
                       (nnimap-address "imap.gmail.com")))
 
-(setq pop3-leave-mail-on-server t)
-
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
                                    :user "vh0004")))
