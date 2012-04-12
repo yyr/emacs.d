@@ -50,40 +50,11 @@
 ;; (setq gnus-ignored-newsgroups "")
 
 ;;; -----------------------------------------------------------------------
-;;; Splitting
+;;; load posting style and spitting rules setting (in a private
+;;; Repo, some what confidential)
+(if (file-exists-p "~/git/org/gnus-secret.el")
+    (load-file "~/git/org/gnus-secret.el"))
 ;;; -----------------------------------------------------------------------
-(setq nnmail-crosspost nil)
-
-(setq nnmail-split-methods
-      '(("mail.live" "^To:.*yagnesh@live.com")
-        ("mail.live" "^Cc:.*yagnesh@live.com")
-        ("mail.hokudai" "^To:.*yagnesh@.*hokudai.ac.jp")
-        ("mail.hokudai" "^Cc:.*yagnesh@.*hokudai.ac.jp.*")
-        ("mail.misc" "")))
-
-;;; -----------------------------------------------------------------------
-;;; posting
-;;; -----------------------------------------------------------------------
-(setq gnus-post-method 'current)
-
-(setq gnus-posting-styles
-      '(
-        ;; (".*"
-        ;;  (From (with-current-buffer gnus-article-buffer
-        ;;          (message-fetch-field "to")))
-        ;;  (signature-file "~/.signature")
-        ;;  (name "Yagnesh"))
-
-        (".*news\\.gmane\\.org.*"
-         (address "yagnesh@live.com")
-         (name "Yagnesh")
-         (user-mail-address "yagnesh@live.com"))
-
-        (".*mail\\.misc"
-         (From (with-current-buffer gnus-article-buffer
-                 (message-fetch-field "to")))
-         (name "Yagnesh"))))
-
 
 ;;; -----------------------------------------------------------------------
 ;;; Gravatar
