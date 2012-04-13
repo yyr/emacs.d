@@ -292,4 +292,15 @@ License: GPL v3 or later
       (gnus)
     (switch-to-buffer "*Group*")))
 
+(defun toggle-debugger ()
+  "alternative to stupid `toggle-debug-on-error'"
+  (interactive)
+  (if debug-on-error
+      (progn
+        (setq debug-on-error nil)
+        (message "Debug on Error disabled globally"))
+    (progn
+      (setq debug-on-error t)
+      (message "Debug on Error enabled globally"))))
+
 ;;; init-utils-el ends here
