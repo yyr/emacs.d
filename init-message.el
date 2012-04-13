@@ -43,7 +43,7 @@
 
 (setq gnus-confirm-mail-reply-to-news t
       message-kill-buffer-on-exit t
-      message-elide-ellipsis "\n[snip]\n")
+      message-elide-ellipsis "[...]\n")
 
 ;;; --------------------------------------------------------
 ;; sent copy
