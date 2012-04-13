@@ -20,21 +20,19 @@
 (setq ibuffer-expert t)
 (setq ibuffer-show-empty-filter-groups nil)
 
-(setq ibuffer-saved-filter-groups
-      '(("home"
-         ("emacs-config" (or (filename . ".emacs.d")
-                             (filename . "init")))
-         ("Org" (or (mode . org-mode)
-                    (filename . "OrgMode")))
-         ("Help" (or (name . "\*Help\*")
-                     (name . "\*Apropos\*")
-                     (name . "\*info\*"))))))
+(setq ibuffer-shrink-to-minimum-size t)
+(setq ibuffer-always-show-last-buffer nil)
+(setq ibuffer-sorting-mode 'recency)
+
+;; (setq ibuffer-saved-filter-groups
+;;       '(("home"
+;;          ("Org" (or (mode . org-mode)
+;;                     (filename . "OrgMode")))
+;;          ("star"  (name . "\*.*\*")))))
 
 (add-hook 'ibuffer-mode-hook
           '(lambda ()
-             (ibuffer-auto-mode 1)
-             (ibuffer-switch-to-saved-filter-groups "home")))
-
+             (ibuffer-auto-mode 1)))
 
 
 ;; kill-other-buffers
@@ -54,10 +52,16 @@
 (define-key global-map [(control ?z) ?k] 'kill-other-buffers) ; Bind to C-z k
 
 
-(defun kill-star-buffers
-  "kill those automatically generated buffers looks like *foo info for you* "
+(defun kill-star-buffers ()
+ "kill all those starred buffers.
+FIXME: make an exceptions for few buffers like gnus, emms"
   (interactive)
-  (let ((sbuf (string-)))))
+  (mapc (lambda (buf)
+          (if (string-match "^\*.*\*$" (buffer-name buf))
+              (kill-buffer buf)))
+        (buffer-list)))
+(define-key global-map
+  [(control ?z) (control ?k)] 'kill-star-buffers) ; Bind to C-z C-k
 
 ;;; kill current buffer
 (global-set-key (kbd "M-k") (lambda ()
