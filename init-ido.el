@@ -38,12 +38,4 @@
 ;; ido-ubiquitous
 ;;(ido-ubiquitous)
 
-;;; -----------------------------------------------------------------------------
-;; recentf
-(defun steve-ido-choose-from-recentf ()
-  "Use ido to select a recently opened file from the `recentf-list'"
-  (interactive)
-  (find-file (ido-completing-read "Open file: " recentf-list nil t)))
-(global-set-key [(meta f11)] 'steve-ido-choose-from-recentf)
-
 ;;; init-ido.el ends here
