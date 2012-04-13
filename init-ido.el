@@ -34,8 +34,4 @@
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
 
-;;; -----------------------------------------------------------------------------
-;; ido-ubiquitous
-;;(ido-ubiquitous)
-
 ;;; init-ido.el ends here
