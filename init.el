@@ -39,6 +39,9 @@
                                         ;(load 'init-elpa)
 (load "init-el-get")
 
+;;; IDE , make
+(load "init-cedet")
+
 ;;; initial setup, keybindings
 (load "init-general")
 (load "init-ess-minors")
@@ -138,8 +141,6 @@
 (load "init-eldoc")
 (load "init-help")
 
-;;; IDE , make
-(load "init-cedet")
 ;; (load "init-ecb")
 (load "init-flymake")
 (load "init-etags")
