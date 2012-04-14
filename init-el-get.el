@@ -21,7 +21,7 @@
   (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
 
 ;;; el-get-is-lazy
-;; (setq el-get-is-lazy t)
+(setq el-get-is-lazy t)
 
 (if (symbolp "package-archives")
     (add-to-list 'package-archives
@@ -33,9 +33,7 @@
 ;;; ---------------------------------------------------------------------------
 ;; packages are defined by me
 (setq el-get-sources
-      '(
-;;;; help typing
-        (:name org2jekyll
+      '((:name org2jekyll
                :type git
                :url "http://github.com/yyr/org2jekyll.git")))
 

@@ -1,6 +1,8 @@
 ;;; loading
 (el-get 'sync '(autopair))
 
+(require 'autopair)
+
 ;;; setup
 (setq autopair-wrap-action t)
 
