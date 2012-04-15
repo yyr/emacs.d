@@ -29,7 +29,11 @@
 
    ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
     "* TODO %?\n%U   %a%i" )
-))
+
+   ("C" "TODO under Task in the current buffer "
+    entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
+    "* TODO %?
+  %U %a %n" :prepend t)))
 
 ;; capture Templages
 (setq org-default-notes-file "~/git/org/refile.org")

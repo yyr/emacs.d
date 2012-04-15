@@ -98,5 +98,6 @@
      (define-key map "Q" 'org-agenda-quit-and-bury)))
 
 (setq org-agenda-tags-column -105)
+(setq org-agenda-window-setup 'current-window)
 
 ;;; init-org-agenda.el ends here
