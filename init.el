@@ -90,6 +90,9 @@
 ;;; File management
 (load "init-dired")
 
+;;; emacs session
+;(load "init-session")
+
 ;;; languages
 (load "init-lispy")
 (load "init-lisp")
