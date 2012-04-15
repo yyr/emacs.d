@@ -2,6 +2,7 @@
 
 ;;; load
 (el-get 'sync '(yasnippet))
+(require 'yasnippet)
 
 ;;; Snippet Dir
 (setq yas/snippet-dirs '("~/.emacs.d/mysnippets/"
