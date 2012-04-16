@@ -18,6 +18,9 @@
 (load "init-bbdb")
 (load "init-message")
 
+;;; cache
+(setq gnus-use-cache t)
+(setq gnus-cacheable-groups "^nntp")
 
 ;;; Sources
 ;;; --------------------------------------------------------
@@ -27,7 +30,6 @@
   ;; only laptop has leafnode installed
   ;;  (setq gnus-select-method '(nntp "localhost"))
   (setq gnus-select-method '(nntp "news.gmane.org")))
-
 
 ;;; -----------------------------------------------------------------------
 ;;; Mail
@@ -44,6 +46,11 @@
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
                                    :user "vh0004")))
 
+(setq mail-source-delete-incoming t)
+(setq mail-sources
+      '((maildir :path "~/Maildir/live/")
+        (maildir :path "~/Maildir/uni/")))
+
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")
 
@@ -52,7 +59,7 @@
 ;;; Repo, some what confidential)
 (if (file-exists-p "~/git/org/gnus-secret.el")
     (load-file "~/git/org/gnus-secret.el"))
-;;; -----------------------------------------------------------------------
+
 
 ;;; -----------------------------------------------------------------------
 ;;; Gravatar
@@ -279,10 +286,12 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; -----------------------------------------------------------------------
 ;;; Spam
 ;;; -----------------------------------------------------------------------
+(require 'spam)
 (spam-initialize)
+(setq spam-directory "~/gnus/spam/")
+
 (setq gnus-spam-process-newsgroups
       '(("^gmane\\." . (((spam spam-use-gmane))))))
-
 
 ;;; MIME
 ;;; --------------------------------------------------
