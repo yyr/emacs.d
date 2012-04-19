@@ -35,21 +35,34 @@
 ;;; Mail
 ;;; -----------------------------------------------------------------------
 ;; Configure incoming mail (IMAP)
-(add-to-list 'gnus-secondary-select-methods '(nnml ""))
+(setq gnus-secondary-select-methods '((nnml "")))
 
 (add-to-list 'gnus-secondary-select-methods
              '(nnimap "yagmsc"
                       (nnir-search-engine imap)
                       (nnimap-address "imap.gmail.com")))
 
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "hc"
+                      (nnimap-address "mail.hcoop.net")))
+
+;;; localhost dovecot IMAP
+
+(setq imap-shell-program '("/usr/lib/dovecot/imap 2> /dev/null"))
+
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "localimap"
+                      (nnimap-address "localhost")
+                      (nnimap-stream ssl)))
+
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
                                    :user "vh0004")))
 
-(setq mail-source-delete-incoming t)
-(setq mail-sources
-      '((maildir :path "~/Maildir/live/")
-        (maildir :path "~/Maildir/uni/")))
+;; (setq mail-source-delete-incoming t)
+;; (setq mail-sources
+;;       '((maildir :path "~/Maildir/live/")
+;;         (maildir :path "~/Maildir/uni/")))
 
 ;; (setq gnus-invalid-group-regexp "[:`'\"]\\|^$")
 ;; (setq gnus-ignored-newsgroups "")

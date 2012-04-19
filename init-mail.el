@@ -28,17 +28,21 @@ NOTE: for a \"gmail\" switch there should be corresponding
                 (save-restriction
                   (message-narrow-to-headers)
                   (message-fetch-field "From")))
+
                (account
                 (cond
-                 ;; gmail
+                 ;; live
                  ((string-match "live.com" from)
                   "live")
-                 ;; live
+
+                 ;; gmail
                  ((string-match "yagneshmsc" from)
                   "gmail")
+
                  ;; lab mail
                  ((string-match "hokudai" from)
                   "hokudai")
+
                  (t
                   "default"))))
           (message "mstmp args given: -a %s" account)

@@ -7,8 +7,11 @@
                                        (ditaa . t)
                                        (octave . t)
                                        (perl . t)
+                                       (python . t)
                                        (gnuplot . t)
                                        (sh . t))))
+
+(require 'ob-python)
 
 ;; Do not prompt to confirm evaluation
 ;; This may be dangerous - make sure you understand the consequences

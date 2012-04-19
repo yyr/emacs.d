@@ -6,7 +6,7 @@
 
 ;;; ---------------------------------------------------------------------------
 (setq user-full-name "Yagnesh Raghava Yakkala")
-(setq user-mail-address "yagnesh@live.com")
+(setq user-mail-address "hi@yagnesh.org")
 
 ;;; ---------------------------------------------------------------------------
 ;; check emacs running on which system (to load config differently
