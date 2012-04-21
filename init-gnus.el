@@ -50,10 +50,11 @@
 
 (setq imap-shell-program '("/usr/lib/dovecot/imap 2> /dev/null"))
 
-(add-to-list 'gnus-secondary-select-methods
-             '(nnimap "localimap"
-                      (nnimap-address "localhost")
-                      (nnimap-stream ssl)))
+(if (file-directory-p "~/Maildir")
+    (add-to-list 'gnus-secondary-select-methods
+                 '(nnimap "localimap"
+                          (nnimap-address "localhost")
+                          (nnimap-stream ssl))))
 
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
