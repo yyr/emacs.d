@@ -95,7 +95,7 @@
 
 ;;; languages
 (load "init-lispy")
-(load "init-lisp")
+(load "init-elisp")
 (load "init-common-lisp")
 (load "init-scheme")
 
