@@ -250,7 +250,10 @@ pIf performed over a topic line, toggle folding the topic."
                 (concat
                  (car my-citation-look)
                  (mapconcat
-                  (lambda (s) (propertize s 'face (pop current-cflist)))
+                  (lambda (s)
+                    (if (string-match " " s)
+                        ""
+                      (propertize s 'face (pop current-cflist))))
                   (make-vector depth (cadr my-citation-look)) "")
                  (caddr my-citation-look))))
           (dolist (line (cdr prefix))
