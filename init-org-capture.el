@@ -30,6 +30,9 @@
    ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
     "* TODO %?\n%U   %a%i" )
 
+   ("m" "mailnote" entry (file+headline "~/git/org/mails.org" "Mails")
+    "** TODO Mail From: %:from Subject: %:subject\n   %a" :kill-buffer t)
+
    ("C" "TODO under Task in the current buffer "
     entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
     "* TODO %?
