@@ -17,10 +17,13 @@
 ;;; load my bbdb settings
 (load "init-bbdb")
 (load "init-message")
+;;; some mail secrets ;)
+(if (file-exists-p "~/git/org/gnus-secret.el")
+    (load-file "~/git/org/gnus-secret.el"))
 
 ;;; cache
 (setq gnus-use-cache t)
-(setq gnus-cacheable-groups "^nntp")
+(setq gnus-cacheable-groups "^gmane")
 
 ;;; Sources
 ;;; --------------------------------------------------------
@@ -69,13 +72,6 @@
 ;; (setq gnus-ignored-newsgroups "")
 
 ;;; -----------------------------------------------------------------------
-;;; load posting style and spitting rules setting (in a private
-;;; Repo, some what confidential)
-(if (file-exists-p "~/git/org/gnus-secret.el")
-    (load-file "~/git/org/gnus-secret.el"))
-
-
-;;; -----------------------------------------------------------------------
 ;;; Gravatar
 ;;; -----------------------------------------------------------------------
 ;;; gravatar set up by TH from ding@gnus.org list
@@ -86,7 +82,6 @@
   (gnus-treat-from-gravatar)
   (gnus-treat-mail-gravatar))
 (add-hook 'gnus-article-prepare-hook 'th-gnus-article-prepared)
-
 
 ;;; -----------------------------------------------------------------------
 ;;; search
@@ -171,6 +166,8 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; -----------------------------------------------------------------------
 ;;; Summary Buffer
 ;;; -----------------------------------------------------------------------
+(setq gnus-summary-gather-subject-limit 'fuzzy)
+(setq gnus-summary-display-arrow t)
 
 (setq-default
  ;; gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
@@ -189,8 +186,18 @@ pIf performed over a topic line, toggle folding the topic."
  gnus-sum-thread-tree-single-leaf     "╰► "
  )
 
-;; (setq gnus-summary-line-format ":%U%R %B %s %-60=| %5L |%-10,8f |%&user-date; \n")
-;; gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f %* %B%s%)\n"
+;;; Gmail envy http://emacs.wordpress.com/2007/10/07/gmail-envy/
+(defun gnus-user-format-function-j (headers)
+  (let ((to (gnus-extra-header 'To headers)))
+    (if (string-match *yag-mails* to)
+        (if (string-match "," to) "~" "»")
+      (if (or (string-match *yag-mails*
+                            (gnus-extra-header 'Cc headers))
+              (string-match *yag-mails*
+                            (gnus-extra-header 'BCc headers)))
+          "~"
+        " "))))
+
 (setq gnus-summary-line-format
       (concat
        "%0{%U%R%z%}"
@@ -199,19 +206,21 @@ pIf performed over a topic line, toggle folding the topic."
        "%4{%-20,20f%}"               ;; name
        "  "
        "%3{│%}"
-       " "
+       "%uj "
        "%1{%B%}"
        "%s\n"))
-(setq gnus-summary-display-arrow t)
-
-(defalias 'gnus-user-format-function-M 'gnus-registry-user-format-function-M)
-
-(setq gnus-summary-gather-subject-limit 'fuzzy)
 
 ;;; -----------------------------------------------------------------------
 ;;; Article Buffer
 ;;; -----------------------------------------------------------------------
 (require 'gnus-cite)
+
+(setq gnus-visible-headers
+      "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^[BGF]?Cc:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Mail-Followup-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^Resent-From:\\|^X-Sent:\\|^User-Agent:\\|^X-Mailer:\\|^X-Newsreader:")
+
+(setq gnus-article-update-date-headers nil)
+(setq gnus-extra-headers  '(To Cc Bcc Keywords Gcc Newsgroups)
+      nnmail-extra-headers gnus-extra-headers)
 
 (add-hook 'gnus-article-display-hook
           '(lambda ()
@@ -223,11 +232,7 @@ pIf performed over a topic line, toggle folding the topic."
              (gnus-article-highlight)
              (gnus-article-highlight-citation)
              ;; will actually convert timestamp from other timezones to yours
-             (gnus-article-date-local)
-             ))
-
-(setq gnus-article-update-date-headers nil)
-(setq gnus-extra-headers '(To))
+             (gnus-article-date-local)))
 
 ;;; Philipp Haselwarter from ding mailing list
 (defcustom my-citation-look '("" "│" "")
@@ -263,30 +268,12 @@ pIf performed over a topic line, toggle folding the topic."
 
 (add-hook 'gnus-article-prepare-hook 'my-citation-style)
 
-(setq gnus-visible-headers
-      "^From:\\|^Newsgroups:\\|^Subject:\\|^Date:\\|^Followup-To:\\|^Reply-To:\\|^Organization:\\|^Summary:\\|^Keywords:\\|^To:\\|^[BGF]?Cc:\\|^Posted-To:\\|^Mail-Copies-To:\\|^Mail-Followup-To:\\|^Apparently-To:\\|^Gnus-Warning:\\|^Resent-From:\\|^X-Sent:\\|^User-Agent:\\|^X-Mailer:\\|^X-Newsreader:")
-
 ;;; -----------------------------------------------------------------------
 ;;; Gnus layout
 ;;; -----------------------------------------------------------------------
-;; (gnus-add-configuration '(article (vertical 1.0 (summary .35 point) (article 1.0))))
+(gnus-add-configuration '(article
+                          (vertical 1.0 (summary .35 point) (article 1.0))))
 
-(gnus-add-configuration
- '(article
-   (horizontal 1.0
-               (vertical 25
-                         (group 1.0))
-               (vertical 1.0
-                         (summary 0.25 point)
-                         (article 1.0)))))
-
-(gnus-add-configuration
- '(summary
-   (horizontal 1.0
-               (vertical 25
-                         (group 1.0))
-               (vertical 1.0
-                         (summary 1.0 point)))))
 
 ;;; -----------------------------------------------------------------------
 ;;; Gnus Daemon
@@ -298,7 +285,6 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; Gnus Agent
 ;;; -----------------------------------------------------------------------
 (setq gnus-plugged t)
-
 
 ;;; -----------------------------------------------------------------------
 ;;; Spam
@@ -317,7 +303,6 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; misc
 ;;; --------------------------------------------------
 (setq gnus-expert-user 't)      ;dont prompt me when i want to quit gnus
-
 
 ;;; Guess url of gnus news article
 (defun gnus-summary-guess-article-url ()
