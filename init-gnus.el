@@ -100,6 +100,12 @@
 ;;; -----------------------------------------------------------------------
 ;;; Group buffer
 ;;; -----------------------------------------------------------------------
+
+;; Don't show me a group that has no new messages
+(setq gnus-group-list-inactive-groups nil
+      gnus-permanently-visible-groups nil
+      gnus-list-groups-with-ticked-articles nil)
+
 (defun gnus-topic-select-group (&optional all)
   "Select this newsgroup.
 No article is selected automatically.
