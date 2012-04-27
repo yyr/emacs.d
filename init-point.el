@@ -41,4 +41,39 @@
 (define-key global-map [(control ?z) ?.] 'pop-point)          ; Bind to C-z .
 
 
+;;; Cursor Look
+
+(defun th-activate-mark-init ()
+  (setq cursor-type 'bar))
+(add-hook 'activate-mark-hook 'th-activate-mark-init)
+
+(defun th-deactivate-mark-init ()
+  (setq cursor-type 'box))
+(add-hook 'deactivate-mark-hook 'th-deactivate-mark-init)
+
+;; Change cursor color according to mode based on the following link
+;;;http://emacs-fu.blogspot.de/2009/12/changing-cursor-color-and-shape.html
+(setq yyr-read-only-color       "grey")
+(setq yyr-overwrite-color       "red")
+(setq yyr-normal-color          "blue")
+
+(setq yyr-read-only-cursor-type 'box)
+(setq yyr-overwrite-cursor-type 'bar)
+(setq yyr-normal-cursor-type    'box)
+
+(defun yyr-set-cursor-according-to-mode ()
+  "change cursor color and type according to some minor modes."
+  (cond
+   (buffer-read-only
+    (set-cursor-color yyr-read-only-color)
+    (setq cursor-type yyr-read-only-cursor-type))
+   (overwrite-mode
+    (set-cursor-color yyr-overwrite-color)
+    (setq cursor-type yyr-overwrite-cursor-type))
+   (t
+    (set-cursor-color yyr-normal-color)
+    (setq cursor-type yyr-normal-cursor-type))))
+
+(add-hook 'post-command-hook 'yyr-set-cursor-according-to-mode)
+
 ;;; init-point.el ends here
