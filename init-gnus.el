@@ -304,7 +304,7 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;;; MIME
 ;;; --------------------------------------------------
-(add-to-list 'mm-attachment-override-types "image/.*")
+;(add-to-list 'mm-attachment-override-types "image/.*")
 
 ;;; misc
 ;;; --------------------------------------------------

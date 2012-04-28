@@ -32,7 +32,7 @@
           '(lambda ()
              (my-vi-bind view-mode-map)))
 
-;(define-key ctl-x-map "\C-q" 'view-mode)
+(define-key ctl-x-map "\M-q" 'view-mode)
 
 ;;; read only files would be open in view-mode
 (setq view-read-only t)
