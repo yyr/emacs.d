@@ -15,6 +15,7 @@
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 (require 'org-install)
+(require 'org-special-blocks)
 
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
