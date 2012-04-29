@@ -53,9 +53,9 @@
 
 ;; Change cursor color according to mode based on the following link
 ;;;http://emacs-fu.blogspot.de/2009/12/changing-cursor-color-and-shape.html
-(setq yyr-read-only-color       "grey")
+(setq yyr-read-only-color       "blue")
 (setq yyr-overwrite-color       "red")
-(setq yyr-normal-color          "blue")
+(setq yyr-normal-color          "green")
 
 (setq yyr-read-only-cursor-type 'box)
 (setq yyr-overwrite-cursor-type 'bar)
