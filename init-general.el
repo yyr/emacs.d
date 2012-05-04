@@ -117,4 +117,7 @@ before point if point is past text"
 ;;; buttonize addresses
 (add-hook 'find-file-hooks 'goto-address-prog-mode)
 
+(add-hook 'doc-view-mode-hook (lambda ()
+                           (auto-revert-mode 1)))
+
 ;;; init-general.el ends here
