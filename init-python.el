@@ -25,10 +25,8 @@
 ;;; highlight indentation mode
 (defvaralias 'py-indent-offset 'python-indent-offset)
 
-(add-hook 'python-mode-hook (lambda ()
-                             (highlight-indentation-mode)))
-
-
+;; (add-hook 'python-mode-hook (lambda ()
+;;                              (highlight-indentation-mode)))
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
