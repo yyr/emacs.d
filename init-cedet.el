@@ -12,19 +12,10 @@
   (when (file-directory-p "~/.emacs.d/el-get/cedet")
     (progn
       (add-to-list 'load-path  "~/.emacs.d/el-get/cedet")
+      (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
+      (semantic-load-enable-minimum-features)
+      (semantic-load-enable-code-helpers))))
 
-      ;; trunk setup
-      (if (file-regular-p "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
-          (progn
-            (load-file "~/.emacs.d/el-get/cedet/cedet-devel-load.el")
-            (semantic-load-enable-minimum-features)
-            (semantic-load-enable-code-helpers)))
-
-
-      ;; newtrunk setup
-      (if (file-regular-p  "~/.emacs.d/el-get/cedet//common/cedet.el")
-          (progn
-            (load-file "~/.emacs.d/el-get/cedet/common/cedet.el"))))))
 
 ;;; ede
 (setq semantic-default-submodes
