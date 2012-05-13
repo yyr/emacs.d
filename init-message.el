@@ -6,6 +6,8 @@
 ;;; Description:
 ;; message mode
 
+(add-hook 'message-setup-hook 'bbdb-get-mail-aliases)
+
 ;;; --------------------------------------------------------
 ;;; auto hello thank you
 (defadvice gnus-summary-reply (after formalities () activate)
