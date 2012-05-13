@@ -42,4 +42,7 @@
 ;;; save org-buffers every hour
 (run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
+(require 'org-element)
+(require 'org-export)
+
 ;;; init-org.el ends here
