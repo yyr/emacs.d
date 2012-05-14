@@ -3,26 +3,26 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
 ;;
 
-(when on-laptop
-  (set-face-attribute 'default nil
-                      :height 108
-                      :width 'extra-condensed
-                      :family "DejaVu Sans Mono"
-                      ))
+(defun abstract-screen-width ()
+  (cond ((eq 'x window-system) (x-display-pixel-width))
+        ((eq 'ns window-system) (display-pixel-width))))
 
-;; (set-default-font
-;; "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
+(defun perfect-font-size (pixels)
+  (cond ((eq 'x window-system) (cond ((<= pixels 1024) 100)
+                                     ((<= pixels 1366) 105)
+                                     ((> pixels 1366) 110)))
 
+        ((eq 'ns window-system) (cond ((<= pixels 1024) 110)
+                                      ((<= pixels 1280) 120)
+                                      ((> pixels 1280) 140)))))
+
+(set-face-attribute 'default nil
+                    :height (perfect-font-size (abstract-screen-width))
+                    :width 'extra-condensed
+                    :weight 'light)
+
+;; (set-default-font  "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
 ;; (set-face-attribute 'default nil :family "Inconsolata" :height 110)
-
-;; (custom-set-faces
-;;  '(default ((t (:slant normal
-;;             :weight light
-;;             :height 95
-;;             :width extra-condensed
-;;             :foundry "unknown"
-;;             :family "DejaVu Sans Mono")))))
-
 ;; (set-face-attribute 'default nil :family "Anonymous Pro" :height 110)
 ;; (set-default-font "-Misc-Fixed-Medium-R-Normal--10-100-75-75-C-90-ISO8859-1")
 
