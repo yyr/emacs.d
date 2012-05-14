@@ -16,10 +16,11 @@
                                       ((<= pixels 1280) 120)
                                       ((> pixels 1280) 140)))))
 
-(set-face-attribute 'default nil
-                    :height (perfect-font-size (abstract-screen-width))
-                    :width 'extra-condensed
-                    :weight 'light)
+(when (window-system)
+  (set-face-attribute 'default nil
+                      :height (perfect-font-size (abstract-screen-width))
+                      :width 'extra-condensed
+                      :weight 'light))
 
 ;; (set-default-font  "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
 ;; (set-face-attribute 'default nil :family "Inconsolata" :height 110)
