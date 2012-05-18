@@ -4,9 +4,10 @@
 ;;
 
 ;; letter class, for formal letters
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
+(require 'org-latex)
 
+
+;;; letter class
 (add-to-list 'org-export-latex-classes
              '("letter"
                "\\documentclass[11pt]{letter}\n
@@ -21,11 +22,6 @@
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
 
-(add-to-list 'org-export-latex-classes
-             '("article"
-               "\\documentclass{article}"
-               ("\\section{%s}" . "\\section*{%s}")))
-
 ;;; emphasis set up for latex
 (setq org-export-latex-emphasis-alist (quote
                                        (("*" "\\textbf{%s}" nil)
@@ -39,5 +35,19 @@
 
 (setq org-export-latex-hyperref-format "\\ref{%s}")
 
+;;; reftex setup from FAQ
+(defun org-mode-reftex-setup ()
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c [") 'reftex-citation))
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
+;; (setq org-latex-to-pdf-process '
+;;       ("pdflatex -interaction nonstopmode %b"
+;;        "/usr/bin/bibtex %b"
+;;        "pdflatex -interaction nonstopmode %b"
+;;        "pdflatex -interaction nonstopmode %b"))
 
 ;;; init-org-latex.el ends here

@@ -4,11 +4,12 @@
 ;;
 
 ;; #+LaTeX_CLASS: beamer in org files
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
+
+(require 'org-beamer)
+
 (add-to-list 'org-export-latex-classes
              ;; beamer class, for presentations
-             '("beamer"
+             '("beamer-1"
                "\\documentclass[11pt]{beamer}\n
       \\mode<{{{beamermode}}}>\n
       \\usetheme{{{{beamertheme}}}}\n

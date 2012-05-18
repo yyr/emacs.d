@@ -131,8 +131,8 @@
 
 ;;; org publish
 (load "init-org-html")
-;; (load "init-org-latex")
-;; (load "init-org-beamer")
+(load "init-org-latex")
+(load "init-org-beamer")
 (load "init-org-s5")
 
 ;;; org misc
