@@ -154,7 +154,7 @@
 (load "init-yaoddmuse")
 (load "init-sass-mode")
 (load "init-erc")
-(load "init-mediawiki")
+
 
 ;;;  misc
 (load "init-exec-path")
@@ -165,8 +165,10 @@
 (load "init-mail")
 (load "init-crontab")
 (load "init-server")
+
 (when (not on-lab-server)
-  (load "init-edit-server"))
+  (load "init-edit-server")
+  (load "init-mediawiki"))
 
 ;;; music
 (when on-laptop                     ; I listen music only on my laptop
