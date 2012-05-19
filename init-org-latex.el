@@ -50,4 +50,29 @@
 ;;        "pdflatex -interaction nonstopmode %b"
 ;;        "pdflatex -interaction nonstopmode %b"))
 
+
+;;; suvayu ali from org list
+;; backend aware export preprocess hook
+(defun sa-org-export-preprocess-hook ()
+  "My backend aware export preprocess hook."
+  (save-excursion
+    (when (eq org-export-current-backend 'latex)
+      ;; ignoreheading tag for bibliographies and appendices
+      (let* ((tag "ignoreheading"))
+        ;; (goto-char (point-min))
+        ;; (while (re-search-forward (concat ":" tag ":") nil t)
+        ;; (delete-region (point-at-bol) (point-at-eol)))
+        (org-map-entries (lambda ()
+                           (delete-region (point-at-bol) (point-at-eol)))
+                         (concat ":" tag ":"))))
+    (when (eq org-export-current-backend 'html)
+      ;; set custom css style class based on matched tag
+      (let* ((match "Qn"))
+        (org-map-entries
+         (lambda () (org-set-property "HTML_CONTAINER_CLASS" "inlinetask"))
+         match)))))
+
+(add-hook 'org-export-preprocess-hook 'sa-org-export-preprocess-hook)
+
+
 ;;; init-org-latex.el ends here
