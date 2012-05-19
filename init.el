@@ -177,7 +177,7 @@
 
 ;; interactive customization
 ;;----------------------------------------------------------------------------
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file "~/.emacs.d/init-custom.el")
 (load custom-file 'noerror)
 
 (add-hook 'emacs-startup-hook
