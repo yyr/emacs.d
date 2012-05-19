@@ -14,8 +14,23 @@
 (add-to-list 'auto-mode-alist
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
+;;; install
 (require 'org-install)
-(require 'org-special-blocks)
+
+(require 'org)
+;;; modules
+(eval-after-load "org.el"
+  (setq org-modules (remove-duplicates
+                     (append
+                      '(org-special-blocks
+                        org-element
+                        org-export
+                        org-inlinetask
+                                        ; add more modules if needed
+
+                        )
+                      org-modules))))
+
 
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
@@ -41,8 +56,5 @@
 
 ;;; save org-buffers every hour
 (run-at-time "00:59" 3600 'org-save-all-org-buffers)
-
-(require 'org-element)
-(require 'org-export)
 
 ;;; init-org.el ends here
