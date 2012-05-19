@@ -91,11 +91,11 @@
 ;;; -----------------------------------------------------------------------
 ;;;DEBUG
 ;;; --------------------------------------------------------
-(defadvice gnus-group-get-new-news (around gnus-timeout activate)
-  "Timeout for Gnus."
-  (with-timeout
-      (5 (message "Gnus timed out.") (debug))
-    ad-do-it))
+;; (defadvice gnus-group-get-new-news (around gnus-timeout activate)
+;;   "Timeout for Gnus."
+;;   (with-timeout
+;;       (5 (message "Gnus timed out.") (debug))
+;;     ad-do-it))
 
 ;;; -----------------------------------------------------------------------
 ;;; Group buffer
