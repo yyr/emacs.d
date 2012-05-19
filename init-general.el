@@ -120,4 +120,7 @@ before point if point is past text"
 (add-hook 'doc-view-mode-hook (lambda ()
                            (auto-revert-mode 1)))
 
+;;; stop unwanted kill-emacs (while using orgmode)
+(global-unset-key (kbd "C-x C-c"))
+
 ;;; init-general.el ends here
