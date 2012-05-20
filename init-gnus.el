@@ -324,7 +324,7 @@ pIf performed over a topic line, toggle folding the topic."
                     (w3m-active-region-or-url-at-point))
                    ((equal (substring (second msgids) 0 6)
                            "gmane.")
-                    (concat "http://news.gmane.org/"
+                    (concat "http://article.gmane.org/"
                             (second msgids) "/" (third msgids))))))))
     (if url
         (browse-url (message url))
