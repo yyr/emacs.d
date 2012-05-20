@@ -39,7 +39,7 @@
 
 ;;;  Custom Key Bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
-
+(define-key org-mode-map (kbd "C-c C-e") 'org-export-dispatch )
 
 ;;; Eric Schulte org list
 (defun yas/org-very-safe-expand ()
