@@ -73,7 +73,7 @@
 (load "init-yasnip")
 
 ;; dict is not available on server
-(when (executable-find "dictd")
+(when (executable-find "dict")
   (load "init-dictem"))
 
 ;;; help navigation
