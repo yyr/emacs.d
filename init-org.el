@@ -16,21 +16,19 @@
 
 ;;; install
 (require 'org-install)
-
 (require 'org)
+
 ;;; modules
-(eval-after-load "org.el"
-  (setq org-modules (remove-duplicates
-                     (append
-                      '(org-special-blocks
-                        org-element
-                        org-export
-                        org-inlinetask
+(setq org-modules (remove-duplicates
+                   (append
+                    '(org-special-blocks
+                      org-element
+                      org-export
+                      org-inlinetask
                                         ; add more modules if needed
 
-                        )
-                      org-modules))))
-
+                      )
+                    org-modules)))
 
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)

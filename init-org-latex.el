@@ -74,6 +74,9 @@
 
 (add-hook 'org-export-preprocess-hook 'sa-org-export-preprocess-hook)
 
+;;; export options
+(setq org-export-allow-BIND t)
+
 ;;; ignore heading
 ;;; Nicolas Goaziou, http://article.gmane.org/gmane.emacs.orgmode/55972
 (defun my-e-latex-headline (headline contents info)
@@ -81,6 +84,8 @@
       contents
     (org-e-latex-headline headline contents info)))
 
-(add-to-list 'org-e-latex-translate-alist '(headline . my-e-latex-headline))
+(require 'org-e-latex)
+(add-to-list 'org-e-latex-translate-alist
+             '(headline . my-e-latex-headline))
 
 ;;; init-org-latex.el ends here
