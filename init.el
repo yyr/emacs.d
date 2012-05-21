@@ -162,6 +162,7 @@
 (load "init-battery")
 
 ;;; sys & server
+(load "init-print")
 (load "init-mail")
 (load "init-crontab")
 (load "init-server")
