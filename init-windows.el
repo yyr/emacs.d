@@ -62,3 +62,11 @@
   (split-window-horizontally)
   (balance-windows)
   (follow-mode t))
+
+
+;;; setup
+;;----------------------------------------------------------------------------
+(setq ediff-split-window-function 'split-window-horizontally)
+
+
+;;; init-windows.el
