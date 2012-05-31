@@ -303,4 +303,11 @@ License: GPL v3 or later
       (setq debug-on-error t)
       (message "Debug on Error enabled globally"))))
 
+(defun yyr-insert-filename (&optional arg)
+  "insert file name sans extension at point. with ARG insert dired"
+  (interactive "P")
+  (insert (format "%s" (file-name-sans-extension
+                        (file-name-nondirectory (buffer-file-name))))))
+
+
 ;;; init-utils-el ends here
