@@ -1,5 +1,12 @@
 ;;; org-babel Setup
 
+(append org-modules '(ob-python
+                      ob-sh
+                      ob-ditaa
+                      ob-perl
+                      ob-python
+                      ob-gnuplot))
+
 (setq org-ditaa-jar-path "~/.emacs.d/el-get/org-mode/contrib/scripts/ditaa.jar")
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
 (setq org-babel-load-languages (quote ((emacs-lisp . t)
@@ -10,8 +17,6 @@
                                        (python . t)
                                        (gnuplot . t)
                                        (sh . t))))
-
-(require 'ob-python)
 
 ;; Do not prompt to confirm evaluation
 ;; This may be dangerous - make sure you understand the consequences
