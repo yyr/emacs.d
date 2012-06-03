@@ -16,7 +16,7 @@
 ;;; some convenience
 (defalias 'yes-or-no-p 'y-or-n-p)
 (when (boundp 'ido-mode)
-  (ido-mode))
+  (ido-mode 1))
 
 ;;; package dirs
 (setq el-get-install-dir "~/.emacs.d/el-get")
