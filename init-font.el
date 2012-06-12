@@ -5,16 +5,14 @@
 
 (defun abstract-screen-width ()
   (cond ((eq 'x window-system) (x-display-pixel-width))
+        ((eq 'w32 window-system) (display-pixel-width))
         ((eq 'ns window-system) (display-pixel-width))))
 
 (defun perfect-font-size (pixels)
-  (cond ((eq 'x window-system) (cond ((<= pixels 1024) 100)
-                                     ((<= pixels 1366) 105)
-                                     ((> pixels 1366) 110)))
-
-        ((eq 'ns window-system) (cond ((<= pixels 1024) 110)
-                                      ((<= pixels 1280) 120)
-                                      ((> pixels 1280) 140)))))
+  (cond
+   ((<= pixels 1024) 95)
+   ((<= pixels 1366) 100)
+   ((> pixels 1366) 110)))
 
 (when (window-system)
   (set-face-attribute 'default nil

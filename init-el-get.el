@@ -73,7 +73,8 @@
 
 ;;; ---------------------------------------------------------------------------
 ;; package needed for only my laptop
-(when on-laptop
+(when (and on-laptop
+           (not on-ms))
   (setq my-packages
         (append
          '(emms textile-mode

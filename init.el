@@ -21,6 +21,9 @@
 (defvar on-lab-server        ; lab cluster (hehe built emacs24 on it)
   (string-match "amu" (system-name)))
 
+(defvar on-ms        ; when on MS windows
+  (string-match "windows" (format "%s" system-type)))
+
 ;;; ---------- PATH -----------------------------------------------------------
 (defconst emacs-path "~/.emacs.d")      ; emacs path
 (setq load-path (cons (expand-file-name emacs-path) load-path))
@@ -35,8 +38,12 @@
 ;; ----------------------------------------------------------------------------
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
+
+;;; first of all any OS dependent paths has to be set
+(when on-ms
+  (load "init-ms"))
+
 ;;; package managers
-                                        ;(load 'init-elpa)
 (load "init-el-get")
 
 ;;; IDE , make
@@ -172,7 +179,7 @@
   (load "init-mediawiki"))
 
 ;;; music
-(when on-laptop                     ; I listen music only on my laptop
+(when (and on-laptop (not on-ms))                     ; I listen music only on my laptop
   (load "init-emms"))
 
 ;;; for tests

@@ -34,3 +34,6 @@ emms/
 semanticdb/*
 ede-projects.el
 srecode-map.el
+
+# emacs-server
+server/*
