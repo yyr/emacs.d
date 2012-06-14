@@ -309,5 +309,13 @@ License: GPL v3 or later
   (insert (format "%s" (file-name-sans-extension
                         (file-name-nondirectory (buffer-file-name))))))
 
+(defun save-in-tmp-dir ()
+  "save current buffer in tmp folder"
+  (interactive)
+  (let* ((bn (buffer-name))
+         (fn (concat (file-name-directory "~/tmp/") bn)))
+    (write-file fn)))
+
+(global-set-key (kbd "C-x w") 'save-in-tmp-dir)
 
 ;;; init-utils-el ends here
