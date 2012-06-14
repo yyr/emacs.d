@@ -18,9 +18,12 @@
 
 
 ;;; excutable paths (for unix commands from MSYS and git from msysgit)
-(add-to-list 'exec-path "C:/MinGW/msys/1.0/bin/")
-(add-to-list 'exec-path "C:/MinGW/bin/")
-(add-to-list 'exec-path "c:/MinGW/mingw32/bin")
-(add-to-list 'exec-path "C:/Program Files (x86)/Git/bin")
+(setq exec-path (append exec-path
+                        '("C:/MinGW/msys/1.0/bin/"
+                          "C:/MinGW/bin/"
+                          "c:/MinGW/mingw32/bin"
+
+                          ;; This must be last
+                          "C:/Program Files (x86)/Git/bin")))
 
 ;;; init-ms.el ends here
