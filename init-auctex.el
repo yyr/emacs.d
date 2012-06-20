@@ -232,4 +232,9 @@ If there is still something left do do start the next latex-command."
           '(lambda ()
              (define-key LaTeX-mode-map (kbd "C-c C-a") 'TeX-texify)))
 
+(add-hook 'LaTeX-mode-hook
+          '(lambda ()
+             (setq paragraph-separate (concat " *}\\|^ *\\\\[a-zA-Z]* ?{\\|"
+                                              paragraph-separate))))
+
 ;;; init-auctex.el ends here
