@@ -1,6 +1,6 @@
 ;;; init-yaml.el
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;
 
 (autoload 'yaml-mode "yaml-mode.el" nil t)
