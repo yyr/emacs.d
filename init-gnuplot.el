@@ -1,7 +1,7 @@
 ;;; init-gnuplot.el
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
+;; Author: Yagnesh Raghava Yakkala.
+;; Website: http://yagnesh.org
 
 (autoload 'gnuplot-mode "gnuplot"
   "gnuplot major mode" t)
