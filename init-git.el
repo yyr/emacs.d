@@ -1,7 +1,7 @@
 ;;: init-git.el
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
+;; Author: Yagnesh Raghava Yakkala.
+;; website: http://yagnesh.org
 
 ;;; load magit
 (el-get 'sync '(magit))
