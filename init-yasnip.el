@@ -9,6 +9,9 @@
                          "~/.emacs.d/snippets/"
                          "~/.emacs.d/el-get/yasnippet/snippets/"))
 
+;;; Stop blabbering
+(setq yas/verbosity 1)
+
 ;;; load snippets at the end
 (add-hook 'after-init-hook 'yas/initialize)
 
