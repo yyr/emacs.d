@@ -24,8 +24,11 @@
 (setq el-get-is-lazy t)
 
 (if (symbolp "package-archives")
-    (add-to-list 'package-archives
-                 '("marmalade" . "http://marmalade-repo.org/packages/")))
+    (setq package-archives
+                 '(("ELPA" . "http://tromey.com/elpa/")
+                   ("gnu" . "http://elpa.gnu.org/packages/")
+                   ("marmalade" . "http://marmalade-repo.org/packages/")
+                   ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 ;; compile at init if any source is not byte compiled
 ;(setq el-get-byte-compile-at-init t)
