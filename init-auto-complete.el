@@ -57,16 +57,6 @@
   (auto-complete-mode 1))
 (add-hook 'ielm-mode-hook 'ielm-auto-complete)
 
-
-;;; ncl-mode
-(defun ac-ncl-mode-setup ()
-  (setq ac-sources
-        (append '(ac-source-yasnippet
-                  ac-source-words-in-buffer)
-                ac-sources)))
-
-(add-hook 'ncl-mode-hook 'ac-ncl-mode-setup)
-
 ;;; work around for autopair autocomplete
 (define-key ac-completing-map [return] 'ac-complete)
 
