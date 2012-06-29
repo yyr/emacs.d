@@ -40,7 +40,7 @@ NOTE: for a \"gmail\" switch there should be corresponding
                   "gmail")
 
                  ;; lab mail
-                 ((string-match "hokudai" from)
+                 ((string-match "yagnesh@hokudai" from)
                   "hokudai")
 
                  (t
