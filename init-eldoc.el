@@ -9,7 +9,8 @@
                'message-mode-hook
                'Info-mode-hook
                'erc-mode-hook
-               ;;               'org-mode-hook
+               'python-mode
+               ;;'org-mode-hook
                ))
   (add-hook hook 'turn-on-eldoc-mode))
 ;;(setq eldoc-argument-case 'upcase)
@@ -51,7 +52,6 @@
                    (setq spec (substring spec (- (length fulldoc) ea-width)))
                    (format "%s: %s" spec docstring))))))
     ad-do-it))
-
 
 
 ;;; init-eldoc.el ends here

@@ -9,11 +9,11 @@
 
 (el-get 'sync '(python
                 pylookup
-                highlight-indentation))
-
-(setq load-path (cons
-                 (expand-file-name "~/.emacs.d/el-get/python")
-                 load-path))
+                highlight-indentation
+                pymacs
+                rope
+                ropemode
+                ropemacs))
 
 ;;; --------------------------------------------------------------------
 ;; PYTHON.EL
@@ -27,6 +27,32 @@
 
 ;; (add-hook 'python-mode-hook (lambda ()
 ;;                              (highlight-indentation-mode)))
+
+
+;;; --------------------------------------------------------------------
+;;; PYMACS
+(require 'pymacs)
+
+(setenv
+ "PYTHONPATH"
+ (let ((pplist (split-string (or (getenv "PYTHONPATH") "") ":" 'omit-nulls)))
+   (mapconcat 'identity
+              (remove-duplicates (cons (el-get-package-directory 'pymacs)  pplist)
+                                 :test #'string= :from-end t)
+              ":")))
+
+(defun pymacs-setup ()
+  "pymacs setup"
+  (autoload 'pymacs-load "pymacs" nil t)
+  (autoload 'pymacs-eval "pymacs" nil t)
+  (autoload 'pymacs-exec "pymacs" nil t)
+  (autoload 'pymacs-call "pymacs")
+  (autoload 'pymacs-apply "pymacs")
+
+;;; ROPEMACS
+  (pymacs-load "ropemacs" "rope-"))
+
+(add-hook 'python-mode-hook 'pymacs-setup)
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
