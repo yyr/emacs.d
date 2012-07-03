@@ -158,7 +158,6 @@
 ;;; web
 (load "init-webjump")
 (load "init-w3m")
-(load "init-yaoddmuse")
 (load "init-sass-mode")
 (load "init-erc")
 
