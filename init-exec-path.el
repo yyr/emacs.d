@@ -3,7 +3,7 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
-(defun add-to-load-path (PATH)
+(defun add-to-load-path (path)
   "Add PATH to your load-path."
   (interactive (list (read-directory-name "Directory: " default-directory
                                           nil  t default-directory)))
