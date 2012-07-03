@@ -21,7 +21,7 @@
   (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
 
 ;;; el-get-is-lazy
-(setq el-get-is-lazy t)
+(setq el-get-is-lazy nil)
 
 (if (symbolp 'package-archives)
     (setq package-archives
