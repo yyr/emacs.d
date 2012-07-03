@@ -23,7 +23,7 @@
 ;;; el-get-is-lazy
 (setq el-get-is-lazy t)
 
-(if (symbolp "package-archives")
+(if (symbolp 'package-archives)
     (setq package-archives
                  '(("ELPA" . "http://tromey.com/elpa/")
                    ("gnu" . "http://elpa.gnu.org/packages/")
