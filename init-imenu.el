@@ -47,6 +47,7 @@ Symbols matching the text at point are put first in the completion list."
                   matching-symbols)))))
     (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
            (position (cdr (assoc selected-symbol name-and-pos))))
+      (push-mark)
       (if (overlayp position)
           (goto-char (overlay-start position))
         (goto-char position)))))

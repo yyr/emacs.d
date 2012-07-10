@@ -42,7 +42,7 @@
  minibuffer-max-depth nil         ; Mini-buffer settings
  display-time-day-and-date t ; Display the time and date on the mode line
  case-fold-search t          ; Fold case on searches
- )
+ indicate-empty-lines t)
 
 ;;; remove crap offerings when finding something
 (setq completion-ignored-extensions
