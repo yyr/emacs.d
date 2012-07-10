@@ -277,8 +277,17 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; -----------------------------------------------------------------------
 ;;; Gnus layout
 ;;; -----------------------------------------------------------------------
-(gnus-add-configuration '(article
-                          (vertical 1.0 (summary .35 point) (article 1.0))))
+;; (gnus-add-configuration '(article
+;;                           (vertical 1.0 (summary .35 point) (article 1.0))))
+
+(setq gnus-buffer-configuration
+      '((group (horizontal 1.0 (group 1.0 point)))
+        (summary (horizontal 1.0 (group 0.3)  (summary 1.0 point)))
+        (article (horizontal 1.0 (summary 0.5 point) (article 1.0)))
+        (forward (horizontal 1.0 (message 0.5 point) (article 1.0)))
+        (message (horizontal 1.0 (message 0.5 point) (article 1.0)))
+        (reply (horizontal 1.0 (message 0.5 point) (article 1.0)))
+        (reply-yank (horizontal 1.0 (message 0.5 point) (article 1.0)))))
 
 
 ;;; -----------------------------------------------------------------------
