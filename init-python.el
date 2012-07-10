@@ -7,8 +7,7 @@
 
 ;;; Description:
 
-(el-get 'sync '(python
-                pylookup
+(el-get 'sync '(pylookup
                 highlight-indentation
                 pymacs
                 rope
@@ -17,9 +16,6 @@
 
 ;;; --------------------------------------------------------------------
 ;; PYTHON.EL
-(require 'python)
-
-(autoload 'python-mode "python.el" "Python Mode." t)
 (add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\)$" . python-mode))
 
 ;;; highlight indentation mode
@@ -52,7 +48,7 @@
 ;;; ROPEMACS
   (pymacs-load "ropemacs" "rope-"))
 
-(add-hook 'python-mode-hook 'pymacs-setup)
+;; (add-hook 'python-mode-hook 'pymacs-setup)
 
 ;;; --------------------------------------------------------------------
 ;; PYLOOKUP
