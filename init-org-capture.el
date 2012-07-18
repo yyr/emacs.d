@@ -16,7 +16,7 @@
    ("t" "todo" entry (file+headline "~/git/org/refile.org" "Tasks")
     "* TODO %?\n%U   %a%i" )
 
-   ("c" "todo under current clock" entry (clock)
+   ("C" "todo under current clock" entry (clock)
     "* TODO %?\n%U   %a%i" )
 
    ;; note --> refile/Notes
@@ -26,6 +26,12 @@
    ;; journal notes --> diary.org
    ("j" "Journal" item (file+datetree "~/git/org/diary.org")
     "%?\n%U\n%i")
+
+   ;; Lab note book
+   ("c" "Lab note book"
+   item (file+datetree "~/git/org/lab/notebook.org")
+    "%?\n%U\n%i")
+
 
    ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
     "* TODO %?\n%U   %a%i" )
