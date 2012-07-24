@@ -5,7 +5,9 @@
                       ob-ditaa
                       ob-perl
                       ob-python
-                      ob-gnuplot))
+                      ob-plantuml
+                      ob-gnuplot
+                      ob-pl))
 
 (setq org-ditaa-jar-path "~/.emacs.d/el-get/org-mode/contrib/scripts/ditaa.jar")
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
@@ -15,6 +17,7 @@
                                        (octave . t)
                                        (perl . t)
                                        (python . t)
+                                       (plantuml . t)
                                        (gnuplot . t)
                                        (sh . t))))
 
