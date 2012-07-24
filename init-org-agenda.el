@@ -20,12 +20,12 @@
 (setq org-agenda-skip-timestamp-if-done t)
 (setq org-agenda-todo-ignore-scheduled t)
 (setq org-agenda-todo-ignore-with-date t)
+(setq org-agenda-todo-ignore-with-date t)
 (setq org-agenda-include-diary t)
 
 ;;;  Custom Agenda views
 ;; dont show deadlines every day
 (setq org-deadline-warning-days 2)
-(setq org-agenda-ndays 7)
 
 (setq org-agenda-custom-commands
       (quote (
@@ -40,7 +40,7 @@
 
               ;; tags WORK
               ("w" "WORK related" tags "LEVEL>1+WORK"
-               ((org-agenda-overriding-header "weekend works")
+               ((org-agenda-overriding-header "Work")
                 (org-tags-match-list-sublevels 'indented)))
 
               ;; @ nights & weekend
