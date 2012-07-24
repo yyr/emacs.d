@@ -41,3 +41,8 @@
             (local-set-key (kbd "<f5> o") 'w3m-open-link-or-image-in-firefox)
             (define-key w3m-mode-map "f" 'w3m-open-current-page-in-firefox)
             (define-key w3m-mode-map "F" 'w3m-open-link-or-image-in-firefox)))
+
+(defun w3m-copy-link ()
+  "copy link at point"
+  (interactive)
+  (kill-new (w3m-anchor)))
