@@ -82,6 +82,8 @@
 ;; dict is not available on server
 (when (executable-find "dict")
   (load "init-dictem"))
+(when (file-directory-p "~/git/sdic")
+  (load "init-sdic"))
 
 ;;; help navigation
 (load "init-navigation")
