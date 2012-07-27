@@ -10,6 +10,8 @@
 
 ;; (setq sdic-default-coding-system 'euc-japan-unix)
 
+(defvar sdic-install-dir (expand-file-name "~/git/sdic"))
+
 ;;; sdic-mode 用の設定
 ;;; autoload
 (setq load-path (cons "/home/yagnesh/git/sdic/" load-path))
@@ -22,12 +24,17 @@
 
 
 ;;; setup dict
-(setq sdic-eiwa-dictionary-list '((sdicf-client "/home/yagnesh/git/sdic/gene.sdic")
-                                  (sdicf-client "/home/yagnesh/git/sdic/eiji-126.sdic")))
-(setq sdic-waei-dictionary-list '((sdicf-client "/home/yagnesh/git/sdic/edict.sdic")
-                                  (sdicf-client "/home/yagnesh/git/sdic/waeiji-126.sdic"
-                                                (add-keys-to-headword t))))
+(setq sdic-eiwa-dictionary-list
+      `((sdicf-client ,(expand-file-name
+                        (concat sdic-install-dir "/dicts/gene.sdic")))
+        (sdicf-client ,(expand-file-name
+                        (concat sdic-install-dir "/dicts/eiji-126.sdic")))))
 
-
+(setq sdic-waei-dictionary-list
+      `((sdicf-client ,(expand-file-name
+                        (concat sdic-install-dir "/dicts/edict.sdic")))
+        (sdicf-client ,(expand-file-name
+                        (concat sdic-install-dir "/dicts//waeiji-126.sdic"))
+                      (add-keys-to-headword t))))
 
 ;;; init-sdic.el ends here
