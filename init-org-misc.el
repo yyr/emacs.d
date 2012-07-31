@@ -41,4 +41,8 @@ If the region is active, insert it."
 ;;; org2jekyll
 (setq org2jekyll-basedir "~/blog")
 
+;;; google weather
+(el-get 'sync '(google-weather))
+(setq org-google-weather-format "%i %-30c, %l-%h %s (%L)")
+
 ;;; init-org-misc.el ends here
