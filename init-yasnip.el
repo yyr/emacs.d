@@ -10,10 +10,12 @@
                          "~/.emacs.d/el-get/yasnippet/snippets/"))
 
 ;;; Stop blabbering
-(setq yas/verbosity 1)
+(setq yas-verbosity 1)
 
 ;;; load snippets at the end
-(add-hook 'after-init-hook 'yas/initialize)
+;(add-hook 'after-init-hook 'yas/initialize)
+
+(yas-global-mode)
 
 (add-to-list 'auto-mode-alist
              '("\\.yasnippet$" . snippet-mode))
