@@ -84,6 +84,7 @@
   (load "init-dictem"))
 (when (file-directory-p "~/git/sdic")
   (load "init-sdic"))
+(load "init-edict")
 
 ;;; help navigation
 (load "init-navigation")
