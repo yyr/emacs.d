@@ -195,11 +195,11 @@ pIf performed over a topic line, toggle folding the topic."
 ;;; Gmail envy http://emacs.wordpress.com/2007/10/07/gmail-envy/
 (defun gnus-user-format-function-j (headers)
   (let ((to (gnus-extra-header 'To headers)))
-    (if (string-match *yag-mails* to)
+    (if (string-match *yag-mails-regex* to)
         (if (string-match "," to) "~" "»")
-      (if (or (string-match *yag-mails*
+      (if (or (string-match *yag-mails-regex*
                             (gnus-extra-header 'Cc headers))
-              (string-match *yag-mails*
+              (string-match *yag-mails-regex*
                             (gnus-extra-header 'BCc headers)))
           "~"
         " "))))
