@@ -34,7 +34,7 @@ If the region is active, insert it."
       org-completion-use-ido t
       org-use-speed-commands t          ; activate speed commands
       org-return-follows-link t         ; RET dwim on links
-
+      org-log-into-drawer t
       org-enable-priority-commands nil  ; I dont use org priorities
       )
 
