@@ -7,7 +7,8 @@
 ;;; Description:
 ;;
 
-(el-get 'sync '(edict))
+(when (executable-find "hg")
+  (el-get 'sync '(edict)))
 
 (setq edict-dictionaries
       (list
