@@ -22,6 +22,7 @@
 (setq org-agenda-todo-ignore-with-date t)
 (setq org-agenda-todo-ignore-with-date t)
 (setq org-agenda-include-diary t)
+(setq org-agenda-start-on-weekday nil)
 
 ;;;  Custom Agenda views
 ;; dont show deadlines every day
