@@ -30,6 +30,18 @@
 
 (setq org-agenda-custom-commands
       (quote (
+              ;;
+              ("l" "Agenda and all TODO's"
+               ((alltodo)))
+
+              ;; backlogs
+              ("b" "Backlogs" tags-todo "/!BACKLOG"
+               ((org-tags-match-list-sublevels 'indented)))
+
+              ;; in queue
+              ("t" "Queued Up" tags-todo "/!TODO"
+               ((org-tags-match-list-sublevels 'indented)))
+
               ;; Next items
               ("n" "Next" tags-todo "/!NEXT"
                ((org-tags-match-list-sublevels 'indented)))

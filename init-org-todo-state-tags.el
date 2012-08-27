@@ -5,18 +5,18 @@
 
 ;;;  TODO key words
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-        (sequence "WAITING(w@/!)" "SOMEDAY(s!)" "|" "CANCELLED(c@/!)")))
+      '((sequence "BACKLOG(b!)" "TODO(t!)" "NEXT(n!)" "|" "DONE(d!)" "EXPIRED(e@/!)")
+        (sequence "WAITING(w@/!)" "|" "CANCELLED(c@/!)" "EXPIRED(e@/!)")
+        (sequence "RECURRENT(r)" "|" "DONE(d)")))
 
 (setq org-todo-keyword-faces
-      (quote (("TODO" :foreground "red" :weight bold)
-              ("NEXT" :foreground "blue" :weight bold)
-              ("DONE" :foreground "forest green" :weight bold)
-              ("WAITING" :foreground "yellow" :weight bold)
-              ("SOMEDAY" :foreground "goldenrod" :weight bold)
-              ("CANCELLED" :foreground "orangered" :weight bold)
-              ("OPEN" :foreground "magenta" :weight bold)
-              ("CLOSED" :foreground "forest green" :weight bold))))
+      '(("BACKLOG" :foreground "goldenrod" :weight bold)
+        ("NEXT" :foreground "yellow" :weight bold)
+        ("TODO" :foreground "red" :weight bold)
+        ("WAITING" :foreground "blue" :weight bold)
+        ("CANCELLED" :foreground "magenta" :weight bold)
+        ("DONE" :foreground "forest green" :weight bold)
+        ("EXPIRED" :foreground "magenta" :weight bold)))
 
 ;;; change state
 (setq org-use-fast-todo-selection t)
