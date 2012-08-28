@@ -46,6 +46,9 @@
               ("n" "Next" tags-todo "/!NEXT"
                ((org-tags-match-list-sublevels 'indented)))
 
+              ;; entries to archived
+              ("A" "Tasks to be Archived" todo "DONE|CANCELLED|EXPIRED")
+
               ;; entries to refile
               ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
                ((org-agenda-overriding-header "Tasks to Refile")
@@ -70,9 +73,6 @@
               ("N" "Evening" tags "LEVEL>1+@night!"
                ((org-agenda-overriding-header "Night time")
                 (org-tags-match-list-sublevels 'indented)))
-
-              ;; entries to archived
-              ("A" "Tasks to be Archived" tags "LEVEL>1-REFILE/DONE|CANCELLED")
 
               ;; Block Agenda
               (" " "Block Agenda"
