@@ -12,7 +12,9 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/auto-complete/dict/")
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/auto-complete/dict/")
 (ac-config-default)
+
 (add-to-list 'ac-sources 'ac-source-semantic)
+(setq-default ac-sources (cons 'ac-source-yasnippet ac-sources))
 
 (setq ac-auto-start 2)
 (setq ac-delay 0.)
