@@ -6,6 +6,6 @@
 ;; info , searching docs, short cuts
 
 (require 'info-look)
-(setq Info-additional-directory-list Info-default-directory-list)
+(add-to-list 'Info-additional-directory-list "~/.emacs.d/my-info/")
 
 ;;; init-info.el ends here
