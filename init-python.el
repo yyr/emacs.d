@@ -9,10 +9,12 @@
 
 (el-get 'sync '(pylookup
                 highlight-indentation
-                pymacs
-                rope
-                ropemode
-                ropemacs))
+                pymacs))
+
+(when (executable-find "hg")
+  (el-get 'sync '(rope
+                  ropemode
+                  ropemacs)))
 
 ;;; --------------------------------------------------------------------
 ;; PYTHON.EL
