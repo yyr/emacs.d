@@ -11,11 +11,7 @@
 
 ;;; Stop blabbering
 (setq yas-verbosity 1)
-
-;;; load snippets at the end
-;(add-hook 'after-init-hook 'yas/initialize)
-
-(yas-global-mode)
+(yas-global-mode 1)
 
 (add-to-list 'auto-mode-alist
              '("\\.yasnippet$" . snippet-mode))
