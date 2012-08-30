@@ -12,7 +12,6 @@
 
 (setq debug-on-error t)
 
-
 ;;; some convenience
 (defalias 'yes-or-no-p 'y-or-n-p)
 (when (boundp 'ido-mode)
@@ -20,26 +19,25 @@
 
 ;;; package dirs
 (setq el-get-install-dir "~/.emacs.d/el-get")
+(add-to-list load-path
+             (cons (expand-file-name (concat el-get-install-dir
+                                             "/el-get")) load-path))
 
 ;;; package to debug
 (setq *debug-org* nil)
 (setq *debug-o-blog* nil)
-
+(setq *debug-ncl* nil)
 
 ;;;------------------------------------------------------------------
 ;;;  org
-(setq org-install-dir "~/.emacs.d/el-get/org-mode")
-
 (defun minimal-load-org ()
+  (setq org-install-dir (concat el-get-install-dir "/org-mode"))
   (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (add-to-list 'load-path (concat org-install-dir "/lisp"))
   (require 'org-install))
 
 (when *debug-org*
-  ;; load org first
   (minimal-load-org)
-
-  ;; reproduce bug here
 
   )
 
@@ -53,14 +51,26 @@
   (require 'o-blog-bootstrap)
   )
 
-
 (when *debug-o-blog*
-  ;; load first
   (minimal-load-o-blog)
 
   )
 
+;;;------------------------------------------------------------------
+;; NCL
+(defun minimal-load-ncl ()
+  (setq ncl-install-dir (concat el-get-install-dir "/ncl-mode"))
+  (add-to-list 'load-path ncl-install-dir)
+  (el-get 'sync 'ncl-mode)
+  (load-file (expand-file-name
+              (concat ncl-install-dir "/ncl-mode-load.el"))))
 
 
+(when *debug-ncl*
+  (minimal-load-ncl)
+
+
+
+  )
 
 ;;; minimal.el ends here
