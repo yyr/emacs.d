@@ -22,12 +22,25 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
-;; Increase message log
-(setq message-log-max 5000)
+(setq message-log-max 5000              ; Increase message log
+      echo-keystrokes 0.1
+      use-dialog-box nil
+      visible-bell t
+      show-paren-delay 0
+      inhibit-startup-screen t          ; Skip the startup screens
+      initial-scratch-message nil
+      require-final-newline t       ; Always end a file with a newline
+
+      search-whitespace-regexp "[ \t\r\n]+"  ;
+      completion-ignored-extensions ; remove crap offerings when finding something
+      '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod")
+
+      next-line-add-newlines nil ; Stop at the end of the file, not just add lines
+      browse-url-browser-function 'browse-url-firefox  ; my system needs this
+      )
+
 
 (setq-default
- inhibit-startup-screen t               ; Skip the startup screens
- initial-scratch-message nil
  frame-title-format '(buffer-file-name "%f" "%b") ; I already know this is Emacs
  truncate-lines t                                 ; Truncate lines, don't wrap
  paren-mode 'sexp                                 ; Highlight parenthesis
@@ -43,19 +56,6 @@
  case-fold-search t               ; Fold case on searches
  indicate-empty-lines t
  fill-column 78)
-
-;;; remove crap offerings when finding something
-(setq completion-ignored-extensions
-      '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod"))
-
-;; Always end a file with a newline
-(setq require-final-newline t)
-
-;; Stop at the end of the file, not just add lines
-;;(setq next-line-add-newlines nil)
-
-;;; Ubuntu needs this(?)
-(setq browse-url-browser-function 'browse-url-firefox)
 
 ;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -92,9 +92,6 @@
                            plain-tex-mode))
       (indent-region (region-beginning) (region-end) nil)))
 
-;;; search
-(setq search-whitespace-regexp "[ \t\r\n]+")
-
 ;;; delete nasty hidden white spaces at the end of lines
 ;; le weng from emacs.help
 (defun my-save-buffer-dtws (arg)
@@ -118,7 +115,7 @@ before point if point is past text"
 (add-hook 'find-file-hooks 'goto-address-prog-mode)
 
 (add-hook 'doc-view-mode-hook (lambda ()
-                           (auto-revert-mode 1)))
+                                (auto-revert-mode 1)))
 
 ;;; stop unwanted kill-emacs (while using orgmode)
 (global-unset-key (kbd "C-x C-c"))
