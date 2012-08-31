@@ -4,7 +4,8 @@
 ;;; elisp setup
 
 (defun my-elisp-hook ()
-  (setq tab-width 8))                    ; Set tab stops
+  (setq tab-width 8)
+  (local-set-key (kbd "C-S-SPC") 'my-popup-describe-symbol))                    ; Set tab stops
 
 (defun set-up-hippie-expand-for-elisp ()
   (make-variable-buffer-local 'hippie-expand-try-functions-list)
