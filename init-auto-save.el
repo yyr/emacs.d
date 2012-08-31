@@ -17,4 +17,10 @@
  kept-old-versions 2
  version-control t) ; use versioned backups
 
+;; Autosave buffer on window switch
+(defadvice switch-to-buffer (before save-buffer-now activate)
+  (when buffer-file-name (save-buffer)))
+(defadvice other-window (before other-window-now activate)
+  (when buffer-file-name (save-buffer)))
+
 ;;; init-auto-save.el ends here
