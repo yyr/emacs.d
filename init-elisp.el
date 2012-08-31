@@ -3,6 +3,9 @@
 
 ;;; elisp setup
 
+(defun my-elisp-hook ()
+  (setq tab-width 8))                    ; Set tab stops
+
 (defun set-up-hippie-expand-for-elisp ()
   (make-variable-buffer-local 'hippie-expand-try-functions-list)
   (add-to-list 'hippie-expand-try-functions-list 'try-complete-lisp-symbol t)
@@ -12,7 +15,8 @@
   (add-hook hook 'pretty-lambdas)
   (add-hook hook 'set-up-hippie-expand-for-elisp)
   (add-hook hook 'turn-on-eldoc-mode)
-  (add-hook hook 'enable-paredit-mode))
+  (add-hook hook 'enable-paredit-mode)
+  (add-hook hook 'my-elisp-hook))
 
 (add-hook 'minibuffer-setup-hook 'conditionally-enable-paredit-mode)
 (defun conditionally-enable-paredit-mode ()
