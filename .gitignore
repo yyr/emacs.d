@@ -37,3 +37,4 @@ srecode-map.el
 
 # emacs-server
 server/*
+eshell/*
