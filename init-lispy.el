@@ -27,7 +27,6 @@
 (autoload 'enable-paredit-mode "paredit" "Turn on paredit mode" t)
 
 (defadvice enable-paredit-mode (before disable-autopair activate)
-  (setq autopair-dont-activate t)
   (autopair-mode -1))
 
 (defun maybe-map-paredit-newline ()
