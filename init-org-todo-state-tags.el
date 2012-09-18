@@ -10,9 +10,9 @@
         (sequence "RECURRENT(r)" "|" "DONE(d)")))
 
 (setq org-todo-keyword-faces
-      '(("BACKLOG" :foreground "goldenrod" :weight bold)
-        ("NEXT" :foreground "yellow" :weight bold)
-        ("TODO" :foreground "red" :weight bold)
+      '(("BACKLOG" :foreground "yellow" :weight bold)
+        ("NEXT" :foreground "red" :weight bold)
+        ("TODO" :foreground "goldenrod" :weight bold)
         ("WAITING" :foreground "blue" :weight bold)
         ("CANCELLED" :foreground "magenta" :weight bold)
         ("DONE" :foreground "forest green" :weight bold)
