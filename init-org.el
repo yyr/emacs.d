@@ -30,6 +30,9 @@
                       )
                     org-modules)))
 
+(add-hook 'org-mode-hook (lambda ()
+                           (org-indent-mode 1)))
+
 ;;;  Standard key bindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
