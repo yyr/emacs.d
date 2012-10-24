@@ -56,6 +56,7 @@
 (load "init-point")
 (load "init-time")
 (load "init-utils")
+(load "init-er")
 
 ;; (my-debugger-on 'org)
 
