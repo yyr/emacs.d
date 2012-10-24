@@ -15,7 +15,7 @@
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;;; install
-(require 'org-install)
+;(require 'org-install)
 (require 'org)
 
 ;;; modules
@@ -43,17 +43,16 @@
 (define-key org-mode-map (kbd "C-c C-e") 'org-export-dispatch )
 
 ;;; Eric Schulte org list
-(defun yas/org-very-safe-expand ()
-  (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+;; (defun yas/org-very-safe-expand ()
+;;   (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
 
-(add-hook 'org-mode-hook
-          (lambda ()
-            ;; yasnippet (using the new org-cycle hooks)
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (org-indent-mode 1)
-            (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
-            (define-key yas/keymap [tab] 'yas/next-field)))
+;; (remove-hook 'org-mode-hook
+;;           (lambda ()
+;;             ;; yasnippet (using the new org-cycle hooks)
+;;             (make-variable-buffer-local 'yas/trigger-key)
+;;             (setq yas/trigger-key [tab])
+;;             (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+;;             (define-key yas/keymap [tab] 'yas/next-field)))
 
 ;;; save org-buffers every hour
 (run-at-time "00:59" 3600 'org-save-all-org-buffers)
