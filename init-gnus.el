@@ -61,7 +61,8 @@
 
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
-                                   :user "vh0004")))
+                                   :user "vh0004"
+                                   :leave t)))
 
 ;; (setq mail-source-delete-incoming t)
 ;; (setq mail-sources
