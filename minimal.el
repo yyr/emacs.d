@@ -19,12 +19,12 @@
 
 ;;; package dirs
 (setq el-get-install-dir "~/.emacs.d/el-get")
-(add-to-list load-path
+(add-to-list 'load-path
              (cons (expand-file-name (concat el-get-install-dir
                                              "/el-get")) load-path))
 
 ;;; package to debug
-(setq *debug-org* nil)
+(setq *debug-org* t)
 (setq *debug-o-blog* nil)
 (setq *debug-ncl* nil)
 
@@ -34,7 +34,7 @@
   (setq org-install-dir (concat el-get-install-dir "/org-mode"))
   (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (add-to-list 'load-path (concat org-install-dir "/lisp"))
-  (require 'org-install))
+  (require 'org-e-latex))
 
 (when *debug-org*
   (minimal-load-org)
@@ -68,9 +68,6 @@
 
 (when *debug-ncl*
   (minimal-load-ncl)
-
-
-
   )
 
 ;;; minimal.el ends here
