@@ -33,7 +33,7 @@
       message-signature-file "~/.signature")
 ;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
 
-(add-hook 'message-send-hook 'ispell-message)
+;(add-hook 'message-send-hook 'ispell-message)
 
 (add-hook 'message-mode-hook 'turn-on-orgstruct++)
 (add-hook 'message-mode-hook 'turn-on-orgtbl)
@@ -46,6 +46,10 @@
 (setq gnus-confirm-mail-reply-to-news t
       message-kill-buffer-on-exit t
       message-elide-ellipsis "[…]\n")
+
+;;; quoting style in reply
+(setq message-citation-line-function 'message-insert-formatted-citation-line)
+(setq message-citation-line-format "On %b %d %Y, %f wrote:\n")
 
 ;;; --------------------------------------------------------
 ;; sent copy
