@@ -38,6 +38,11 @@ If the region is active, insert it."
       org-enable-priority-commands nil  ; I dont use org priorities
       )
 
+(setq org-speed-commands-user
+      '(("s" . org-save-all-org-buffers)
+        ("a" . (org-agenda nil "T" t))))
+
+
 ;;; org2jekyll
 (setq org2jekyll-basedir "~/blog")
 
