@@ -8,52 +8,10 @@
 ;;; Description:
 
 (el-get 'sync '(pylookup
-                highlight-indentation
-                pymacs))
-
-(when (executable-find "hg")
-  (el-get 'sync '(rope
-                  ropemode
-                  ropemacs)))
+                highlight-indentation))
 
 ;;; --------------------------------------------------------------------
-;; PYTHON.EL
-(add-to-list 'auto-mode-alist '("\\.\\(py\\|py3\\)$" . python-mode))
-
-;;; highlight indentation mode
-(defvaralias 'py-indent-offset 'python-indent-offset)
-
-;; (add-hook 'python-mode-hook (lambda ()
-;;                              (highlight-indentation-mode)))
-
-
-;;; --------------------------------------------------------------------
-;;; PYMACS
-(require 'pymacs)
-
-(setenv
- "PYTHONPATH"
- (let ((pplist (split-string (or (getenv "PYTHONPATH") "") ":" 'omit-nulls)))
-   (mapconcat 'identity
-              (remove-duplicates (cons (el-get-package-directory 'pymacs)  pplist)
-                                 :test #'string= :from-end t)
-              ":")))
-
-(defun pymacs-setup ()
-  "pymacs setup"
-  (autoload 'pymacs-load "pymacs" nil t)
-  (autoload 'pymacs-eval "pymacs" nil t)
-  (autoload 'pymacs-exec "pymacs" nil t)
-  (autoload 'pymacs-call "pymacs")
-  (autoload 'pymacs-apply "pymacs")
-
-;;; ROPEMACS
-  (pymacs-load "ropemacs" "rope-"))
-
-;; (add-hook 'python-mode-hook 'pymacs-setup)
-
-;;; --------------------------------------------------------------------
-;; PYLOOKUP
+;; pylookup
 (setq pylookup-dir "~/.emacs.d/el-get/pylookup")
 (add-to-list 'load-path pylookup-dir)
 
@@ -81,6 +39,5 @@
             ;; indentation
             (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
             (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
-
 
 ;;; init-python.el ends here
