@@ -20,4 +20,7 @@
 (when (eq 'x window-system )
     (max-emacs-x-window))
 
+(set-frame-parameter (selected-frame) 'alpha '(100 95))
+(add-to-list 'default-frame-alist '(alpha 100 95))
+
 ;;; init-frame.el ends here
