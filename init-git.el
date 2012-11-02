@@ -4,7 +4,8 @@
 ;; website: http://yagnesh.org
 
 ;;; load magit
-(el-get 'sync '(magit))
+(el-get 'sync '(magit
+                git-modes))
 
 ;;; setup
 (autoload 'magit-status "magit" nil t)
