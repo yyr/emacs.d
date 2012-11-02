@@ -15,6 +15,7 @@
     (auto-complete '(ac-source-jedi-direct))))
 
 (defun my-jedi-setup ()
+  (require 'jedi)
   (jedi-mode)
   (jedi:ac-setup)
   (define-key python-mode-map (kbd "<C-tab>") 'jedi:complete)
