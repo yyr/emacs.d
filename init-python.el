@@ -10,6 +10,8 @@
 (el-get 'sync '(pylookup
                 highlight-indentation))
 
+(load "init-jedi")
+
 ;;; --------------------------------------------------------------------
 ;; pylookup
 (setq pylookup-dir "~/.emacs.d/el-get/pylookup")
