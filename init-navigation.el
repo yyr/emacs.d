@@ -13,7 +13,7 @@
 (el-get 'sync '(ace-jump-mode
                 jump-char))
 
-(define-key global-map (kbd "M-l") 'ace-jump-mode)
+(define-key global-map (kbd "M-L") 'ace-jump-mode)
 
 ;;; faster C-n C-p
 (global-set-key (kbd "C-S-n") (kbd "C-6 C-n"))
@@ -36,6 +36,7 @@
 
 ;;; read only files would be open in view-mode
 (setq view-read-only t)
+(setq scroll-preserve-screen-position 'always)
 
 ;;; highlight current line in view mode
 (defadvice view-mode (after disable-hl-line-mode activate)
