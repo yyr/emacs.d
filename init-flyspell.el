@@ -6,6 +6,8 @@
 ;;; dont use M-TAB for flyspell , I reserve it for other LaTex mode
 (setq flyspell-use-meta-tab nil)
 
+(setq ispell-program-name "hunspell")
+
 ;;; turn on flyspell mode
 (dolist (hook '(org-mode-hook
                 text-mode-hook
