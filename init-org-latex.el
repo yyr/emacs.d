@@ -85,7 +85,5 @@
     (org-e-latex-headline headline contents info)))
 
 (require 'org-e-latex)
-(add-to-list 'org-e-latex-translate-alist
-             '(headline . my-e-latex-headline))
 
 ;;; init-org-latex.el ends here
