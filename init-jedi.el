@@ -9,6 +9,7 @@
 
 
 (defun auto-complete-python-completion-on-dot ()
+  "Start AC by typing \".\" "
   (interactive)
   (insert ".")
   (when auto-complete-mode
