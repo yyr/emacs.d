@@ -35,6 +35,9 @@ semanticdb/*
 ede-projects.el
 srecode-map.el
 
-# emacs-server
+#
 server/*
 eshell/*
+tutorial/*
+my-info/*
+/.*
