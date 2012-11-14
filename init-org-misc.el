@@ -40,6 +40,7 @@ If the region is active, insert it."
 
 (setq org-speed-commands-user
       '(("s" . org-save-all-org-buffers)
+        ("k" . org-kill-line)
         ("a" . (org-agenda nil "T" t))))
 
 
