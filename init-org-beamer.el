@@ -5,8 +5,6 @@
 
 ;; #+LaTeX_CLASS: beamer in org files
 
-(require 'org-beamer)
-
 (add-to-list 'org-export-latex-classes
              ;; beamer class, for presentations
              '("beamer-1"
@@ -39,5 +37,16 @@
                 "\\end{frame}"
                 "\\begin{frame}[fragile]\\frametitle{%s}"
                 "\\end{frame}")))
+
+(require 'org-e-beamer)
+(add-to-list 'org-e-latex-classes
+             '("beamer"
+               "\\documentclass[presentation]{beamer}
+\[DEFAULT-PACKAGES]
+\[PACKAGES]
+\[EXTRA]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
 
 ;;; Org-Beamer.el ends here
