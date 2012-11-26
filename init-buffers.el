@@ -14,8 +14,6 @@
       uniquify-ignore-buffers-re "^\\*")
 
 ;;; Ibuffer
-;; bs instead of buffer-menu
-;; (global-set-key (kbd "C-x C-b") 'bs-show)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (setq ibuffer-expert t)
 (setq ibuffer-show-empty-filter-groups nil)
@@ -24,16 +22,67 @@
 (setq ibuffer-always-show-last-buffer nil)
 (setq ibuffer-sorting-mode 'recency)
 
-;; (setq ibuffer-saved-filter-groups
-;;       '(("home"
-;;          ("Org" (or (mode . org-mode)
-;;                     (filename . "OrgMode")))
-;;          ("star"  (name . "\*.*\*")))))
+;;; http://www.elliotglaysher.org/emacs/
+(setq ibuffer-saved-filter-groups
+      '(("default"
+         ("version control" (or (mode . svn-status-mode)
+                                (mode . svn-log-edit-mode)
+                                (name . "^\\*svn-")
+                                (name . "^\\*vc\\*$")
+                                (name . "^\\*Annotate")
+                                (name . "^\\*Magit-")
+                                (name . "^\\*vc-")))
+         ("emacs" (or (name . "^\\*scratch\\*$")
+                      (name . "^\\*Messages\\*$")
+                      (name . "^\\*ELP Profiling Results\\*$")
+                      (name . "^TAGS\\(<[0-9]+>\\)?$")
+                      (name . "^\\*Help\\*$")
+                      (name . "^\\*info\\*$")
+                      (name . "^\\*Occur\\*$")
+                      (name . "^\\*grep\\*$")
+                      (name . "^\\*Apropos\\*$")
+                      (name . "^\\*Compile-Log\\*$")
+                      (name . "^\\*Backtrace\\*$")
+                      (name . "^\\*Packages\\*$")
+                      (name . "^\\*Process List\\*$")
+                      (name . "^\\*gud\\*$")
+                      (name . "^\\*Man")
+                      (name . "^\\*WoMan")
+                      (name . "^\\*Kill Ring\\*$")
+                      (name . "^\\*Completions\\*$")
+                      (name . "^\\*tramp")
+                      (name . "^\\*shell\\*$")
+                      (name . "^\\*compilation\\*$")
+                      (mode . Custom-mode)))
+         ("EMMS" (or  (name . "^\\*Music\\*$")
+                      (name . "^\\*EMMS")
+                      (mode . emms-browser-mode)))
+         ("IRC" (or (name . "^\\*Finger")
+                    (mode . erc-mode)))
+         ("emacs source" (or (mode . emacs-lisp-mode)
+                             (filename . "\\.el\\.gz$")))
+         ("agenda" (or (name . "^\\*Calendar\\*$")
+                       (name . "^diary$")
+                       (name . "^\\*Agenda")
+                       (name . "^\\*org-")
+                       (name . "^\\*Org")
+                       (mode . org-mode)
+                       (mode . muse-mode)))
+         ("latex" (or (mode . latex-mode)
+                      (mode . LaTeX-mode)
+                      (mode . bibtex-mode)
+                      (mode . reftex-mode)))
+         ("dired" (or (mode . dired-mode))))))
 
 (add-hook 'ibuffer-mode-hook
-          '(lambda ()
-             (ibuffer-auto-mode 1)))
+          (lambda ()
+            (ibuffer-switch-to-saved-filter-groups "default")
+            (ibuffer-auto-mode 1)))
 
+;; Order the groups so the order is : [Default], [agenda], [emacs]
+(defadvice ibuffer-generate-filter-groups (after reverse-ibuffer-groups ()
+                                                 activate)
+  (setq ad-return-value (nreverse ad-return-value)))
 
 ;; kill-other-buffers
 ;; ------------------
