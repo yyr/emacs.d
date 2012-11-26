@@ -32,14 +32,13 @@
 (find-function-setup-keys)
 
 ;;; By Jumbunathan on org-mode list
-(global-set-key (kbd "C-c f")
-                (lambda ()
-                  (interactive)
-                  (require 'finder)
-                  (let ((thing (intern (thing-at-point 'symbol))))
-                    (if (functionp thing)
-                        (find-function thing)
-                      (find-variable thing)))))
+(defun yyr-jump-to-source ()
+  (interactive)
+  (let ((thing (intern (thing-at-point 'symbol))))
+    (if (functionp thing)
+        (find-function thing)
+      (find-variable thing))))
+(global-set-key (kbd "C-c f") 'yyr-jump-to-source)
 
 ;;; http://stackoverflow.com/a/9620373/399964
 (defun locate-feature (feature)
