@@ -15,4 +15,12 @@
               webjump-sample-sites))
 ;(global-set-key "\C-cj" 'webjump)
 
+(defun domain-whois ()
+  (interactive)
+  (let* ((q (read-from-minibuffer "Domain name: "))
+         (q-url (format "%s%s%s" "http://reports.internic.net/cgi/whois?whois_nic="
+                        q "&type=domain")))
+    (message "Browsing: %s" q-url)
+    (browse-url q-url)))
+
 ;;; init-webjump.el ends here
