@@ -74,6 +74,9 @@
                ((org-agenda-overriding-header "Night time")
                 (org-tags-match-list-sublevels 'indented)))
 
+              ("o" "runs"
+               ((tags "LEVEL>1+CATEGORY=\"runs\"")))
+
               ;; Block Agenda
               (" " "Block Agenda"
                ((agenda " " nil)
