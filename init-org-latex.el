@@ -83,6 +83,7 @@
 
 (require 'org-e-latex)
 
+;; [[gnus:gmane.emacs.orgmode#87a9t8u75x.fsf@gmail.com][Email from Myles English: Re: Bibtex export]]
 (defun my-export-delete-headlines-tagged-noheading (backend)
   (dolist (hl (nreverse (org-element-map (org-element-parse-buffer 'headline)
                                          'headline
