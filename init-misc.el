@@ -70,4 +70,21 @@
            (looking-at "\\s\)")) (forward-char 1) (backward-list 1))))
 (define-key global-map [(control ?z) ?p] 'goto-matching-paren) ; Bind to C-z p
 
+
+;;; http://lists.gnu.org/archive/html/gnu-emacs-sources/2010-04/msg00010.html
+(defun nice-single-quote (&optional n)
+  "Insert ‘ and ’ around the N sexps before point; leave point at end.
+N defaults to 1.  Successive interactive calls (that set ‘last-command’)
+behave differently, however: In that case, find the left single quote
+and transpose it with the character preceding it."
+  (interactive "p")
+  (if (eq 'nice-single-quote last-command)
+      (save-excursion
+        (search-backward "‘")
+        (transpose-chars 1))
+    (save-excursion
+      (backward-sexp (or n 1))
+      (insert "‘"))
+    (insert "’")))
+
 ;;; init-misc.el ends here
