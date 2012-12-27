@@ -116,6 +116,7 @@
 (load "init-html")
 (load "init-yaml")
 (load "init-python")
+(load "init-compile")
 
 ;;; subject
 (load "init-octave")
