@@ -44,6 +44,7 @@
   (define-key org-mode-map (kbd "C-c [") 'reftex-citation))
 ;; (add-hook 'org-mode-hook 'org-mode-reftex-setup)
 
+;; (setq org-latex-to-pdf-process '("texi2dvi --pdf --clean --verbose --batch %f"))
 ;; (setq org-latex-to-pdf-process '
 ;;       ("pdflatex -interaction nonstopmode %b"
 ;;        "/usr/bin/bibtex %b"
@@ -79,11 +80,19 @@
 
 ;;; ignore heading
 ;;; Nicolas Goaziou, http://article.gmane.org/gmane.emacs.orgmode/55972
-(defun my-e-latex-headline (headline contents info)
-  (if (member "ignoreheading" (org-element-property :tags headline))
-      contents
-    (org-e-latex-headline headline contents info)))
 
 (require 'org-e-latex)
+
+(defun my-export-delete-headlines-tagged-noheading (backend)
+  (dolist (hl (nreverse (org-element-map (org-element-parse-buffer 'headline)
+                                         'headline
+                                         'identity)))
+    (when (member "noheading" (org-element-property :tags hl))
+      (goto-char (org-element-property :begin hl))
+      (delete-region (point) (progn (forward-line) (point))))))
+
+(add-to-list 'org-export-before-processing-hook
+             'my-export-delete-headlines-tagged-noheading)
+
 
 ;;; init-org-latex.el ends here
