@@ -47,12 +47,12 @@
   (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
 
-  (dolist (hook
-           '(python-mode-hook
-             c-mode-hook
-             fortran-mode-hook
-             emacs-lisp-mode-hook
-             f90-mode-hook))
+(dolist (hook
+         '(python-mode-hook
+           c-mode-hook
+           fortran-mode-hook
+           emacs-lisp-mode-hook
+           f90-mode-hook))
   (add-hook hook 'my-cedet-hook))
 
 ;;; init-cedet.el ends here
