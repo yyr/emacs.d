@@ -14,8 +14,8 @@
 
 (add-hook 'emacs-startup-hook
           (lambda ()
-            (if (fboundp toggle-frame-maximized)
-                (when (eq 'x window-system )
+            (if (fboundp 'toggle-frame-maximized)
+                (when (eq 'x window-system)
                   (toggle-frame-maximized))
               (max-emacs-x-window))))
 
