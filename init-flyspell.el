@@ -1,12 +1,10 @@
 ;;; init-flyspell.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
 
 ;;; dont use M-TAB for flyspell , I reserve it for other LaTex mode
-(setq flyspell-use-meta-tab nil)
+(require 'flyspell)
 
-(setq ispell-program-name "hunspell")
+(define-key flyspell-mode-map "\M-\t" nil)
+(setq flyspell-use-meta-tab nil)
 
 ;;; turn on flyspell mode
 (dolist (hook '(org-mode-hook
