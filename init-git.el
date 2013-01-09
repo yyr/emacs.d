@@ -1,15 +1,16 @@
 ;;: init-git.el
-;;
-;; Author: Yagnesh Raghava Yakkala.
-;; website: http://yagnesh.org
 
-;;; load magit
 (el-get 'sync '(magit
                 git-modes))
 
-;;; setup
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "M-<f12>") 'magit-status)
+
+;; (setq magit-repo-dirs `())
+(setq magit-commit-signoff t)
+(setq magit-completing-read-function 'magit-iswitchb-completing-read)
+(setq magit-save-some-buffers nil)
+(setq magit-remote-ref-format 'remote-slash-branch)
 
 ;;; rebase mode
 (autoload 'rebase-mode "rebase-mode" nil t)
