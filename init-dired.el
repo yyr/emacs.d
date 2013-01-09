@@ -9,7 +9,10 @@
 ;; (define-key ctl-x-map   "d" 'diredp-dired-files)
 ;; (define-key ctl-x-4-map "d" 'diredp-dired-files-other-window)
 
-(setq dired-recursive-deletes 'top)
+(setq dired-recursive-deletes 'always)
+(setq dired-listing-switches "-alh")
+(add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
+
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
 ;; dired-x
