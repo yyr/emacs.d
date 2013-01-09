@@ -1,9 +1,5 @@
 ;;; init-mail.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-mail.el
 ;; Created: Thursday, November 10 2011
-;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; mail settings
@@ -11,8 +7,9 @@
 
 ;;; msmtp
 ;;---------------------
-(require 'smtpmail)
+(setq mail-user-agent 'gnus-user-agent)
 
+(require 'smtpmail)
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 ;; we substitute sendmail with msmtp
 (setq sendmail-program "/usr/bin/msmtp")
