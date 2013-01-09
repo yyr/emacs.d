@@ -4,42 +4,40 @@
 ;; License: GPL v3 or later
 ;;
 
-;;; ---------------------------------------------------------------------------
 (setq user-full-name "Yagnesh Raghava Yakkala")
 (setq user-mail-address "hi@yagnesh.org")
 
 ;;; ---------------------------------------------------------------------------
-;; check emacs running on which system (to load config differently
+;; Check emacs running on which system (to load config differently
 ;; for different computers). I go by hostnames which are all fixed
 
-(defvar on-laptop          ; on my laptop, mostly I can run everything
+(defvar on-laptop
   (string-match "rag" (system-name)))
 
-(defvar on-lab-computer                 ; main lab desktop
+(defvar on-lab-computer
   (string-match "okho" (system-name)))
 
-(defvar on-lab-server        ; lab cluster (hehe built emacs24 on it)
+(defvar on-lab-server
   (string-match "amu" (system-name)))
 
-(defvar on-ms        ; when on MS windows
+(defvar on-ms
   (string-match "windows" (format "%s" system-type)))
 
-;;; ---------- PATH -----------------------------------------------------------
-(defconst emacs-path "~/.emacs.d")      ; emacs path
+(defconst emacs-path "~/.emacs.d")
 (setq load-path (cons (expand-file-name emacs-path) load-path))
 
-;; ----------------------------------------------------------------------------
-(require 'cl)                            ; must have
+(setq gnus-init-file
+      (concat emacs-path "/init-gnus.el" ))
 
-;; ----------------------------------------------------------------------------
-;;; any reservations in loading individual configurations (down below)
-(setq gnus-init-file (concat emacs-path "/init-gnus.el" )) ;gnus init file
+(require 'cl)
 
 ;; ----------------------------------------------------------------------------
 ;;; load emacs individual configuration files
 ;; ----------------------------------------------------------------------------
 
 ;;; first of all any OS dependent paths has to be set
+
+
 (when on-ms
   (load "init-ms"))
 
