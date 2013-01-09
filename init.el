@@ -183,28 +183,8 @@
   (load "init-mediawiki"))
 
 ;;; music
-(when (and on-laptop (not on-ms))                     ; I listen music only on my laptop
+(when (and on-laptop (not on-ms))
   (load "init-emms"))
 
-;;; for tests
-
-
-;; interactive customization
-;;----------------------------------------------------------------------------
-(setq custom-file "~/.emacs.d/init-custom.el")
-(load custom-file 'noerror)
-
-(add-hook 'emacs-startup-hook
-          '(lambda ()
-             (progn
-               (message "My .emacs loaded in %s"
-                        (emacs-init-time))
-               (el-get-notify
-                "Emacs is started"
-                (format "loding init file took %s"
-                        (emacs-init-time)))
-               (sit-for 0.5)
-               ;; bit intersting startup
-               (message "%s" "As always by your command... "))))
-
+(load "init-finish")
 ;; init ends here
