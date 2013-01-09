@@ -57,6 +57,7 @@
 ;;; make friendly mini buffer
 (load "init-ido")
 (load "init-smex")
+(load "init-minibuffer")
 
 (load "init-diminish")
 (load "init-auto-save")
