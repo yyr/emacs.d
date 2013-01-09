@@ -315,7 +315,13 @@ pIf performed over a topic line, toggle folding the topic."
 
 ;;; MIME
 ;;; --------------------------------------------------
-                                        ;(add-to-list 'mm-attachment-override-types "image/.*")
+(setq mm-verify-option 'known)
+(setq mm-decrypt-option 'known)
+(add-to-list 'mm-attachment-override-types "image/.*")
+(add-to-list 'mm-attachment-override-types "message/rfc822")
+(add-to-list 'mm-attachment-override-types "text/x-patch")
+(setq mm-inline-large-images 'resize)
+(setq mm-discouraged-alternatives '("text/html" "text/richtext"))
 
 ;;; misc
 ;;; --------------------------------------------------
@@ -345,5 +351,13 @@ pIf performed over a topic line, toggle folding the topic."
           (lambda ()
             (define-key gnus-summary-mode-map
               (kbd "C-c C-o") 'gnus-summary-guess-article-url)))
+
+
+;;; footnotes
+;;; --------------------------------------------------------
+(setq footnote-section-tag "")
+(setq footnote-style 'unicode)
+(setq footnote-start-tag "")
+(setq footnote-end-tag "")
 
 ;;; init-gnus.el ends here
