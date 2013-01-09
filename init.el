@@ -172,6 +172,7 @@
 (load "init-mail")
 (load "init-crontab")
 (load "init-server")
+(load "init-boxquote")
 
 (when (not on-lab-server)
   (load "init-edit-server")
