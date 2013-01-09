@@ -11,6 +11,6 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (show-paren-mode 1)
-;(global-hl-line-mode -1)
+(which-func-mode 1)
 
 ;; (pending-delete-mode t)                ; Typed text replaces selection
