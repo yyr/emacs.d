@@ -36,8 +36,6 @@
 ;; ----------------------------------------------------------------------------
 
 ;;; first of all any OS dependent paths has to be set
-
-
 (when on-ms
   (load "init-ms"))
 
@@ -55,8 +53,6 @@
 (load "init-time")
 (load "init-utils")
 (load "init-er")
-
-;; (my-debugger-on 'org)
 
 ;;; make friendly mini buffer
 (load "init-ido")
