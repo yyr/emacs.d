@@ -7,19 +7,11 @@
 (el-get 'sync '(deferred
                  jedi))
 
-
-(defun auto-complete-python-completion-on-dot ()
-  "Start AC by typing \".\" "
-  (interactive)
-  (insert ".")
-  (when auto-complete-mode
-    (auto-complete '(ac-source-jedi-direct))))
-
 (defun my-jedi-setup ()
+  (setq jedi:complete-on-dot t)
+  (setq jedi:setup-keys t)
   (require 'jedi)
-  (jedi:setup)
-  (define-key python-mode-map (kbd "<C-tab>") 'jedi:complete)
-  (define-key python-mode-map "." 'auto-complete-python-completion-on-dot))
+  (jedi:setup))
 
 (add-hook 'python-mode-hook 'my-jedi-setup)
 
