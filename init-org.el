@@ -15,7 +15,6 @@
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 ;;; install
-;(require 'org-install)
 (require 'org)
 
 ;;; modules
