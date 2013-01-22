@@ -135,6 +135,7 @@
 ;(load "init-org-clock")
 (load "init-org-ob")
 (load "init-org-diary")
+(load "init-calender")
 
 ;;; org publish
 (load "init-org-html")
