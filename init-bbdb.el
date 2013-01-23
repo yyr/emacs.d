@@ -43,12 +43,16 @@
 (defun bbdb/gnus-update-selectively ()
   "Update BBDB record selectively"
   (interactive)
-  (if
-      (gnus-news-group-p gnus-newsgroup-name)
+  (if (gnus-news-group-p gnus-newsgroup-name)
       (setq bbdb/gnus-update-records-p nil)
-    (setq bbdb/gnus-update-records-p 'query)
-    ))
+    (setq bbdb/gnus-update-records-p 'query)))
 
-(add-hook 'gnus-summary-prepare-hook 'bbdb/gnus-update-selectively)
+(add-hook 'gnus-summary-prepare-hook
+          (lambda ()
+            (bbdb/gnus-update-selectively)
+            (local-set-key (kbd "\"")
+                           (lambda ()
+                             (interactive)
+                             (bbdb-mua-update-records)))))
 
 ;;; init-bbdb.el ends here
