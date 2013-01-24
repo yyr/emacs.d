@@ -28,6 +28,7 @@
 
  bbdb-complete-name-allow-cycling t       ;; cycle through matches
  ;; this only works partially
+ bbdb-phone-style nil
 
  bbbd-message-caching-enabled t           ;; be fast
  bbdb-use-alternate-names t               ;; use AKA
