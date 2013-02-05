@@ -1,7 +1,6 @@
 ;;; init-el-get.el
-;;
 ;;    File: init-el-get.el
-;;  Author: Yagnesh Raghava Yakkala <yagnesh@NOSPAM.live.com>
+;;  Author: Yagnesh Raghava Yakkala <hi@yagnesh.org>
 
 ;;; Description:
 ;; load el-get package manager, install/load few packages here. this
@@ -32,39 +31,21 @@
 ;; compile at init if any source is not byte compiled
 ;(setq el-get-byte-compile-at-init t)
 
-;;; ---------------------------------------------------------------------------
 ;; packages are defined by me
 (setq el-get-sources
       '((:name org2jekyll
                :type git
                :url "http://github.com/yyr/org2jekyll.git")))
 
-;;; ---------------------------------------------------------------------------
-;; COMMON packages all the systems I have
+;; common packages all the systems I have
 (setq my-packages
       (append
-       '(
-;;;; Cosmetics
-         boxquote
-
-         yaml-mode
-
-;;;; Sub
-         ;; gnuplot-mode
-
-;;;; web & mail
-         emacs-w3m
-         yaoddmuse
-
-;;; sys
+       '(emacs-w3m
          screenshot
-
-;;;; misc
          profile-dotemacs
          el-get)
        (mapcar 'el-get-source-name el-get-sources)))
 
-;;; ---------------------------------------------------------------------------
 ;; add these packages if I am not server
 (when (not on-lab-server)
   (setq my-packages
@@ -73,7 +54,6 @@
            bbdb)
          my-packages)))
 
-;;; ---------------------------------------------------------------------------
 ;; package needed for only my laptop
 (when (and on-laptop
            (not on-ms))
