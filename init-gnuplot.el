@@ -3,6 +3,8 @@
 ;; Author: Yagnesh Raghava Yakkala.
 ;; Website: http://yagnesh.org
 
+(el-get 'sync 'gnuplot-mode)
+
 (autoload 'gnuplot-mode "gnuplot"
   "gnuplot major mode" t)
 

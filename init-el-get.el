@@ -50,7 +50,7 @@
          yaml-mode
 
 ;;;; Sub
-         gnuplot-mode
+         ;; gnuplot-mode
 
 ;;;; web & mail
          emacs-w3m
