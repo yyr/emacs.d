@@ -120,7 +120,7 @@
   (load "init-bib"))
 (load "init-ncl")
 (load "init-grads")
-(load "init-gnuplot")
+;; (load "init-gnuplot")
 
 ;;; DVC
 (load "init-git")
