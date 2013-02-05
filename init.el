@@ -175,7 +175,7 @@
 (load "init-server")
 (load "init-boxquote")
 
-(when (not on-lab-server)
+(when on-laptop
   (load "init-edit-server")
   (load "init-mediawiki"))
 
