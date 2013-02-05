@@ -41,8 +41,8 @@ If the region is active, insert it."
 (setq org-speed-commands-user
       '(("s" . org-save-all-org-buffers)
         ("k" . org-kill-line)
-        ("a" . (org-agenda nil "T" t))))
-
+        ("a" . (org-agenda nil "T" t))
+        ("$" . org-archive-subtree)))
 
 ;;; org2jekyll
 (setq org2jekyll-basedir "~/blog")
