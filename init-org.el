@@ -14,8 +14,7 @@
 (add-to-list 'auto-mode-alist
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
-;;; install
-(require 'org)
+(require 'ox-beamer)
 
 ;;; modules
 (setq org-modules (remove-duplicates

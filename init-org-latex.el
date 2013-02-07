@@ -4,36 +4,11 @@
 ;;
 
 ;; letter class, for formal letters
-(require 'org-latex)
-
 
 ;;; letter class
-(add-to-list 'org-export-latex-classes
-             '("letter"
-               "\\documentclass[11pt]{letter}\n
-      \\usepackage[utf8]{inputenc}\n
-      \\usepackage[T1]{fontenc}\n
-      \\usepackage{color}"
+(require 'ox-beamer)
 
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-
-;;; emphasis set up for latex
-(setq org-export-latex-emphasis-alist (quote
-                                       (("*" "\\textbf{%s}" nil)
-                                        ("/" "\\emph{%s}" nil)
-                                        ("_" "\\underline{%s}" nil)
-                                        ("+" "\\texttt{%s}" nil)
-                                        ("=" "\\verb=%s=" nil)
-                                        ("~" "\\verb~%s~" t)
-                                        ("@" "\\alert{%s}" nil))))
-
-
-(setq org-export-latex-hyperref-format "\\ref{%s}")
+(setq ox-latex-hyperref-format "\\ref{%s}")
 
 ;;; reftex setup from FAQ
 (defun org-mode-reftex-setup ()
@@ -80,8 +55,6 @@
 
 ;;; ignore heading
 ;;; Nicolas Goaziou, http://article.gmane.org/gmane.emacs.orgmode/55972
-
-(require 'org-e-latex)
 
 ;; [[gnus:gmane.emacs.orgmode#87a9t8u75x.fsf@gmail.com][Email from Myles English: Re: Bibtex export]]
 (defun my-export-delete-headlines-tagged-noheading (backend)
