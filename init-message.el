@@ -35,8 +35,8 @@
 
 ;(add-hook 'message-send-hook 'ispell-message)
 
-(add-hook 'message-mode-hook 'turn-on-orgstruct++)
-(add-hook 'message-mode-hook 'turn-on-orgtbl)
+;; (add-hook 'message-mode-hook 'turn-on-orgstruct++)
+;; (add-hook 'message-mode-hook 'turn-on-orgtbl)
 
 (add-hook 'message-mode-hook
           (lambda ()
