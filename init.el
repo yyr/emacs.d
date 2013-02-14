@@ -74,6 +74,7 @@
 (load "init-hippie-expand")
 (load "init-auto-complete")
 (load "init-yasnip")
+(load "init-multiple-cursors")
 
 ;; dict is not available on server
 (when (executable-find "dict")
