@@ -24,7 +24,7 @@
     "* %?\n%U   %a%i" )
 
    ;; journal notes --> diary.org
-   ("j" "Journal" item (file+datetree "~/git/org/diary.org")
+   ("j" "Journal" item (file+datetree "~/git/org/journal.org")
     "%?\n%U\n%i")
 
    ;; Lab note book
