@@ -63,6 +63,6 @@ Symbols matching the text at point are put first in the completion list."
 
 (add-hook 'message-mode-hook
           (lambda ()
-            (setq imenu-generic-expression message-imenu-generic-expression)))
+            (setq-default imenu-generic-expression message-imenu-generic-expression)))
 
 ;;; init-imenu.el ends here
