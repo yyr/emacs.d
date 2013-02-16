@@ -35,7 +35,10 @@
 (setq el-get-sources
       '((:name org2jekyll
                :type git
-               :url "http://github.com/yyr/org2jekyll.git")))
+               :url "http://github.com/yyr/org2jekyll.git")
+        (:name door-gnus
+               :type git
+               :url "http://github.com/yyr/door-gnus.git")))
 
 ;; common packages all the systems I have
 (setq my-packages

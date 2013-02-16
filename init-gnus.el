@@ -12,6 +12,8 @@
 
 (require 'nnimap)
 (require 'starttls)
+(el-get 'sync 'door-gnus)
+
 ;; (require 'registry)
 
 ;;; load my bbdb settings
