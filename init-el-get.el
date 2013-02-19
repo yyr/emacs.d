@@ -38,7 +38,8 @@
                :url "http://github.com/yyr/org2jekyll.git")
         (:name door-gnus
                :type git
-               :url "http://github.com/yyr/door-gnus.git")))
+               :url "http://github.com/yyr/door-gnus.git"
+               :features door-gnus)))
 
 ;; common packages all the systems I have
 (setq my-packages
