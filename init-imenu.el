@@ -7,6 +7,8 @@
 ;;; from emacs-starter-kit
 (require 'imenu)
 
+(setq imenu-auto-rescan t)
+
 (defun ido-imenu ()
   "Update the imenu index and then use ido to select a symbol to navigate to.
 Symbols matching the text at point are put first in the completion list."
