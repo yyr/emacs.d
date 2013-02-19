@@ -105,6 +105,7 @@
 (load "init-elisp")
 (load "init-common-lisp")
 (load "init-scheme")
+(load "init-grammar")
 
 (load "init-perl")
 (load "init-fortran")
