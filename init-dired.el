@@ -44,6 +44,24 @@
 ;;'e' usually does 'dired-find-file, same as RET, rebinding it here
 (add-hook 'dired-mode-hook
           (lambda ()
-            (define-key dired-mode-map (kbd "e") 'dired-xdg-open-file)))
+            (define-key dired-mode-map (kbd "e") 'dired-xdg-open-file)
+            (dired-omit-mode 1)))
 
 (setq image-dired-external-viewer "/usr/bin/xdg-open")
+
+;;; http://whattheemacsd.com/setup-dired.el-02.html
+(defun dired-back-to-top ()
+  (interactive)
+  (beginning-of-buffer)
+  (dired-next-line 2))
+
+(define-key dired-mode-map
+  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+
+(defun dired-jump-to-bottom ()
+  (interactive)
+  (end-of-buffer)
+  (dired-next-line -1))
+
+(define-key dired-mode-map
+  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
