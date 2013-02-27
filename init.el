@@ -108,12 +108,14 @@
 (load "init-grammar")
 
 (load "init-perl")
-(load "init-fortran")
 (load "init-sh")
 (load "init-html")
 (load "init-yaml")
 (load "init-python")
 (load "init-compile")
+
+(load "init-fortran")
+(load "init-namelist")
 
 ;;; subject
 (load "init-octave")
