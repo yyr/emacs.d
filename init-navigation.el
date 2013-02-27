@@ -18,7 +18,7 @@
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
-(satq save-place-limit 1000)
+(setq save-place-limit 1000)
 (setq save-place-file
       (expand-file-name ".save-places" user-emacs-directory))
 
