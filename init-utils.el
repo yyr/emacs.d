@@ -249,4 +249,17 @@ License: GPL v3 or later
 
 (global-set-key (kbd "C-x w") 'save-in-tmp-dir)
 
+;;; https://github.com/rejeep/emacs/blob/master/rejeep-defuns.el#L150-L158
+(defun join-line-or-lines-in-region ()
+  "Join this line or the lines in the selected region."
+  (interactive)
+  (cond ((region-active-p)
+         (let ((min (line-number-at-pos (region-beginning))))
+           (goto-char (region-end))
+           (while (> (line-number-at-pos) min)
+             (join-line))))
+        (t (call-interactively 'join-line))))
+
+(global-set-key (kbd "M-J") 'join-line-or-lines-in-region)
+
 ;;; init-utils-el ends here
