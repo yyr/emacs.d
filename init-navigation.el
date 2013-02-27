@@ -15,6 +15,13 @@
 
 (define-key global-map (kbd "M-L") 'ace-jump-mode)
 
+;; Save point position between sessions
+(require 'saveplace)
+(setq-default save-place t)
+(satq save-place-limit 1000)
+(setq save-place-file
+      (expand-file-name ".save-places" user-emacs-directory))
+
 ;;; faster C-n C-p
 (global-set-key (kbd "C-S-n") (kbd "C-6 C-n"))
 (global-set-key (kbd "C-S-p") (kbd "C-6 C-p"))
