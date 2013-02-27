@@ -2,6 +2,8 @@
 ;; http://yagnesh.org
 
 ;;; elisp setup
+(el-get 'sync 'elisp-slime-nav)
+(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode 1)))
 
 (defun my-elisp-hook ()
   (setq tab-width 8)

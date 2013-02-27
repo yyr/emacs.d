@@ -11,5 +11,7 @@
 
 (eval-after-load "eldoc" '(diminish 'eldoc-mode "ed"))
 (eval-after-load "paredit" '(diminish 'paredit-mode "pe"))
+(eval-after-load "yasnippet" '(diminish 'yas-minor-mode " Y"))
+(eval-after-load 'elisp-slime-nav '(diminish 'elisp-slime-nav-mode))
 
 ;;; init-diminish.el ends here
