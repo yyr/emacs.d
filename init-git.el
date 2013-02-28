@@ -1,7 +1,8 @@
 ;;: init-git.el
 
 (el-get 'sync '(magit
-                git-modes))
+                git-modes
+                git-gutter-fringe))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "M-<f12>") 'magit-status)
@@ -37,4 +38,18 @@
 (eval-after-load "magit"
   '(define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace))
 
+;;; git gutter.
+(require 'git-gutter-fringe)
+
+;; If you enable global minor mode
+(global-git-gutter-mode t)
+
+;; bind git-gutter toggle command
+;; (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+
+;; Jump to next/previous diff
+(global-set-key (kbd "C-x p") 'git-gutter:previous-diff)
+(global-set-key (kbd "C-x n") 'git-gutter:next-diff)
+
+(setq git-gutter-fr:side 'right-fringe)
 ;;; init-git.el ends here
