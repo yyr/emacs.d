@@ -68,7 +68,11 @@
 
 ;; Make dired less verbose
 (el-get 'sync 'dired-details)
-(setq-default dired-details-hidden-string "--- ")
-(dired-details-install)
+(eval-after-load
+    "dired"
+  '(progn
+     (require 'dired-details)
+     (setq-default dired-details-hidden-string "--- ")
+     (dired-details-install)))
 
 ;;; init-dired.el ends here
