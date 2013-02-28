@@ -22,9 +22,38 @@
 (setq save-place-file
       (expand-file-name ".save-places" user-emacs-directory))
 
-;;; faster C-n C-p
-(global-set-key (kbd "C-S-n") (kbd "C-6 C-n"))
-(global-set-key (kbd "C-S-p") (kbd "C-6 C-p"))
+;;; --- http://whattheemacsd.com/key-bindings.el-02.html
+;; Move more quickly
+(global-set-key (kbd "C-S-n")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (next-line 5))))
+
+(global-set-key (kbd "C-S-p")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (previous-line 5))))
+
+(global-set-key (kbd "C-S-f")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-char 5))))
+
+(global-set-key (kbd "C-S-b")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-char 5))))
+
+(global-set-key (kbd "M-F")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (forward-word 5))))
+
+(global-set-key (kbd "M-B")
+                (lambda ()
+                  (interactive)
+                  (ignore-errors (backward-word 5))))
+;;; ---
 
 
 ;;; View mode on when ever possible
