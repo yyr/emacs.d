@@ -53,7 +53,7 @@
 (defun dired-back-to-top ()
   (interactive)
   (beginning-of-buffer)
-  (dired-next-line 2))
+  (dired-next-line 1))
 
 (define-key dired-mode-map
   (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
@@ -65,3 +65,10 @@
 
 (define-key dired-mode-map
   (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+
+;; Make dired less verbose
+(el-get 'sync 'dired-details)
+(setq-default dired-details-hidden-string "--- ")
+(dired-details-install)
+
+;;; init-dired.el ends here
