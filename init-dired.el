@@ -11,7 +11,7 @@
 
 (add-hook 'dired-mode-hook
           (lambda ()
-            ('turn-on-gnus-dired-mode)
+            (turn-on-gnus-dired-mode)
             ;; dired-x
             (require 'dired-x)
             (require 'dired-details)
