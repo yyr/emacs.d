@@ -44,8 +44,8 @@
 ;; If you enable global minor mode
 (global-git-gutter-mode t)
 
-;; bind git-gutter toggle command
 ;; (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+;; (setq git-gutter:diff-option "-w")
 
 ;; Jump to next/previous diff
 (global-set-key (kbd "C-x p") 'git-gutter:previous-diff)
