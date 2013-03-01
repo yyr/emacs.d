@@ -168,7 +168,6 @@
 
 
 ;;;  misc
-(load "init-exec-path")
 (load "init-misc")
 (load "init-battery")
 
