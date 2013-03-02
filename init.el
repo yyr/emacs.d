@@ -90,6 +90,9 @@
 (load "init-buffers")
 (load "init-recentf")
 
+;;; shell, term, comint, tramp
+(load "init-term")
+
 ;;; window , frame
 (load "init-windows")
 (load "init-frame")
@@ -108,7 +111,6 @@
 (load "init-grammar")
 
 (load "init-perl")
-(load "init-sh")
 (load "init-html")
 (load "init-yaml")
 (load "init-python")
@@ -165,7 +167,6 @@
 (load "init-w3m")
 (load "init-sass-mode")
 (load "init-erc")
-
 
 ;;;  misc
 (load "init-misc")

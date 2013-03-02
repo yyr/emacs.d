@@ -6,11 +6,7 @@
 ;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;;
-
-;;; comint
-
-;; (require 'comint)
+;; shell, term, tramp settings
 
 (setq-default
  comint-scroll-to-bottom-on-input t    ; always insert at the bottom
@@ -22,13 +18,21 @@
  comint-input-ring-size 5000 ; max shell history size
  )
 
+;;; tramp
+(setq tramp-default-method "ssh")
+
 ;; truncate buffers continuously
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
 
 ;; interpret and use ansi color codes in shell output windows
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;; tramp
-(setq tramp-default-method "ssh")
+;;;
+(autoload 'flymake-shell-load
+  "flymake-shell" "On-the-fly syntax checking of shell scripts" t)
+
+;; (add-hook 'sh-mode-hook 'flymake-shell-load)
+(setq shell-file-name "bash") ;;use bash for shell
+
 
 ;;; init-term.el ends here
