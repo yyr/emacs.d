@@ -34,5 +34,12 @@
 ;; (add-hook 'sh-mode-hook 'flymake-shell-load)
 (setq shell-file-name "bash") ;;use bash for shell
 
+;;; track shell directory.
+(setq-default dirtrack-list '("^[^@]*@.*:\\([^$].*\\)\\$" 1))
+(setq dirtrack-debug-message nil)
+(add-hook 'shell-mode-hook
+          (lambda ()
+            (shell-dirtrack-mode -1)
+            (dirtrack-mode 1)))
 
 ;;; init-term.el ends here
