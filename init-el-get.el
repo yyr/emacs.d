@@ -36,6 +36,11 @@
       '((:name org2jekyll
                :type git
                :url "http://github.com/yyr/org2jekyll.git")
+        (:name readline-complete
+               :description "Offers completions in shell mode"
+               :type github
+               :pkgname "monsanto/readline-complete.el"
+               :depends (auto-complete))
         (:name door-gnus
                :type git
                :url "http://github.com/yyr/door-gnus.git"
