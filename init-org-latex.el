@@ -59,8 +59,8 @@
 ;; [[gnus:gmane.emacs.orgmode#87a9t8u75x.fsf@gmail.com][Email from Myles English: Re: Bibtex export]]
 (defun my-export-delete-headlines-tagged-noheading (backend)
   (dolist (hl (nreverse (org-element-map (org-element-parse-buffer 'headline)
-                                         'headline
-                                         'identity)))
+                            'headline
+                          'identity)))
     (when (member "noheading" (org-element-property :tags hl))
       (goto-char (org-element-property :begin hl))
       (delete-region (point) (progn (forward-line) (point))))))

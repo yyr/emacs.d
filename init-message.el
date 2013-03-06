@@ -32,8 +32,7 @@
 (setq message-signature t
       message-signature-file "~/.signature")
 ;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
-
-;(add-hook 'message-send-hook 'ispell-message)
+;; (add-hook 'message-send-hook 'ispell-message)
 
 ;; (add-hook 'message-mode-hook 'turn-on-orgstruct++)
 ;; (add-hook 'message-mode-hook 'turn-on-orgtbl)
