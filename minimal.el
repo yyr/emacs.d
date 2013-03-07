@@ -20,54 +20,27 @@
 ;;; package dirs
 (setq el-get-install-dir "~/.emacs.d/el-get")
 (add-to-list 'load-path
-             (cons (expand-file-name (concat el-get-install-dir
-                                             "/el-get")) load-path))
-
-;;; package to debug
-(setq *debug-org* t)
-(setq *debug-o-blog* nil)
-(setq *debug-ncl* nil)
-
-;;;------------------------------------------------------------------
+             (expand-file-name (concat el-get-install-dir
+                                       "/el-get")))
 ;;;  org
 (defun minimal-load-org ()
   (setq org-install-dir (concat el-get-install-dir "/org-mode"))
   (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (add-to-list 'load-path (concat org-install-dir "/lisp"))
-  (require 'org-e-latex))
+  (require 'org))
 
-(when *debug-org*
-  (minimal-load-org)
-
-  )
-
-
-;;;------------------------------------------------------------------
 ;;;  o-blog
 (defun minimal-load-o-blog ()
   (minimal-load-org)
   (add-to-list 'load-path (concat el-get-install-dir "/o-blog"))
   (require 'o-blog)
-  (require 'o-blog-bootstrap)
-  )
+  (require 'o-blog-bootstrap))
 
-(when *debug-o-blog*
-  (minimal-load-o-blog)
-
-  )
-
-;;;------------------------------------------------------------------
-;; NCL
+;; ncl
 (defun minimal-load-ncl ()
   (setq ncl-install-dir (concat el-get-install-dir "/ncl-mode"))
   (add-to-list 'load-path ncl-install-dir)
-  (el-get 'sync 'ncl-mode)
   (load-file (expand-file-name
               (concat ncl-install-dir "/ncl-mode-load.el"))))
-
-
-(when *debug-ncl*
-  (minimal-load-ncl)
-  )
 
 ;;; minimal.el ends here
