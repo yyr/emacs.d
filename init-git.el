@@ -9,7 +9,7 @@
 
 ;; (setq magit-repo-dirs `())
 (setq magit-commit-signoff t)
-(setq magit-completing-read-function 'magit-iswitchb-completing-read)
+(setq magit-completing-read-function 'magit-ido-completing-read)
 (setq magit-save-some-buffers nil)
 (setq magit-remote-ref-format 'remote-slash-branch)
 
