@@ -33,10 +33,7 @@
 
 ;; packages are defined by me
 (setq el-get-sources
-      '((:name org2jekyll
-               :type git
-               :url "http://github.com/yyr/org2jekyll.git")
-        (:name readline-complete
+      '((:name readline-complete
                :description "Offers completions in shell mode"
                :type github
                :pkgname "monsanto/readline-complete.el"
