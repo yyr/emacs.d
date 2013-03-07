@@ -15,6 +15,7 @@
              '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
 
 (require 'ox-beamer)
+(require 'org-indent)
 
 ;;; modules
 (setq org-modules (remove-duplicates
