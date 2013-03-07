@@ -54,19 +54,14 @@
 (setq org-export-allow-BIND t)
 
 ;;; ignore heading
-;;; Nicolas Goaziou, http://article.gmane.org/gmane.emacs.orgmode/55972
+;;; Nicolas Goaziou, http://article.gmane.org/gmane.emacs.orgmode/67692
 
-;; [[gnus:gmane.emacs.orgmode#87a9t8u75x.fsf@gmail.com][Email from Myles English: Re: Bibtex export]]
-(defun my-export-delete-headlines-tagged-noheading (backend)
-  (dolist (hl (nreverse (org-element-map (org-element-parse-buffer 'headline)
-                                         'headline
-                                         'identity)))
-    (when (member "noheading" (org-element-property :tags hl))
-      (goto-char (org-element-property :begin hl))
-      (delete-region (point) (progn (forward-line) (point))))))
-
-(add-to-list 'org-export-before-processing-hook
-             'my-export-delete-headlines-tagged-noheading)
-
+(defun org-latex-ignore-heading-filter-headline (headline backend info)
+  "Strip headline from HEADLINE. Ignore BACKEND and INFO."
+  (when (and (org-export-derived-backend-p backend 'latex)
+             (string-match "\\`.*ignoreheading.*\n" headline))
+    (replace-match "" nil nil headline)))
+(add-to-list 'org-export-filter-headline-functions
+             'org-latex-ignore-heading-filter-headline)
 
 ;;; init-org-latex.el ends here
