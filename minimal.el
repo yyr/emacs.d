@@ -3,8 +3,8 @@
 ;;; Description:
 ;; minimal setup; to report any bugs come across
 
-;;; call emacs like this
-;; emacs -Q -l ~/.emacs.d/minimal.el
+;;; Call emacs as following (or see minimal.sh)
+;; emacs -Q -l ~/.emacs.d/minimal.el "(minimal-load-XXX)"
 
 ;;; bug report
 (setq user-full-name "Yagnesh Raghava Yakkala")
@@ -25,8 +25,8 @@
 ;;;  org
 (defun minimal-load-org ()
   (setq org-install-dir (concat el-get-install-dir "/org-mode"))
-  (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (add-to-list 'load-path (concat org-install-dir "/lisp"))
+  (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (require 'org))
 
 ;;;  o-blog
@@ -42,5 +42,11 @@
   (add-to-list 'load-path ncl-install-dir)
   (load-file (expand-file-name
               (concat ncl-install-dir "/ncl-mode-load.el"))))
+
+;;; magit
+(defun minimal-load-magit ()
+  (setq magit-install-dir (concat el-get-install-dir "/magit"))
+  (add-to-list 'load-path magit-install-dir)
+  (require '50magit))
 
 ;;; minimal.el ends here
