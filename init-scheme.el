@@ -8,7 +8,7 @@
 ;;; Description:
 ;; mit/scheme setup
 
-;(setq scheme-program-name "")
+;; (setq scheme-program-name "")
 (require 'xscheme)
 
 (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))

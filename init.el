@@ -101,7 +101,7 @@
 (load "init-dired")
 
 ;;; emacs session
-;(load "init-session")
+;;(load "init-session")
 
 ;;; languages
 (load "init-lispy")
@@ -138,7 +138,7 @@
 (load "init-org-tags")
 (load "init-org-capture")
 (load "init-org-refile")
-;(load "init-org-clock")
+;; (load "init-org-clock")
 (load "init-org-ob")
 (load "init-org-diary")
 (load "init-calender")

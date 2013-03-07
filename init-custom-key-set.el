@@ -62,7 +62,7 @@
 
 (global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
 
-;(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+;; (global-set-key (kbd "C-x C-m") 'execute-extended-command)
 (global-set-key (kbd "C-h a") 'apropos) ;
 ;; (global-unset-key "\C-x\C-c")           ;unset kill Emacs
 

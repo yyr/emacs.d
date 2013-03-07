@@ -29,7 +29,7 @@
 
    ;; Lab note book
    ("c" "Lab note book"
-   item (file+datetree "~/git/org/lab/notebook.org")
+    item (file+datetree "~/git/org/lab/notebook.org")
     "%?\n%U\n%i")
 
 

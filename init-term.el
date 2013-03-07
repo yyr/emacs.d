@@ -45,6 +45,7 @@
 
 ;;; shell completion: readline-complete
 (el-get 'sync 'readline-complete)
+(require 'readline-complete)
 
 (setq explicit-shell-file-name "bash")
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))

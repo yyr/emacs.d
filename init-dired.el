@@ -20,6 +20,8 @@
             (dired-details-install)
             (dired-omit-mode 1)))
 
+(setq dired-omit-verbose nil)
+
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 
 (autoload 'dired-jump "dired-x"

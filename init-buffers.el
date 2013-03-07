@@ -94,7 +94,7 @@
 
 
 (defun kill-star-buffers ()
- "kill all those starred buffers.
+  "kill all those starred buffers.
 FIXME: make an exceptions for few buffers like gnus, emms"
   (interactive)
   (mapc (lambda (buf)
