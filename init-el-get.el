@@ -3,8 +3,8 @@
 ;;  Author: Yagnesh Raghava Yakkala <hi@yagnesh.org>
 
 ;;; Description:
-;; load el-get package manager, install/load few packages here. this
-;; file should be loaded first
+;; El-get package manager., This file should be loaded first. load few
+;; packages here.
 
 ;;; add el-get load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
@@ -29,7 +29,7 @@
             ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 ;; compile at init if any source is not byte compiled
-;; (setq el-get-byte-compile-at-init t)
+(setq el-get-byte-compile-at-init t)
 
 ;; packages are defined by me
 (setq el-get-sources
@@ -46,29 +46,19 @@
 ;; common packages all the systems I have
 (setq my-packages
       (append
-       '(emacs-w3m
-         screenshot
-         profile-dotemacs
-         el-get)
+       '(screenshot
+         profile-dotemacs)
        (mapcar 'el-get-source-name el-get-sources)))
-
-;; add these packages if I am not server
-(when (not on-lab-server)
-  (setq my-packages
-        (append
-         '(edit-server
-           bbdb)
-         my-packages)))
 
 ;; package needed for only my laptop
 (when (and on-laptop
            (not on-ms))
   (setq my-packages
         (append
-         '(emms textile-mode
-                markdown-mode
-                haml-mode
-                sass-mode)
+         '(textile-mode
+           markdown-mode
+           haml-mode
+           sass-mode)
          my-packages)))
 
 (el-get 'sync my-packages)

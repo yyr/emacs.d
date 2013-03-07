@@ -8,9 +8,9 @@
 ;;; Description:
 ;;
 
-(add-to-list 'load-path "~/.emacs.d/el-get/emms/lisp/")
-
+(el-get 'sync 'emms)
 (require 'emms-setup)
+
 (emms-standard)
 (emms-default-players)
 

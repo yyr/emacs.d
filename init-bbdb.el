@@ -4,6 +4,8 @@
 ;;
 
 (setq bbdb-file "~/git/org/.bbdb")
+(el-get 'sync 'bbdb)
+
 (require 'bbdb)
 (bbdb-initialize 'gnus 'message)
 

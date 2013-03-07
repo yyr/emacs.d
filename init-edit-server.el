@@ -1,14 +1,13 @@
 ;;; init-edit-server.el
 ;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;    File: init-edit-server.el
 ;; Created: Monday, September 12 2011
 ;; License: GPL v3 or later.
-;;  You should get a copy from <http://www.gnu.org/licenses/gpl.html>
-
 
 ;;; Description:
+;; for firefox/external tools
 
+(el-get 'sync 'edit-server)
 (require 'edit-server)
 (edit-server-start)
 
