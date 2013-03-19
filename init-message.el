@@ -57,6 +57,8 @@
             "nnml:mail.sent.news"
           "nnml:mail.sent.mail")))
 
+(setq message-user-agent 'gnus-user-agent)
+(setq mail-user-agent 'gnus-user-agent)
 
 ;;; footnotes
 (autoload 'footnote-mode "footnote" nil t)
