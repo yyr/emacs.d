@@ -37,11 +37,7 @@
                :description "Offers completions in shell mode"
                :type github
                :pkgname "monsanto/readline-complete.el"
-               :depends (auto-complete))
-        (:name door-gnus
-               :type git
-               :url "http://github.com/yyr/door-gnus.git"
-               :features door-gnus)))
+               :depends (auto-complete))))
 
 ;; common packages all the systems I have
 (setq my-packages
