@@ -16,7 +16,7 @@
    ("t" "todo" entry (file+headline "~/git/org/refile.org" "Tasks")
     "* TODO %?\n%U   %a%i" )
 
-   ("C" "todo under current clock" entry (clock)
+   ("c" "todo under current clock" entry (clock)
     "* TODO %?\n%U   %a%i" )
 
    ;; note --> refile/Notes
@@ -28,7 +28,7 @@
     "%?\n%U\n%i")
 
    ;; Lab note book
-   ("c" "Lab note book"
+   ("l" "Lab note book"
     item (file+datetree "~/git/org/lab/notebook.org")
     "%?\n%U\n%i")
 
@@ -39,7 +39,7 @@
    ("m" "mailnote" entry (file+headline "~/git/org/mails.org" "Mails")
     "** TODO Mail From: %:from Subject: %:subject\n   %a" :kill-buffer t)
 
-   ("C" "TODO under Task in the current buffer "
+   ("T" "TODO under Task in the current buffer "
     entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
     "* TODO %?
   %U %a %n" :prepend t)))
