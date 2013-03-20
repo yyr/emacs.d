@@ -28,9 +28,6 @@
             ("marmalade" . "http://marmalade-repo.org/packages/")
             ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
-;; compile at init if any source is not byte compiled
-(setq el-get-byte-compile-at-init t)
-
 ;; packages are defined by me
 (setq el-get-sources
       '((:name readline-complete
