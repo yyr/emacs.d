@@ -52,4 +52,13 @@
 (global-set-key (kbd "C-x n") 'git-gutter:next-diff)
 
 (setq git-gutter-fr:side 'right-fringe)
+
+
+;;; Mercurial
+
+(when (executable-find "hg")
+  (el-get 'sync 'monky)
+  (setq monky-process-type 'cmdserver))
+
+
 ;;; init-git.el ends here
