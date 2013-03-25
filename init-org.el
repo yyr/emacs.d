@@ -44,4 +44,8 @@
 ;;; save org-buffers every hour
 (run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
+;;; hideshow-org
+(el-get 'sync 'hideshow-org)
+(global-set-key "\C-ch" 'hs-org/minor-mode)
+
 ;;; init-org.el ends here
