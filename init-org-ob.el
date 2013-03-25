@@ -1,25 +1,25 @@
-;;; org-babel Setup
+;;; org-babel setup
 
-(append org-modules '(ob-python
-                      ob-sh
-                      ob-ditaa
-                      ob-perl
-                      ob-python
-                      ob-plantuml
-                      ob-gnuplot
-                      ob-pl))
+(setq org-modules (append org-modules '(ob-python
+                                        ob-sh
+                                        ob-ditaa
+                                        ob-perl
+                                        ob-plantuml
+                                        ob-gnuplot)))
+
+(setq org-babel-load-languages
+      '((emacs-lisp . t)
+        (dot . t)
+        (ditaa . t)
+        (octave . t)
+        (perl . t)
+        (python . t)
+        (plantuml . t)
+        (gnuplot . t)
+        (sh . t)))
 
 (setq org-ditaa-jar-path "~/.emacs.d/el-get/org-mode/contrib/scripts/ditaa.jar")
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images)
-(setq org-babel-load-languages (quote ((emacs-lisp . t)
-                                       (dot . t)
-                                       (ditaa . t)
-                                       (octave . t)
-                                       (perl . t)
-                                       (python . t)
-                                       (plantuml . t)
-                                       (gnuplot . t)
-                                       (sh . t))))
 
 ;; Do not prompt to confirm evaluation
 ;; This may be dangerous - make sure you understand the consequences
