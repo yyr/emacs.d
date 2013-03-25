@@ -30,11 +30,11 @@
 
 ;; packages are defined by me
 (setq el-get-sources
-      '((:name readline-complete
-               :description "Offers completions in shell mode"
+      '((:name ams-glossary
+               :description "Read AMS glossary from Emacs"
                :type github
-               :pkgname "monsanto/readline-complete.el"
-               :depends (auto-complete))))
+               :pkgname "yyr/ams-glossary.el"
+               :depends (epc))))
 
 ;; common packages all the systems I have
 (setq my-packages
