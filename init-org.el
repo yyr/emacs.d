@@ -46,6 +46,7 @@
 
 ;;; hideshow-org
 (el-get 'sync 'hideshow-org)
+(autoload 'hs-org/minor-mode "hideshow-org")
 (global-set-key "\C-ch" 'hs-org/minor-mode)
 
 ;;; init-org.el ends here
