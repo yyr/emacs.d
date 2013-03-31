@@ -14,7 +14,7 @@
   (add-to-list 'Info-additional-directory-list "~/local/guile/share/info/"))
 
 (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
-(setq geiser-impl-installed-implementations 'guile)
+(setq geiser-active-implementations '(guile))
 
 
 (dolist (hook '(scheme-mode-hook))
