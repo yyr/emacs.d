@@ -257,4 +257,12 @@ License: GPL v3 or later
                                           nil  t default-directory)))
   (add-to-list 'load-path path))
 
+
+(defun wikipedia-browse (word)
+  (interactive "sWord: ")
+  (let* ((prefix "https://en.wikipedia.org/wiki/")
+         (w (replace-regexp-in-string " +" "_" word))
+         (term (concat prefix w)))
+    (browse-url term)))
+
 ;;; init-utils-el ends here
