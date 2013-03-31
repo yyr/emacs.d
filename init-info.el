@@ -11,9 +11,9 @@
 
 ;;; this work around is needed if emacs is in non standard directory and
 ;;; INFOPATH is set.
-(if (getenv "INFOPATH")
-    (dolist (dir Info-default-directory-list)
-      (add-to-list 'Info-additional-directory-list dir)))
+(when (getenv "INFOPATH")
+  (dolist (dir Info-default-directory-list)
+    (add-to-list 'Info-additional-directory-list dir)))
 
 (when (file-exists-p (concat my-info-dir "python.info"))
   (el-get 'sync 'pydoc-info)
