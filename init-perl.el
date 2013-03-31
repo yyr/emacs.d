@@ -1,2 +1,2 @@
 (add-to-list 'auto-mode-alist
-             '("\\.\\([pP][Llm]\\|al\\)\\'" . cperl-mode))
+             '("\\.\\([pP][Llm]\\|al\\)\\'" . perl-mode))
