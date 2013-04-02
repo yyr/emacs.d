@@ -15,7 +15,7 @@
   (string-match "rag" (system-name)))
 
 (defvar on-lab-computer
-  (string-match "okho" (system-name)))
+  (string-match "sealion" (system-name)))
 
 (defvar on-lab-server
   (string-match "amu" (system-name)))
