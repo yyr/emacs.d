@@ -8,7 +8,8 @@
 ;;; Description:
 ;; managing bibliography modes
 
-(el-get 'sync '(ebib))
+(el-get 'sync '(ebib
+                zotelo))
 
 (autoload 'ebib "ebib"
   "Ebib, a BibTeX database manager." t)
