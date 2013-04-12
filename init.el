@@ -50,6 +50,7 @@
 (load "init-ess-minors")
 (load "init-custom-key-set")
 (load "init-point")
+(load "init-editing")
 (load "init-time")
 (load "init-utils")
 (load "init-er")
