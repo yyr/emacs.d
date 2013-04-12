@@ -8,10 +8,10 @@
 ;;; Description:
 
 (setq org-agenda-include-diary nil)
-(setq org-agenda-diary-file "~/git/org/diary.org")
+(setq org-agenda-diary-file "~/git/org/life/diary.org")
 
 ;; put diary in org notes folder instead of home folder
-(setq diary-file "~/git/org/diary")
+(setq diary-file "~/git/org/life/d")
 
 ;;; diary supplement Nick Dokos org-mode mailing list
 ;;; location: sapporo
