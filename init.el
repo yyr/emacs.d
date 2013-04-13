@@ -185,7 +185,8 @@
   (load "init-mediawiki"))
 
 ;;; music
-(when (and on-laptop (not on-ms))
+(when (and (not on-lab-server)
+           (not on-ms))
   (load "init-emms"))
 
 (load "init-finish")
