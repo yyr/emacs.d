@@ -10,10 +10,10 @@
 ;; ace-jump-mode - navigation by searching
 ;; jump-char - char type navigation
 
-(el-get 'sync '(ace-jump-mode
-                jump-char))
+(el-get 'sync '(ace-jump-mode))
 
-(define-key global-map (kbd "M-L") 'ace-jump-mode)
+(define-key global-map (kbd "M-l") 'ace-jump-mode)  ; was downcase-word
+(define-key global-map (kbd "M-L") 'downcase-word)
 
 ;; Save point position between sessions
 (require 'saveplace)
