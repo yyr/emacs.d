@@ -52,6 +52,7 @@
 (global-set-key (kbd "C-x n") 'git-gutter:next-diff)
 
 (setq git-gutter-fr:side 'right-fringe)
+(setq git-gutter:disabled-modes '(org-mode))
 
 
 ;;; Mercurial
