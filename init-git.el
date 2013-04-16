@@ -1,8 +1,6 @@
 ;;: init-git.el
 
-(el-get 'sync '(magit
-                git-modes
-                git-gutter-fringe))
+(el-get 'sync '(magit git-gutter-fringe))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "M-<f12>") 'magit-status)
