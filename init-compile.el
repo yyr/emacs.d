@@ -5,6 +5,6 @@
 (setq compilation-auto-jump-to-first-error t)
 (setq compilation-scroll-output 'first-error)
 
-(global-set-key (kbd "<f8>") 'compile)
+(global-set-key (kbd "<f7>") 'compile)
 
 ;;; init-compile.el ends here
