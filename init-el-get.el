@@ -34,7 +34,12 @@
                :description "Read AMS glossary from Emacs"
                :type github
                :pkgname "yyr/ams-glossary.el"
-               :depends (epc))))
+               :depends (epc))
+        (:name ido-hacks
+               :description "Advices for ido-mode."
+               :type github
+               :pkgname "scottjad/ido-hacks"
+               :load    "ido-hacks.el")))
 
 ;; common packages all the systems I have
 (setq my-packages

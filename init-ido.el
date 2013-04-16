@@ -1,13 +1,10 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; License: GPL v3 or later
 
-;;; -----------------------------------------------------------------------------
-;; IDO-minor-mode
-;;; -----------------------------------------------------------------------------
-
-(ido-mode t)  ; use 'buffer rather than t to use only buffer switching
+(el-get 'sync 'ido-hacks)
+(ido-mode t)
 (ido-everywhere t)
-(setq ido-enable-flex-matching t) ;; enable fuzzy matching
+(setq ido-enable-flex-matching t)
 (setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length 0)
 (setq ido-execute-command-cache nil)
