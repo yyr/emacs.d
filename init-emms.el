@@ -30,8 +30,8 @@
 ;;; track info info
 (require 'emms-info-libtag)
 (setq
-  emms-info-functions '(emms-info-libtag)
-  emms-info-libtag-program-name (concat
+ emms-info-functions '(emms-info-libtag)
+ emms-info-libtag-program-name (concat
                                 (el-get-package-directory "emms")
                                 "src/emms-print-metadata.pl"))
 
@@ -54,16 +54,6 @@
 ;;; Show me when track is changed
 (add-hook 'emms-player-started-hook 'emms-show)
 
-(global-set-key (kbd "<f8> s") 'emms-play-directory-tree)  ;s stands for start
-(global-set-key (kbd "<f8> t") 'emms-toggle-repeat-playlist)
-(global-set-key (kbd "<f8> o") 'emms)
-
-(global-set-key (kbd "<f8> P") 'emms-pause)
-(global-set-key (kbd "<f8> a") 'emms-add-directory)
-(global-set-key (kbd "<f8> A") 'emms-add-directory-tree)
-(global-set-key (kbd "<f8> n") 'emms-next)
-(global-set-key (kbd "<f8> p") 'emms-previous)
-
 ;;; Better Icon function.
 (require 'emms-mode-line-icon)
 (defun emms-mode-line-icon-function ()
@@ -73,6 +63,7 @@
           (format emms-mode-line-format (emms-track-get
                                          (emms-playlist-current-selected-track)
                                          'info-title))))
+;;; Utility function
 (defun emms-show-at-point ()
   "Just like  `emacs-show' but at current point"
   (interactive)
@@ -82,6 +73,43 @@
                              (emms-playlist-track-at (point)))))))
     (message "%s" string)))
 (define-key emms-playlist-mode-map (kbd "F") 'emms-show-at-point)
+
+;;; make a global keymap for emms.
+(define-prefix-command 'emms-prefix-command 'emms-prefix-map "EMMS")
+(loop for key in
+      '(([left] emms-seek-backward)
+        ([right] ems-seek-forward)
+        ("\C-b" emms-seek-backward)
+        ("\C-f" emms-seek-forward)
+
+        ("o" emms)
+        ("s" emms-start)
+        ("q" emms-stop)
+        ("n" emms-next)
+        ("p" emms-previous)
+        ("." emms-pause)
+
+        ("d" emms-play-directory)
+        ("D" emms-play-directory-tree)
+        ("S" emms-shuffle)
+
+        ("t" emms-toggle-repeat-playlist)
+        ("a" emms-add-directory)
+        ("A" emms-add-directory-tree)
+        ("f" emms-add-find)
+
+        ("l" emms-locate)
+        ("f" emms-play-find)
+        ("g" emms-playlist-mode-go)
+
+        ("j" emms-seek)
+        ("J" emms-seek-to)
+        ("r" emms-random)
+        ("i" emms-show)
+        (";" emms-streams)
+
+        do (define-key emms-prefix-map (car key) (cadr key))))
+(global-set-key (kbd "<f8>") 'emms-prefix-command)
 
 
 ;;; osdsh display
