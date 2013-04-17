@@ -54,7 +54,7 @@
                       (name . "^\\*shell\\*$")
                       (name . "^\\*compilation\\*$")
                       (mode . Custom-mode)))
-         ("EMMS" (or  (name . "^\\*Music\\*$")
+         ("EMMS" (or  (name . "^\\*Music")
                       (name . "^\\*EMMS")
                       (mode . emms-browser-mode)))
          ("IRC" (or (name . "^\\*Finger")
