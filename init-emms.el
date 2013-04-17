@@ -59,8 +59,8 @@
 (global-set-key (kbd "<f8> o") 'emms)
 
 (global-set-key (kbd "<f8> P") 'emms-pause)
-(global-set-key (kbd "<f8> a") 'emms-add-playlist-directory)
-(global-set-key (kbd "<f8> A") 'emms-add-playlist-directory-tree)
+(global-set-key (kbd "<f8> a") 'emms-add-directory)
+(global-set-key (kbd "<f8> A") 'emms-add-directory-tree)
 (global-set-key (kbd "<f8> n") 'emms-next)
 (global-set-key (kbd "<f8> p") 'emms-previous)
 
@@ -73,6 +73,15 @@
           (format emms-mode-line-format (emms-track-get
                                          (emms-playlist-current-selected-track)
                                          'info-title))))
+(defun emms-show-at-point ()
+  "Just like  `emacs-show' but at current point"
+  (interactive)
+  (let ((string (if emms-player-playing-p
+                    (format emms-show-format
+                            (emms-track-description
+                             (emms-playlist-track-at (point)))))))
+    (message "%s" string)))
+(define-key emms-playlist-mode-map (kbd "F") 'emms-show-at-point)
 
 
 ;;; osdsh display
