@@ -22,6 +22,8 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
+(add-to-list 'completion-styles 'substring t)
+
 (setq message-log-max 5000              ; Increase message log
       echo-keystrokes 0.1
       use-dialog-box nil

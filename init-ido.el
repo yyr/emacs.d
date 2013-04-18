@@ -11,6 +11,8 @@
 (el-get 'sync 'ido-hacks)
 (ido-hacks-mode 1)
 
+(load "init-smex")
+
 ;;; additional keys (copied from source file)
 (defun ido-my-keys ()
   "Add my keybindings for ido."

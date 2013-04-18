@@ -19,7 +19,7 @@
                               (make-variable-buffer-local 'yas/trigger-key)
                               (setq yas/trigger-key [tab]))))
 
-(setq mediawiki-site-default "wikemacs")
+(setq mediawiki-site-default "")
 
 (defun yyr-mediawiki-browser-edit/create-page (&optional arg)
   "Edit pages in a web browser. It tries to pick \"Page Name\"

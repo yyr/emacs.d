@@ -30,7 +30,8 @@
 (setq gnus-init-file
       (concat emacs-path "/init-gnus.el" ))
 
-(require 'cl)
+(eval-when-compile
+  (require 'cl))
 
 ;; ----------------------------------------------------------------------------
 ;;; load emacs individual configuration files
@@ -48,7 +49,10 @@
 
 ;;; initial setup, keybindings
 (load "init-general")
-(load "init-ess-minors")
+(load "init-minors")
+(load "init-auto-save")
+(load "init-diminish")
+
 (load "init-custom-key-set")
 (load "init-point")
 (load "init-editing")
@@ -58,15 +62,6 @@
 
 ;;; make friendly mini buffer
 (load "init-ido")
-;; (load "init-smex")
-(load "init-minibuffer")
-
-(load "init-diminish")
-(load "init-auto-save")
-;; (load "init-linum")
-
-;;; look
-(load "init-font")
 
 ;;; help typing
 (load "init-autopair")
@@ -77,6 +72,10 @@
 (load "init-auto-complete")
 (load "init-yasnip")
 (load "init-multiple-cursors")
+
+;;; look
+(load "init-font")
+;; (load "init-linum")
 
 ;; dict is not available on server
 (when (executable-find "dict")
@@ -120,6 +119,11 @@
 
 (load "init-fortran")
 (load "init-namelist")
+(load "init-sass-mode")
+
+;;; code assistance
+(load "init-flymake")
+(load "init-etags")
 
 ;;; subject
 (load "init-octave")
@@ -128,7 +132,7 @@
   (load "init-bib"))
 (load "init-ncl")
 (load "init-grads")
-;; (load "init-gnuplot")
+(load "init-gnuplot")
 
 ;;; DVC
 (load "init-git")
@@ -160,14 +164,9 @@
 (load "init-eldoc")
 (load "init-help")
 
-;; (load "init-ecb")
-(load "init-flymake")
-(load "init-etags")
-
 ;;; web
 (load "init-webjump")
 (load "init-w3m")
-(load "init-sass-mode")
 (load "init-erc")
 
 ;;;  misc
