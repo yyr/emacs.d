@@ -49,4 +49,11 @@
   (add-to-list 'load-path magit-install-dir)
   (require '50magit))
 
+
+;; el-get
+(defun minimal-load-el-get ()
+  (setq magit-install-dir (concat el-get-install-dir "/el-get"))
+  (add-to-list 'load-path el-get-install-dir)
+  (require 'el-get))
+
 ;;; minimal.el ends here
