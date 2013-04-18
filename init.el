@@ -11,30 +11,21 @@
 ;; Check emacs running on which system (to load config differently
 ;; for different computers). I go by hostnames which are all fixed
 
-(defvar on-laptop
-  (string-match "rag" (system-name)))
+(defvar on-laptop (string-match "rag" (system-name)))
+(defvar on-lab-computer (string-match "sealion" (system-name)))
+(defvar on-lab-server (or (string-match "amu" (system-name))
+                          (string-match "yuz" (system-name))))
+(defvar on-ms (string-match "windows" (format "%s" system-type)))
 
-(defvar on-lab-computer
-  (string-match "sealion" (system-name)))
-
-(defvar on-lab-server
-  (or (string-match "amu" (system-name))
-      (string-match "yuz" (system-name))))
-
-(defvar on-ms
-  (string-match "windows" (format "%s" system-type)))
-
+;;;
 (defconst emacs-path "~/.emacs.d")
 (setq load-path (cons (expand-file-name emacs-path) load-path))
+(setq gnus-init-file (concat emacs-path "/init-gnus.el" ))
 
-(setq gnus-init-file
-      (concat emacs-path "/init-gnus.el" ))
-
-(eval-when-compile
-  (require 'cl))
+(require 'cl)
 
 ;; ----------------------------------------------------------------------------
-;;; load emacs individual configuration files
+;;; load individual configuration files
 ;; ----------------------------------------------------------------------------
 
 ;;; first of all any OS dependent paths has to be set
@@ -49,16 +40,10 @@
 
 ;;; initial setup, keybindings
 (load "init-general")
+(load "init-custom-key-set")
 (load "init-minors")
 (load "init-auto-save")
 (load "init-diminish")
-
-(load "init-custom-key-set")
-(load "init-point")
-(load "init-editing")
-(load "init-time")
-(load "init-utils")
-(load "init-er")
 
 ;;; make friendly mini buffer
 (load "init-ido")
@@ -72,21 +57,22 @@
 (load "init-auto-complete")
 (load "init-yasnip")
 (load "init-multiple-cursors")
+(load "init-er")
 
 ;;; look
 (load "init-font")
+(load "init-point")
 ;; (load "init-linum")
 
-;; dict is not available on server
-(when (executable-find "dict")
-  (load "init-dictem"))
-(when (file-directory-p "~/git/sdic")
-  (load "init-sdic"))
+;; dictionary
+(when (executable-find "dict") (load "init-dictem"))
+(when (file-directory-p "~/git/sdic") (load "init-sdic"))
 (load "init-edict")
 
 ;;; help navigation
 (load "init-navigation")
 (load "init-bookmarks")
+(load "init-editing")
 (load "init-imenu")
 (load "init-buffers")
 (load "init-recentf")
@@ -94,7 +80,7 @@
 ;;; shell, term, comint, tramp
 (load "init-term")
 
-;;; window , frame
+;;; window, frame
 (load "init-windows")
 (load "init-frame")
 
@@ -127,24 +113,22 @@
 
 ;;; subject
 (load "init-octave")
-(when (executable-find "latex")         ; auctex is no use  without latex
-  (load "init-auctex")
-  (load "init-bib"))
 (load "init-ncl")
 (load "init-grads")
 (load "init-gnuplot")
+;; auctex is no use  without latex
+(when (executable-find "latex") (load "init-auctex") (load "init-bib"))
 
-;;; DVC
+;;; version control
 (load "init-git")
 
-;;; org GTD
+;;; ORG
 (load "init-org")
 (load "init-org-todo-state-tags")
 (load "init-org-agenda")
 (load "init-org-tags")
 (load "init-org-capture")
 (load "init-org-refile")
-;; (load "init-org-clock")
 (load "init-org-ob")
 (load "init-org-diary")
 (load "init-calender")
@@ -159,7 +143,7 @@
 (load "init-org-misc")
 (load "init-epresent")
 
-;;; Info,  help, doc , man(woman) etc..
+;;; info,  help, doc, man(woman) etc..
 (load "init-info")
 (load "init-eldoc")
 (load "init-help")
@@ -172,22 +156,19 @@
 ;;;  misc
 (load "init-misc")
 (load "init-battery")
+(load "init-utils")
+(load "init-boxquote")
 
 ;;; sys & server
 (load "init-print")
 (load "init-mail")
 (load "init-crontab")
 (load "init-server")
-(load "init-boxquote")
-
-(when on-laptop
-  (load "init-edit-server")
-  (load "init-mediawiki"))
+(load "init-time")
+(when on-laptop (load "init-edit-server") (load "init-mediawiki"))
 
 ;;; music
-(when (and (not on-lab-server)
-           (not on-ms))
-  (load "init-emms"))
+(when (and (not on-lab-server) (not on-ms)) (load "init-emms"))
 
 (load "init-finish")
 ;; init ends here
