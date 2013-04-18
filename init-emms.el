@@ -53,6 +53,9 @@
 
 ;;; Show me when track is changed
 (add-hook 'emms-player-started-hook 'emms-show)
+;; (add-hook 'emms-player-started-hook
+;;           (lambda () (el-get-notify "Now playing" (emms-show))))
+
 
 ;;; Better Icon function.
 (require 'emms-mode-line-icon)
@@ -109,21 +112,6 @@
         (";" emms-streams))
       do (define-key emms-prefix-map (car key) (cadr key)))
 
-;;; osdsh display
-;; (defun emms-osd-message (string)
-;;   (shell-command-to-string
-;;    (concat "osdctl" " -s " "\"" string "\"" ","))
-;;   nil)
-
-;; (defun my-emms-current ()
-;;   (interactive)
-;;   (emms-track-description (emms-playlist-current-selected-track)))
-
-;; (defun emms-osd-np ()
-;;   (interactive)
-;;   (emms-osd-message (my-emms-current))
-;;   nil)
-
-;; (add-hook 'emms-player-started-hook 'emms-osd-np)
+(global-set-key (kbd "<f8>") 'emms-prefix-command)
 
 ;;; init-emms.el ends here
