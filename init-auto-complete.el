@@ -62,7 +62,6 @@
 
 ;;; configuration of ac-sources
 ;; define  sources for ielm
-(add-hook 'ielm-mode-hook (lambda ()
-                            (setq-default ac-sources 'ac-emacs-lisp-mode-setup)))
+(add-hook 'ielm-mode-hook 'ac-emacs-lisp-mode-setup)
 
 ;;; init-auto-complete.el ends here
