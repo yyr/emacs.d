@@ -5,10 +5,10 @@
 (windmove-default-keybindings) ;; Shift+direction
 
 (global-set-key "\M-t" 'other-window)   ; was transpose words
-;;; (global-set-key (kbd "<f8>") 'other-window)
 (global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
 (global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward t
-(global-set-key (kbd "C-c C-o") 'scroll-other-window)
+(global-set-key (kbd "C-c C-u") 'scroll-other-window)
+(global-set-key (kbd "C-c C-b") 'scroll-other-window-down)
 
 ;;----------------------------------------------------------------------------
 ;; When splitting window, show (other-buffer) in the new window
@@ -47,11 +47,8 @@
 
 (global-set-key [f2] (split-window-func-with-other-buffer 'split-window-horizontally))
 (global-set-key (kbd "<S-f2>") 'delete-other-windows)
-
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
-;; (global-set-key (kbd "M-s") 'other-window) ; was center-line
-
 
 ;;; I want a key to open the current buffer all over the screen.
 ;; http://stackoverflow.com/questions/970292/emacs-multiple-columns-one-buffer
@@ -93,9 +90,7 @@
 
 (global-set-key (kbd "C-S-<f7>") 'previous-buffer-in-other-window)
 
-;;; setup
-;;----------------------------------------------------------------------------
+;;; ediff
 (setq ediff-split-window-function 'split-window-horizontally)
-
 
 ;;; init-windows.el
