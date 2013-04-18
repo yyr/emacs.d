@@ -44,7 +44,4 @@ If the region is active, insert it."
         ("a" . (org-agenda nil "T" t))
         ("$" . org-archive-subtree)))
 
-;;; org2jekyll
-(setq org2jekyll-basedir "~/blog")
-
 ;;; init-org-misc.el ends here
