@@ -18,7 +18,8 @@
   (string-match "sealion" (system-name)))
 
 (defvar on-lab-server
-  (string-match "amu" (system-name)))
+  (or (string-match "amu" (system-name))
+      (string-match "yuz" (system-name))))
 
 (defvar on-ms
   (string-match "windows" (format "%s" system-type)))
