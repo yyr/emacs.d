@@ -78,7 +78,7 @@
 (define-prefix-command 'emms-prefix-command 'emms-prefix-map "EMMS")
 (loop for key in
       '(([left] emms-seek-backward)
-        ([right] ems-seek-forward)
+        ([right] emms-seek-forward)
         ("\C-b" emms-seek-backward)
         ("\C-f" emms-seek-forward)
 
@@ -106,11 +106,8 @@
         ("J" emms-seek-to)
         ("r" emms-random)
         ("i" emms-show)
-        (";" emms-streams)
-
-        do (define-key emms-prefix-map (car key) (cadr key))))
-(global-set-key (kbd "<f8>") 'emms-prefix-command)
-
+        (";" emms-streams))
+      do (define-key emms-prefix-map (car key) (cadr key)))
 
 ;;; osdsh display
 ;; (defun emms-osd-message (string)
