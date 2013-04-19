@@ -43,7 +43,9 @@
 
 
 (setq-default
- frame-title-format '(buffer-file-name "%f" "%b") ; I already know this is Emacs
+ frame-title-format `("%b       " ,(user-login-name) "@" ,(system-name) "     "
+                      global-mode-string)
+ ;; frame-title-format '(buffer-file-name "%f" "%b") ; I already know this is Emacs
  truncate-lines t                                 ; Truncate lines, don't wrap
  paren-mode 'sexp                                 ; Highlight parenthesis
  blink-cursor-alist '((t . hollow))     ; Cursor blinks solid and hollow
