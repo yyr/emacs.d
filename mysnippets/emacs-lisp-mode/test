@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# --
+(ert-deftest $1 ()
+  (should (equal $0)))
