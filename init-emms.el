@@ -82,6 +82,9 @@
 (loop for key in
       '(([left] emms-seek-backward)
         ([right] emms-seek-forward)
+        ([up] emms-volume-raise)
+        ([down] emms-volume-lower)
+
         ("\C-b" emms-seek-backward)
         ("\C-f" emms-seek-forward)
 
