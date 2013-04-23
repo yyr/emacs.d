@@ -28,6 +28,7 @@
          ("EMMS" (or  (name . "^\\*Music")
                       (name . "^\\*EMMS")
                       (mode . emms-browser-mode)))
+
          ("emacs" (or (name . "^\\*scratch\\*$")
                       (name . "^\\*Messages\\*$")
                       (name . "^\\*ELP Profiling Results\\*$")
@@ -50,24 +51,34 @@
                       (name . "^\\*shell\\*$")
                       (name . "^\\*compilation\\*$")
                       (mode . Custom-mode)))
+
+         ("dict" (or (name . "^\\*edict")
+                     (name . "^\\*dict")))
+
          ("version control" (or (mode . svn-status-mode)
                                 (mode . svn-log-edit-mode)
                                 (name . "^\\*svn-")
                                 (name . "^\\*vc\\*$")
                                 (name . "^\\*Annotate")
-                                (name . "^\\*Magit-")
+                                (name . "^\\*magit")
                                 (name . "^\\*vc-")))
+
          ("IRC" (or (name . "^\\*Finger")
                     (mode . erc-mode)))
+
          ("emacs source" (or (mode . emacs-lisp-mode)
                              (filename . "\\.el\\.gz$")))
+
          ("Gnus" (or   (name . "^\\*Group*")
                        (name . "^\\*BBDB*")
                        (name . "^\\*Summary")
                        (name . "^\\*mail")
                        (name . "^\\*wide")
                        (name . "^\\*Article")
-                       (name . "^\\*reply")))
+                       (name . "^\\*reply")
+                       (name . "^\\.news")
+                       (name . "^\\.bbdb")))
+
          ("agenda" (or (name . "^\\*Calendar\\*$")
                        (name . "^diary$")
                        (name . "^\\*Agenda")
@@ -75,10 +86,12 @@
                        (name . "^\\*Org")
                        (mode . org-mode)
                        (mode . muse-mode)))
+
          ("latex" (or (mode . latex-mode)
                       (mode . LaTeX-mode)
                       (mode . bibtex-mode)
                       (mode . reftex-mode)))
+
          ("dired" (or (mode . dired-mode))))))
 
 (add-hook 'ibuffer-mode-hook
