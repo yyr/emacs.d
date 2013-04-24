@@ -8,11 +8,13 @@
                  jedi))
 
 (defun my-jedi-setup ()
+  (setq auto-complete-mode 1)
   (setq jedi:complete-on-dot t)
   (setq jedi:setup-keys t)
   (require 'jedi)
   (jedi:setup))
 
 (add-hook 'python-mode-hook 'my-jedi-setup)
+(add-hook 'inferior-python-mode-hook 'my-jedi-setup)
 
 ;;; init-jedi.el ends here
