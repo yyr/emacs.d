@@ -77,6 +77,7 @@
                        (name . "^\\*Article")
                        (name . "^\\*reply")
                        (name . "^\\.news")
+                       (name . "^\\*unsent")
                        (name . "^\\.bbdb")))
 
          ("agenda" (or (name . "^\\*Calendar\\*$")
