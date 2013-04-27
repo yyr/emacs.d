@@ -10,39 +10,13 @@
 (el-get 'sync '(pylookup
                 highlight-indentation))
 
+;;; --------------------------------------------------------------------
+;;; Auto Completion
+;;; --------------------------------------------------------------------
 (load "init-jedi")
 
-;;; --------------------------------------------------------------------
-;; pylookup
-(setq pylookup-dir "~/.emacs.d/el-get/pylookup")
-(add-to-list 'load-path pylookup-dir)
 
-;; load pylookup when compile time
-(require 'pylookup)
-
-;; set executable file and db file
-(setq pylookup-program
-      (concat pylookup-dir "/pylookup.py"))
-(setq pylookup-db-file
-      (concat pylookup-dir "/pylookup.db"))
-
-;; to speedup, just load it on demand
-(autoload 'pylookup-lookup "pylookup"
-  "Lookup SEARCH-TERM in the Python HTML indexes." t)
-
-(autoload 'pylookup-update "pylookup"
-  "Run pylookup-update and create the database at `pylookup-db-file'." t)
-
-(add-hook 'python-mode-hook
-          (lambda ()
-            ;; pylookup
-            (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
-            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
-            ;; indentation
-            (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
-            (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
-
-;;; ipython
+;;; Ipython
 (when (executable-find "ipython")
   (setq
    python-shell-interpreter "ipython"
@@ -55,5 +29,32 @@
    "';'.join(module_completion('''%s'''))\n"
    python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
+
+
+;;; --------------------------------------------------------------------
+;; Documentation Helpers
+;;; --------------------------------------------------------------------
+;;; pylookup
+(require 'pylookup)
+(add-hook 'python-mode-hook
+          (lambda ()
+            ;; pylookup
+            (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
+            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
+            ;; indentation
+            (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
+            (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
+
+;;; pydoc-info
+(setq my-info-dir "~/git/info-collection/")
+(when (file-exists-p (concat my-info-dir "python.info"))
+  (el-get 'sync 'pydoc-info)
+  (require 'pydoc-info)
+  (info-lookup-add-help
+   :mode 'python-mode
+   :parse-rule 'pydoc-info-python-symbol-at-point
+   :doc-spec
+   '(("(python)Index" pydoc-info-lookup-transform-entry)
+     ("(sphinx)Index" pydoc-info-lookup-transform-entry))))
 
 ;;; init-python.el ends here
