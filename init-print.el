@@ -15,6 +15,7 @@
 
 (setq ps-print-color-p t
       ps-spool-duplex t
+      ps-paper-type 'a4
       ps-switch-header nil
       ps-print-header t
       ps-print-footer nil
