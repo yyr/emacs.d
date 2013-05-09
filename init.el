@@ -159,6 +159,7 @@
 (load "init-battery")
 (load "init-utils")
 (load "init-boxquote")
+(when (and (not on-lab-server) (not on-ms)) (load "init-social"))
 
 ;;; sys & server
 (load "init-print")
