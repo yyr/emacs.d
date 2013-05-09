@@ -41,4 +41,18 @@
       (buffer-substring start end))))
 
 
+(require 'calendar)
+(el-get 'sync 'japanese-holidays)
+(require 'japanese-holidays)
+
+(setq diary-number-of-entries 31)
+(define-key calendar-mode-map "f" 'calendar-forward-day)
+(define-key calendar-mode-map "b" 'calendar-backward-day)
+(setq calendar-weekend-marker 'diary)
+(add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
+(add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
+(setq mark-holidays-in-calendar t)
+(setq calendar-holidays
+      (append japanese-holidays local-holidays other-holidays))
+
 ;;; init-org-diary.el ends here

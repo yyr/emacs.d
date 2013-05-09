@@ -35,11 +35,10 @@
                :type github
                :pkgname "yyr/ams-glossary.el"
                :depends (epc))
-        (:name ido-hacks
-               :description "Advices for ido-mode."
-               :type github
-               :pkgname "scottjad/ido-hacks"
-               :load    "ido-hacks.el")))
+        (:name japanese-holidays
+               :type http
+               :url "http://www.meadowy.org/meadow/netinstall/export/799/branches/3.00/pkginfo/japanese-holidays/japanese-holidays.el")))
+
 
 ;; common packages all the systems I have
 (setq my-packages
