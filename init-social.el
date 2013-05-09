@@ -3,6 +3,7 @@
 
 ;;; twitter
 (el-get 'sync 'twittering-mode)
+
 (setq twittering-username "kindahero")
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
@@ -21,7 +22,6 @@
 
 ;;; Jabber
 (el-get 'sync 'emacs-jabber)
-(require 'jabber)
 (setq jabber-account-list
       '(("yagneshmsc@gmail.com"
          (:network-server . "talk.google.com")
