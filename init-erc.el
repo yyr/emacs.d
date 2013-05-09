@@ -1,34 +1,44 @@
 ;;; init-erc.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;;    File: init-erc.el
 ;; Created: Saturday, August 20 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
-;;; Description:
-;;;
+(setq erc-anonymous-login nil)
+(setq erc-beep-p t)
 
-;;; http://delysid.org/emacs/erc.html
+;; Set personal information
+(setq erc-nick "kindahero")
+(setq erc-user-full-name "dontknow")
+
+(setq erc-server-coding-system '(utf-8 . undecided))
+(setq erc-echo-notices-in-minibuffers-flag t)
+(add-hook 'erc-echo-notice-hook 'erc-echo-notice-in-active-buffer)
+
+;; Set autojoin channels
+(setq erc-autojoin-channels-alist
+      '((".*\\.freenode.net" "#emacs" "#hcoop" "#guile")))
+
 (eval-after-load "erc"
   '(progn
-     (setq erc-auto-query t
-           erc-bbdb-auto-create-on-whois-p t
-           erc-fill-column (- (window-width) 2)
-           erc-pals '("" "")
-           erc-notify-list erc-pals)
-
-                                        ;    (require 'erc-bbdb)
+     ;; (require 'erc-bbdb)
      ;; Set personal information
      (setq erc-nick "kindahero")
      (setq erc-user-full-name "dontknow")
 
-     ;; Set autojoin channels
-     (setq erc-autojoin-channels-alist
-           '(("freenode.net" "#emacs")))
      (require 'erc-imenu)
      (require 'erc-menu)
      (require 'erc-notify)
      (require 'erc-ring)
+     (require 'erc-log)
+
+     (setq erc-auto-query t
+           erc-bbdb-auto-create-on-whois-p t
+           erc-fill-column (- (window-width) 2)
+           erc-pals '("" "")
+           erc-notify-list erc-pals
+           erc-log-channels-directory "~/.emacs.d/.erc/logs/"
+           erc-hide-timestamps nil
+           erc-log-insert-log-on-open nil)
+
      (erc-button-mode 1)
      (erc-completion-mode 1)
      (erc-fill-mode 1)
@@ -39,12 +49,20 @@
      (erc-track-mode 1)
      (add-hook 'erc-mode-hook 'erc-add-scroll-to-bottom)))
 
+
 ;; Set autoconnect networks
 (defun my-erc ()
   "Connect to my default ERC servers."
-
   (interactive)
   (erc-tls :server "irc.freenode.net" :port 7000))
 
+(defun erc/erc-autoaway ()
+  "erc autoaway"
+  (require 'erc-autoaway)
+  (setq erc-auto-discard-away t)
+  (setq erc-autoaway-idle-seconds 600)
+  (setq erc-auto-set-away t)
+  (setq erc-autoaway-use-emacs-idle t))
 
+(add-hook 'erc-mode 'erc/erc-autoaway)
 ;;; init-erc.el ends here
