@@ -7,6 +7,7 @@
 
 ;;; Description:
 
+(el-get 'sync 'epresent)
 (autoload 'epresent "epresent" nil t)
 
 
