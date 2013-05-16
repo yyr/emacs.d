@@ -108,7 +108,7 @@
 (load "init-sass-mode")
 
 ;;; code assistance
-(load "init-flymake")
+(load "init-flycheck")
 (load "init-etags")
 
 ;;; subject
