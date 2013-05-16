@@ -9,18 +9,16 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-listing-switches "-alh")
 
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (turn-on-gnus-dired-mode)
-            ;; dired-x
-            (require 'dired-x)
-            (require 'dired-details)
-            (require 'dired-aux)
-            (setq-default dired-details-hidden-string "--- ")
-            (dired-details-install)
-            (dired-omit-mode 1)))
+(after 'dired
+       (require 'dired-x)
+       (require 'dired-details)
+       (require 'dired-aux)
+       (setq dired-omit-extensions
+             (append dired-omit-extensions
+                     '(".mod" ".pyc" ".pyo"))))
 
-(setq dired-omit-verbose nil)
+(add-hook 'dired-mode-hook
+          'turn-on-gnus-dired-mode)
 
 (define-key dired-mode-map [mouse-2] 'dired-find-file)
 

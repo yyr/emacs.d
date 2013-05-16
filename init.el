@@ -22,7 +22,9 @@
 (setq load-path (cons (expand-file-name emacs-path) load-path))
 (setq gnus-init-file (concat emacs-path "/init-gnus.el" ))
 
-(require 'cl)
+(defmacro after (mode &rest body)
+  `(eval-after-load ,mode
+     '(progn ,@body)))
 
 ;; ----------------------------------------------------------------------------
 ;;; load individual configuration files
