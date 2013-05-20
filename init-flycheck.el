@@ -1,10 +1,12 @@
 ;;; init-flycheck.el
 
 (el-get 'sync 'flycheck)
-(require 'flycheck)
 
-(eval-after-load 'flycheck
-  '(setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers)))
+(after 'flycheck
+       (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))
+       (setq flycheck-idle-change-timer 3)
+       (setq flycheck-check-syntax-automatically
+             (delq 'new-line flycheck-check-syntax-automatically)))
 
 ;; (add-hook 'prog-mode-hook 'flycheck-mode)
 (dolist (hook '(emacs-lisp-mode-hook
