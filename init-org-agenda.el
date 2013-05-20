@@ -12,7 +12,8 @@
     (load-file agenda-file))
 
 ;;;  Custom Key Bindings
-(global-set-key (kbd "<f12>") 'org-agenda)
+(add-hook 'emacs-startup-hook           ; workaround for epresent
+          (lambda () (global-set-key (kbd "<f12>") 'org-agenda)))
 
 ;;; agenda props
 (setq org-agenda-skip-deadline-if-done t)
