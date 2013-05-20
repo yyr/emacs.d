@@ -8,7 +8,7 @@
                  jedi))
 
 (defun my-jedi-setup ()
-  (setq auto-complete-mode 1)
+  (auto-complete-mode 1)
   (setq jedi:complete-on-dot t)
   (setq jedi:setup-keys t)
   (require 'jedi)
