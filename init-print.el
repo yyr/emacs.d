@@ -13,9 +13,13 @@
 (setq ps-italic-faces
       '(font-lock-comment-face font-lock-string-face))
 
+(after 'ps-print
+       (add-to-list 'ps-page-dimensions-database
+                    (list 'JpA4 (* 72 8.5)  (* 72 11) "JpA4"))
+       (setq ps-paper-type 'JpA4))
+
 (setq ps-print-color-p t
       ps-spool-duplex t
-      ps-paper-type 'a4
       ps-switch-header nil
       ps-print-header t
       ps-print-footer nil
