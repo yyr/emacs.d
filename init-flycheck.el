@@ -10,7 +10,6 @@
 
 ;; (add-hook 'prog-mode-hook 'flycheck-mode)
 (dolist (hook '(emacs-lisp-mode-hook
-                python-mode-hook
                 sh-mode-hook))
   (add-hook hook 'flycheck-mode))
 
