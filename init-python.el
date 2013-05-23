@@ -30,6 +30,8 @@
    python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
 
+(add-to-list 'auto-mode-alist           ; .py, pym, pyc (also capitals)
+             '("\\.[pP][yY][MmCc]?\\'" . python-mode))
 
 ;;; --------------------------------------------------------------------
 ;; Documentation Helpers
