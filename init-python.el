@@ -33,6 +33,11 @@
 (add-to-list 'auto-mode-alist           ; .py, pym, pyc (also capitals)
              '("\\.[pP][yY][MmCc]?\\'" . python-mode))
 
+;;;
+(defun inf-python ()
+  (interactive)
+  (run-python "python" t t))
+
 ;;; --------------------------------------------------------------------
 ;; Documentation Helpers
 ;;; --------------------------------------------------------------------
