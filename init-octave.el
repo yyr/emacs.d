@@ -4,7 +4,7 @@
 ;;(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 
 ;; using Octave mode for all `.m' files
-(autoload 'octave-mode "octave-mod" nil t)
+(autoload 'octave-mode "octave" nil t)
 (setq auto-mode-alist
       (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
