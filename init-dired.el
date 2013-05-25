@@ -15,7 +15,13 @@
        (require 'dired-aux)
        (setq dired-omit-extensions
              (append dired-omit-extensions
-                     '(".mod" ".pyc" ".pyo"))))
+                     '(".mod" ".pyc" ".pyo")))
+       (add-to-list 'dired-mode-hook
+                    (lambda ()
+                      (setq-default dired-details-hidden-string "--- ")
+                      (dired-details-install)
+                      (dired-omit-mode 1))))
+
 
 (add-hook 'dired-mode-hook
           'turn-on-gnus-dired-mode)
