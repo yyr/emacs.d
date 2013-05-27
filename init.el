@@ -106,7 +106,6 @@
 (load "init-compile")
 
 (load "init-fortran")
-(load "init-namelist")
 (load "init-sass-mode")
 
 ;;; code assistance
