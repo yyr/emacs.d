@@ -117,4 +117,10 @@
 
 (global-set-key (kbd "<f8>") 'emms-prefix-command)
 
+;;; Chalisa
+(setq chalisa-path "/dump/MUSIC/devotional/Hanuman_Chalisa_full.mp3")
+(defun play-file (f) (if (file-exists-p f) (emms-play-file f)
+    (message "File %s is present" f)))
+(defun play-chalisa () (interactive) (play-file chalisa-path))
+
 ;;; init-emms.el ends here
