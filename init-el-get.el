@@ -9,6 +9,13 @@
 ;;; add el-get load-path
 (setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
 
+(when (symbolp 'package-archives)
+  (setq package-archives
+        '(("melpa" . "http://melpa.milkbox.net/packages/")
+          ("marmalade" . "http://marmalade-repo.org/packages/")
+          ("gnu" . "http://elpa.gnu.org/packages/"))))
+
+
 ;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
   (setq el-get-install-branch "master")
@@ -17,16 +24,12 @@
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (end-of-buffer)
     (eval-print-last-sexp))
-  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t))
+  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t)
+  (el-get-elpa-build-local-recipes))
 
 ;;; el-get-is-lazy
 (setq el-get-is-lazy nil)
 
-(if (symbolp 'package-archives)
-    (setq package-archives
-          '(("gnu" . "http://elpa.gnu.org/packages/")
-            ("marmalade" . "http://marmalade-repo.org/packages/")
-            ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 ;; packages are defined by me
 (setq el-get-sources
