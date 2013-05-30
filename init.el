@@ -168,6 +168,7 @@
 (load "init-crontab")
 (load "init-server")
 (load "init-time")
+(load "init-crypt")
 (when on-laptop (load "init-edit-server") (load "init-mediawiki"))
 
 ;;; music
