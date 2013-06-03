@@ -61,6 +61,9 @@
  indicate-empty-lines t
  fill-column 78)
 
+(setq gc-cons-threshold 20000000)       ; increase gc
+
+
 ;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
