@@ -36,6 +36,9 @@
 ;;;
 (defun inf-python ()
   (interactive)
+  (setenv "PYTHONSTARTUP"
+          (replace-regexp-in-string
+           "\n"  "" (shell-command-to-string "python -m jedi")))
   (run-python "python" t t))
 
 ;;; --------------------------------------------------------------------
