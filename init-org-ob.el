@@ -4,6 +4,7 @@
                                         ob-sh
                                         ob-ditaa
                                         ob-perl
+                                        ob-latex
                                         ob-plantuml
                                         ob-gnuplot)))
 
@@ -12,6 +13,7 @@
         (dot . t)
         (ditaa . t)
         (octave . t)
+        (latex . t)
         (perl . t)
         (python . t)
         (plantuml . t)
