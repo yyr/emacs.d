@@ -99,6 +99,7 @@
 (load "init-scheme")
 (load "init-grammar")
 
+(load "init-cc")
 (load "init-perl")
 (load "init-html")
 (load "init-yaml")
