@@ -16,7 +16,7 @@ these before you get going to use.
 - git (cloning most of the packages by [[https://github.com/dimitri/el-get][el-get]] (package manager))
 
 ** Building Emacs from bzr/git HEAD
-see also my other [[http::/github.com/yyr/build-emacs][script]] which I use to build emacs automatically.
+see also my other [[http://github.com/yyr/build-emacs][script]] which I use to build emacs automatically.
 
 To build emacs on ubuntu (I follow bzr/git HEAD) I needed the
 following OS packages.
