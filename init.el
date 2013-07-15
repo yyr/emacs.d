@@ -144,7 +144,7 @@
 
 ;;; org misc
 (load "init-org-misc")
-(load "init-epresent")
+;(load "init-epresent")
 
 ;;; info,  help, doc, man(woman) etc..
 (load "init-info")
