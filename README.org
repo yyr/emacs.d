@@ -5,17 +5,21 @@
   packages/context.
 
 * Dependencies.
-  if you want to use all of these settings you might want to look for
-  these before you get going to use.
+I use mostly latest version of Emacs. In fact to I build and use emacs from
+bzr trunk and keep stable versions around for fail safe and testing purposes.
 
-  - GNU Emacs 23.3
-  - elpa (included in Emacs 24.0)
-  - git (cloning most of the packages by [[https://github.com/dimitri/el-get][el-get]] (package manager))
-  - CVS (optional which is needed emacs-w3m by el-get I guess)
+So if you want to use all of these settings you might want to look for
+these before you get going to use.
+
+- GNU Emacs latest version, (above 24.0 is recommondad)
+- elpa (included in Emacs 24.0)
+- git (cloning most of the packages by [[https://github.com/dimitri/el-get][el-get]] (package manager))
 
 ** Building Emacs from bzr/git HEAD
-   To build emacs on ubuntu (I follow bzr/git HEAD) I needed the
-   following OS packages.
+see also my other [[http::/github.com/yyr/build-emacs][script]] which I use to build emacs automatically.
+
+To build emacs on ubuntu (I follow bzr/git HEAD) I needed the
+following OS packages.
   - build-essantial
   - build-dep emacs23
   - autoconf
@@ -36,7 +40,7 @@ make install
     el-get should start installing your additional external packages
 
 * License.
-  GPL v3 or later.
+GPL v3 or later.
 
 * references
-  see the cite file
+see the cite file
