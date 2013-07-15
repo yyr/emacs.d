@@ -21,12 +21,12 @@
 
         global-semantic-highlight-edits-mode
         global-semantic-idle-local-symbol-highlight-mode
-        ;; global-cedet-m3-minor-mode
+        global-cedet-m3-minor-mode
 
         ;; code helpers
-        ;; global-semantic-idle-scheduler-mode
-        ;; global-semantic-idle-summary-mode
-        ;; global-semantic-idle-completions-mode
+        global-semantic-idle-scheduler-mode
+        global-semantic-idle-summary-mode
+        global-semantic-idle-completions-mode
 
         ;; eye candy
         ;; global-semantic-decoration-mode
@@ -42,16 +42,19 @@
 (global-ede-mode 1)
 
 (defun my-cedet-hook ()
+  (require 'semantic/senator)
   (local-set-key [(control return)] 'semantic-ia-complete-symbol)
   (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
   (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
+  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+  (local-set-key (kbd "C-.") 'semantic-ia-fast-jump))
 
 (dolist (hook
          '(python-mode-hook
            c-mode-hook
            fortran-mode-hook
            emacs-lisp-mode-hook
+           c-mode-hook
            f90-mode-hook))
   (add-hook hook 'my-cedet-hook))
 
