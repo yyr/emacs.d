@@ -16,6 +16,10 @@
  bbdb-notice-auto-save-file t
  bbdb-expand-mail-aliases t
 
+ bbdb-offer-save (quote savenoprompt)
+ bbdb-layout 'one-line
+ bbdb-pop-up-layout 'pop-up-multi-line
+
  bbdb-use-pop-up t                        ;; allow popups for addresses
  bbdb-electric-p t                        ;; be disposable with SPC
  bbdb-popup-target-lines  1               ;; very small
@@ -38,8 +42,9 @@
  bbdb-completion-display-record nil     ; don't display window after completion
 
  ;; auto-create addresses from mail
- bbdb/mail-auto-create-p 'bbdb-ignore-some-messages-hook
- bbdb-ignore-some-messages-alist  ;; don't ask about fake addresses
+ bbdb/message-update-records-p  t ; mua specific option, store all sent mail ids
+
+ bbdb-ignore-some-messages-alist ;; don't ask about fake addresses
  '(( "From" . "no.?reply\\|DAEMON\\|daemon\\|facebookmail"))
  )
 
