@@ -6,7 +6,7 @@
        (setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))
        (setq flycheck-idle-change-delay 10)
        ;; Highlight whole line with error
-       (setq-default flycheck-highlighting-mode 'columns)
+       (setq flycheck-highlighting-mode 'columns)
        (setq flycheck-check-syntax-automatically
              (delq 'new-line flycheck-check-syntax-automatically)
              ;; '(save idle-change new-line mode-enabled)
