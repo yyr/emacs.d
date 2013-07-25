@@ -10,9 +10,10 @@
         ("\\.el$"  . ["insert.el" alexott/auto-update-defaults])
         ("\\.pl$"  . ["insert.pl" alexott/auto-update-defaults])
         ("\\.ncl$" . ["insert.ncl" alexott/auto-update-defaults])
+        ("\\.c$"   . ["insert.c" alexott/auto-update-defaults])
         ("\\.py$"  . ["insert.py" alexott/auto-update-defaults])
-        ("\\.py3$" . ["insert.py3" alexott/auto-update-defaults])
-        ))
+        ("\\.py3$" . ["insert.py3" alexott/auto-update-defaults])))
+
 
 
 (defun alexott/auto-replace-header-name ()
@@ -22,10 +23,8 @@
         (narrow-to-region (match-beginning 0) (match-end 0))
         (replace-match (upcase (file-name-nondirectory buffer-file-name)))
         (subst-char-in-region (point-min) (point-max) ?. ?_)
-        (subst-char-in-region (point-min) (point-max) ?- ?_)
-        ))
-    )
-  )
+        (subst-char-in-region (point-min) (point-max) ?- ?_)))))
+
 
 (defun alexott/auto-replace-file-name ()
   (save-excursion
@@ -33,10 +32,8 @@
     (while (search-forward "(>>FILE<<)" nil t)
       (save-restriction
         (narrow-to-region (match-beginning 0) (match-end 0))
-        (replace-match (file-name-nondirectory buffer-file-name) t)
-        ))
-    )
-  )
+        (replace-match (file-name-nondirectory buffer-file-name) t)))))
+
 
 (defun alexott/auto-replace-file-name-no-ext ()
   (save-excursion
@@ -44,10 +41,9 @@
     (while (search-forward "(>>FILE_NO_EXT<<)" nil t)
       (save-restriction
         (narrow-to-region (match-beginning 0) (match-end 0))
-        (replace-match (file-name-sans-extension (file-name-nondirectory buffer-file-name)) t)
-        ))
-    )
-  )
+        (replace-match (file-name-sans-extension
+                        (file-name-nondirectory buffer-file-name)) t)))))
+
 
 (defun alexott/insert-today ()
   "Insert today's date into buffer"
@@ -61,8 +57,8 @@
       (save-restriction
         (narrow-to-region (match-beginning 0) (match-end 0))
         (replace-match "" t)
-        (alexott/insert-today)
-        ))))
+        (alexott/insert-today)))))
+
 
 (defun alexott/auto-update-header-file ()
   (alexott/auto-replace-header-name)
@@ -74,7 +70,9 @@
     (while (search-forward "HHHH" nil t)
       (save-restriction
         (narrow-to-region (match-beginning 0) (match-end 0))
-        (replace-match (concat (file-name-sans-extension (file-name-nondirectory buffer-file-name)) ".h") t))))
+        (replace-match
+         (concat (file-name-sans-extension
+                  (file-name-nondirectory buffer-file-name)) ".h") t))))
   (alexott/auto-replace-file-name)
   (alexott/auto-replace-date-time))
 
