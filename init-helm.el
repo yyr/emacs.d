@@ -10,10 +10,11 @@
 (el-get 'sync 'helm)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/helm/")
+
 (require 'helm-config)
 (helm-mode 1)
 (helm-match-plugin-mode 1)
 
-(global-set-key (kbd "<f8>") 'helm-command-prefix)
+(global-set-key (kbd "<f10>") 'helm-command-prefix)
 
 ;;; init-helm.el ends here
