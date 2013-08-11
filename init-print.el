@@ -33,10 +33,11 @@
 (ps-extend-face '(default "black" nil nil) 'MERGE)
 
 (defun sjt/print-file-of-buffer ()
+  (interactive)
   (let ((cmd (format "lp %s" (buffer-file-name))))
     (when (y-or-n-p (format "%s?" cmd))
       (shell-command cmd))))
 
-(global-set-key (kbd "C-c c p") #'sjt/print-file-of-buffer)
+(global-set-key (kbd "C-c c p") 'sjt/print-file-of-buffer)
 
 ;;; init-print.el ends here
