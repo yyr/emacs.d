@@ -56,4 +56,10 @@
   (add-to-list 'load-path el-get-install-dir)
   (require 'el-get))
 
+
+(defun minimal-load-geiser ()
+  (setq magit-install-dir (concat el-get-install-dir "/geiser/elisp"))
+  (add-to-list 'load-path magit-install-dir)
+  (require 'geiser-install))
+
 ;;; minimal.el ends here
