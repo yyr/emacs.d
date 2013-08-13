@@ -8,8 +8,7 @@
 (setq scheme-program-name "guile")
 
 (require 'xscheme)
-(require 'geiser-install)
-
+(require 'geiser-load)
 
 (when (file-exists-p "~/local/guile/")
   (eval-after-load "info"
