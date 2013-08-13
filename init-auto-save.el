@@ -12,7 +12,7 @@
  backup-directory-alist
  '(("." . "~/.emacs.d/auto-save-list/")) ; don't litter my fs tree
  delete-old-versions t
- kept-new-versionhs 6
+ kept-new-versions 6
  kept-old-versions 2
  version-control t) ; use versioned backups
 
