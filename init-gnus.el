@@ -2,23 +2,14 @@
 ;; http://yagnesh.org
 ;;
 
-;;; --------------------------------------------------------
-;;; Keep everything under ~/gnus folder for easy synchronization (unison)
-;;; --------------------------------------------------------
-(setq gnus-home-directory "~/gnus")
-(setq gnus-startup-file "~/gnus/.newsrc")
-(setq gnus-directory "~/gnus/News")
-(setq message-directory "~/gnus/Mail")
-
 (require 'nnimap)
 (require 'starttls)
-(el-get 'sync 'door-gnus)
 
 ;; (require 'registry)
 
 ;;; load my bbdb settings
 (load "init-bbdb")
-(load "init-message")
+
 ;;; some mail secrets ;)
 (if (file-exists-p "~/git/org/gnus-secret.el")
     (load-file "~/git/org/gnus-secret.el"))
@@ -64,7 +55,7 @@
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
                                    :user "vh0004"
-                                   :leave t)))
+                                   :leave 14)))
 
 ;; (setq mail-source-delete-incoming t)
 ;; (setq mail-sources

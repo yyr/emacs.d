@@ -20,7 +20,6 @@
 ;;;
 (defconst emacs-path "~/.emacs.d")
 (setq load-path (cons (expand-file-name emacs-path) load-path))
-(setq gnus-init-file (concat emacs-path "/init-gnus.el" ))
 
 (defmacro after (mode &rest body)
   `(eval-after-load ,mode
@@ -39,6 +38,13 @@
 
 ;;; IDE , make
 (load "init-cedet")
+
+;;; mail, news & messages
+(load "init-gpg")
+(load "init-pre-gnus")
+(load "init-mail")
+(load "init-message")
+
 
 ;;; initial setup, keybindings
 (load "init-general")
@@ -165,7 +171,6 @@
 
 ;;; sys & server
 (load "init-print")
-(load "init-mail")
 (load "init-crontab")
 (load "init-server")
 (load "init-time")
