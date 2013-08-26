@@ -12,9 +12,7 @@
 (when (symbolp 'package-archives)
   (setq package-archives
         '(("melpa" . "http://melpa.milkbox.net/packages/")
-          ("marmalade" . "http://marmalade-repo.org/packages/")
           ("gnu" . "http://elpa.gnu.org/packages/"))))
-
 
 ;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
@@ -29,7 +27,7 @@
 
 ;;; el-get-is-lazy
 (setq el-get-is-lazy nil)
-
+(package-initialize)
 
 ;; packages are defined by me
 (setq el-get-sources
