@@ -17,8 +17,7 @@
 (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
 (setq geiser-active-implementations '(guile))
 
-
-(dolist (hook '(scheme-mode-hook))
+(dolist (hook '(scheme-mode-hook geiser-repl-mode-hook))
   (add-hook hook 'pretty-lambdas)
   (add-hook hook 'enable-paredit-mode))
 
