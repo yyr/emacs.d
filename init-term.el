@@ -6,7 +6,7 @@
 ;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;; shell, term, tramp settings
+;; shell, term settings
 
 (setq-default
  comint-scroll-to-bottom-on-input t    ; always insert at the bottom
@@ -17,9 +17,6 @@
  comint-buffer-maximum-size 20000  ; max length of the buffer in lines
  comint-input-ring-size 5000 ; max shell history size
  )
-
-;;; tramp
-(setq tramp-default-method "ssh")
 
 ;; truncate buffers continuously
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)

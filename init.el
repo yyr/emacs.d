@@ -87,6 +87,7 @@
 
 ;;; shell, term, comint, tramp
 (load "init-term")
+(load "init-tramp")
 
 ;;; window, frame
 (load "init-windows")
