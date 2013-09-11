@@ -8,8 +8,8 @@
 (setq ido-auto-merge-work-directories-length 0)
 (setq ido-execute-command-cache nil)
 
-(el-get 'sync 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
+;; (el-get 'sync 'ido-ubiquitous)
+;; (ido-ubiquitous-mode 1)
 
 (load "init-smex")
 
