@@ -173,6 +173,8 @@ License: GPL v3 or later
    '(("\\<\\(?:were\\|was\\|is\\|are\\|has been\\|be\\)\\(?:[ \t\r\n]+[a-zA-Z]+\\)?[ \t\r\n]+[a-zA-Z]+ed\\>"
       0 'grammar-warning-face t)        ; passive voice
      ("\\<\\([a-zA-Z]+\\)[ \t\r\n]+\\1\\>" 0 'grammar-warning-face t)
+     ("\\(?:highly\\|mostly\\|then after\\|very\\)" 0 'grammar-warning-face t)
+     ("\\<\\([a-zA-Z]+\\)[ \t\r\n]+\\1\\>" 0 'grammar-warning-face t)
      ("[,-][ \t\r\n]+that\\>" 0 'grammar-warning-face t)
      ("[a-zA-Z]+[ \t\r\n]+which\\>" 0 'grammar-warning-face t)
      ("\\<[a-z]+\\(?:n't\\|d've\\)\\>" 0 'grammar-warning-face t)
