@@ -7,7 +7,6 @@
 
 (setq scheme-program-name "guile")
 
-(require 'xscheme)
 (require 'geiser-load)
 
 (when (file-exists-p "~/local/guile/")
