@@ -76,6 +76,7 @@
 (when (executable-find "dict") (load "init-dictem"))
 (when (file-directory-p "~/git/sdic") (load "init-sdic"))
 (load "init-edict")
+;; (when (not on-ms) (load "init-japanese"))
 
 ;;; help navigation
 (load "init-navigation")
@@ -178,7 +179,8 @@
 (load "init-server")
 (load "init-time")
 (load "init-crypt")
-(when on-laptop (load "init-edit-server") (load "init-mediawiki"))
+;; (when on-laptop (load "init-edit-server")
+;;       (load "init-mediawiki"))
 
 ;;; music
 (when (and (not on-lab-server) (not on-ms)) (load "init-emms"))

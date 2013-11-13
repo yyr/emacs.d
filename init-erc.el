@@ -17,6 +17,13 @@
 (setq erc-autojoin-channels-alist
       '((".*\\.freenode.net" "#emacs" "#hcoop" "#guile")))
 
+;; check channels
+(erc-track-mode t)
+(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                "324" "329" "332" "333" "353" "477"))
+;; don't show any of this
+(setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+
 (eval-after-load "erc"
   '(progn
      ;; (require 'erc-bbdb)
@@ -55,6 +62,15 @@
   "Connect to my default ERC servers."
   (interactive)
   (erc-tls :server "irc.freenode.net" :port 7000))
+
+(defun erc-start-or-switch ()
+  (interactive)
+  (if (get-buffer "irc.freenode.net:7000")
+      (erc-track-switch-buffer 1)
+    (when (y-or-n-p "Start ERC? ")
+      (erc-tls :server "irc.freenode.net" :port 7000))))
+
+(global-set-key (kbd "C-c e") 'erc-start-or-switch)
 
 (defun erc/erc-autoaway ()
   "erc autoaway"
