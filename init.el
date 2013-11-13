@@ -76,6 +76,7 @@
 (when (executable-find "dict") (load "init-dictem"))
 (when (file-directory-p "~/git/sdic") (load "init-sdic"))
 (load "init-edict")
+;; (when (not on-ms) (load "init-japanese"))
 
 ;;; help navigation
 (load "init-navigation")
