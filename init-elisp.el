@@ -88,4 +88,11 @@
   (my-aif (function-called-at-point)
       (my-popup-message (ac-symbol-documentation it))))
 
+
+(add-hook 'outline-minor-mode-hook
+          (lambda ()
+            (when (and outline-minor-mode (derived-mode-p 'emacs-lisp-mode))
+              (hide-sublevels 1000)
+              (reveal-mode 1))))
+
 ;;; init-elisp.el ends here
