@@ -110,8 +110,9 @@ before point if point is past text"
                                        (line-beginning-position) t))
                 (match-string 0))))
     (delete-trailing-whitespace)
+    (set-buffer-modified-p t)
     (save-buffer arg)
-    (when save
+    (when (and (eq major-mode 'org-mode) save)
       (insert save)
       (set-buffer-modified-p nil))))
 
