@@ -16,3 +16,12 @@
 ;; toggle with C-c q
 ;; C-z f toggles auto-fill
 (define-key global-map [(control ?z) ?f] 'auto-fill-mode)
+
+;;; Stefan Monnier. It is the opposite of fill-paragraph
+(defun unfill-paragraph ()
+  "Takes a multi-line paragraph and makes it into a single line of text."
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(define-key global-map "\M-Q" 'unfill-paragraph)
