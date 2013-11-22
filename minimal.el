@@ -47,7 +47,8 @@
 (defun minimal-load-magit ()
   (setq magit-install-dir (concat el-get-install-dir "/magit"))
   (add-to-list 'load-path magit-install-dir)
-  (require '50magit))
+  (add-to-list 'load-path (concat el-get-install-dir "/git-modes"))
+  (require 'magit-autoloads))
 
 
 ;; el-get
