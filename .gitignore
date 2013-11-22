@@ -7,9 +7,21 @@
 \#*\#
 
 # Dirs to mask
-el-get
-auto-save-list/*
-snippets/
+/newsticker/
+/image-dired/
+/auto-save-list/
+/el-get/
+/snippets/
+/eshell/
+/tutorial/
+/my-info/
+/server/*
+/icons/
+/semanticdb/
+/thumbs/
+/url/
+/var/
+
 
 # auto generated files
 bookmarks
@@ -36,12 +48,5 @@ ede-projects.el
 srecode-map.el
 
 #
-server/*
-eshell/*
-tutorial/*
-my-info/*
-/.*
-
-newsticker/*
 /kkcrc
-/image-dired/*
+/.*
