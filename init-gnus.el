@@ -347,6 +347,11 @@ pIf performed over a topic line, toggle folding the topic."
               (kbd "C-c C-o") 'gnus-summary-guess-article-url)))
 
 
+(setq gnus-exit-gnus-hook '(mm-temp-files-delete mm-destroy-postponed-undisplay-list))
+(when on-laptop
+  (add-to-list 'gnus-exit-gnus-hook
+               (lambda () (start-process "unison" nil "unison"))))
+
 ;;; footnotes
 ;;; --------------------------------------------------------
 (setq footnote-section-tag "")
