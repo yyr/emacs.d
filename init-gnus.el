@@ -221,6 +221,7 @@ pIf performed over a topic line, toggle folding the topic."
 (setq gnus-article-update-date-headers nil)
 (setq gnus-extra-headers  '(To Cc Bcc Keywords Gcc Newsgroups)
       nnmail-extra-headers gnus-extra-headers)
+(setq gnus-break-pages nil)
 
 (add-hook 'gnus-article-display-hook
           '(lambda ()
