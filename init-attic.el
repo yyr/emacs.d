@@ -7,7 +7,6 @@
   (interactive)
   (setq inhibit-debugger nil)
   (yas-global-mode -1)
-  (autopair-global-mode -1)
   (recentf-mode -1)
   (hl-sexp-mode -1)
   (font-lock-mode -1)

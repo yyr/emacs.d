@@ -57,7 +57,6 @@
 (load "init-ido")
 
 ;;; help typing
-(load "init-autopair")
 (load "init-auto-fill")
 (load "init-auto-insert")
 (load "init-flyspell")

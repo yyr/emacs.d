@@ -11,5 +11,7 @@
 (column-number-mode t)
 (blink-cursor-mode -1)
 (show-paren-mode 1)
+(electric-pair-mode 1)
+
 
 ;; (pending-delete-mode t)                ; Typed text replaces selection

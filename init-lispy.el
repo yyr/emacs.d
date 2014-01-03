@@ -26,8 +26,8 @@
 
 (autoload 'enable-paredit-mode "paredit" "Turn on paredit mode" t)
 
-(defadvice enable-paredit-mode (before disable-autopair activate)
-  (autopair-mode -1))
+;; (defadvice enable-paredit-mode (before disable-autopair activate)
+;;   (autopair-mode -1))
 
 (defun maybe-map-paredit-newline ()
   (unless (or (eq major-mode 'inferior-emacs-lisp-mode) (minibufferp))
