@@ -66,7 +66,11 @@
 
 (add-hook 'view-mode-hook
           '(lambda ()
-             (my-vi-bind view-mode-map)))
+             (my-vi-bind view-mode-map)
+             (define-key view-mode-map "i" '(lambda ()
+                                              (interactive)
+                                              (view-mode -1)
+                                              (toggle-read-only)))))
 
 (define-key ctl-x-map "\M-q" 'view-mode)
 
