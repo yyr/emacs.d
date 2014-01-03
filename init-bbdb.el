@@ -63,4 +63,9 @@
                              (interactive)
                              (bbdb-mua-update-records)))))
 
+(bbdb-mua-auto-update-init 'gnus 'message)
+(setq bbdb-mua-update-interactive-p '(query . create))
+(define-key gnus-summary-mode-map (kbd ":")
+  'bbdb-mua-display-records)
+
 ;;; init-bbdb.el ends here
