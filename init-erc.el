@@ -15,7 +15,7 @@
 
 ;; Set autojoin channels
 (setq erc-autojoin-channels-alist
-      '((".*\\.freenode.net" "#emacs" "#hcoop" "#guile")))
+      '((".*\\.freenode.net" "#emacs" "#hcoop" "#guile" "#guix")))
 
 ;; check channels
 (erc-track-mode t)
@@ -36,6 +36,7 @@
      (require 'erc-notify)
      (require 'erc-ring)
      (require 'erc-log)
+     (require 'erc-match)
 
      (setq erc-auto-query t
            erc-bbdb-auto-create-on-whois-p t
@@ -44,7 +45,8 @@
            erc-notify-list erc-pals
            erc-log-channels-directory "~/.emacs.d/.erc/logs/"
            erc-hide-timestamps nil
-           erc-log-insert-log-on-open nil)
+           erc-log-insert-log-on-open nil
+           erc-keywords '("kindahero"))
 
      (erc-button-mode 1)
      (erc-completion-mode 1)
