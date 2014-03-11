@@ -23,6 +23,7 @@
 (global-set-key "\C-cW" 'sdic-describe-word-at-point)
 
 
+;; (el-get 'sync 'sdic-inline-pos-tip)
 ;;; setup dict
 (setq sdic-eiwa-dictionary-list
       `((sdicf-client ,(expand-file-name
@@ -36,5 +37,12 @@
         (sdicf-client ,(expand-file-name
                         (concat sdic-install-dir "/dicts//waeiji-126.sdic"))
                       (add-keys-to-headword t))))
+
+(setq sdic-inline-eiwa-dictionary "/home/yagnesh/git/sdic/dicts/eiji-126-utf8.sdic")
+(setq sdic-inline-waei-dictionary "/home/yagnesh/git/sdic/dicts/waeiji-126-utf8.sdic")
+
+(setq sdic-inline-search-func 'sdic-inline-search-word-with-stem)
+(setq sdic-inline-dictionary-encoding 'utf-8-unix)
+
 
 ;;; init-sdic.el ends here
