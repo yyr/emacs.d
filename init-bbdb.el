@@ -56,7 +56,7 @@
     (setq bbdb/gnus-update-records-p 'query)))
 
 (add-hook 'gnus-summary-prepare-hook
-          (lambda ()
+          (defun my-bbdb-hook ()
             (bbdb/gnus-update-selectively)
             (local-set-key (kbd "\"")
                            (lambda ()

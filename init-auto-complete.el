@@ -31,8 +31,7 @@
 
 ;;; work around for autopair auto-complete
 (define-key ac-completing-map [return] 'ac-complete)
-(add-hook 'auto-complete-mode-hook (lambda ()
-                                     (ac-flyspell-workaround)))
+(add-hook 'auto-complete-mode-hook 'ac-flyspell-workaround)
 
 ;;; list of modes where ac should be available
 (dolist (mode '(emacs-lisp-mode
