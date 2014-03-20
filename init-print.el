@@ -34,7 +34,7 @@
 
 (defun sjt/print-file-of-buffer ()
   (interactive)
-  (let ((cmd (format "lp %s" (buffer-file-name))))
+  (let ((cmd (format "lp -o media=A4 %s" (buffer-file-name))))
     (when (y-or-n-p (format "%s?" cmd))
       (shell-command cmd))))
 

@@ -46,7 +46,9 @@
            erc-log-channels-directory "~/.emacs.d/.erc/logs/"
            erc-hide-timestamps nil
            erc-log-insert-log-on-open nil
-           erc-keywords '("kindahero"))
+           erc-keywords '("kindahero")
+           erc-save-buffer-on-part t
+           erc-save-queries-on-quit t)
 
      (erc-button-mode 1)
      (erc-completion-mode 1)

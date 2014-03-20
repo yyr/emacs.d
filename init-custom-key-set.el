@@ -56,7 +56,7 @@
       (occur (if isearch-regexp isearch-string (regexp-quote isearch-string))))))
 
 (define-key global-map "\C-x\C-r" 'rgrep)
-(define-key global-map (kbd "C-|") (lambda ()
+(define-key global-map (kbd "C-|") (defun my-just-one-space ()
                                      (interactive)
                                      (just-one-space -1)))
 

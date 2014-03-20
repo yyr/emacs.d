@@ -15,8 +15,8 @@
   "Ebib, a BibTeX database manager." t)
 
 (add-hook 'LaTeX-mode-hook
-          #'(lambda ()
-              (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
+          (defun my-latex-kbds ()
+            (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
 
 (global-set-key (kbd "C-c B") 'ebib)
 

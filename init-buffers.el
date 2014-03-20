@@ -126,7 +126,7 @@ FIXME: make an exceptions for few buffers like gnus, emms"
   [(control ?z) (control ?k)] 'kill-star-buffers)
 
 ;;; kill current buffer
-(global-set-key (kbd "M-k") (lambda ()
+(global-set-key (kbd "M-k") (defun my-kill-buffer ()
                               (interactive)
                               (kill-buffer (buffer-name))))
 

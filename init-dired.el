@@ -4,7 +4,7 @@
 
 ;;;; navigation
 
-(el-get 'sync 'dired-details) ;; Make dired less verbose
+(el-get 'sync '(direx dired-details)) ;; Make dired less verbose
 
 (setq dired-recursive-deletes 'always)
 (setq dired-listing-switches "-alh")
@@ -39,6 +39,11 @@
 (global-set-key "\C-x\C-j" 'dired-jump)
 (global-set-key "\C-x4\C-j" 'dired-jump-other-window)
 
+;;; direx
+(setq direx:leaf-icon " "
+      direx:open-icon "▾ "
+      direx:closed-icon "▸ ")
+(global-set-key (kbd "C-x C-l") 'direx:jump-to-directory-other-window)
 
 ;;; from org mailing list Eric Abrahamsen
 (defun dired-xdg-open-file ()
