@@ -65,14 +65,13 @@
   (define-key map "h" [left]))
 
 (add-hook 'view-mode-hook
-          '(lambda ()
-             (my-vi-bind view-mode-map)
-             (define-key view-mode-map "i" '(lambda ()
-                                              (interactive)
-                                              (view-mode -1)
-                                              (toggle-read-only)))))
+          (lambda ()
+            (my-vi-bind view-mode-map)
+            (define-key view-mode-map "n" [down])
+            (define-key view-mode-map "p" [up])
+            (define-key view-mode-map "i" 'read-only-mode)))
 
-(define-key ctl-x-map "\M-q" 'view-mode)
+(setq view-mode-hook nil)
 
 ;;; read only files would be open in view-mode
 (setq view-read-only t)
@@ -83,16 +82,5 @@
   (if view-mode
       (hl-line-mode 1)
     (hl-line-mode -1)))
-
-;;; from taking off help-mode
-(defadvice find-function-search-for-symbol
-  (after oxy-adv1 last (symbol type library) activate)
-  (with-current-buffer (car ad-return-value)
-    (view-mode 1)))
-
-(defadvice find-variable-noselect
-  (after oxy-adv2 last (variable &optional file) activate)
-  (with-current-buffer (car ad-return-value)
-    (view-mode 1)))
 
 ;;; init-navigation.el ends here
