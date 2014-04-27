@@ -8,6 +8,7 @@
 ;;; Description:
 ;;
 
+(el-get 'sync 'cedet)
 (unless (featurep 'cedet)
   (when (file-directory-p "~/.emacs.d/el-get/cedet")
     (progn

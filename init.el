@@ -37,7 +37,7 @@
 (load "init-el-get")
 
 ;;; IDE , make
-(load "init-cedet")
+;; (load "init-cedet")
 
 ;;; mail, news & messages
 (load "init-gpg")
@@ -129,6 +129,7 @@
 (when (executable-find "latex") ;; auctex is no use  without latex
   (load "init-latex")
   (load "init-bib"))
+(load "init-doc-view")
 
 ;;; version control
 (load "init-git")
