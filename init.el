@@ -28,6 +28,7 @@
 ;; ----------------------------------------------------------------------------
 ;;; load individual configuration files
 ;; ----------------------------------------------------------------------------
+(defalias 'function-put 'put)
 
 ;;; first of all any OS dependent paths has to be set
 (when on-ms
