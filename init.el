@@ -18,7 +18,7 @@
 (defvar on-ms (string-match "windows" (format "%s" system-type)))
 
 ;;;
-(defconst emacs-path "~/.emacs.d")
+(defconst emacs-path "~/.emacs.d/lisp")
 (setq load-path (cons (expand-file-name emacs-path) load-path))
 
 (defmacro after (mode &rest body)

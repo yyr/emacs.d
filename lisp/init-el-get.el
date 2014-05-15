@@ -60,4 +60,10 @@
          my-packages)))
 
 (el-get 'sync my-packages)
+
+(defun el-get-create-recipe-from-url (url)
+  (interactive "sURL of Elisp Package: ")
+  (unless (url-p url)
+    (message "'%s' is not an url" url)))
+
 ;; init-el-get.el ends here
