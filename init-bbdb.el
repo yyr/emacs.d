@@ -68,4 +68,6 @@
 (define-key gnus-summary-mode-map (kbd ":")
   'bbdb-mua-display-records)
 
+(add-hook 'message-sent-hook 'bbdb-query-create)
+
 ;;; init-bbdb.el ends here
