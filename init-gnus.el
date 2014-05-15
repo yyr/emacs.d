@@ -202,11 +202,10 @@ pIf performed over a topic line, toggle folding the topic."
       (concat
        "%0{%U%R%z%}"
        "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
-       "  "
+       " " "%uj" " "                    ; gmail style
        "%4{%-20,20f%}"               ;; name
        "  "
        "%3{│%}"
-       "%uj "
        "%1{%B%}"
        "%s\n"))
 
