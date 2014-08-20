@@ -125,5 +125,7 @@ before point if point is past text"
 ;;; stop unwanted kill-emacs (while using orgmode)
 (global-unset-key (kbd "C-x C-c"))
 
+(when (fboundp 'horizontal-scroll-bar-mode)
+  (horizontal-scroll-bar-mode -1))
 
 ;;; init-general.el ends here
