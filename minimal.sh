@@ -14,5 +14,5 @@ EOF
 if [[ $# -eq 0 ]]; then
     usage
 else
-    emacs -Q -l ~/.emacs.d/minimal.el -eval "(minimal-load-$1)"
+    emacs -Q -l ~/.emacs.d/lisp/minimal.el -eval "(minimal-load-$1)"
 fi
