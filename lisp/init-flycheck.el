@@ -18,10 +18,6 @@
                 sh-mode-hook))
   (add-hook hook 'flycheck-mode))
 
-(add-hook 'sh-mode-hook
-          (lambda ()
-            (setq flycheck-checker 'bash)))
-
 ;;; for c & cpp
 (defun flycheck-show-nearby-error (arg)
   "Go forward to next error, display error. if ARG is given go to previous error"
