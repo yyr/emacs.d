@@ -42,14 +42,14 @@
 (global-git-gutter-mode t)
 
 ;; (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
-;; (setq git-gutter:diff-option "-w")
+(setq git-gutter:diff-option "-w")
 
 ;; Jump to next/previous diff
-(global-set-key (kbd "C-x p") 'git-gutter:previous-diff)
-(global-set-key (kbd "C-x n") 'git-gutter:next-diff)
+(global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+(global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
 
 (setq git-gutter-fr:side 'right-fringe)
-(setq git-gutter:disabled-modes '(org-mode))
+;; (setq git-gutter:disabled-modes '(org-mode))
 
 
 ;;; Mercurial
