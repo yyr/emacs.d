@@ -18,12 +18,12 @@
                       (:endgroup)
 
                       ;; type
-                      ("MAIL" . ?E)
-                      ("READ" . ?r)
-                      ("WRITE" . ?R)
-                      ("WORK" . ?W)
-                      ("PHONE" . ?P)
-                      ("HOME" . ?H)
+                      ("mail" . ?E)
+                      ("read" . ?r)
+                      ("write" . ?R)
+                      ("work" . ?W)
+                      ("phone" . ?P)
+                      ("home" . ?H)
                       ))
 
 ;; Allow setting single tags without the menu
