@@ -23,13 +23,13 @@
 (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 
 ;;; TODO state triggers
-(setq org-todo-state-tags-triggers
-      '(("CANCELLED" ("CANCELLED" . t))
-        ("WAITING" ("WAITING" . t))
-        ("SOMEDAY" ("WAITING" . t))
-        ("DONE" ("WAITING"))
-        ("TODO" ("WAITING") ("CANCELLED"))
-        ("NEXT" ("WAITING"))
-        ("DONE" ("WAITING") ("CANCELLED"))))
+;; (setq org-todo-state-tags-triggers
+;;       '(("CANCELLED" ("cancelled" . t))
+;;         ("WAITING" ("waiting" . t))
+;;         ("SOMEDAY" ("waiting" . t))
+;;         ("DONE" ("waiting"))
+;;         ("TODO" ("waiting") ("cancelled"))
+;;         ("NEXT" ("waiting"))
+;;         ("DONE" ("waiting") ("cancelled"))))
 
 ;;; init-org-todo-state-tags.el ends here
