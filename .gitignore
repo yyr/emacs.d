@@ -50,3 +50,5 @@ srecode-map.el
 #
 /kkcrc
 /.*
+/ido.last
+/recentf
