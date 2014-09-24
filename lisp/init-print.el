@@ -15,10 +15,10 @@
 
 (after 'ps-print
        (add-to-list 'ps-page-dimensions-database
-                    (list 'JpA4 (* 72 8.5)  (* 72 11) "JpA4"))
-       (setq ps-paper-type 'JpA4))
+                    (list 'JpA4 (* 72 8.5)  (* 72 11) "JpA4")))
 
-(setq ps-print-color-p t
+(setq ps-paper-type 'a4
+      ps-print-color-p t
       ps-spool-duplex t
       ps-switch-header nil
       ps-print-header t
