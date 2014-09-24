@@ -49,12 +49,12 @@
               ("A" "Tasks to be Archived" todo "DONE|CANCELLED|EXPIRED")
 
               ;; entries to refile
-              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+REFILE"
+              ("r" "Refile New Notes and Tasks" tags "LEVEL=2+refile"
                ((org-agenda-overriding-header "Tasks to Refile")
                 (org-tags-match-list-sublevels 'indented)))
 
               ;; tags WORK
-              ("w" "WORK related" tags "LEVEL>1+WORK"
+              ("w" "work related" tags "LEVEL>1+work"
                ((org-agenda-overriding-header "Work")
                 (org-tags-match-list-sublevels 'indented)))
 
@@ -74,7 +74,7 @@
                 (org-tags-match-list-sublevels 'indented)))
 
               ("o" "runs"
-               ((tags "LEVEL>1+CATEGORY=\"runs\"")))
+               ((tags "LEVEL>1+CATEGORY=\"work\"")))
 
               ;; Block Agenda
               (" " "Block Agenda"
@@ -82,14 +82,16 @@
                 (tags-todo "/!NEXT"
                            ((org-tags-match-list-sublevels 'indented))
                            (org-agenda-overriding-header "Next Tasks"))
-                (tags "LEVEL=2+REFILE"
+                (tags "LEVEL=2+refile"
                       ((org-agenda-overriding-header "Entries to be Refiled")))
 
                 ;; (todo "TODO"
                 ;;       ((org-tags-match-list-sublevels 'indented)
                 ;;        (org-agenda-overriding-header "All Global TODOS")))
+                ;; (tags "LEVEL>1-REFILE/DONE|CANCELLED|EXPIRED"
+                ;;       ((org-agenda-overriding-header "Entires can be Archived")))
 
-                (tags "LEVEL>1-REFILE/DONE|CANCELLED"
+                (tags "LEVEL>1-REFILE/DONE|CANCELLED|EXPIRED"
                       ((org-agenda-overriding-header "Entires can be Archived"))))))))
 
 (defun org-agenda-quit-and-bury ()
