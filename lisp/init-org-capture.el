@@ -13,18 +13,18 @@
  org-capture-templates
  '(
    ;; todo --> refile/Tasks
-   ("t" "todo" entry (file+headline "~/git/org/refile.org" "Tasks")
+   ("t" "todo" entry (file+headline "~/git/org/agenda/refile.org" "Tasks")
     "* TODO %?\n%U   %a%i" )
 
    ("c" "todo under current clock" entry (clock)
     "* TODO %?\n%U   %a%i" )
 
    ;; note --> refile/Notes
-   ("n" "note" entry (file+headline "~/git/org/refile.org" "Notes")
+   ("n" "note" entry (file+headline "~/git/org/agenda/refile.org" "Notes")
     "* %?\n%U   %a%i" )
 
    ;; journal notes --> diary.org
-   ("j" "Journal" item (file+datetree "~/git/org/journal.org")
+   ("j" "Journal" item (file+datetree "~/git/org/agenda/journal.org")
     "%?\n%U\n%i")
 
    ;; Lab note book
@@ -33,10 +33,10 @@
     "%?\n%U\n%i")
 
 
-   ("o" "Flow todos/ideas" entry (file+headline "~/git/org/refile.org" "overflows")
+   ("o" "Flow todos/ideas" entry (file+headline "~/git/org/agenda/refile.org" "overflows")
     "* TODO %?\n%U   %a%i" )
 
-   ("m" "mailnote" entry (file+headline "~/git/org/mails.org" "Mails")
+   ("m" "mailnote" entry (file+headline "~/git/org/agenda/mails.org" "Mails")
     "** TODO Mail From: %:from Subject: %:subject\n   %a" :kill-buffer t)
 
    ("T" "TODO under Task in the current buffer "
@@ -45,7 +45,7 @@
   %U %a %n" :prepend t)))
 
 ;; capture Templages
-(setq org-default-notes-file "~/git/org/refile.org")
+(setq org-default-notes-file "~/git/org/agenda/refile.org")
 
 ;; C-c C-c stores the note immediately
 (setq org-capture-store-without-prompt t)
