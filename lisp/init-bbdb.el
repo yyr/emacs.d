@@ -7,7 +7,10 @@
 (el-get 'sync 'bbdb)
 
 (require 'bbdb)
-(bbdb-initialize 'gnus 'message)
+(bbdb-mua-auto-update-init 'gnus 'message)
+(setq bbdb-mua-update-interactive-p '(query . create))
+(bbdb-mua-auto-update-init 'message) ;; use 'gnus for incoming messages too
+(setq bbdb-mua-auto-update-p 'query) ;; or 'create to create without asking
 
 (setq
  ;; bbdb-offer-save 'auto
@@ -63,11 +66,6 @@
                              (interactive)
                              (bbdb-mua-update-records)))))
 
-(bbdb-mua-auto-update-init 'gnus 'message)
-(setq bbdb-mua-update-interactive-p '(query . create))
-(define-key gnus-summary-mode-map (kbd ":")
-  'bbdb-mua-display-records)
-
-(add-hook 'message-sent-hook 'bbdb-query-create)
-
+(define-key gnus-summary-mode-map (kbd ":") 'bbdb-mua-display-records)
+;(add-hook 'message-sent-hook 'bbdb-query-create)
 ;;; init-bbdb.el ends here
