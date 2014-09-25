@@ -16,12 +16,26 @@
    ("t" "todo" entry (file+headline "~/git/org/agenda/refile.org" "Tasks")
     "* TODO %?\n%U   %a%i" )
 
+   ("T" "TODO under Task in the current buffer "
+    entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
+    "* TODO %?
+  %U %a %n" :prepend t)
+
    ("c" "todo under current clock" entry (clock)
     "* TODO %?\n%U   %a%i" )
 
+   ("n" "Note under current clock" entry (clock)
+    "* %?                                      :note:\n%U   %a%i%" )
+
    ;; note --> refile/Notes
-   ("n" "note" entry (file+headline "~/git/org/agenda/refile.org" "Notes")
+   ("N" "note" entry (file+headline "~/git/org/agenda/refile.org" "Notes")
     "* %?\n%U   %a%i" )
+
+   ("o" "Flow todos/ideas" entry (file+headline "~/git/org/agenda/refile.org" "overflows")
+    "* TODO %?\n%U   %a%i" )
+
+   ("m" "mailnote" entry (file+headline "~/git/org/agenda/mails.org" "Mails")
+    "** TODO Mail From: %:from Subject: %:subject\n   %a" :kill-buffer t)
 
    ;; journal notes --> diary.org
    ("j" "Journal" item (file+datetree "~/git/org/agenda/journal.org")
@@ -30,19 +44,8 @@
    ;; Lab note book
    ("l" "Lab note book"
     item (file+datetree "~/git/org/lab/notebook.org")
-    "%?\n%U\n%i")
+    "%?\n%U\n%i")))
 
-
-   ("o" "Flow todos/ideas" entry (file+headline "~/git/org/agenda/refile.org" "overflows")
-    "* TODO %?\n%U   %a%i" )
-
-   ("m" "mailnote" entry (file+headline "~/git/org/agenda/mails.org" "Mails")
-    "** TODO Mail From: %:from Subject: %:subject\n   %a" :kill-buffer t)
-
-   ("T" "TODO under Task in the current buffer "
-    entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
-    "* TODO %?
-  %U %a %n" :prepend t)))
 
 ;; capture Templages
 (setq org-default-notes-file "~/git/org/agenda/refile.org")
