@@ -25,32 +25,28 @@
 ;;; http://www.elliotglaysher.org/emacs/
 (setq ibuffer-saved-filter-groups
       '(("default"
-         ("EMMS" (or  (name . "^\\*Music")
-                      (name . "^\\*EMMS")
-                      (mode . emms-browser-mode)))
-
-         ("emacs" (or (name . "^\\*scratch\\*$")
-                      (name . "^\\*Messages\\*$")
-                      (name . "^\\*ELP Profiling Results\\*$")
-                      (name . "^TAGS\\(<[0-9]+>\\)?$")
-                      (name . "^\\*Help\\*$")
-                      (name . "^\\*info\\*$")
-                      (name . "^\\*Occur\\*$")
-                      (name . "^\\*grep\\*$")
-                      (name . "^\\*Apropos\\*$")
-                      (name . "^\\*Compile-Log\\*$")
-                      (name . "^\\*Backtrace\\*$")
-                      (name . "^\\*Packages\\*$")
-                      (name . "^\\*Process List\\*$")
-                      (name . "^\\*gud\\*$")
-                      (name . "^\\*Man")
-                      (name . "^\\*WoMan")
-                      (name . "^\\*Kill Ring\\*$")
-                      (name . "^\\*Completions\\*$")
-                      (name . "^\\*tramp")
-                      (name . "^\\*shell\\*$")
-                      (name . "^\\*compilation\\*$")
-                      (mode . Custom-mode)))
+         ;; ("emacs" (or (name . "^\\*scratch\\*$")
+         ;;              (name . "^\\*Messages\\*$")
+         ;;              (name . "^\\*ELP Profiling Results\\*$")
+         ;;              (name . "^\\*Help\\*$")
+         ;;              (name . "^TAGS\\(<[0-9]+>\\)?$")
+         ;;              (name . "^\\*info\\*$")
+         ;;              (name . "^\\*Occur\\*$")
+         ;;              (name . "^\\*grep\\*$")
+         ;;              (name . "^\\*Apropos\\*$")
+         ;;              (name . "^\\*Compile-Log\\*$")
+         ;;              (name . "^\\*Backtrace\\*$")
+         ;;              (name . "^\\*Packages\\*$")
+         ;;              (name . "^\\*Process List\\*$")
+         ;;              (name . "^\\*gud\\*$")
+         ;;              (name . "^\\*Man")
+         ;;              (name . "^\\*WoMan")
+         ;;              (name . "^\\*Kill Ring\\*$")
+         ;;              (name . "^\\*Completions\\*$")
+         ;;              (name . "^\\*tramp")
+         ;;              (name . "^\\*shell\\*$")
+         ;;              (name . "^\\*compilation\\*$")
+         ;;              (mode . Custom-mode)))
 
          ("dict" (or (name . "^\\*edict")
                      (name . "^\\*dict")))
@@ -93,7 +89,19 @@
                       (mode . bibtex-mode)
                       (mode . reftex-mode)))
 
-         ("dired" (or (mode . dired-mode))))))
+         ("dired" (or (mode . dired-mode)))
+
+         ("Starred"  (or
+                      (name . "^\\*[[:ascii:]]+\\*")
+                      (name . "^TAGS\\(<[0-9]+>\\)?$")
+                      (mode . Custom-mode)))
+
+         ("EMMS" (or  (name . "^\\*Music")
+                      (name . "^\\*EMMS")
+                      (mode . emms-browser-mode)))
+         )))
+
+
 
 (add-hook 'ibuffer-mode-hook
           (lambda ()
