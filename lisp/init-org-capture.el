@@ -25,7 +25,7 @@
     "* TODO %?\n%U   %a%i" )
 
    ("n" "Note under current clock" entry (clock)
-    "* %?                                      :note:\n%U   %a%i%" )
+    "* %?   :note:\n%U   %a%i%" )
 
    ;; note --> refile/Notes
    ("N" "note" entry (file+headline "~/git/org/agenda/refile.org" "Notes")
