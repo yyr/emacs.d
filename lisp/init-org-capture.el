@@ -13,8 +13,11 @@
  org-capture-templates
  '(
    ;; todo --> refile/Tasks
-   ("t" "todo" entry (file+headline "~/git/org/agenda/refile.org" "Tasks")
+   ("t" "todo entry in refile " entry (file+headline "~/git/org/agenda/refile.org" "Tasks")
     "* TODO %?\n%U   %a%i" )
+
+   ("b" "backlog entry." entry (file+headline "~/git/org/agenda/refile.org" "Tasks")
+    "* BACKLOG %?\n%U   %a%i" )
 
    ("T" "TODO under Task in the current buffer "
     entry (file+headline (buffer-file-name (org-capture-get :original-buffer)) "Tasks")
