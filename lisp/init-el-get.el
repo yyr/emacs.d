@@ -22,7 +22,6 @@
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (end-of-buffer)
     (eval-print-last-sexp))
-  (el-get-emacswiki-refresh el-get-recipe-path-emacswiki t)
   (el-get-elpa-build-local-recipes))
 
 ;;; el-get-is-lazy
