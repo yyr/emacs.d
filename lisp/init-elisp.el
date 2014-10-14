@@ -3,7 +3,7 @@
 
 ;;; elisp setup
 (el-get 'sync 'elisp-slime-nav)
-(add-hook 'emacs-lisp-mode-hook (lambda () (elisp-slime-nav-mode 1)))
+(add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 
 (defun my-elisp-hook ()
   (setq tab-width 8)
@@ -26,6 +26,9 @@
   "Enable paredit-mode during eval-expression"
   (if (eq this-command 'eval-expression)
       (paredit-mode 1)))
+
+;;; show eldoc while in minibuffer.
+(add-hook 'eval-expression-minibuffer-setup-hook #'eldoc-mode)
 
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-to-list 'auto-mode-alist '("\\.emacs-project$" . emacs-lisp-mode))
