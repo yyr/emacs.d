@@ -62,10 +62,10 @@
 (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
 (autoload 'reftex-citation "reftex-cite" "Make citation" nil)
 (autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
+(add-hook 'LaTeX-mode-hook  #'reftex-mode)
 
 (add-hook 'LaTeX-mode-hook
           '(lambda ()
-             (reftex-mode 1)
              (define-key LaTeX-mode-map (kbd "C-c p") 'reftex-parse-all)
              (setq )
              (setq reftex-section-levels
