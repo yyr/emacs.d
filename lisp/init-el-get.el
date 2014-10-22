@@ -60,9 +60,31 @@
 
 (el-get 'sync my-packages)
 
-(defun el-get-create-recipe-from-url (url)
+(defun el-get-create-recipe-from-github-url (url &optional target-dir)
   (interactive "sURL of Elisp Package: ")
-  (unless (url-p url)
-    (message "'%s' is not an url" url)))
+  (let* ((href (url-generic-parse-url url))
+         (file (url-filename href))
+         (up (split-string file "/"))
+         (user (cadr up))
+         (pkg (caddr up))
+         (rfile (concat pkg ".rcp"))
+         (rfilename  (expand-file-name rfile target-dir) )
+         (target-dir (or target-dir
+                         (concat (file-name-directory el-get-script) "recipes")))
+         (coding-system-for-write 'utf-8))
+    (if (file-exists-p rfilename)
+        (progn
+          (message "recipe file for %s already exists" pkg)
+          (find-file-other-window rfilename))
+      (with-temp-file rfilename
+        (message "writing recipe file for %s" pkg)
+        (insert
+         (format
+          "(:name %s\n:description \"\"\n:website \"%s\"
+:type github\n:pkgname \"%s\")"
+          pkg url (concat user "/" pkg)))
+        (emacs-lisp-mode)
+        (indent-region (point-min) (point-max)))
+      (find-file-other-window rfilename))))
 
 ;; init-el-get.el ends here
