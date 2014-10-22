@@ -33,11 +33,7 @@
       '((:name ams-glossary
                :description "Read AMS glossary from Emacs"
                :type github
-               :pkgname "yyr/ams-glossary.el"
-               :depends (epc))
-        (:name japanese-holidays
-               :type http
-               :url "http://www.meadowy.org/meadow/netinstall/export/799/branches/3.00/pkginfo/japanese-holidays/japanese-holidays.el")))
+               :pkgname "yyr/ams-glossary.el")))
 
 
 ;; common packages all the systems I have
