@@ -76,8 +76,12 @@
         (message "writing recipe file for %s" pkg)
         (insert
          (format
-          "(:name %s\n:description \"\"\n:website \"%s\"
-:type github\n:pkgname \"%s\")"
+          "(:name %s
+:description \"\"
+:website \"%s\"
+:type github
+:depends nil
+:pkgname \"%s\")"
           pkg url (concat user "/" pkg)))
         (emacs-lisp-mode)
         (indent-region (point-min) (point-max)))
