@@ -53,6 +53,6 @@
 (add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)
 (setq mark-holidays-in-calendar t)
 (setq calendar-holidays
-      (append japanese-holidays local-holidays other-holidays))
+      (append japanese-holidays holiday-local-holidays holiday-other-holidays))
 
 ;;; init-org-diary.el ends here
