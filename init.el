@@ -65,7 +65,7 @@
 (load "init-auto-complete")
 (load "init-yasnip")
 (load "init-multiple-cursors")
-;(load "init-er")
+(load "init-dev")
 
 ;;; look
 (load "init-font")

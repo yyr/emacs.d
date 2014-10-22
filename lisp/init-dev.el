@@ -1,10 +1,8 @@
-;;; init-er.el
+;;; init-dev.el
 ;;
-;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-er.el
 
 ;;; Description:
-;; expand region
+;; common development related packages.
 
 (el-get 'sync
         'expand-region)
