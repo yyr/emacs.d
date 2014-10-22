@@ -98,4 +98,6 @@
               (hide-sublevels 1000)
               (reveal-mode 1))))
 
+(add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
+
 ;;; init-elisp.el ends here
