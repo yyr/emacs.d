@@ -64,14 +64,12 @@
          (user (cadr up))
          (pkg (caddr up))
          (rfile (concat pkg ".rcp"))
-         (rfilename  (expand-file-name rfile target-dir) )
          (target-dir (or target-dir
                          (concat (file-name-directory el-get-script) "recipes")))
+         (rfilename  (expand-file-name rfile target-dir) )
          (coding-system-for-write 'utf-8))
     (if (file-exists-p rfilename)
-        (progn
-          (message "recipe file for %s already exists" pkg)
-          (find-file-other-window rfilename))
+        (message "recipe file for %s already exists" pkg)
       (with-temp-file rfilename
         (message "writing recipe file for %s" pkg)
         (insert
