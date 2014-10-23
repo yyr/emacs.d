@@ -7,9 +7,6 @@
 ;;; Description:
 ;;
 
-(el-get 'sync 'js2-mode)
-(el-get-init 'web-mode)
-
-
+(el-get 'sync '(js2-mode web-mode))
 
 ;;; init-js.el ends here
