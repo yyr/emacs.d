@@ -61,11 +61,23 @@
 
 (defun locate-function (func)
   "Return file-name as string where `func' was defined or will be autoloaded"
-  (interactive "Ccommand: ")
-  (let ((res (find-lisp-object-file-name func (symbol-function func))))
-    (when (called-interactively-p 'any)
-      (message "%s defined in %s" func res))
-    res))
+  (interactive
+   (let ((fn (function-called-at-point))
+         (enable-recursive-minibuffers t)
+         val)
+     (setq val (completing-read (if fn
+                                    (format "Describe function (default %s): " fn)
+                                  "Describe function: ")
+                                obarray 'fboundp t nil nil
+                                (and fn (symbol-name fn))))
+     (list (if (equal val "")
+               fn (intern val)))))
+  (if (null func)
+      (message "You didn't specify a function")
+    (let ((res (find-lisp-object-file-name func (symbol-function func))))
+      (when (called-interactively-p 'any)
+        (message "%s defined in %s" func res))
+      res)))
 
 
 ;;; tkf on https://github.com/m2ym/auto-complete/issues/81
