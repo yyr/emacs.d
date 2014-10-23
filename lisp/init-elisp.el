@@ -59,25 +59,37 @@
               (return (car file-info))))
           (cdr file-info))))
 
-(defun locate-function (func)
+(defun locate-symbol (arg sym-name)
   "Return file-name as string where `func' was defined or will be autoloaded"
   (interactive
-   (let ((fn (function-called-at-point))
-         (enable-recursive-minibuffers t)
-         val)
-     (setq val (completing-read (if fn
-                                    (format "Describe function (default %s): " fn)
-                                  "Describe function: ")
-                                obarray 'fboundp t nil nil
-                                (and fn (symbol-name fn))))
-     (list (if (equal val "")
-               fn (intern val)))))
-  (if (null func)
-      (message "You didn't specify a function")
-    (let ((res (find-lisp-object-file-name func (symbol-function func))))
-      (when (called-interactively-p 'any)
-        (message "%s defined in %s" func res))
-      res)))
+   (list (prefix-numeric-value current-prefix-arg)
+         (let ((sym (symbol-at-point))
+               (enable-recursive-minibuffers t)
+               val)
+           (setq val (completing-read (if sym
+                                          (format "Describe symbol (default %s): " sym)
+                                        "Describe Sym: ")
+                                      obarray nil t nil nil
+                                      (and sym (symbol-name sym))))
+           (if (equal val "")
+               sym (intern val)))))
+  (when sym-name
+    (let ((sym sym-name))
+      (message "Searching for %s..." (pp-to-string sym))
+      (ring-insert find-tag-marker-ring (point-marker))
+      (cond
+       ((fboundp sym) (find-function sym))
+       ((boundp sym) (find-variable sym))
+       ((or (featurep sym) (locate-library sym-name))
+        (find-library sym-name))
+       ((facep sym)
+        (find-face-definition sym))
+       (:else
+        (progn
+          (pop-tag-mark)
+          (error "Don't know how to find '%s'" sym))))))
+
+  )
 
 
 ;;; tkf on https://github.com/m2ym/auto-complete/issues/81
