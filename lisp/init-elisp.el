@@ -87,10 +87,7 @@
        (:else
         (progn
           (pop-tag-mark)
-          (error "Don't know how to find '%s'" sym))))))
-
-  )
-
+          (error "Don't know how to find '%s'" sym)))))))
 
 ;;; tkf on https://github.com/m2ym/auto-complete/issues/81
 (defmacro my-aif (test-form then-form &rest else-forms)
