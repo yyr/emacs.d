@@ -1,24 +1,10 @@
 ;;; init-bib.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-bib.el
 ;; Created: Sunday, September  4 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;; managing bibliography modes
+;; Managing bibliography modes
 
-(el-get 'sync '(ebib
-                zotelo))
-
-(autoload 'ebib "ebib"
-  "Ebib, a BibTeX database manager." t)
-
-(add-hook 'LaTeX-mode-hook
-          (defun my-latex-kbds ()
-            (local-set-key "\C-cb" 'ebib-insert-bibtex-key)))
-
-(global-set-key (kbd "C-c B") 'ebib)
+(el-get 'sync '(zotelo))
 
 (setq
  ebib-file-search-dirs '("~/git/bib/")
@@ -38,7 +24,5 @@
       bibtex-autokey-titlewords 0
       bibtex-maintain-sorted-entries 'plain
       bibtex-entry-format '(opts-or-alts numerical-fields))
-
-
 
 ;;; init-bib.el ends here
