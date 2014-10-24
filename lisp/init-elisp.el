@@ -50,35 +50,25 @@
               (return (car file-info))))
           (cdr file-info))))
 
-(defun locate-symbol (arg sym-name)
-  "Return file-name as string where `func' was defined or will be autoloaded"
+(defun locate-symbol (sym &optional noprompt)
+  "locate SYM definition. When NOPROMPT forcefully attempts find
+thing-at-point"
   (interactive
-   (list (prefix-numeric-value current-prefix-arg)
-         (let ((sym (symbol-at-point))
-               (enable-recursive-minibuffers t)
-               val)
-           (setq val (completing-read (if sym
+   (list (symbol-at-point)
+         (prefix-numeric-value current-prefix-arg)))
+  (cond ((and sym (= noprompt 4))
+         (elisp-slime-nav-find-elisp-thing-at-point (format "%s" sym)))
+        ((not (= noprompt 4))
+         (let ((symb (completing-read (if sym
                                           (format "Describe symbol (default %s): " sym)
-                                        "Describe Sym: ")
+                                        "Describe symbol: ")
                                       obarray nil t nil nil
-                                      (and sym (symbol-name sym))))
-           (if (equal val "")
-               sym (intern val)))))
-  (when sym-name
-    (let ((sym sym-name))
-      (message "Searching for %s..." (pp-to-string sym))
-      (ring-insert find-tag-marker-ring (point-marker))
-      (cond
-       ((fboundp sym) (find-function sym))
-       ((boundp sym) (find-variable sym))
-       ((or (featurep sym) (locate-library sym-name))
-        (find-library sym-name))
-       ((facep sym)
-        (find-face-definition sym))
-       (:else
-        (progn
-          (pop-tag-mark)
-          (error "Don't know how to find '%s'" sym)))))))
+                                      (and sym (symbol-name sym)))))
+           (elisp-slime-nav-find-elisp-thing-at-point (format "%s" symb))))
+        (t
+         (message "No symbol found at point" sym noprompt))))
+
+(global-set-key (kbd "C-c f") 'locate-symbol)
 
 ;;; tkf on https://github.com/m2ym/auto-complete/issues/81
 (defmacro my-aif (test-form then-form &rest else-forms)
