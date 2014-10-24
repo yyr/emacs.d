@@ -147,7 +147,6 @@
 (load "init-org-ob")
 (load "init-org-diary")
 (load "init-calender")
-(load "init-weather-metno")
 
 ;;; org publish
 (load "init-org-html")
