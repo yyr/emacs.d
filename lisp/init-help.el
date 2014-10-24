@@ -34,4 +34,7 @@
 (define-key Apropos-Prefix (kbd "C-v") 'apropos-value)
 (define-key Apropos-Prefix (kbd "C-a")   'about-emacs)
 
+(define-key help-mode-map (kbd "M-<left>") 'help-go-back)
+(define-key help-mode-map (kbd "M-<right>") 'help-go-forward)
+
 ;;; init-help.el ends here
