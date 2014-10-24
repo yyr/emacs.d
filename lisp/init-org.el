@@ -3,8 +3,7 @@
 ;; License: GPL v3 or later
 
 ;;; load org
-(el-get 'sync '(org-mode
-                calfw))
+(el-get 'sync '(org-mode))
 
 (add-to-list 'load-path
              (expand-file-name "~/.emacs.d/el-get/org-mode/lisp"))
@@ -18,14 +17,13 @@
 (require 'org-indent)
 
 ;;; modules
-(setq org-modules (remove-duplicates
+(setq org-modules (cl-remove-duplicates
                    (append
                     '(org-special-blocks
                       org-element
                       org-export
                       org-inlinetask
                       ;; add more modules if needed
-
                       )
                     org-modules)))
 
