@@ -16,8 +16,6 @@
  kept-old-versions 2
  version-control t) ; use versioned backups
 
-(require 'backup-each-save)
-
 (add-hook 'after-save-hook 'backup-each-save)
 
 (defun backup-each-save-filter (filename)
