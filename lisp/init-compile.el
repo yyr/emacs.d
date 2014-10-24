@@ -1,8 +1,6 @@
 ;;; init-compile.el
 ;; Created: 金曜日, 11月 30 2012
 
-(require 'compile)
-
 (setq compilation-scroll-output t)
 (setq compilation-auto-jump-to-first-error t)
 (setq compilation-scroll-output 'first-error)
