@@ -1,11 +1,10 @@
 ;;; init-flyspell.el
 
 ;;; dont use M-TAB for flyspell , I reserve it for other LaTex mode
-(require 'flyspell)
-
-(setq flyspell-use-meta-tab nil)
-(define-key flyspell-mode-map "\M-\t" nil)
-(define-key flyspell-mode-map [(control .)] nil)
+(after 'flyspell
+       (setq flyspell-use-meta-tab nil)
+       (define-key flyspell-mode-map "\M-\t" nil)
+       (define-key flyspell-mode-map [(control .)] nil))
 
 ;;; turn on flyspell mode
 (dolist (hook '(org-mode-hook
