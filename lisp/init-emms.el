@@ -7,7 +7,6 @@
 ;;
 
 (el-get 'sync 'emms)
-(require 'emms-setup)
 (emms-devel)
 (emms-default-players)
 

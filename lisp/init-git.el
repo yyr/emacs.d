@@ -36,8 +36,6 @@
   '(define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace))
 
 ;;; git gutter.
-(require 'git-gutter-fringe)
-
 ;; If you enable global minor mode
 (global-git-gutter-mode t)
 
