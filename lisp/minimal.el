@@ -29,13 +29,6 @@
   (add-to-list 'load-path (concat org-install-dir "/contrib/lisp"))
   (require 'org))
 
-;;;  o-blog
-(defun minimal-load-o-blog ()
-  (minimal-load-org)
-  (add-to-list 'load-path (concat el-get-install-dir "/o-blog"))
-  (require 'o-blog)
-  (require 'o-blog-bootstrap))
-
 ;; ncl
 (defun minimal-load-ncl ()
   (setq ncl-install-dir (concat el-get-install-dir "/ncl-mode"))
