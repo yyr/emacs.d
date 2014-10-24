@@ -1,12 +1,9 @@
 ;;; auto-complete mode
 
-(el-get 'sync '(popup
-                fuzzy
-                auto-complete
+(el-get 'sync '(auto-complete
                 ac-math
                 ac-octave))
 
-(require 'auto-complete-config)
 (ac-config-default)
 
 (add-to-list 'completion-styles 'initials t)
