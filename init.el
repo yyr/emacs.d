@@ -21,9 +21,11 @@
 (defconst emacs-path "~/.emacs.d/lisp")
 (setq load-path (cons (expand-file-name emacs-path) load-path))
 
-(defmacro after (mode &rest body)
-  `(eval-after-load ,mode
-     '(progn ,@body)))
+(if (symbolp 'with-eval-after-load)
+    (defalias 'after #'with-eval-after-load)
+  (defmacro after (file &rest body)
+    `(eval-after-load ,file
+       (lambda () ,@body))))
 
 ;; ----------------------------------------------------------------------------
 ;;; load individual configuration files
