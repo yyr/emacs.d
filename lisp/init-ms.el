@@ -7,10 +7,10 @@
 ;;; Description:
 ;;
 
-;;; should install MinGW from
+;;; Should install MinGW from
 ;;; http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/
 ;; don't forget install MSYS also when installing MinGW.  (optionally)
-;; gnuwin32
+;; Gnuwin32
 ;; http://sourceforge.net/projects/getgnuwin32/files/getgnuwin32/
 
 (setq shell-file-name "C:/MinGW/msys/1.0/bin/bash")
