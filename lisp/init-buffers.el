@@ -1,8 +1,7 @@
 ;;; init-buffers.el
 ;; Created: Tuesday, August 30 2011
 
-(require 'uniquify)       ; Smarter buffer naming than x<1>, x<2>, ...
-
+;;; uniquify
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets
       uniquify-after-kill-buffer-p t
       uniquify-ignore-buffers-re "^\\*")
