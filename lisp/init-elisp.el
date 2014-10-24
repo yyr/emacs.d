@@ -33,17 +33,8 @@
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-to-list 'auto-mode-alist '("\\.emacs-project$" . emacs-lisp-mode))
 
-(require 'find-func)
+;;; find func.
 (find-function-setup-keys)
-
-;;; By Jumbunathan on org-mode list
-(defun yyr-jump-to-source ()
-  (interactive)
-  (let ((thing (intern (thing-at-point 'symbol))))
-    (if (functionp thing)
-        (find-function thing)
-      (find-variable thing))))
-(global-set-key (kbd "C-c f") 'yyr-jump-to-source)
 
 ;;; http://stackoverflow.com/a/9620373/399964
 (defun locate-feature (feature)
