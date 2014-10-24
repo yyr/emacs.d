@@ -6,7 +6,6 @@
 (setq bbdb-file "~/git/org/.bbdb")
 (el-get 'sync 'bbdb)
 
-(require 'bbdb)
 (bbdb-mua-auto-update-init 'gnus 'message)
 (setq bbdb-mua-update-interactive-p '(query . create))
 (bbdb-mua-auto-update-init 'message) ;; use 'gnus for incoming messages too
@@ -67,5 +66,5 @@
                              (bbdb-mua-update-records)))))
 
 (define-key gnus-summary-mode-map (kbd ":") 'bbdb-mua-display-records)
-;(add-hook 'message-sent-hook 'bbdb-query-create)
+;; (add-hook 'message-sent-hook 'bbdb-query-create)
 ;;; init-bbdb.el ends here
