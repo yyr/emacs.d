@@ -166,7 +166,6 @@
 
 ;;; web
 (load "init-webjump")
-(load "init-w3m")
 (load "init-erc")
 
 ;;;  misc
