@@ -25,7 +25,7 @@
   (el-get-elpa-build-local-recipes))
 
 ;;; el-get-is-lazy
-(setq el-get-is-lazy nil)
+; (setq el-get-is-lazy nil)
 (package-initialize)
 
 ;; packages are defined by me
@@ -39,9 +39,9 @@
 ;; common packages all the systems I have
 (setq my-packages
       (append
-       '(screenshot
-         profile-dotemacs)
-       (mapcar 'el-get-source-name el-get-sources)))
+       '(profile-dotemacs)
+       (mapcar
+        'el-get-source-name el-get-sources)))
 
 ;; package needed for only my laptop
 (when (and on-laptop
