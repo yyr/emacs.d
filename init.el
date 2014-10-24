@@ -29,6 +29,8 @@
 ;;; load individual configuration files
 ;; ----------------------------------------------------------------------------
 (defalias 'function-put 'put)
+;;; prefer neweer
+(setq load-prefer-newer t)
 
 ;;; first of all any OS dependent paths has to be set
 (when on-ms
