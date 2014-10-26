@@ -14,15 +14,13 @@
 
 (el-get 'sync '(dictem))
 
-(require 'dictem)
-
 (setq dictem-server "localhost")
 (setq dictem-user-databases-alist
       `(("_en-en"  . ("foldoc" "gcide" "wn"))))
 
 (setq dictem-use-user-databases-only t)
 
-(setq dictem-port   "2628")
+(setq dictem-port  "2628")
 (dictem-initialize)
 
 (setq dictem-default-strategy "word")
