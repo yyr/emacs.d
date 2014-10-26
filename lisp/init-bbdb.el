@@ -5,6 +5,7 @@
 
 (setq bbdb-file "~/git/org/.bbdb")
 (el-get 'sync 'bbdb)
+(require 'bbdb)
 
 (bbdb-mua-auto-update-init 'gnus 'message)
 (setq bbdb-mua-update-interactive-p '(query . create))
