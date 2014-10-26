@@ -267,4 +267,9 @@ License: GPL v3 or later
          (term (concat prefix w)))
     (browse-url term)))
 
+(defun real-debug-on ()
+  (interactive)
+  (setq debug-on-error t)
+  (setq inhibit-debugger nil))
+
 ;;; init-utils-el ends here
