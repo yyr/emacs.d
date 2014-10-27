@@ -131,7 +131,7 @@
 (load "init-grads")
 (load "init-gnuplot")
 
-(when (executable-find "pdflatex")
+(when (and (not on-lab-server) (not on-ms))
   (load "init-latex")
   (load "init-bib"))
 (load "init-doc-view")
