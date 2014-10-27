@@ -8,11 +8,11 @@
           (lambda ()
             (local-set-key "G" 'doc-view-goto-page)))
 
-(el-get 'sync 'pdf-tools)
-
-(add-hook 'doc-view-mode-hook
-          (lambda ()
-            (when (equal (file-name-extension (buffer-file-name)) "pdf")
-              (pdf-tools-enable))))
+(when (and (not on-lab-server) (not on-ms))
+  (el-get 'sync 'pdf-tools)
+  (add-hook 'doc-view-mode-hook
+            (lambda ()
+              (when (equal (file-name-extension (buffer-file-name)) "pdf")
+                (pdf-tools-enable)))))
 
 ;;; init-doc-view.el ends here
