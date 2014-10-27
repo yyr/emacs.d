@@ -24,10 +24,7 @@
     (eval-print-last-sexp))
   (el-get-elpa-build-local-recipes))
 
-;;; el-get-is-lazy
-; (setq el-get-is-lazy nil)
 (package-initialize)
-
 ;; packages are defined by me
 (setq el-get-sources
       '((:name ams-glossary
