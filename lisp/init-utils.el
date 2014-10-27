@@ -267,10 +267,16 @@ License: GPL v3 or later
          (term (concat prefix w)))
     (browse-url term)))
 
-(defun real-debug-on ()
-  (interactive)
-  (setq debug-on-error t)
-  (setq inhibit-debugger nil))
+(defun real-debug-on (arg)
+  "make debugger trigger on error, with ARG do the opposite."
+  (interactive "p")
+  (if arg
+      (progn
+        (setq debug-on-error nil)
+        (setq inhibit-debugger t))
+    (progn
+      (setq debug-on-error t)
+      (setq inhibit-debugger nil))))
 
 (defun clean-hook (hook)
   "Set nil to HOOK."
