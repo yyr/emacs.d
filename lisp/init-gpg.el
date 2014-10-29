@@ -6,10 +6,6 @@
 ;;
 
 ;;; EasyPG
-(require 'epa-file)
-(require 'epa-mail)
-(epa-file-enable)
-
 (setq mml2015-use 'epg
       mml2015-verbose t
       epg-user-id '3206D78B
