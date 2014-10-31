@@ -39,8 +39,14 @@
 ;; If you enable global minor mode
 (global-git-gutter-mode t)
 
-;; (global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+(global-set-key (kbd "C-x C-,") 'git-gutter:toggle)
 (setq git-gutter:diff-option "-w")
+
+;; Stage current hunk
+(global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+
+;; Revert current hunk
+(global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
 ;; Jump to next/previous diff
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
