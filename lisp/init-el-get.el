@@ -7,7 +7,10 @@
 ;; packages here.
 
 ;;; add el-get load-path
-(setq load-path (cons (expand-file-name "~/.emacs.d/el-get/el-get") load-path))
+(setq load-path (cons
+                 (expand-file-name "el-get/el-get"
+                                   (file-name-directory user-init-file))
+                      load-path))
 
 (when (symbolp 'package-archives)
   (setq package-archives
