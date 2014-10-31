@@ -1,7 +1,7 @@
 ;;; init-pre-gnus.el
 
 ;;; t
-(setq gnus-init-file (concat emacs-path "/init-gnus.el"))
+(setq gnus-init-file (expand-file-name "init-gnus.el" emacsd))
 (setq gnus-home-directory "~/gnus")
 (setq gnus-startup-file "~/gnus/.newsrc")
 (setq gnus-directory "~/gnus/News")

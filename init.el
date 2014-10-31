@@ -18,8 +18,10 @@
 (defvar on-ms (string-match "windows" (format "%s" system-type)))
 
 ;;;
-(defconst emacs-path "~/.emacs.d/lisp")
-(setq load-path (cons (expand-file-name emacs-path) load-path))
+(defconst emacsd
+  (expand-file-name "lisp"
+                    (file-name-directory user-init-file)))
+(add-to-list 'load-path emacsd)
 
 (if (symbolp 'with-eval-after-load)
     (defalias 'after #'with-eval-after-load)
