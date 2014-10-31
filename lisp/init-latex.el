@@ -6,12 +6,7 @@
 ;;; Description:
 ;; settings for auctex and reftex .. etc
 
-(el-get 'sync 'auctex)
-
-(add-to-list 'load-path "~/.emacs.d/el-get/auctex/preview")
-(add-to-list 'load-path "~/.emacs.d/el-get/auctex")
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(el-get 'sync '(auctex zotelo))
 
 (setq
  TeX-electric-escape t
@@ -259,6 +254,4 @@ If there is still something left do do start the next latex-command."
              (setq paragraph-separate (concat " *}\\|^ *\\\\[a-zA-Z]* ?{\\|"
                                               paragraph-separate))))
 
-(el-get 'sync 'zotelo)
-(require 'zotelo)
 ;;; init-latex.el ends here
