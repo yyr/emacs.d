@@ -254,4 +254,7 @@ If there is still something left do do start the next latex-command."
              (setq paragraph-separate (concat " *}\\|^ *\\\\[a-zA-Z]* ?{\\|"
                                               paragraph-separate))))
 
+(setq reftex-default-bibliography
+      '("/home/yagnesh/git/thesis/thesis.bib"))
+
 ;;; init-latex.el ends here
