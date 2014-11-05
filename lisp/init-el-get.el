@@ -33,7 +33,11 @@
       '((:name ams-glossary
                :description "Read AMS glossary from Emacs"
                :type github
-               :pkgname "yyr/ams-glossary.el")))
+               :pkgname "yyr/ams-glossary.el")
+        (:name backup-each-save
+               :description "backup each save"
+               :type github
+               :pkgname "yyr/backup-each-save")))
 
 
 ;; common packages all the systems I have
