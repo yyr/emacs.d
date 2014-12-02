@@ -13,6 +13,6 @@
   (add-hook 'doc-view-mode-hook
             (lambda ()
               (when (equal (file-name-extension (buffer-file-name)) "pdf")
-                (pdf-tools-enable)))))
+                (pdf-tools-install)))))
 
 ;;; init-doc-view.el ends here
