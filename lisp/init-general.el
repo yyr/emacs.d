@@ -62,6 +62,7 @@
  fill-column 78)
 
 (setq gc-cons-threshold 20000000)       ; increase gc
+(setq undo-outer-limit  40000000)
 
 
 ;;; damn IMPORTANT.
