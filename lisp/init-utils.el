@@ -256,6 +256,13 @@ License: GPL v3 or later
          (term (concat prefix w)))
     (browse-url term)))
 
+(defun google-cache-page (url)
+  (interactive "sURL: ")
+  (let* ((prefix "http://webcache.googleusercontent.com/search?q=cache:")
+         (w (replace-regexp-in-string "^http://" "" url))
+         (cache-url (concat prefix w)))
+    (browse-url cache-url)))
+
 (defun toggle-debugger ()
   "alternative to stupid `toggle-debug-on-error'"
   (interactive)
