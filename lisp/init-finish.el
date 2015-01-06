@@ -9,11 +9,6 @@
              (progn
                (message "My .emacs loaded in %s"
                         (emacs-init-time))
-               (el-get-notify
-                "Emacs is started"
-                (format "loding init file took %s"
-                        (emacs-init-time)))
-               (sit-for 0.5)
                ;; bit intersting startup
                (message "%s" "As always by your command... "))))
 
