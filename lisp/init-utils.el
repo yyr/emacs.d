@@ -209,17 +209,6 @@ License: GPL v3 or later
           (insert " "))))
     (kill-buffer mouse-buffer)))
 
-(defun toggle-debugger ()
-  "alternative to stupid `toggle-debug-on-error'"
-  (interactive)
-  (if debug-on-error
-      (progn
-        (setq debug-on-error nil)
-        (message "Debug on Error disabled globally"))
-    (progn
-      (setq debug-on-error t)
-      (message "Debug on Error enabled globally"))))
-
 (defun yyr-insert-filename (&optional arg)
   "insert file name sans extension at point. with ARG insert dired"
   (interactive "P")
@@ -266,6 +255,17 @@ License: GPL v3 or later
          (w (replace-regexp-in-string " +" "_" word))
          (term (concat prefix w)))
     (browse-url term)))
+
+(defun toggle-debugger ()
+  "alternative to stupid `toggle-debug-on-error'"
+  (interactive)
+  (if debug-on-error
+      (progn
+        (setq debug-on-error nil)
+        (message "Debug on Error disabled globally"))
+    (progn
+      (setq debug-on-error t)
+      (message "Debug on Error enabled globally"))))
 
 (defun real-debug-on (arg)
   "make debugger trigger on error, with ARG do the opposite."
