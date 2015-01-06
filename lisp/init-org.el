@@ -40,7 +40,7 @@
 (define-key org-mode-map (kbd "C-c C-e") 'org-export-dispatch )
 
 ;;; save org-buffers every hour
-(run-at-time "00:59" 3600 'org-save-all-org-buffers)
+;; (run-at-time "00:59" 3600 'org-save-all-org-buffers)
 
 ;;; hideshow-org
 (el-get 'sync 'hideshow-org)
