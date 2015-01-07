@@ -3,15 +3,8 @@
 ;; License: GPL v3 or later
 
 ;;; load org
-(el-get 'sync '(org-mode))
-
-(add-to-list 'load-path
-             (expand-file-name "~/.emacs.d/el-get/org-mode/lisp"))
-(add-to-list 'load-path
-             (expand-file-name "~/.emacs.d/el-get/org-mode/contrib/lisp"))
-
 (add-to-list 'auto-mode-alist
-             '("\\.\\(org\\|org_archive\\|txt\\)$" . org-mode))
+             '("\\.\\(org_archive\\|txt\\)$" . org-mode))
 
 (require 'ox-beamer)
 (require 'org-indent)
