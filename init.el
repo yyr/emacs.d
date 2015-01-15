@@ -52,13 +52,11 @@
 (load "init-mail")
 (load "init-message")
 
-
 ;;; initial setup, keybindings
 (load "init-general")
 (load "init-custom-key-set")
 (load "init-minors")
 (load "init-auto-save")
-(load "init-diminish")
 
 ;;; make friendly mini buffer
 (load "init-ido")

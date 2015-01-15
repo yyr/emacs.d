@@ -21,4 +21,8 @@
 ;; (set-frame-parameter (selected-frame) 'alpha '(100 95))
 ;; (add-to-list 'default-frame-alist '(alpha 100 95))
 
+(el-get 'sync 'smart-mode-line)
+(sml/setup)
+;; (sml/apply-theme 'automatic)
+
 ;;; init-frame.el ends here
