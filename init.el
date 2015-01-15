@@ -67,6 +67,8 @@
 (load "init-flyspell")
 (load "init-hippie-expand")
 (load "init-auto-complete")
+(load "init-company")
+
 (load "init-yasnip")
 (load "init-multiple-cursors")
 (load "init-dev")
