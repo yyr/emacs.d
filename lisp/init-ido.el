@@ -25,6 +25,9 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq ido-create-new-buffer 'always)
 
+(setq ido-file-extensions-order
+      '(".tex" ".org" ".sh" ".ncl" ".py" ".el" ".xml" ".el" ".pdf"))
+
 ;; disable auto searching for files unless called explicitly
 (setq ido-auto-merge-delay-time 99999)
 (define-key ido-file-dir-completion-map (kbd "C-c C-s")

@@ -34,13 +34,13 @@
       require-final-newline t       ; Always end a file with a newline
 
       search-whitespace-regexp "[ \t\r\n]+"  ;
-      completion-ignored-extensions ; remove crap offerings when finding something
-      '(".o" ".elc" "~" ".bin" ".bak" ".obj" ".map" ".a" ".ln" ".mod")
-
       next-line-add-newlines nil ; Stop at the end of the file, not just add lines
       browse-url-browser-function 'browse-url-firefox  ; my system needs this
       )
 
+(setq completion-ignored-extensions
+      (append completion-ignored-extensions
+              '(".bak" ".obj" ".map" ".mod" ".rel" ".out")))
 
 (setq-default
  frame-title-format `("%b       " ,(user-login-name) "@" ,(system-name) "     "
