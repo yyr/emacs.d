@@ -1,9 +1,6 @@
 ;;; init-lispy.el
-;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-lispy.el
 ;; Created: Monday, December 26 2011
-;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; common things to load to all lispies
@@ -25,9 +22,6 @@
                     'font-lock-keyword-face))))))
 
 (autoload 'enable-paredit-mode "paredit" "Turn on paredit mode" t)
-
-;; (defadvice enable-paredit-mode (before disable-autopair activate)
-;;   (autopair-mode -1))
 
 (defun maybe-map-paredit-newline ()
   (unless (or (eq major-mode 'inferior-emacs-lisp-mode) (minibufferp))
