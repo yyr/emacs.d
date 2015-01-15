@@ -76,7 +76,6 @@
 ;;; look
 (load "init-font")
 (load "init-point")
-;; (load "init-linum")
 
 ;; dictionary
 (when (executable-find "dict") (load "init-dictem"))
