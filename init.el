@@ -66,7 +66,7 @@
 (load "init-auto-insert")
 (load "init-flyspell")
 (load "init-hippie-expand")
-(load "init-auto-complete")
+;; (load "init-auto-complete")
 (load "init-company")
 
 (load "init-yasnip")
