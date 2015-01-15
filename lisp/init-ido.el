@@ -29,7 +29,7 @@
 
 (setq ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido"
                            "^\*trace" "*Completions*" "^\*TAGS" "^\*Mus"
-                           "\\`\*.*buffer" "^\*" "#.*"
+                           "\\`\*.*buffer" "^\*.*process" "^\*.*-Log"  "#.*"
                            "*Shell Command Output*" "Async Shell Command"
                            "^session\.*"))
 
