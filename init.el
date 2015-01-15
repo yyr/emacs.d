@@ -128,8 +128,6 @@
 
 ;;; subject
 (load "init-ncl")
-(load "init-grads")
-(load "init-gnuplot")
 
 (when (and (not on-lab-server) (not on-ms))
   (load "init-latex")
@@ -155,11 +153,9 @@
 (load "init-org-html")
 (load "init-org-latex")
 (load "init-org-beamer")
-(load "init-org-s5")
 
 ;;; org misc
 (load "init-org-misc")
-;(load "init-epresent")
 
 ;;; info,  help, doc, man(woman) etc..
 (load "init-info")
@@ -182,7 +178,7 @@
 (load "init-crontab")
 (load "init-server")
 (load "init-time")
-(load "init-crypt")
+
 
 ;;; music
 (when (and (not on-lab-server) (not on-ms)) (load "init-emms"))
