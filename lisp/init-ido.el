@@ -1,5 +1,5 @@
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
+;;; init-ido.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (ido-mode t)
 (ido-everywhere t)
@@ -10,13 +10,10 @@
 (el-get 'sync 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
 
-(load "init-smex")
-
 ;;; additional keys (copied from source file)
 (defun ido-my-keys ()
   "Add my keybindings for ido."
-  (define-key ido-completion-map " " 'ido-next-match)  ; use space for next match
-  )
+  (define-key ido-completion-map " " 'ido-next-match))
 
 (add-hook 'ido-setup-hook 'ido-my-keys)
 
@@ -46,5 +43,11 @@
 
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
+
+
+;;; Smex
+(el-get 'sync '(smex))
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;;; init-ido.el ends here
