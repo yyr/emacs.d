@@ -6,8 +6,8 @@
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 
 (defun my-elisp-hook ()
-  (setq tab-width 8)
-  (local-set-key (kbd "C-S-SPC") 'my-popup-describe-symbol))                    ; Set tab stops
+  (setq tab-width 8))                    ; Set tab stops
+
 
 (defun set-up-hippie-expand-for-elisp ()
   (make-variable-buffer-local 'hippie-expand-try-functions-list)
@@ -69,36 +69,6 @@ thing-at-point"
          (message "No symbol found at point" sym noprompt))))
 
 (global-set-key (kbd "C-c f") 'locate-symbol)
-
-;;; tkf on https://github.com/m2ym/auto-complete/issues/81
-(defmacro my-aif (test-form then-form &rest else-forms)
-  (declare (debug (form form &rest form)))
-  `(let ((it ,test-form))
-     (if it ,then-form ,@else-forms)))
-(put 'my-aif 'lisp-indent-function 2)
-
-(defun my-popup-message (string)
-  "Show string in tooltip using either `pos-tip-show' or `popup-tip'."
-  (cond
-   ((ac-quick-help-use-pos-tip-p)
-    ;; see: `ac-pos-tip-show-quick-help'
-    (pos-tip-show string 'popup-tip-face nil nil 0 popup-tip-max-width))
-   ((featurep 'popup)
-    (popup-tip string))
-   (t
-    (message string))))
-
-(defun my-popup-describe-symbol ()
-  (interactive)
-  (my-aif (function-called-at-point)
-      (my-popup-message (ac-symbol-documentation it))))
-
-
-(add-hook 'outline-minor-mode-hook
-          (lambda ()
-            (when (and outline-minor-mode (derived-mode-p 'emacs-lisp-mode))
-              (hide-sublevels 1000)
-              (reveal-mode 1))))
 
 (add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
 

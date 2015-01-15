@@ -74,4 +74,30 @@
             (lambda ()
               (ac-latex-mode-setup))))
 
+
+;;; elisp
+;;; tkf on https://github.com/m2ym/auto-complete/issues/81
+(defmacro my-aif (test-form then-form &rest else-forms)
+  (declare (debug (form form &rest form)))
+  `(let ((it ,test-form))
+     (if it ,then-form ,@else-forms)))
+(put 'my-aif 'lisp-indent-function 2)
+
+(defun my-popup-message (string)
+  "Show string in tooltip using either `pos-tip-show' or `popup-tip'."
+  (cond
+   ((ac-quick-help-use-pos-tip-p)
+    ;; see: `ac-pos-tip-show-quick-help'
+    (pos-tip-show string 'popup-tip-face nil nil 0 popup-tip-max-width))
+   ((featurep 'popup)
+    (popup-tip string))
+   (t
+    (message string))))
+
+(defun my-popup-describe-symbol ()
+  (interactive)
+  (my-aif (function-called-at-point)
+      (my-popup-message (ac-symbol-documentation it))))
+(define-key emacs-lisp-mode-map (kbd "C-S-SPC") 'my-popup-describe-symbol)
+
 ;;; init-auto-complete.el ends here
