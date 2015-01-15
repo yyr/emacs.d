@@ -54,10 +54,39 @@
 
 ;;; --------------------------------------------------------
 ;;; Reftex
-(autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
-(autoload 'reftex-citation "reftex-cite" "Make citation" nil)
-(autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
+(require 'reftex)
+;; (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
+;; (autoload 'reftex-citation "reftex-cite" "Make citation" nil)
+;; (autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
 (add-hook 'LaTeX-mode-hook  #'reftex-mode)
+
+(setq reftex-plug-into-AUCTeX t ;activate
+      reftex-extra-bindings nil
+      reftex-bibfile-ignore-list nil
+      reftex-guess-label-type t
+      reftex-revisit-to-follow t ; watch out!! bibs are changing
+
+      reftex-use-fonts t   ; make colorful toc
+      reftex-toc-follow-mode nil ; don't follow other toc(s)
+      reftex-toc-split-windows-horizontally t
+      reftex-auto-recenter-toc t
+      ;; reftex-toc-split-windows-fraction 0.2
+
+      reftex-enable-partial-scans t
+      reftex-save-parse-info t
+      reftex-use-multiple-selection-buffers t
+      reftex-cite-format 'natbib)
+
+(loop for x in
+      '(("\C-zt" . reftex-toc)
+        ("\C-zl" . reftex-label)
+        ("\C-zr" . reftex-reference)
+        ("\C-zc" . reftex-citation)
+        ("\C-zv" . reftex-view-crossref)
+        ("\C-zg" . reftex-grep-document)
+        ("\C-zs" . reftex-search-document))
+      do (define-key reftex-mode-map (car x) (cdr x)))
+
 
 (add-hook 'LaTeX-mode-hook
           '(lambda ()
@@ -68,23 +97,7 @@
                      ("frametitle" . 4) ("subsubsection" . 4) ("paragraph" . 5)
                      ("subparagraph" . 6) ("addchap" . -1) ("addsec" . -2)))
 
-             (setq reftex-plug-into-AUCTeX t ;activate
-                   reftex-extra-bindings t
-                   reftex-bibfile-ignore-list nil
-                   reftex-guess-label-type t
-                   reftex-revisit-to-follow t ; watch out!! bibs are changing
 
-                   reftex-use-fonts t   ; make colorful toc
-                   reftex-toc-follow-mode nil ; don't follow other toc(s)
-                   reftex-toc-split-windows-horizontally t
-                   reftex-auto-recenter-toc t
-                   ;; reftex-toc-split-windows-fraction 0.2
-
-                   reftex-enable-partial-scans t
-                   reftex-save-parse-info t
-                   reftex-use-multiple-selection-buffers t
-                   ;; reftex-cite-format 'natbib
-                   )
 
 ;;; not sure how this works
              (setq reftex-section-regexp   ;; standard setting ...
