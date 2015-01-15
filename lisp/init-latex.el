@@ -104,77 +104,7 @@
 
 
 ;;; --------------------------------------------------------
-;;; folding
-(add-hook 'LaTeX-mode-hook (lambda ()
-                             (TeX-fold-mode 1)
-                             (outline-minor-mode 1)
-                             (setq TeX-fold-env-spec-list
-                                   (quote (("[comment]" ("comment"))
-                                           ("[figure]" ("figure"))
-                                           ("[table]" ("table"))
-                                           ("[itemize]" ("itemize"))
-                                           ("[enumerate]" ("enumerate"))
-                                           ("[description]" ("description"))
-                                           ("[overpic]" ("overpic"))
-                                           ("[tabularx]" ("tabularx"))
-                                           ("[code]" ("code"))
-                                           ("[shell]" ("shell")))))))
-
-;; (setq outline-minor-mode-prefix  [(meta ?z)])
-
-;; Outline-minor-mode key map
-(define-prefix-command 'cm-map nil "Outline-")
-                                        ; HIDE
-(define-key cm-map "q" 'hide-sublevels)    ; Hide everything but the top-level headings
-(define-key cm-map "t" 'hide-body)         ; Hide everything but headings (all body lines)
-(define-key cm-map "o" 'hide-other)        ; Hide other branches
-(define-key cm-map "c" 'hide-entry)        ; Hide this entry's body
-(define-key cm-map "l" 'hide-leaves)       ; Hide body lines in this entry and sub-entries
-(define-key cm-map "d" 'hide-subtree)      ; Hide everything in this entry and sub-entries
-;; SHOW
-(define-key cm-map "a" 'show-all)          ; Show (expand) everything
-(define-key cm-map "e" 'show-entry)        ; Show this heading's body
-(define-key cm-map "i" 'show-children)     ; Show this heading's immediate child sub-headings
-(define-key cm-map "k" 'show-branches)     ; Show all sub-headings under this heading
-(define-key cm-map "s" 'show-subtree)      ; Show (expand) everything in this heading & below
-;; MOVE
-(define-key cm-map "u" 'outline-up-heading)                ; Up
-(define-key cm-map "n" 'outline-next-visible-heading)      ; Next
-(define-key cm-map "p" 'outline-previous-visible-heading)  ; Previous
-(define-key cm-map "f" 'outline-forward-same-level)        ; Forward - same level
-(define-key cm-map "b" 'outline-backward-same-level)       ; Backward - same level
-(global-set-key "\M-z" cm-map)
-
-
-;;; --------------------------------------------------------
 ;;; util functions
-
-;; from emacs wiki
-(defun guess-TeX-master (filename)
-  "Guess the master file for FILENAME from currently open .tex files."
-  (let ((candidate nil)
-        (filename (file-name-nondirectory filename)))
-    (save-excursion
-      (dolist (buffer (buffer-list))
-        (with-current-buffer buffer
-          (let ((name (buffer-name))
-                (file buffer-file-name))
-            (if (and file (string-match "\\.tex$" file))
-                (progn
-                  (goto-char (point-min))
-                  (if (re-search-forward
-                       (concat "\\\\input{" filename "}") nil t)
-                      (setq candidate file))
-                  (if (re-search-forward
-                       (concat
-                        "\\\\include{" (file-name-sans-extension
-                                        filename) "}") nil t)
-                      (setq
-                       candidate file))))))))
-    (if candidate
-        (message
-         "TeX master document: %s" (file-name-nondirectory candidate)))
-    candidate))
 
 ;;; http://www.emacswiki.org/emacs/TN
 (require 'tex-buf)

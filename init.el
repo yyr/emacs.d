@@ -128,7 +128,6 @@
 
 ;;; subject
 (load "init-ncl")
-
 (when (and (not on-lab-server) (not on-ms))
   (load "init-latex")
   (load "init-bib"))
@@ -161,6 +160,7 @@
 (load "init-info")
 (load "init-eldoc")
 (load "init-help")
+(load "init-outline")
 
 ;;; web
 (load "init-webjump")
