@@ -27,11 +27,8 @@
 (add-hook 'LaTeX-mode-hook
           (lambda()
             (TeX-PDF-mode t)
-                                        ;            (setq TeX-master (guess-TeX-master (buffer-file-name)))
             (imenu-add-menubar-index)
-            (define-key LaTeX-mode-map (kbd "M-.") 'TeX-complete-symbol)
-
-;;; add additional environments
+            ;; add additional environments
             (LaTeX-add-environments
              '("algorithm" LaTeX-env-label)
              '("example" LaTeX-env-label)
