@@ -121,14 +121,12 @@
 (load "init-compile")
 
 (load "init-fortran")
-(load "init-sass-mode")
 
 ;;; code assistance
 (load "init-flycheck")
 (load "init-etags")
 
 ;;; subject
-(load "init-octave")
 (load "init-ncl")
 (load "init-grads")
 (load "init-gnuplot")
