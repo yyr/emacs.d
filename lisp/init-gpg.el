@@ -1,9 +1,11 @@
 ;;; init-gpg.el
-;;    File: init-pgp.el
 ;; Created: Wednesday, March  7 2012
 
-;;; Description:
-;;
+(defadvice epg--start (around advice-epg-disable-agent activate)
+  (let ((agent (getenv "GPG_AGENT_INFO")))
+    (setenv "GPG_AGENT_INFO" nil)
+    ad-do-it
+    (setenv "GPG_AGENT_INFO" agent)))
 
 ;;; EasyPG
 (setq mml2015-use 'epg
