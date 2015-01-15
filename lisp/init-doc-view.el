@@ -9,10 +9,7 @@
             (local-set-key "G" 'doc-view-goto-page)))
 
 (when (and (not on-lab-server) (not on-ms))
-  (el-get 'sync 'pdf-tools)
-  (add-hook 'doc-view-mode-hook
-            (lambda ()
-              (when (equal (file-name-extension (buffer-file-name)) "pdf")
-                (pdf-tools-install)))))
-
+  (progn
+    (el-get 'sync 'pdf-tools)
+    (pdf-tools-install)))
 ;;; init-doc-view.el ends here
