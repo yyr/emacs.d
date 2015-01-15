@@ -39,8 +39,8 @@
       )
 
 (setq completion-ignored-extensions
-      (append completion-ignored-extensions
-              '(".bak" ".obj" ".map" ".mod" ".rel" ".out")))
+      (delete-dups (append completion-ignored-extensions
+                           '(".bak" ".obj" ".map" ".mod" ".rel" ".out"))))
 
 (setq-default
  frame-title-format `("%b       " ,(user-login-name) "@" ,(system-name) "     "

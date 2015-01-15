@@ -4,12 +4,11 @@
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point nil)
+(setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
-(setq ido-execute-command-cache nil)
 
-;; (el-get 'sync 'ido-ubiquitous)
-;; (ido-ubiquitous-mode 1)
+(el-get 'sync 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
 
 (load "init-smex")
 
@@ -27,6 +26,16 @@
 
 (setq ido-file-extensions-order
       '(".tex" ".org" ".sh" ".ncl" ".py" ".el" ".xml" ".el" ".pdf"))
+
+(setq ido-ignore-buffers '("\\` " "^\*Mess" "^\*Back" ".*Completion" "^\*Ido"
+                           "^\*trace" "*Completions*" "^\*TAGS" "^\*Mus"
+                           "\\`\*.*buffer" "^\*" "#.*"
+                           "*Shell Command Output*" "Async Shell Command"
+                           "^session\.*"))
+
+(setq ido-ignore-directories
+      (delete-dups (append ido-ignore-directories
+                           '(".git" "\\`\\..*"))))
 
 ;; disable auto searching for files unless called explicitly
 (setq ido-auto-merge-delay-time 99999)
