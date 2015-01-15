@@ -35,21 +35,6 @@
              '("proposition" LaTeX-env-label))))
 
 ;;; --------------------------------------------------------
-;;; auto completion support
-(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
-  (setq ac-sources
-        (append
-         '(ac-source-yasnippet
-           ac-source-math-latex
-           ac-source-latex-commands  ac-source-math-unicode)
-         ac-sources)))
-
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (require 'ac-math)
-            (ac-latex-mode-setup)))
-
-;;; --------------------------------------------------------
 ;;; Reftex
 (require 'reftex)
 ;; (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)

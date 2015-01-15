@@ -59,4 +59,19 @@
 ;; define  sources for ielm
 (add-hook 'ielm-mode-hook 'ac-emacs-lisp-mode-setup)
 
+;;; --------------------------------------------------------
+;;; auto completion support
+(defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
+  (setq ac-sources
+        (append
+         '(ac-source-yasnippet
+           ac-source-math-latex
+           ac-source-latex-commands  ac-source-math-unicode)
+         ac-sources)))
+
+(after 'auto-complete
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (ac-latex-mode-setup))))
+
 ;;; init-auto-complete.el ends here
