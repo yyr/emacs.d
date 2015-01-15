@@ -4,7 +4,7 @@
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
+;; (setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
 
 (el-get 'sync 'ido-ubiquitous)
