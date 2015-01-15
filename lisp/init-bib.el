@@ -4,14 +4,11 @@
 ;;; Description:
 ;; Managing bibliography modes
 
-(el-get 'sync '(zotelo))
-
 (setq
  ebib-file-search-dirs '("~/git/bib/")
  ebib-insertion-commands                ; which cite commands you wanna use
  '(("cite" 1 nil) ("citep" 1 nil) ("citet" 1 nil))
- ebib-preload-bib-files '("~/git/bib/fullnames.bib" "~/git/bib/shortnames.bib"
-                          "~/git/bib/cld.bib"))
+ ebib-preload-bib-files '("~/git/bib/fullnames.bib" "~/git/bib/shortnames.bib"))
 
 ;;;;;;;;;;;;;;;;;;;;  bibtex setting  ;;;;;;;;;;;;;;;;;;;;
 (setq bibtex-autokey-names 1
