@@ -7,8 +7,8 @@
 ;; (setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
 
-(el-get 'sync 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
+;; (el-get 'sync 'ido-ubiquitous)
+;; (ido-ubiquitous-mode 1)
 
 ;;; additional keys (copied from source file)
 (defun ido-my-keys ()
