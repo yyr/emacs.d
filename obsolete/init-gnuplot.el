@@ -1,5 +1,4 @@
 ;;; init-gnuplot.el
-;;
 ;; Author: Yagnesh Raghava Yakkala.
 ;; Website: http://yagnesh.org
 
@@ -14,6 +13,5 @@
       (append '(("\\.gp$" . gnuplot-mode))
               auto-mode-alist))
 ;; (global-set-key [(f9)] ’gnuplot-make-buffer)
-
 
 ;;; init-gnuplot.el ends here

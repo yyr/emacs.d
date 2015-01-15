@@ -1,7 +1,5 @@
 ;;; init-grads.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
+;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (el-get 'sync '(emacs-grads))
 
