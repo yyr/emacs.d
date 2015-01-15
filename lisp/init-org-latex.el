@@ -1,10 +1,7 @@
 ;;; init-org-latex.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; letter class, for formal letters
-
 ;;; letter class
 (require 'ox-beamer)
 

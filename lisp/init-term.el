@@ -1,9 +1,5 @@
 ;;; init-term.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-term.el
 ;; Created: Saturday, February  4 2012
-;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; shell, term settings

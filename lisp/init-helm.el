@@ -1,11 +1,6 @@
 ;;; init-helm.el
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-helm.el
 ;; Created: Tuesday, May 29 2012
-
-;;; Description:
-;;
 
 (el-get 'sync 'helm)
 

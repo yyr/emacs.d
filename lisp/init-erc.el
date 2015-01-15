@@ -1,5 +1,4 @@
 ;;; init-erc.el
-;;    File: init-erc.el
 ;; Created: Saturday, August 20 2011
 
 (setq erc-anonymous-login nil)

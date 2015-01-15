@@ -1,6 +1,5 @@
 ;;; init-pre-gnus.el
 
-;;; t
 (setq gnus-init-file (expand-file-name "init-gnus.el" emacsd))
 (setq gnus-home-directory "~/gnus")
 (setq gnus-startup-file "~/gnus/.newsrc")
@@ -10,6 +9,5 @@
 (el-get 'sync 'door-gnus)
 (require 'door-gnus)
 (global-set-key (kbd "<f9> g") 'door-gnus)
-
 
 ;;; init-pre-gnus.el ends here

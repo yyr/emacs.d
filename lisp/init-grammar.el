@@ -1,5 +1,4 @@
 ;;; init-bnf.el
-;;
 
 ;;; http://stackoverflow.com/a/1801004/399964
 (define-generic-mode 'bnf-mode

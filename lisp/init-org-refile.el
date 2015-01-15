@@ -1,12 +1,6 @@
 ;;; init-org-refile.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;    File: init-org-refile.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Tuesday, May 17 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
-
-;;; Description:
-;;  refile stuff
 
 ;;;  Targets include this file and any file contributing to the agenda
 ;;;  - up to 5 levels deep

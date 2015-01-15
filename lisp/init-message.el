@@ -1,15 +1,11 @@
 ;;; init-message.el
-;;
-;;    File: init-message.el
 ;; Created: Wednesday, December  7 2011
 
-;;; Description:
 ;; message mode
-
 (add-hook 'message-setup-hook 'bbdb-get-mail-aliases)
 
 ;;; --------------------------------------------------------
-;;; auto hello thank you
+;;; Auto hello thank you
 (defadvice gnus-summary-reply (after formalities () activate)
   (de-add-formalities))
 
@@ -31,6 +27,7 @@
 
 (setq message-signature t
       message-signature-file "~/.signature")
+
 ;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
 ;; (add-hook 'message-send-hook 'ispell-message)
 

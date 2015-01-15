@@ -1,6 +1,4 @@
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
-;;
 
 ;; org capture settings
 ;; -----------------------------------------------------------------------------

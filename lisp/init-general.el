@@ -1,6 +1,5 @@
 ;;; init-general.el
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;;; General settings
 

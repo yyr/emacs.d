@@ -1,9 +1,6 @@
 ;;; init-cc.el
-;;
 ;;    File: init-cc.el
 ;; Created: 月曜日, 7月 15 2013
-
-;;; Description:
 
 ;;; gdb
 (setq gdb-many-windows t)

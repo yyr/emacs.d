@@ -1,12 +1,7 @@
 ;;; init-help.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-help.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Friday, September 16 2011
-;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
-
-;;; Description:
 ;; Emacs help related settings
 
 ;;; help-map additional keys

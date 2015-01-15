@@ -1,6 +1,5 @@
 ;;; init-doc-view.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-doc-view.el
 ;; Created: Monday, March 31 2014
 
 ;;; docview.

@@ -1,12 +1,7 @@
 ;;; init-sdic.el
 ;; -*- coding: utf-8; -*-
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-sdic.el
 ;; Created: Thursday, July 26 2012
-
-;;; Description:
-;;
 
 ;; (setq sdic-default-coding-system 'euc-japan-unix)
 

@@ -1,11 +1,6 @@
 ;;; init-python.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;    File: init-python.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Friday, July 22 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
-
-;;; Description:
 
 (el-get 'sync '(pylookup
                 highlight-indentation))
@@ -14,7 +9,6 @@
 ;;; Auto Completion
 ;;; --------------------------------------------------------------------
 (load "init-jedi")
-
 
 ;;; Ipython
 (when (executable-find "ipython")

@@ -1,7 +1,5 @@
 ;;; init-diminish.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;;; loading
 (el-get 'sync '(diminish))

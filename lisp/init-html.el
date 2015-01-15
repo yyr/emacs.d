@@ -1,7 +1,5 @@
 ;;; init-html.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (add-hook 'html-mode-hook
           '(lambda ()

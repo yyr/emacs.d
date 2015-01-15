@@ -1,7 +1,5 @@
 ;;; init-org-agenda.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
+;; Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;;;  Org Agenda files and org-dir
 (setq org-directory "~/git/org/")

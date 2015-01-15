@@ -1,7 +1,5 @@
 ;;; init-org-html.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;;; emphasis set up latex
 (setq org-emphasis-alist (quote (("*" bold "<b>" "</b>")

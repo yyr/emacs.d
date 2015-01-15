@@ -1,6 +1,5 @@
 ;;; init-org.el --
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
 
 ;;; load org
 (add-to-list 'auto-mode-alist

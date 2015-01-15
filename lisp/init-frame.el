@@ -1,10 +1,9 @@
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
-;;
+;;; init-frame.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; full screen
 
-;;; http://stackoverflow.com/questions/7763847/maximize-emacs-on-start-upnot-the-fullscreen/7763907#7763907
+;;; http://stackoverflow.com/a/7763907
 (defun max-emacs-x-window (&optional f)
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32

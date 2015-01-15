@@ -1,9 +1,7 @@
 ;;; init-print.el
 ;; Created: Monday, May 21 2012
 
-;;; Description:
 ;; ps print setup
-
 (defun print-header-func ()
   (concat (ps-time-stamp-locale-default) " : " (ps-header-dirpart)))
 

@@ -1,9 +1,6 @@
 ;;; init-org-time.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;    File: org-time.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Wednesday, April 27 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 
@@ -13,6 +10,5 @@
 (add-hook 'org-clock-in-hook '(lambda ()
                                 (if (not org-timer-current-timer)
                                     (org-timer-set-timer '(16)))))
-
 
 ;;; init-org-time.el ends here

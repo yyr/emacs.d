@@ -1,11 +1,6 @@
 ;;; init-session.el
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-session.el
-;; Created: Friday, April 13 2012
-
-;;; Description:
-;;
+;;; Created: Friday, April 13 2012
 
 (setq desktop-save 'if-exists)
 (desktop-save-mode 1)

@@ -1,11 +1,6 @@
 ;;; init-ms.el
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-ms.el
 ;; Created: Tuesday, June 12 2012
-
-;;; Description:
-;;
 
 ;;; Should install MinGW from
 ;;; http://sourceforge.net/projects/mingw/files/Installer/mingw-get-inst/

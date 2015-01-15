@@ -1,12 +1,8 @@
 ;;; init-point.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-point.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Tuesday, August 30 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-
 ;; point-stack
 ;; -----------
 ;; Alternative *simple* mechanism for recording points and buffers and

@@ -1,7 +1,5 @@
 ;;; init-jedi.el
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-jedi.el
 ;; Created: 水曜日, 10月 31 2012
 
 (el-get 'sync '(deferred

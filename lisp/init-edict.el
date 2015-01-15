@@ -1,11 +1,6 @@
 ;;; init-edict.el
-;;
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-edict.el
 ;; Created: Friday, July 27 2012
-
-;;; Description:
-;;
 
 (when (executable-find "hg")
   (el-get 'sync '(edict)))

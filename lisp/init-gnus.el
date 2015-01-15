@@ -1,6 +1,5 @@
 ;;; init-gnus.el
 ;; http://yagnesh.org
-;;
 
 (require 'nnimap)
 (require 'starttls)

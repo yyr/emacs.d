@@ -1,9 +1,6 @@
 ;;; init-ncl.el
-;;
 
-;; load ncl using ncl.
 (el-get 'sync '(ncl-mode))
-
 (load "~/.emacs.d/el-get/ncl-mode/ncl-mode-load.el")
 
 ;; use downloaded documentation instead (for offline use)

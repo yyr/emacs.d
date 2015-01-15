@@ -1,6 +1,4 @@
-;;; init-tramp.el --- tramp settings
 ;;; init-tramp.el
-;;    File: init-tramp.el
 ;; Created: Wednesday, August 28 2013
 
 ;; (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))

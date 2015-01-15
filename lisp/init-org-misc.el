@@ -1,11 +1,6 @@
 ;;; init-org-misc.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;    File: init-org-misc.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Tuesday, May 17 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
-
-;;; Description:
 
 ;;; org-scratch
 (defun dan/switch-to-org-scratch ()
@@ -24,9 +19,7 @@ If the region is active, insert it."
 (font-lock-add-keywords
  'org-mode
  '(("\\[\\(X\\)\\]"
-    (0 (progn (compose-region (match-beginning 1) (match-end 1) "✔") nil)))
-   ))
-
+    (0 (progn (compose-region (match-beginning 1) (match-end 1) "✔") nil)))))
 
 ;;; misc settings
 (setq font-lock-verbose nil             ; to speed up org

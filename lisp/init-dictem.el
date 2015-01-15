@@ -1,9 +1,6 @@
 ;;; init-dictem.el
-;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-dictem.el
 ;; Created: Thursday, August 25 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
 ;; ubuntu packages needed

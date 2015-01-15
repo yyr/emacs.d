@@ -1,10 +1,5 @@
 ;;; init-emms.el
-;;
-;;    File: init-emms.el
 ;; Created: Thursday, July 21 2011
-
-;;; Description:
-;;
 
 (el-get 'sync 'emms)
 (emms-devel)

@@ -1,11 +1,6 @@
 ;;; init-org-diary.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;    File: init-org-diary.el
+;; Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Friday, June 17 2011
-;; License: GPL v3 or later. You should get a copy from <http://www.gnu.org/licenses/gpl.html>
-
-;;; Description:
 
 (setq org-agenda-include-diary nil)
 (setq org-agenda-diary-file "~/git/org/life/diary.org")

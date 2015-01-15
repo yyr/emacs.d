@@ -1,6 +1,5 @@
 ;;; init-el-get.el
-;;    File: init-el-get.el
-;;  Author: Yagnesh Raghava Yakkala <hi@yagnesh.org>
+;;  Author: Yagnesh Raghava Yakkala http://yagnesh.org
 
 ;;; Description:
 ;; El-get package manager., This file should be loaded first. load few

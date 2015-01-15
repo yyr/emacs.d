@@ -1,8 +1,5 @@
 ;;; init-battery.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;;; http://stackoverflow.com/questions/5562974/emacs-is-it-running-on-laptop-or-on-desktop
 (require 'battery)

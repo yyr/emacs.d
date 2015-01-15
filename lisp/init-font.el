@@ -1,7 +1,5 @@
 ;;; init-font.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (defun abstract-screen-width ()
   (cond ((eq 'x window-system) (x-display-pixel-width))

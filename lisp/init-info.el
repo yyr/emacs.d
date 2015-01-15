@@ -1,11 +1,9 @@
 ;;; init-info.el
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;; License: GPL v3 or later
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-;;; Commentary:
 ;; info , searching docs, short cuts
-
 (require 'info-look)
+
 (setq my-info-dir "~/git/info-collection/")
 (add-to-list 'Info-additional-directory-list my-info-dir)
 

@@ -1,8 +1,5 @@
 ;;; init-common-lisp.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; See http://bc.tech.coop/blog/070927.html
 (add-to-list 'auto-mode-alist '("\\.cl$" . lisp-mode))
@@ -33,10 +30,5 @@
                               "basic+search")))))))
 
 (define-key lisp-mode-map (kbd "C-c l") 'lispdoc)
-
-
-
-;;; Sources
-;; ch.coop/blog/070927.html
 
 ;;; init-common-lisp.el ends here

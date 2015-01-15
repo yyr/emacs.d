@@ -1,4 +1,4 @@
-;;; Tags stuff
+;;; Org TAGS stuff
 
 ;; Tags with fast selection keys
 (setq org-tag-alist '(
@@ -23,8 +23,7 @@
                       ("write" . ?R)
                       ("work" . ?W)
                       ("phone" . ?P)
-                      ("home" . ?H)
-                      ))
+                      ("home" . ?H)))
 
 ;; Allow setting single tags without the menu
 (setq org-fast-tag-selection-single-key (quote expert))

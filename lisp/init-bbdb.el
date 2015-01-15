@@ -1,7 +1,5 @@
 ;;; init-bbdb.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (setq bbdb-file "~/git/org/.bbdb")
 (el-get 'sync 'bbdb)
@@ -68,4 +66,5 @@
 
 (define-key gnus-summary-mode-map (kbd ":") 'bbdb-mua-display-records)
 ;; (add-hook 'message-sent-hook 'bbdb-query-create)
+
 ;;; init-bbdb.el ends here

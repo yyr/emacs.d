@@ -1,12 +1,7 @@
 ;;; init-imenu.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-;;; from emacs-starter-kit
 (require 'imenu)
-
 (setq imenu-auto-rescan t)
 
 (defun ido-imenu ()

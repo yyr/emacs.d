@@ -1,7 +1,5 @@
 ;;; init-bookmarks.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: Gpl v3 or later
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 (global-set-key (kbd "<f5> m" ) 'bookmark-set)
 (global-set-key (kbd "<f5> b" ) 'bookmark-jump)

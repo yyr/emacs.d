@@ -1,7 +1,5 @@
 ;;; init-org-beamer.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;;
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; #+LaTeX_CLASS: beamer in org files
 

@@ -1,9 +1,6 @@
 ;;; init-navigation.el
-;;
-;;    File: init-navigation.el
 ;; Created: Tuesday, December 13 2011
 
-;;; Description:
 ;; navigation with in buffer related setup
 
 ;;; loading
