@@ -1,12 +1,8 @@
 ;;; init-mediawiki.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
-;;    File: init-mediawiki.el
+;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Sunday, April  1 2012
-;; License: GPL v3 or later. <http://www.gnu.org/licenses/gpl.html>
 
 ;;; Description:
-;;
 (el-get 'sync '(mediawiki))
 
 (require 'mediawiki)
