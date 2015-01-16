@@ -22,7 +22,8 @@
 ;; (add-to-list 'default-frame-alist '(alpha 100 95))
 
 (el-get 'sync 'smart-mode-line)
-(sml/setup)
+(add-hook 'after-init-hook #'sml/setup)
+
 ;; (sml/apply-theme 'automatic)
 
 ;;; init-frame.el ends here
