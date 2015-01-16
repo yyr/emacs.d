@@ -94,6 +94,7 @@
 ;;; shell, term, comint, tramp
 (load "init-term")
 (load "init-tramp")
+(load "init-unixutils")
 
 ;;; window, frame
 (load "init-windows")
