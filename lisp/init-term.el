@@ -43,7 +43,7 @@
 (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
 (setq comint-process-echoes t)
 
-(add-to-list 'ac-modes 'shell-mode)
-(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
+;; (add-to-list 'ac-modes 'shell-mode)
+;; (add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
 
 ;;; init-term.el ends here
