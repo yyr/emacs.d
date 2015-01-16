@@ -23,11 +23,26 @@
                     (file-name-directory user-init-file)))
 (add-to-list 'load-path emacsd)
 
+;; ----------------------------------------------------------------------------
+;;; Some assistant macros for loading/debug
+;; ----------------------------------------------------------------------------
 (if (symbolp 'with-eval-after-load)
     (defalias 'after #'with-eval-after-load)
   (defmacro after (file &rest body)
     `(eval-after-load ,file
        (lambda () ,@body))))
+
+;; stupid debugger assistant
+(defmacro catch-pkg-load (&optional pkg)
+  "Find out who is loading a PKG if the argument is available or
+mark a check point"
+  (setq debug-on-error t)
+  (if pkg
+      (eval-after-load pkg
+        `(error  "%s is just loaded in %s" ',pkg
+                 (or load-file-name buffer-file-name)))
+    (message "%s already loaded at this point: %s " ',pkg
+             (or load-file-name buffer-file-name))))
 
 ;; ----------------------------------------------------------------------------
 ;;; load individual configuration files
