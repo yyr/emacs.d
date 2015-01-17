@@ -37,13 +37,15 @@
 
 
 ;;; shell completion: readline-complete
-;; (el-get 'sync 'readline-complete)
+(el-get-bundle readline-complete
+  :type github
+  :pkgname "yyr/readline-complete.el")
 
-;; (setq explicit-shell-file-name "bash")
-;; (setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
-;; (setq comint-process-echoes t)
+(setq explicit-shell-file-name "bash")
+(setq explicit-bash-args '("-c" "export EMACS=; stty echo; bash"))
+(setq comint-process-echoes t)
 
-;; (add-to-list 'ac-modes 'shell-mode)
-;; (add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
+(add-to-list 'ac-modes 'shell-mode)
+(add-hook 'shell-mode-hook 'ac-rlc-setup-sources)
 
 ;;; init-term.el ends here
