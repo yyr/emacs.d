@@ -100,7 +100,6 @@ mark a check point"
 
 ;;; help navigation
 (load "init-navigation")
-(load "init-bookmarks")
 (load "init-editing")
 (load "init-imenu")
 (load "init-buffers")
