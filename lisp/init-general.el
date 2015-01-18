@@ -13,6 +13,8 @@
 (setenv "TERM" "xterm")
 (setenv "TMPDIR" "/tmp")
 
+
+
 ;; I dont what this means. but looks imp
 (setq buffer-file-coding-system 'utf-8-unix)
 (setq default-file-name-coding-system 'utf-8-unix)
@@ -20,6 +22,10 @@
 (setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
+
+(setq gc-cons-threshold 20000000)       ; increase gc
+(setq undo-outer-limit  40000000)
+(setq large-file-warning-threshold 100000000) ;; 95mb aprox
 
 (add-to-list 'completion-styles 'substring t)
 
@@ -59,10 +65,6 @@
  case-fold-search t               ; Fold case on searches
  indicate-empty-lines t
  fill-column 78)
-
-(setq gc-cons-threshold 20000000)       ; increase gc
-(setq undo-outer-limit  40000000)
-
 
 ;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)
