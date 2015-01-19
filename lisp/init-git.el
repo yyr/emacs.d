@@ -52,6 +52,7 @@
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
 
+(require 'git-gutter-fringe)
 (setq git-gutter-fr:side 'right-fringe)
 ;; (setq git-gutter:disabled-modes '(org-mode))
 
