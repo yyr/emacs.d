@@ -22,8 +22,17 @@
 ;; (add-to-list 'default-frame-alist '(alpha 100 95))
 
 (el-get 'sync 'smart-mode-line)
-(add-hook 'after-init-hook #'sml/setup)
+(add-hook 'after-init-hook 'sml/setup)
 
+(setq rm-blacklist
+      '(" AC" " Abbrev"
+        " Fill" " hl-p" " Rbow" " yas"
+        " ElDoc" " Fly" " Paredit" " SliNav"
+        " GitGutter" " company" " MRev"
+        " zx" " Ref" " Outl"
+        " Ind"))
+
+;; (setq sml/show-client t)
 ;; (sml/apply-theme 'automatic)
 
 ;;; init-frame.el ends here
