@@ -3,15 +3,18 @@
 (add-hook 'prog-mode 'flycheck-mode)
 (add-hook 'latex-mode 'flycheck-mode)
 
-(global-set-key "\M-o" flycheck-keymap-prefix)
+(define-key flycheck-mode-map flycheck-keymap-prefix nil)
+(setq flycheck-keymap-prefix [(meta ?o)])
+(define-key flycheck-mode-map flycheck-keymap-prefix
+  flycheck-command-map)
 
 (after 'flycheck
   (setq flycheck-idle-change-delay 10)
-       ;; Highlight whole line with error
-       (setq flycheck-highlighting-mode 'columns)
-       (setq flycheck-check-syntax-automatically
-             ;; '(save idle-change new-line mode-enabled)
-             (delq 'new-line flycheck-check-syntax-automatically)))
+  ;; Highlight whole line with error
+  (setq flycheck-highlighting-mode 'columns)
+  (setq flycheck-check-syntax-automatically
+        ;; '(save idle-change new-line mode-enabled)
+        (delq 'new-line flycheck-check-syntax-automatically)))
 
 ;; (add-hook 'prog-mode-hook 'flycheck-mode)
 (dolist (hook '(emacs-lisp-mode-hook
