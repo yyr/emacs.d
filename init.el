@@ -163,11 +163,7 @@ mark a check point"
 (load "init-weather-metno")
 
 ;;; org publish
-(load "init-org-html")
-(load "init-org-latex")
-(load "init-org-beamer")
-
-;;; org misc
+(load "init-org-export")
 (load "init-org-misc")
 
 ;;; info,  help, doc, man(woman) etc..
