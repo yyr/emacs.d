@@ -62,17 +62,16 @@
 ;;; auto completion support
 (defun ac-latex-mode-setup ()         ; add ac-sources to default ac-sources
   (setq ac-sources
-        (append
-         '(ac-source-yasnippet
-           ac-source-math-latex
-           ac-source-latex-commands  ac-source-math-unicode)
-         ac-sources)))
+        (delete-dups
+         (append
+          '(ac-source-yasnippet
+            ac-source-math-latex
+            ac-source-latex-commands
+            ac-source-math-unicode)
+          ac-sources))))
 
-(after 'auto-complete
-  (add-hook 'LaTeX-mode-hook
-            (lambda ()
-              (ac-latex-mode-setup))))
-
+(add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
+(add-hook 'LaTeX-mode-hook 'ac-latex-mode-setup)
 
 ;;; elisp
 ;;; tkf on https://github.com/m2ym/auto-complete/issues/81
