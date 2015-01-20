@@ -1,8 +1,10 @@
 ;;; init-flycheck.el
 (el-get 'sync 'flycheck)
+(require 'flycheck)
 (add-hook 'prog-mode 'flycheck-mode)
 (add-hook 'latex-mode 'flycheck-mode)
 
+(global-unset-key (kbd "M-o"))         ; stupid prefix I never used in my life.
 (define-key flycheck-mode-map flycheck-keymap-prefix nil)
 (setq flycheck-keymap-prefix [(meta ?o)])
 (define-key flycheck-mode-map flycheck-keymap-prefix
