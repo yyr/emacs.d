@@ -38,4 +38,6 @@ If the region is active, insert it."
         ("A" . (org-agenda nil "T" t))
         ("$" . org-archive-subtree)))
 
+(el-get-bundle 'org-tree-slide)
+
 ;;; init-org-misc.el ends here
