@@ -10,5 +10,10 @@
 (when (and (not on-lab-server) (not on-ms))
   (progn
     (el-get 'sync 'pdf-tools)
-    (pdf-tools-install)))
+    (pdf-tools-install)
+    (loop for key in
+          '(("G" pdf-view-goto-page)
+            )
+          do (define-key pdf-view-mode-map (car key) (cadr key)))))
+
 ;;; init-doc-view.el ends here
