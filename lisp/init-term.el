@@ -20,10 +20,6 @@
 ;; interpret and use ansi color codes in shell output windows
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;;;
-(autoload 'flymake-shell-load
-  "flymake-shell" "On-the-fly syntax checking of shell scripts" t)
-
 ;; (add-hook 'sh-mode-hook 'flymake-shell-load)
 (setq shell-file-name "bash") ;;use bash for shell
 
