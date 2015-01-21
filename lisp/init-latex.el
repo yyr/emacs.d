@@ -6,7 +6,7 @@
 ;;; Description:
 ;; settings for auctex and reftex .. etc
 
-(el-get 'sync '(auctex zotelo))
+(el-get 'sync '(auctex zotelo timer-revert))
 
 (setq
  TeX-electric-escape t
