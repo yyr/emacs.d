@@ -9,7 +9,7 @@
 (setq load-path (cons
                  (expand-file-name "el-get/el-get"
                                    (file-name-directory user-init-file))
-                      load-path))
+                 load-path))
 
 (when (symbolp 'package-archives)
   (setq package-archives
@@ -71,21 +71,23 @@
                          (concat (file-name-directory el-get-script) "recipes")))
          (rfilename  (expand-file-name rfile target-dir) )
          (coding-system-for-write 'utf-8))
-    (if (file-exists-p rfilename)
-        (message "recipe file for %s already exists" pkg)
-      (with-temp-file rfilename
-        (message "writing recipe file for %s" pkg)
-        (insert
-         (format
-          "(:name %s
+    (when (file-exists-p rfilename)
+      (if (yes-or-no-p (format "\"%s\" already exists. delete it?" pkg))
+          (progn
+            (with-temp-file rfilename
+              (message "writing recipe file for %s" pkg)
+              (insert
+               (format
+                "(:name %s
 :description \"\"
 :website \"%s\"
 :type github
 :depends nil
 :pkgname \"%s\")"
-          pkg url (concat user "/" pkg)))
-        (emacs-lisp-mode)
-        (indent-region (point-min) (point-max)))
-      (find-file-other-window rfilename))))
+                pkg url (concat user "/" pkg)))
+              (emacs-lisp-mode)
+              (indent-region (point-min) (point-max)))
+            (find-file-other-window rfilename))
+        (find-file-other-window rfilename)))))
 
 ;; init-el-get.el ends here
