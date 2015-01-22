@@ -31,25 +31,6 @@
                   (interactive)
                   (ignore-errors (previous-line 5))))
 
-(global-set-key (kbd "C-S-f")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-char 5))))
-
-(global-set-key (kbd "C-S-b")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (backward-char 5))))
-
-(global-set-key (kbd "M-F")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (forward-word 5))))
-
-(global-set-key (kbd "M-B")
-                (lambda ()
-                  (interactive)
-                  (ignore-errors (backward-word 5))))
 ;;; ---
 
 
