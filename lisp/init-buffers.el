@@ -2,9 +2,9 @@
 ;; Created: Tuesday, August 30 2011
 
 ;;; uniquify
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets
-      uniquify-after-kill-buffer-p t
-      uniquify-ignore-buffers-re "^\\*")
+(setq  uniquify-buffer-name-style 'post-forward-angle-brackets
+       uniquify-after-kill-buffer-p t
+       uniquify-ignore-buffers-re "^\\*")
 
 ;;; Ibuffer
 ;;; --------------------------------------------------------
@@ -97,10 +97,7 @@
 
          ("EMMS" (or  (name . "^\\*Music")
                       (name . "^\\*EMMS")
-                      (mode . emms-browser-mode)))
-         )))
-
-
+                      (mode . emms-browser-mode))))))
 
 (add-hook 'ibuffer-mode-hook
           (lambda ()
@@ -149,7 +146,7 @@ FIXME: make an exceptions for few buffers like gnus, emms"
     (mapc
      (lambda (buf-file)
        (setq recently-killed-list
-	     (delq buf-file recently-killed-list)))
+             (delq buf-file recently-killed-list)))
      buffer-files-list)
     (find-file
      (if arg (nth arg recently-killed-list)
