@@ -32,4 +32,9 @@
 (define-key help-mode-map (kbd "M-<left>") 'help-go-back)
 (define-key help-mode-map (kbd "M-<right>") 'help-go-forward)
 
+(el-get 'sync 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+(guide-key-mode 1)
+(setq guide-key/guide-key-sequence t)
+
 ;;; init-help.el ends here
