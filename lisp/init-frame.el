@@ -32,6 +32,11 @@
         " zx" " Ref" " Outl"
         " Ind"))
 
+(el-get 'sync '(jazz-theme
+                solarized-emacs))
+
+
+
 ;; (setq sml/show-client t)
 ;; (sml/apply-theme 'automatic)
 
