@@ -46,18 +46,13 @@
        (mapcar
         'el-get-source-name el-get-sources)))
 
-;; package needed for only my laptop
-(when (and on-laptop
-           (not on-ms))
-  (setq my-packages
-        (append
-         '(textile-mode
-           markdown-mode
-           haml-mode
-           sass-mode)
-         my-packages)))
-
 (el-get 'sync my-packages)
+
+(el-get 'sync 'auto-compile)
+;; (require 'auto-compile)
+;; (auto-compile-on-load-mode 1)
+;; (auto-compile-on-save-mode 1)
+
 
 (defun el-get-create-recipe-from-github-url (url &optional target-dir)
   (interactive "sURL of Elisp Package: ")
