@@ -18,6 +18,12 @@
 ;;; rebase mode
 (autoload 'rebase-mode "rebase-mode" nil t)
 
+; (setq magit-highlight-indentation nil)
+; (setq magit-highlight-trailing-whitespace nil)
+; (setq magit-highlight-whitespace nil)
+; (setq magit-diff-refine-hunk nil)
+(setq magit-backup-untracked nil)       ; lighten magit
+
 ;;; http://whattheemacsd.com/setup-magit.el-02.html
 (defun magit-toggle-whitespace ()
   (interactive)
