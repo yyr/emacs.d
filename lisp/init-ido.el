@@ -9,6 +9,13 @@
 
 ;; (el-get 'sync 'ido-ubiquitous)
 ;; (ido-ubiquitous-mode 1)
+(el-get 'sync '(flx
+                ido-vertical-mode))
+(ido-vertical-mode 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
 
 ;;; additional keys (copied from source file)
 (defun ido-my-keys ()
