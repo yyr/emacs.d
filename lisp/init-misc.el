@@ -36,11 +36,6 @@
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
-(defun reload-init-file ()
-  "reloads init file .emacs.d/init.el"
-  (interactive)
-  (load-file "~/.emacs.d/init.el"))
-
 ;; goto-matching-paren
 ;; -------------------
 ;; If point is sitting on a parenthetic character, jump to its match.

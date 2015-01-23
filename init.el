@@ -44,6 +44,11 @@ mark a check point"
     (message "%s already loaded at this point: %s " ',pkg
              (or load-file-name buffer-file-name))))
 
+(defun reload-init-file ()
+  "reloads init file .emacs.d/init.el"
+  (interactive)
+  (load-file "~/.emacs.d/init.el"))
+
 ;; ----------------------------------------------------------------------------
 ;;; load individual configuration files
 ;; ----------------------------------------------------------------------------
