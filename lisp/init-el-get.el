@@ -59,6 +59,16 @@
 
 (el-get 'sync my-packages)
 
+(defun el-get-recipe-format (pkg url user)
+  (format
+   "(:name %s
+:description \"\"
+:website \"%s\"
+:type github
+:depends nil
+:pkgname \"%s\")"
+   pkg url (concat user "/" pkg)))
+
 (defun el-get-create-recipe-from-github-url (url &optional target-dir)
   (interactive "sURL of Elisp Package: ")
   (let* ((href (url-generic-parse-url url))
@@ -69,25 +79,14 @@
          (rfile (concat pkg ".rcp"))
          (target-dir (or target-dir
                          (concat (file-name-directory el-get-script) "recipes")))
-         (rfilename  (expand-file-name rfile target-dir) )
+         (rfilename  (expand-file-name rfile target-dir))
          (coding-system-for-write 'utf-8))
-    (when (file-exists-p rfilename)
-      (if (yes-or-no-p (format "\"%s\" already exists. delete it?" pkg))
-          (progn
-            (with-temp-file rfilename
-              (message "writing recipe file for %s" pkg)
-              (insert
-               (format
-                "(:name %s
-:description \"\"
-:website \"%s\"
-:type github
-:depends nil
-:pkgname \"%s\")"
-                pkg url (concat user "/" pkg)))
-              (emacs-lisp-mode)
-              (indent-region (point-min) (point-max)))
-            (find-file-other-window rfilename))
-        (find-file-other-window rfilename)))))
+    (if  (file-exists-p rfilename)
+        (message (format "\"%s\" already exists." pkg))
+      (message "writing recipe file for %s" pkg)
+      (el-get-write-recipe (el-get-recipe-format pkg url user)
+                           target-dir))
+    (find-file-other-window rfilename)))
+
 
 ;; init-el-get.el ends here
