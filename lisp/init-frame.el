@@ -30,7 +30,7 @@
         " ElDoc" " Fly" " Paredit" " SliNav"
         " GitGutter" " company" " MRev"
         " zx" " Ref" " Outl"
-        " Ind"))
+        " Ind" " Guide" " Compiling"))
 
 (el-get 'sync '(jazz-theme
                 solarized-emacs))
