@@ -161,7 +161,6 @@ mark a check point"
 (load "init-org-agenda")
 (load "init-org-tags")
 (load "init-org-capture")
-(load "init-org-refile")
 (load "init-org-ob")
 (load "init-org-diary")
 (load "init-calender")
