@@ -78,8 +78,10 @@
     (if  (file-exists-p rfilename)
         (message (format "\"%s\" already exists." pkg))
       (message "writing recipe file for %s" pkg)
-      (el-get-write-recipe (el-get-recipe-format pkg url user)
-                           target-dir))
+      (with-temp-file rfilename
+        (emacs-lisp-mode)
+        (insert (el-get-recipe-format pkg url user))
+        (indent-buffer)))
     (find-file-other-window rfilename)))
 
 
