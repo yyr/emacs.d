@@ -1,7 +1,4 @@
-;;; init-webjump.el
-;;
-;; Copyright (C) Yagnesh Raghava Yakkala. www.yagnesh.org
-;; License: GPL v3 or later
+;;; init-web.el
 
 (after 'webjump
   (setq webjump-sites
@@ -11,4 +8,5 @@
 
 (global-set-key "\C-cj" 'webjump)
 
-;;; init-webjump.el ends here
+
+;;; init-web.el ends here

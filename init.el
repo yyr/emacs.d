@@ -177,7 +177,7 @@ mark a check point"
 (load "init-outline")
 
 ;;; web
-(load "init-webjump")
+(load "init-web")
 (load "init-erc")
 
 ;;;  misc
