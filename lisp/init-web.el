@@ -8,5 +8,6 @@
 
 (global-set-key "\C-cj" 'webjump)
 
+(el-get 'sync 'sx)
 
 ;;; init-web.el ends here
