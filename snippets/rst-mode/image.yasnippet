@@ -1,6 +1,8 @@
 # This was cloned from a TextMate bundle for yasnippet.
 #name : image
-#key : image
+#key : img
 # --
 .. image:: ${1:path}
+   :align: ${2:$$(yas-choose-value '("right" "left" "center"))}
+   :width: ${3:$$(yas-choose-value '("300" "400" "600"))}
 $0
