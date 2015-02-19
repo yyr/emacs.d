@@ -8,6 +8,10 @@
 
 (global-set-key "\C-cj" 'webjump)
 
-(el-get 'sync 'sx)
+(el-get 'sync '(sx tinkerer))
+
+
+;;; Tinkerer
+(setq tinkerer-root-path "~/git/yorg/")
 
 ;;; init-web.el ends here
