@@ -34,4 +34,7 @@
           (lambda ()
             (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)))
 
+(global-set-key (kbd "C-<f8>")
+                'flyspell-check-previous-highlighted-word)
+
 ;;; init-flyspell.el ends here
