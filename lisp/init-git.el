@@ -72,5 +72,9 @@
   (el-get 'sync 'monky)
   (setq monky-process-type 'cmdserver))
 
+;;; Projectile
+(projectile-global-mode 1)
+;; (setq projectile-enable-caching nil)
+(setq projectile-indexing-method 'align)
 
 ;;; init-git.el ends here
