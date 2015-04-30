@@ -251,6 +251,7 @@ License: GPL v3 or later
   (let* ((prefix "http://webcache.googleusercontent.com/search?q=cache:")
          (w (replace-regexp-in-string "^http://" "" url))
          (cache-url (concat prefix w)))
+    (message "Browsing %s" cache-url )
     (browse-url cache-url)))
 
 (defun toggle-debugger ()

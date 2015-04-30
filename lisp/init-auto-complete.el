@@ -97,6 +97,6 @@
   (my-aif (function-called-at-point)
       (my-popup-message (ac-symbol-documentation it))))
 (define-key emacs-lisp-mode-map (kbd "C-S-SPC") 'my-popup-describe-symbol)
-(define-key ielm-map (kbd "C-S-SPC") 'my-popup-describe-symbol)
+;; (define-key ielm-map (kbd "C-S-SPC") 'my-popup-describe-symbol)
 
 ;;; init-auto-complete.el ends here

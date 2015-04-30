@@ -10,6 +10,7 @@
 (dolist (hook '(org-mode-hook
                 text-mode-hook
                 erc-mode-hook
+                LaTeX-mode-hook
                 message-mode-hook))
   (add-hook hook (lambda ()
                    (flyspell-mode 1))))
@@ -26,8 +27,8 @@
                 nxml-mode-hook
                 crontab-mode-hook
                 perl-mode-hook
-                javascript-mode-hook
-                LaTeX-mode-hook))
+                javascript-mode-hook))
+
   (add-hook hook 'flyspell-prog-mode))
 
 (add-hook 'nxml-mode-hook
