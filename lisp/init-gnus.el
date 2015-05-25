@@ -43,13 +43,12 @@
 
 ;;; localhost dovecot IMAP
 
-(setq imap-shell-program '("/usr/lib/dovecot/imap 2> /dev/null"))
-
-(if (file-directory-p "~/Maildir")
-    (add-to-list 'gnus-secondary-select-methods
-                 '(nnimap "localimap"
-                          (nnimap-address "localhost")
-                          (nnimap-stream ssl))))
+;; (setq imap-shell-program '("/usr/lib/dovecot/imap 2> /dev/null"))
+;; (if (file-directory-p "~/Maildir")
+;;     (add-to-list 'gnus-secondary-select-methods
+;;                  '(nnimap "localimap"
+;;                           (nnimap-address "localhost")
+;;                           (nnimap-stream ssl))))
 
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
