@@ -254,6 +254,13 @@ License: GPL v3 or later
     (message "Browsing %s" cache-url )
     (browse-url cache-url)))
 
+(defun doi-resolver (doi)
+  (interactive "sDOI: ")
+  (let* ((prefix "http://dx.doi.org/")
+         (doi-url (concat prefix doi)))
+    (message "Opening %s" doi-url)
+    (browse-url doi-url)))
+
 (defun toggle-debugger ()
   "alternative to stupid `toggle-debug-on-error'"
   (interactive)
