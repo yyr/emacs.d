@@ -1,3 +1,5 @@
+(package-initialize)
+
 ;;; Emacs Init
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
