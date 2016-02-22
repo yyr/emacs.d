@@ -5,7 +5,7 @@
 
 ;;; load org
 (add-to-list 'auto-mode-alist
-             '("\\.\\(org_archive\\|txt\\)$" . org-mode))
+             '("\\.\\(org_archive\\)$" . org-mode))
 
 (require 'ox-beamer)
 (require 'org-indent)
