@@ -7,6 +7,7 @@
                 webjump-sample-sites)))
 
 (global-set-key "\C-cj" 'webjump)
+(setq browse-url-firefox-program "firefox")
 
 (el-get 'sync '(sx tinkerer))
 

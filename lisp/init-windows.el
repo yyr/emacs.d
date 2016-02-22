@@ -88,7 +88,8 @@
     (other-window 1)
     (switch-to-buffer pb)
     (when arg
-      (transpose-buffers 1))))
+      (transpose-buffers 1))
+    (switch-to-buffer cb)))
 
 (global-set-key (kbd "C-S-<f7>") 'previous-buffer-in-other-window)
 
