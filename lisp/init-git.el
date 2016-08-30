@@ -5,7 +5,7 @@
                 projectile))
 
 (autoload 'magit-status "magit" nil t)
-(global-set-key (kbd "M-<f12>") 'magit-status)
+(global-set-key (kbd "C-<f10>") 'magit-status)
 
 ;; (setq magit-repo-dirs `())
 (setq magit-commit-signoff nil)

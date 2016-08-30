@@ -30,7 +30,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;;;  Custom Key Bindings
-(global-set-key (kbd "<f12>") 'org-agenda)
+(global-set-key (kbd "<f10>") 'org-agenda)
 (define-key org-mode-map (kbd "C-c C-e") 'org-export-dispatch )
 
 ;;; save org-buffers every hour
