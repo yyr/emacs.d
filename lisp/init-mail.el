@@ -42,7 +42,7 @@ NOTE: for a \"gmail\" switch there should be corresponding
 
                  (t
                   "default"))))
-          (message "mstmp args given: -a %s" account)
+          (message "msmtp args given: -a %s" account)
           (setq message-sendmail-extra-arguments (list '"-a" account))))))
 
 (add-hook 'message-send-mail-hook 'msmtp-switch-args)
