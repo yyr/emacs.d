@@ -304,4 +304,22 @@ License: GPL v3 or later
   (funcall 'set (intern hook) nil)
   (message "%s set to nil" hook))
 
+
+;;; https://lists.gnu.org/archive/html/help-gnu-emacs/2012-02/msg00152.html
+(defvar input-method "telugu-itrans")
+(defun translate-to-telugu (filename)
+  (interactive "fFile to be translated: ")
+  (let ((inp (with-temp-buffer
+               (insert-file-contents filename)
+               (buffer-string)))
+        (out-file-name (concat (file-name-sans-extension filename)
+                               "-te" (file-name-extension filename t))))
+    (with-temp-buffer
+      (switch-to-buffer (current-buffer))
+      (setq buffer-file-coding-system 'utf-8)
+      (set-input-method input-method t)
+      (execute-kbd-macro inp)
+      (write-file out-file-name))))
+
+
 ;;; init-utils-el ends here
