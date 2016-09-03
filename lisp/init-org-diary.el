@@ -10,8 +10,8 @@
 
 ;;; diary supplement Nick Dokos org-mode mailing list
 ;;; location: sapporo
-(setq calendar-latitude +43.0)
-(setq calendar-longitude +141.21)
+(setq calendar-latitude +18.52)
+(setq calendar-longitude +73.85)
 
 (defun diary-sunrise ()
   (let ((dss (diary-sunrise-sunset)))
