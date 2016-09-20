@@ -41,6 +41,13 @@
              '(nnimap "hc"
                       (nnimap-address "mail.hcoop.net")))
 
+(add-to-list 'gnus-secondary-select-methods
+             '(nnimap "tropmet"
+                      (nnimap-address "mail.tropmet.res.in")
+                      (nnimap-stream network)
+                      (nnimap-server-port 143)))
+
+
 ;;; localhost dovecot IMAP
 
 ;; (setq imap-shell-program '("/usr/lib/dovecot/imap 2> /dev/null"))
