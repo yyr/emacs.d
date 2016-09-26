@@ -39,5 +39,14 @@ If the region is active, insert it."
         ("$" . org-archive-subtree)))
 
 (el-get-bundle 'org-tree-slide)
-
+(when (require 'org-tree-slide nil t)
+  (define-key org-tree-slide-mode-map (kbd "<left>")
+    'org-tree-slide-move-previous-tree)
+  (define-key org-tree-slide-mode-map (kbd "<right>")
+    'org-tree-slide-move-next-tree)
+  (define-key org-tree-slide-mode-map (kbd "<f11>")
+    'org-tree-slide-content)
+  (setq org-tree-slide-skip-outline-level 2)
+  (org-tree-slide-narrowing-control-profile)
+  (setq org-tree-slide-skip-done nil))
 ;;; init-org-misc.el ends here
