@@ -88,8 +88,8 @@ mark a check point"
 (load "init-auto-insert")
 (load "init-flyspell")
 (load "init-hippie-expand")
-(load "init-auto-complete")
-;; (load "init-company")
+;; (load "init-auto-complete")
+(load "init-company")
 
 (load "init-yasnip")
 (load "init-multiple-cursors")
