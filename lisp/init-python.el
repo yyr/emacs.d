@@ -5,10 +5,17 @@
 (el-get 'sync '(pylookup
                 highlight-indentation))
 
+(el-get-bundle company-jedi :depends (company-mode))
+
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+
+
 ;;; --------------------------------------------------------------------
 ;;; Auto Completion
 ;;; --------------------------------------------------------------------
-(load "init-jedi")
+;(load "init-jedi")
 
 ;;; Ipython
 (when (executable-find "ipython")

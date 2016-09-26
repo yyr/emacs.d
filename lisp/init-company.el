@@ -4,6 +4,7 @@
 
 (el-get  'sync  'company-mode)
 (require 'company)
+(setq company-minimum-prefix-length 2)
 
 (add-hook 'after-init-hook 'global-company-mode)
 (define-key company-active-map (kbd "C-n") 'company-select-next)
