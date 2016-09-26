@@ -29,8 +29,8 @@ NOTE: for a \"gmail\" switch there should be corresponding
                (account
                 (cond
                  ;; live
-                 ((string-match "live.com" from)
-                  "live")
+                 ((string-match "tropmet" from)
+                  "tropmet")
 
                  ;; gmail
                  ((string-match "yagneshmsc" from)
