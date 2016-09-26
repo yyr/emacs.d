@@ -1,9 +1,8 @@
 ;;; auto-complete mode
 
-(el-get 'sync '(auto-complete
-                ac-math))
-
+(el-get 'sync 'auto-complete)
 (ac-config-default)
+
 
 (add-to-list 'completion-styles 'initials t)
 (add-to-list 'ac-sources 'ac-source-semantic)
