@@ -149,6 +149,7 @@ mark a check point"
 
 ;;; subject
 (load "init-ncl")
+(load "init-ferret")
 (when (and (not on-lab-server) (not on-ms))
   (load "init-latex")
   (load "init-bib"))
