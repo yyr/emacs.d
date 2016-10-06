@@ -36,9 +36,8 @@ NOTE: for a \"gmail\" switch there should be corresponding
                  ((string-match "yagneshmsc" from)
                   "gmail")
 
-                 ;; lab mail
-                 ((string-match "yagnesh@hokudai" from)
-                  "hokudai")
+                 ((string-match "hi" from)
+                  "hc")
 
                  (t
                   "default"))))
