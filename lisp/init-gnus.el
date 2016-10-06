@@ -41,11 +41,11 @@
              '(nnimap "hc"
                       (nnimap-address "mail.hcoop.net")))
 
-(add-to-list 'gnus-secondary-select-methods
-             '(nnimap "tropmet"
-                      (nnimap-address "mail.tropmet.res.in")
-                      (nnimap-stream network)
-                      (nnimap-server-port 143)))
+;; (add-to-list 'gnus-secondary-select-methods
+;;              '(nnimap "tropmet"
+;;                       (nnimap-address "mail.tropmet.res.in")
+;;                       (nnimap-stream network)
+;;                       (nnimap-server-port 143)))
 
 
 ;;; localhost dovecot IMAP
@@ -57,11 +57,19 @@
 ;;                           (nnimap-address "localhost")
 ;;                           (nnimap-stream ssl))))
 
+
+;;; Pop
+(add-to-list 'mail-sources
+             '(pop :server "mail.tropmet.res.in"
+                   :user "yagnesh.yakkala"
+                   :leave 14))
+
 (when on-lab-computer
   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
                                    :user "vh0004"
                                    :leave 14)))
 
+;;; Fetched
 ;; (setq mail-source-delete-incoming t)
 ;; (setq mail-sources
 ;;       '((maildir :path "~/Maildir/live/")
@@ -102,7 +110,7 @@
 
 ;; Don't show me a group that has no new messages
 (setq gnus-group-list-inactive-groups nil
-      gnus-permanently-visible-groups "INBOX"
+      gnus-permanently-visible-groups "INBOX$\\|trop"
       gnus-list-groups-with-ticked-articles nil)
 
 (defun gnus-topic-select-group (&optional all)
