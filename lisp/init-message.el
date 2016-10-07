@@ -31,8 +31,20 @@
 ;; (setq message-signature (lambda () (shell-command-to-string "/usr/games/fortune -n perl")))
 ;; (add-hook 'message-send-hook 'ispell-message)
 
-;; (add-hook 'message-mode-hook 'turn-on-orgstruct++)
-;; (add-hook 'message-mode-hook 'turn-on-orgtbl)
+;;; Every mail sent from gnus will have a Bcc and equal to From id So server
+;;; has a copy of outgoing email. This also allows to use a localhost smtp
+;;; server.
+(setq message-default-mail-headers "Bcc: \n")
+(defun message-update-bcc-from-from ()
+  (let ((from
+         (save-restriction
+           (message-narrow-to-headers)
+           (message-fetch-field "From"))))
+    (message-goto-bcc)
+    (unless (message-fetch-field "Bcc")
+        (insert (format " %s" from)))))
+
+(setq gnus-message-setup-hook 'message-update-bcc-from-from)
 
 (add-hook 'message-mode-hook
           (lambda ()
