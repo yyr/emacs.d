@@ -6,7 +6,8 @@
                 highlight-indentation
                 sphinx-doc
                 company-jedi
-                py-isort))
+                py-isort
+                py-yapf))
 
 ;;; plakes8, isort, yapf
 
