@@ -4,16 +4,21 @@
 
 (el-get 'sync '(pylookup
                 highlight-indentation
-                sphinx-doc))
+                sphinx-doc
+                company-jedi
+                py-isort))
 
-(el-get-bundle company-jedi :depends (company-mode))
+;;; plakes8, isort, yapf
 
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi)
   (require 'sphinx-doc)
-  (sphinx-doc-mode 1))
+  (require 'py-yapf)
+  (require 'py-isort)
+  (sphinx-doc-mode 1)
+  (py-yapf-enable-on-save)
+  (add-hook (make-local-variable 'before-save-hook) 'py-isort-before-save))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
-
 
 ;;; --------------------------------------------------------------------
 ;;; Auto Completion
