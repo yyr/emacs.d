@@ -3,12 +3,15 @@
 ;; Created: Friday, July 22 2011
 
 (el-get 'sync '(pylookup
-                highlight-indentation))
+                highlight-indentation
+                sphinx-doc))
 
 (el-get-bundle company-jedi :depends (company-mode))
 
 (defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
+  (add-to-list 'company-backends 'company-jedi)
+  (require 'sphinx-doc)
+  (sphinx-doc-mode 1))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
 
