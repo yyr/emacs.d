@@ -7,7 +7,9 @@
 (el-get 'sync '(direx dired-details)) ;; Make dired less verbose
 
 (setq dired-recursive-deletes 'always)
-(setq dired-listing-switches "-alh")
+(setq dired-listing-switches "-alht")
+(setq dired-dwim-target t)
+
 
 (after 'dired
        (require 'dired-x)
