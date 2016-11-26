@@ -182,23 +182,4 @@ If there is still something left do do start the next latex-command."
 (setq reftex-default-bibliography
       '("/home/yagnesh/git/thesis/thesis.bib"))
 
-
-;;; pdf-tools
-(when (and (not on-lab-server) (not on-ms))
-  (progn
-    (el-get 'sync 'pdf-tools)
-    (pdf-tools-install)
-    ;; (loop for key in
-    ;;       '(("G" pdf-view-goto-page))
-    ;;       do (define-key pdf-view-mode-map (car key) (cadr key)))
-    ))
-
-(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-      TeX-source-correlate-start-server t)
-
-;; Update PDF buffers after successful LaTeX runs
-
-(add-hook 'TeX-after-TeX-LaTeX-command-finished-hook
-          #'TeX-revert-document-buffer)
-
 ;;; init-latex.el ends here
