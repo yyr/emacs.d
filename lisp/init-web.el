@@ -9,10 +9,11 @@
 (global-set-key "\C-cj" 'webjump)
 (setq browse-url-firefox-program "firefox")
 
-(el-get 'sync '(sx tinkerer))
-
+;;; sx
+(el-get 'sync 'sx)
 
 ;;; Tinkerer
+(el-get 'sync 'tinkerer)
 (setq tinkerer-root-path "~/git/yorg/")
 
 ;;; init-web.el ends here
