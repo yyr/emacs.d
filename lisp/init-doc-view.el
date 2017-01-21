@@ -12,10 +12,9 @@
   (progn
     (el-get 'sync 'pdf-tools)
     (pdf-tools-install)
-    ;; (loop for key in
-    ;;       '(("G" pdf-view-goto-page))
-    ;;       do (define-key pdf-view-mode-map (car key) (cadr key)))
-    ))
+    (loop for key in
+          '(("G" pdf-view-goto-page))
+          do (define-key pdf-view-mode-map (car key) (cadr key)))))
 
 (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
       TeX-source-correlate-start-server t)
