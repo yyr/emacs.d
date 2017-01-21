@@ -65,6 +65,9 @@ mark a check point"
 ;;; package managers
 (load "init-el-get")
 
+;;; version control
+(load "init-git")
+
 ;;; IDE , make
 ;; (load "init-cedet")
 
@@ -154,9 +157,6 @@ mark a check point"
   (load "init-latex")
   (load "init-bib"))
 (load "init-doc-view")
-
-;;; version control
-(load "init-git")
 
 ;;; ORG
 (load "init-org")
