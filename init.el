@@ -15,8 +15,7 @@
 
 (defvar on-laptop (string-match "rag" (system-name)))
 (defvar on-lab-computer (string-match "sealion" (system-name)))
-(defvar on-lab-server (or (string-match "amu" (system-name))
-                          (string-match "yuz" (system-name))))
+(defvar on-lab-server (string-match "iitm" (system-name)))
 (defvar on-ms (string-match "windows" (format "%s" system-type)))
 
 ;;;
