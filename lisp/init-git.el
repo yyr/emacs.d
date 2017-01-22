@@ -24,26 +24,6 @@
 ; (setq magit-diff-refine-hunk nil)
 (setq magit-backup-untracked nil)       ; lighten magit
 
-;;; http://whattheemacsd.com/setup-magit.el-02.html
-(defun magit-toggle-whitespace ()
-  (interactive)
-  (if (member "-w" magit-diff-options)
-      (magit-dont-ignore-whitespace)
-    (magit-ignore-whitespace)))
-
-(defun magit-ignore-whitespace ()
-  (interactive)
-  (add-to-list 'magit-diff-options "-w")
-  (magit-refresh))
-
-(defun magit-dont-ignore-whitespace ()
-  (interactive)
-  (setq magit-diff-options (remove "-w" magit-diff-options))
-  (magit-refresh))
-
-(eval-after-load "magit"
-  '(define-key magit-status-mode-map (kbd "W") 'magit-toggle-whitespace))
-
 ;;; git gutter.
 ;; If you enable global minor mode
 (global-git-gutter-mode t)
