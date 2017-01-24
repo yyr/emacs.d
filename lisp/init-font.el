@@ -46,4 +46,10 @@
 (define-key global-map [(control ?z) ?-] 'font-decrease)      ; Bind to C-z -
 
 
+(set-face-attribute 'default nil
+                    :height 95
+                    :width 'extra-condensed
+                    ;; :family "DejaVu Sans Condensed"
+                    :family "DejaVu Sans Mono")
+
 ;;; init-font.el ends here
