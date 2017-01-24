@@ -39,11 +39,11 @@ With prefix argument, insert date and time."
   (if (= arg 16)
       (insert (format-time-string "%A, %B %e %Y" (current-time)))
     (progn
-      (insert (format-time-string "%Y-%m-%d"))
-      (when arg
-        (insert (format-time-string " %H:%M"))))))
+      (if (= arg 4)
+          (insert (format-time-string "%Y-%m-%d %H:%M"))
+        (insert (format-time-string "%Y-%m-%d"))))))
 
-;; (global-set-key (kbd "C-c d") 'insert-date)
+(global-set-key (kbd "C-c d") 'insert-date)
 
 ;;; -----
 (defun delete-leading-whitespace (start end)
