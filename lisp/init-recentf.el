@@ -1,6 +1,11 @@
 (recentf-mode 1)
-(setq recentf-max-saved-items 500)
+(setq recentf-max-saved-items 1024)
 (setq recentf-max-menu-items 60)
+(setq recentf-auto-cleanup 'never)
+
+(setq recentf-keep '(file-remote-p file-readable-p))
+(setq recentf-exclude
+      '("\\.elc$" ".recentf$"))
 
 (defun ido-choose-from-recentf (arg)
   "Use ido to select a recently opened file from the `recentf-list'"
