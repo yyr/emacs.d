@@ -57,7 +57,7 @@
   "xdg-opens the specified file."
   (interactive "fFile to open: ")
   (let ((process-connection-type nil))
-    (start-process "" nil "/usr/bin/xdg-open" filename)))
+    (call-process "/usr/bin/xdg-open" nil 0 nil filename)))
 
 ;;'e' usually does 'dired-find-file, same as RET, rebinding it here
 (add-hook 'dired-mode-hook
