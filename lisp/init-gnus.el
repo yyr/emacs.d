@@ -24,7 +24,7 @@
 (when (not on-lab-server)
   ;; only laptop has leafnode installed
   ;;  (setq gnus-select-method '(nntp "localhost"))
-  (setq gnus-select-method '(nntp "news.gmane.org")))
+  (setq gnus-select-method '(nnfolder "")))
 
 ;;; -----------------------------------------------------------------------
 ;;; Mail
@@ -64,10 +64,10 @@
                    :user "yagnesh.yakkala"
                    :leave 14))
 
-(when on-lab-computer
-  (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
-                                   :user "vh0004"
-                                   :leave 14)))
+;; (when on-lab-computer
+;;   (add-to-list 'mail-sources '(pop :server "pop.hines.hokudai.ac.jp"
+;;                                    :user "vh0004"
+;;                                    :leave 14)))
 
 ;;; Fetched
 ;; (setq mail-source-delete-incoming t)
