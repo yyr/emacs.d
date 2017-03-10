@@ -16,7 +16,8 @@
   (set-face-attribute 'default nil
                       :height (perfect-font-size (abstract-screen-width))
                       :width 'extra-condensed
-                      :weight 'light))
+                      :weight 'light
+                      :family "DejaVu Sans Mono"))
 
 ;; (set-default-font  "-adobe-courier-medium-r-normal--18-100-75-75-m-90-iso8859-1")
 ;; (set-face-attribute 'default nil :family "Inconsolata" :height 110)
@@ -44,12 +45,5 @@
                       :height (- (face-attribute 'default :height) 10))
   (message "Font size: %s" (face-attribute 'default :height)))
 (define-key global-map [(control ?z) ?-] 'font-decrease)      ; Bind to C-z -
-
-
-(set-face-attribute 'default nil
-                    :height 95
-                    :width 'extra-condensed
-                    ;; :family "DejaVu Sans Condensed"
-                    :family "DejaVu Sans Mono")
 
 ;;; init-font.el ends here
