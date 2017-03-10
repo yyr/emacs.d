@@ -135,9 +135,13 @@ FIXME: make an exceptions for few buffers like gnus, emms"
   [(control ?z) (control ?k)] 'kill-star-buffers)
 
 ;;; kill current buffer
+(setq my-kill-buffer-omitions '("*Music*" "*Group*"))
 (global-set-key (kbd "M-k") (defun my-kill-buffer ()
                               (interactive)
-                              (kill-buffer (buffer-name))))
+                              (let (buf (buffer-name))
+                                (if (member buf my-kill-buffer-omitions)
+                                    (bury-buffer-internal buf)
+                                  (kill-buffer buf)))))
 
 ;;; From Emacswiki http://www.emacswiki.org/RecentFiles
 (defun undo-kill-buffer (arg)
