@@ -4,7 +4,7 @@
 ;;; twitter
 (el-get 'sync 'twittering-mode)
 
-(setq twittering-username "kindahero")
+(setq twittering-username "yagneshraghava")
 (setq twittering-use-master-password t)
 (setq twittering-icon-mode t)
 (setq twittering-use-icon-storage t)

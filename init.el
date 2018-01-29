@@ -40,7 +40,7 @@
 ;;;
 (defconst emacsd
   (expand-file-name "lisp"
-                    (file-name-directory user-init-file)))
+                    (file-name-directory "~/.emacs.d/")))
 (add-to-list 'load-path emacsd)
 
 ;; ----------------------------------------------------------------------------
@@ -199,14 +199,14 @@ mark a check point"
 
 ;;; web
 (load "init-web")
-(load "init-erc")
+;; (load "init-erc")
 
 ;;;  misc
 (load "init-misc")
 (load "init-battery")
 (load "init-utils")
 (load "init-boxquote")
-(when (and (not on-lab-server) (not on-ms)) (load "init-social"))
+;; (when (and (not on-lab-server) (not on-ms)) (load "init-social"))
 
 ;;; sys & server
 (load "init-print")
@@ -214,9 +214,8 @@ mark a check point"
 (load "init-server")
 (load "init-time")
 
-
 ;;; music
-(when (and (not on-lab-server) (not on-ms)) (load "init-emms"))
+;; (when (and (not on-lab-server) (not on-ms)) (load "init-emms"))
 
 (load "init-finish")
 ;; init ends here
