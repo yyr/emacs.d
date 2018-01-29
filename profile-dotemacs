@@ -4,6 +4,7 @@
 elcode=$( cat <<EOF
 (progn
   (setq debug-on-error (not noninteractive))
+  (setq user-init-file "~/.emacs.d/init.el")
   (setq profile-dotemacs-file "~/.emacs.d/init.el")
   (load "~/.emacs.d/el-get/profile-dotemacs/profile-dotemacs.el")
   (profile-dotemacs))
