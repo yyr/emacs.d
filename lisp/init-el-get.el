@@ -11,6 +11,8 @@
                                    (file-name-directory user-init-file))
                  load-path))
 
+(setq el-get-is-lazy t)
+
 ;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
   (setq el-get-install-branch "master")

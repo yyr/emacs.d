@@ -18,7 +18,10 @@
 (setq dictem-use-user-databases-only t)
 
 (setq dictem-port  "2628")
-(dictem-initialize)
+(eval-after-load "dictem"
+  `(progn (dictem-initialize)
+          (define-key dictem-mode-map [tab] 'dictem-next-link)
+          (define-key dictem-mode-map [(backtab)] 'dictem-previous-link)))
 
 (setq dictem-default-strategy "word")
 (setq dictem-use-user-databases-only t)
@@ -46,9 +49,6 @@
 ;; that contains information about a database.
 (add-hook 'dictem-postprocess-show-info-hook
           'dictem-postprocess-definition-hyperlinks)
-
-(define-key dictem-mode-map [tab] 'dictem-next-link)
-(define-key dictem-mode-map [(backtab)] 'dictem-previous-link)
 
 (setq dictem-user-databases-alist
       '(("_en-en"  . ("foldoc" "gcide" "wn"))))

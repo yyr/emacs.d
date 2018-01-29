@@ -22,8 +22,9 @@
                     (lambda ()
                       (setq-default dired-details-hidden-string "--- ")
                       (dired-details-install)
-                      (dired-omit-mode 1))))
-
+                      (dired-omit-mode 1)))
+       (define-key dired-mode-map
+         (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom))
 
 (add-hook 'dired-mode-hook
           'turn-on-gnus-dired-mode)
@@ -82,8 +83,5 @@
   (interactive)
   (end-of-buffer)
   (dired-next-line -1))
-
-(define-key dired-mode-map
-  (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
 
 ;;; init-dired.el ends here
