@@ -1,10 +1,20 @@
-(package-initialize)
-
 ;;; Emacs Init
 ;;
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; License: GPL v3 or later
 ;;
+
+(defvar file-name-handler-alist-backup file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+(setq gc-cons-threshold 64000000
+      gc-cons-percentage 0.6)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 2000000
+                                     gc-cons-percentage 0.1
+                                     file-name-handler-alist file-name-handler-alist-backup)))
+(package-initialize)
 
 (setq user-full-name "Yagnesh Raghava Yakkala")
 (setq user-mail-address "hi@yagnesh.org")
