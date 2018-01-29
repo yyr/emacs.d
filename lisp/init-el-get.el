@@ -11,11 +11,6 @@
                                    (file-name-directory user-init-file))
                  load-path))
 
-(when (symbolp 'package-archives)
-  (setq package-archives
-        '(("melpa" . "http://melpa.org/packages/")
-          ("gnu" . "http://elpa.gnu.org/packages/"))))
-
 ;;; load el-get or install it (from readme)
 (unless (require 'el-get nil t)
   (setq el-get-install-branch "master")
@@ -26,7 +21,6 @@
     (eval-print-last-sexp))
   (el-get-elpa-build-local-recipes))
 
-(package-initialize)
 ;; packages are defined by me
 (setq el-get-sources
       '((:name ams-glossary
@@ -37,7 +31,6 @@
                :description "backup each save"
                :type github
                :pkgname "yyr/backup-each-save")))
-
 
 ;; common packages all the systems I have
 (setq my-packages

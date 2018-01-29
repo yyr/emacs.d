@@ -4,18 +4,6 @@
 ;; License: GPL v3 or later
 ;;
 
-(defvar file-name-handler-alist-backup file-name-handler-alist)
-(setq file-name-handler-alist nil)
-
-(setq gc-cons-threshold 64000000
-      gc-cons-percentage 0.6)
-(add-hook 'after-init-hook #'(lambda ()
-                               ;; restore after startup
-                               (setq gc-cons-threshold 2000000
-                                     gc-cons-percentage 0.1
-                                     file-name-handler-alist file-name-handler-alist-backup)))
-(package-initialize)
-
 (setq user-full-name "Yagnesh Raghava Yakkala")
 (setq user-mail-address "hi@yagnesh.org")
 
@@ -27,6 +15,27 @@
 (defvar on-lab-computer (string-match "sealion" (system-name)))
 (defvar on-lab-server (string-match "iitm" (system-name)))
 (defvar on-ms (string-match "windows" (format "%s" system-type)))
+
+;;; for faster startup
+(defvar file-name-handler-alist-backup file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+(setq gc-cons-threshold 64000000
+      gc-cons-percentage 0.6)
+(add-hook 'after-init-hook #'(lambda ()
+                               ;; restore after startup
+                               (setq gc-cons-threshold 2000000
+                                     gc-cons-percentage 0.1
+
+                                     file-name-handler-alist file-name-handler-alist-backup)))
+
+;;; package.el
+(when (symbolp 'package-archives)
+  (setq package-archives
+        '(("melpa" . "http://melpa.org/packages/")
+          ("gnu" . "http://elpa.gnu.org/packages/"))))
+
+(package-initialize)
 
 ;;;
 (defconst emacsd
