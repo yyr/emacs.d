@@ -7,8 +7,8 @@
 (global-set-key "\M-t" 'other-window)   ; was transpose words
 (global-set-key (kbd "C-x O") (defun other-window-1 ()
                                 (interactive) (other-window -1))) ;; back one
-(global-set-key (kbd "C-x C-o") (defun other-window+2 ()
-                                  (interactive) (other-window 2))) ;; forward t
+;; (global-set-key (kbd "C-x C-o") (defun other-window+2 ()
+;;                                   (interactive) (other-window 2))) ;; forward t
 (global-set-key (kbd "C-c C-u") 'scroll-other-window)
 (global-set-key (kbd "C-c C-b") 'scroll-other-window-down)
 

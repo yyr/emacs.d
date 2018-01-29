@@ -1,7 +1,8 @@
 ;;; init-imenu.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-(require 'imenu)
+(el-get 'sync 'imenu-anywhere)
+
 (setq imenu-auto-rescan t)
 
 (defun ido-imenu ()
@@ -50,6 +51,7 @@ Symbols matching the text at point are put first in the completion list."
         (goto-char position)))))
 
 (global-set-key (kbd "C-x C-i") 'ido-imenu)
+(global-set-key (kbd "C-x C-o") 'imenu-anywhere)
 
 ;;; mail mode
 (setq message-imenu-generic-expression
