@@ -23,7 +23,6 @@
 (setq default-sendmail-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 
-(setq gc-cons-threshold 20000000)       ; increase gc
 (setq undo-outer-limit  40000000)
 (setq large-file-warning-threshold 100000000) ;; 95mb aprox
 
