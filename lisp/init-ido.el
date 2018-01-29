@@ -7,10 +7,10 @@
 ;; (setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
 
-(el-get 'sync 'ido-ubiquitous)
-(require 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
+(el-get 'sync 'ido-completing-read-plus)
 
+(require 'ido-completing-read+)
+(ido-ubiquitous-mode 1)
 (el-get 'sync '(flx
                 ido-vertical-mode))
 (ido-vertical-mode 1)
