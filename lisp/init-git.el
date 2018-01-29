@@ -12,8 +12,8 @@
 (setq magit-completing-read-function 'magit-ido-completing-read)
 (setq magit-save-some-buffers nil)
 (setq magit-remote-ref-format 'remote-slash-branch)
-
 (setq magit-diff-refine-hunk t)
+(setq magit-repository-directories '(("~/git" . 2)))
 
 ;;; rebase mode
 (autoload 'rebase-mode "rebase-mode" nil t)

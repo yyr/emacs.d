@@ -3,7 +3,7 @@
 (el-get 'sync '(ncl-mode))
 
 ;; use downloaded documentation instead (for offline use)
-(setq ncl-doc-url-base (directory-file-name "file:///home/yagnesh/docs/ncl"))
+(setq ncl-doc-url-base (directory-file-name "file:///home/yagnesh/doc/ncl_doc"))
 
 ;; utility functions
 (defun ncl-del-comment-indentation ()
