@@ -4,7 +4,7 @@
 ;;----------------------------------------------------------------------------
 ;; Find the directory containing a given library
 ;;----------------------------------------------------------------------------
-(require 'find-func)
+;; (require 'find-func)
 (defun directory-of-library (library-name)
   "open directory with dired which contains the give library"
   (interactive "M")

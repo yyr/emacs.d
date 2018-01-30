@@ -55,9 +55,9 @@
 ;; Documentation Helpers
 ;;; --------------------------------------------------------------------
 ;;; pylookup
-(require 'pylookup)
 (add-hook 'python-mode-hook
           (lambda ()
+            (require 'pylookup)
             ;; pylookup
             (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
             (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
