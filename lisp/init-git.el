@@ -25,8 +25,7 @@
 (setq magit-backup-untracked nil)       ; lighten magit
 
 ;;; git gutter.
-;; If you enable global minor mode
-(global-git-gutter-mode t)
+(global-git-gutter-mode 1)
 
 (global-set-key (kbd "C-x C-,") 'git-gutter:toggle)
 (setq git-gutter:diff-option "-w")
@@ -41,20 +40,20 @@
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
 
-(require 'git-gutter-fringe)
+;; (require 'git-gutter-fringe)
+(global-git-gutter-mode 1)
 (setq git-gutter-fr:side 'right-fringe)
 ;; (setq git-gutter:disabled-modes '(org-mode))
 
 
 ;;; Mercurial
-
 (when (executable-find "hg")
   (el-get 'sync 'monky)
   (setq monky-process-type 'cmdserver))
 
 ;;; Projectile
 (projectile-global-mode 1)
-;; (setq projectile-enable-caching nil)
+(setq projectile-enable-caching nil)
 (setq projectile-indexing-method 'align)
 
 ;;; init-git.el ends here

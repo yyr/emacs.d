@@ -11,8 +11,6 @@
                                  ("@" org-warning "<b>" "</b>"))))
 
 
-(require 'ox-beamer)
-
 (setq ox-latex-hyperref-format "\\ref{%s}")
 
 ;;; reftex setup from FAQ
@@ -42,14 +40,16 @@
   (when (and (org-export-derived-backend-p backend 'latex)
              (string-match "\\`.*ignoreheading.*\n" headline))
     (replace-match "" nil nil headline)))
-(add-to-list 'org-export-filter-headline-functions
-             'org-latex-ignore-heading-filter-headline)
 
+(eval-after-load "ox" `(add-to-list 'org-export-filter-headline-functions
+                                    'org-latex-ignore-heading-filter-headline))
 
-(add-to-list 'org-latex-classes
-             ;; beamer class, for presentations
-             '("beamer-1"
-               "\\documentclass[11pt]{beamer}\n
+(eval-after-load "ox-latex"
+  `(progn
+     (add-to-list 'org-latex-classes
+                  ;; beamer class, for presentations
+                  '("beamer-1"
+                    "\\documentclass[11pt]{beamer}\n
       \\mode<{{{beamermode}}}>\n
       \\usetheme{{{{beamertheme}}}}\n
       \\usecolortheme{{{{beamercolortheme}}}}\n
@@ -72,22 +72,21 @@
       \\institute{{{{beamerinstitute}}}}\n
        \\subject{{{{beamersubject}}}}\n"
 
-               ("\\section{%s}" . "\\section*{%s}")
+                    ("\\section{%s}" . "\\section*{%s}")
 
-               ("\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}"
-                "\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}")))
+                    ("\\begin{frame}[fragile]\\frametitle{%s}"
+                     "\\end{frame}"
+                     "\\begin{frame}[fragile]\\frametitle{%s}"
+                     "\\end{frame}")))
 
-(add-to-list 'org-latex-classes
-             '("beamer"
-               "\\documentclass[presentation]{beamer}
+     (add-to-list 'org-latex-classes
+                  '("beamer"
+                    "\\documentclass[presentation]{beamer}
 \[DEFAULT-PACKAGES]
 \[PACKAGES]
 \[EXTRA]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
-
-
+                    ("\\section{%s}" . "\\section*{%s}")
+                    ("\\subsection{%s}" . "\\subsection*{%s}")
+                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+))
 ;;; init-org-export.el ends here

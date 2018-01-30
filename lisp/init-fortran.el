@@ -16,6 +16,6 @@
 
 ;;; namelist mode
 (el-get 'sync 'namelist-mode)
-(load "~/.emacs.d/el-get/namelist-mode/namelist-mode-load.el")
+;; (load "~/.emacs.d/el-get/namelist-mode/namelist-mode-load.el")
 
 ;;; init-fortran.el ends here

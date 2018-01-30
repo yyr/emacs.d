@@ -36,20 +36,32 @@
 
 ;;; --------------------------------------------------------
 ;;; Reftex
-(require 'reftex)
-;; (autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
-;; (autoload 'reftex-citation "reftex-cite" "Make citation" nil)
-;; (autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
+(autoload 'reftex-mode "reftex" "RefTeX Minor Mode" t)
+(autoload 'reftex-citation "reftex-cite" "Make citation" nil)
+(autoload 'reftex-index-phrase-mode "reftex-index" "Phrase mode" t)
 (add-hook 'LaTeX-mode-hook  #'reftex-mode)
 
-(setq reftex-plug-into-AUCTeX t ;activate
+(add-hook 'reftex-mode-hook
+          (lambda nil
+            (loop for x in
+                  '(("\C-zt" . reftex-toc)
+                    ("\C-zl" . reftex-label)
+                    ("\C-zr" . reftex-reference)
+                    ("\C-zc" . reftex-citation)
+                    ("\C-zv" . reftex-view-crossref)
+                    ("\C-zg" . reftex-grep-document)
+                    ("\C-zs" . reftex-search-document))
+                  do (define-key reftex-mode-map (car x) (cdr x)))))
+
+
+(setq reftex-plug-into-AUCTeX t         ;activate
       reftex-extra-bindings nil
       reftex-bibfile-ignore-list nil
       reftex-guess-label-type t
-      reftex-revisit-to-follow t ; watch out!! bibs are changing
+      reftex-revisit-to-follow t        ; watch out!! bibs are changing
 
-      reftex-use-fonts t   ; make colorful toc
-      reftex-toc-follow-mode nil ; don't follow other toc(s)
+      reftex-use-fonts t                ; make colorful toc
+      reftex-toc-follow-mode nil        ; don't follow other toc(s)
       reftex-toc-split-windows-horizontally t
       reftex-auto-recenter-toc t
       ;; reftex-toc-split-windows-fraction 0.2
@@ -58,17 +70,6 @@
       reftex-save-parse-info t
       reftex-use-multiple-selection-buffers t
       reftex-cite-format 'natbib)
-
-(loop for x in
-      '(("\C-zt" . reftex-toc)
-        ("\C-zl" . reftex-label)
-        ("\C-zr" . reftex-reference)
-        ("\C-zc" . reftex-citation)
-        ("\C-zv" . reftex-view-crossref)
-        ("\C-zg" . reftex-grep-document)
-        ("\C-zs" . reftex-search-document))
-      do (define-key reftex-mode-map (car x) (cdr x)))
-
 
 (add-hook 'LaTeX-mode-hook
           '(lambda ()
@@ -102,7 +103,10 @@
 ;;; util functions
 
 ;;; http://www.emacswiki.org/emacs/TN
-(require 'tex-buf)
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+;; (require 'tex-buf)
+
 (defun TeX-command-default (name)
   "Next TeX command to use. Most of the code is stolen from `TeX-command-query'."
   (cond ((if (string-equal name TeX-region)

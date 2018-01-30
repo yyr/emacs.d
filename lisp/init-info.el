@@ -2,12 +2,12 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; info , searching docs, short cuts
-(require 'info-look)
+;; (require 'info-look)
 
 (setq my-info-dir "~/git/info-collection/")
 (add-to-list 'Info-additional-directory-list my-info-dir)
 
-;;; this work around is needed if emacs is in non standard directory and
+;;; This work around is needed if emacs is in non standard directory and
 ;;; INFOPATH is set.
 (when (getenv "INFOPATH")
   (dolist (dir Info-default-directory-list)
