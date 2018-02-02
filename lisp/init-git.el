@@ -2,7 +2,8 @@
 (el-get 'sync '(magit
                 git-modes
                 git-gutter-fringe
-                projectile))
+;                projectile
+                ))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-<f10>") 'magit-status)
@@ -40,20 +41,18 @@
 (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
 
-;; (require 'git-gutter-fringe)
 (global-git-gutter-mode 1)
 (setq git-gutter-fr:side 'right-fringe)
 ;; (setq git-gutter:disabled-modes '(org-mode))
 
-
 ;;; Mercurial
-(when (executable-find "hg")
-  (el-get 'sync 'monky)
-  (setq monky-process-type 'cmdserver))
+;; (when (executable-find "hg")
+;;   (el-get 'sync 'monky)
+;;   (setq monky-process-type 'cmdserver))
 
 ;;; Projectile
-(projectile-global-mode 1)
-(setq projectile-enable-caching nil)
-(setq projectile-indexing-method 'align)
+;; (projectile-global-mode 1)
+;; (setq projectile-enable-caching nil)
+;; (setq projectile-indexing-method 'align)
 
 ;;; init-git.el ends here

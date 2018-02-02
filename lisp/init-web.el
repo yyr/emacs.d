@@ -10,7 +10,7 @@
 (setq browse-url-firefox-program "firefox")
 
 ;;; sx
-(el-get 'sync 'sx)
+;; (el-get 'sync 'sx)
 
 ;;; Tinkerer
 (el-get 'sync 'tinkerer)
