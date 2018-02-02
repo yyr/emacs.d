@@ -1,18 +1,20 @@
 ;;; init-ido.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
+(el-get 'sync '(flx
+                ido-completing-read-plus
+                ido-vertical-mode
+                smex))
+
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-enable-flex-matching t)
 ;; (setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
 
-(el-get 'sync 'ido-completing-read-plus)
-
-(require 'ido-completing-read+)
+;; (require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
-(el-get 'sync '(flx
-                ido-vertical-mode))
+
 (ido-vertical-mode 1)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
@@ -53,9 +55,7 @@
 ;; Allow the same buffer to be open in different frames
 (setq ido-default-buffer-method 'selected-window)
 
-
 ;;; Smex
-(el-get 'sync '(smex))
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
