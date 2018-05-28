@@ -35,7 +35,8 @@
         '(("melpa" . "http://melpa.org/packages/")
           ("gnu" . "http://elpa.gnu.org/packages/"))))
 
-(package-initialize)
+(setq package-enable-at-startup nil)
+;; (package-initialize)
 
 ;;;
 (defconst emacsd
@@ -161,11 +162,12 @@ mark a check point"
 (load! "init-cc")
 (load! "init-perl")
 (load! "init-html")
-(load! "init-yaml")
+;; (load! "init-yaml")
 (load! "init-python")
 (load! "init-compile")
 
 (load! "init-fortran")
+(load! "init-js")
 
 ;;; code assistance
 (load! "init-flycheck")
