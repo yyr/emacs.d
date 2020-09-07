@@ -7,7 +7,6 @@
 
 ;;; load some minor modes first
 (el-get 'sync '(paredit
-                hl-sexp
                 highlight-parentheses))
 
 
@@ -55,8 +54,6 @@
 (dolist (hook '(emacs-lisp-mode-hook scheme-mode-hook))
   (add-hook hook (lambda ()
                    (progn
-                     (require 'hl-sexp)
-                     (hl-sexp-mode 1)
                      (highlight-parentheses-mode 1)))))
 
 ;;; init-lispy.el ends here

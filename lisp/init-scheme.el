@@ -9,9 +9,9 @@
 
 (require 'geiser-load)
 
-(when (file-exists-p "~/local/guile/")
-  (eval-after-load "info"
-    '(add-to-list 'Info-additional-directory-list "~/local/guile/share/info/")))
+;; (when (and (symbolp Info-default-directory-list) (file-exists-p "~/local/guile/"))
+;;   (eval-after-load "info"
+;;     '(add-to-list 'Info-additional-directory-list "~/local/guile/share/info/")))
 
 (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
 (setq geiser-active-implementations '(guile))

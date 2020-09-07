@@ -81,8 +81,8 @@ mark a check point"
 (setq load-prefer-newer t)
 
 ;;; first of all any OS dependent paths has to be set
-(when on-ms
-  (load! "init-ms"))
+;; (when on-ms
+;;   (load! "init-ms"))
 
 ;;; package managers
 (load! "init-el-get")
@@ -167,7 +167,7 @@ mark a check point"
 (load! "init-compile")
 
 (load! "init-fortran")
-(load! "init-js")
+;(load! "init-js")
 
 ;;; code assistance
 (load! "init-flycheck")

@@ -1,8 +1,8 @@
 ;;; init-misc.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-(el-get 'sync 'wc-mode)
-(add-to-list 'org-mode-hook 'wc-mode)
+;; (el-get 'sync 'wc-mode)
+;; (add-to-list 'org-mode-hook 'wc-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Misc config - yet to be placed in separate files

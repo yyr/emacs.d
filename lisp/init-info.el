@@ -5,7 +5,7 @@
 ;; (require 'info-look)
 
 (setq my-info-dir "~/git/info-collection/")
-(add-to-list 'Info-additional-directory-list my-info-dir)
+;; (add-to-list 'Info-additional-directory-list my-info-dir)
 
 ;;; This work around is needed if emacs is in non standard directory and
 ;;; INFOPATH is set.

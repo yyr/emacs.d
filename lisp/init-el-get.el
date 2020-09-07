@@ -35,13 +35,13 @@
                :pkgname "yyr/backup-each-save")))
 
 ;; common packages all the systems I have
-(setq my-packages
-      (append
-       '(profile-dotemacs)
-       (mapcar
-        'el-get-source-name el-get-sources)))
+;; (setq my-packages
+;;       (append
+;;        '(profile-dotemacs)
+;;        (mapcar
+;;         'el-get-source-name el-get-sources)))
 
-(el-get 'sync my-packages)
+;; (el-get 'sync my-packages)
 
 ;; (el-get 'sync 'auto-compile)
 ;; (require 'auto-compile)
