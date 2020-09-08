@@ -96,6 +96,7 @@ mark a check point"
 ;;; mail, news & messages
 (load! "init-gpg")
 (load! "init-pre-gnus")
+(load! "init-gnus")
 (load! "init-mail")
 (load! "init-message")
 

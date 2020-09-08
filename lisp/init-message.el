@@ -46,11 +46,6 @@
 
 (setq gnus-message-setup-hook 'message-update-bcc-from-from)
 
-(add-hook 'message-mode-hook
-          (lambda ()
-            (setq fill-column 78)
-            (turn-on-auto-fill)))
-
 (setq gnus-confirm-mail-reply-to-news t
       message-kill-buffer-on-exit t
       message-elide-ellipsis "[…]\n")

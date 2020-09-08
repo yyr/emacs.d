@@ -62,8 +62,8 @@
  minibuffer-max-depth nil         ; Mini-buffer settings
  display-time-day-and-date t      ; Display the time and date on the mode line
  case-fold-search t               ; Fold case on searches
- indicate-empty-lines t
- fill-column 78)
+ indicate-empty-lines t)
+
 
 ;;; damn IMPORTANT.
 (defalias 'yes-or-no-p 'y-or-n-p)

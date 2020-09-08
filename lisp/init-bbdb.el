@@ -5,9 +5,10 @@
 (el-get 'sync 'bbdb)
 (require 'bbdb)
 
-(bbdb-mua-auto-update-init 'gnus 'message)
+(setq bbdb-allow-duplicates t)
+;(bbdb-mua-auto-update-init 'gnus 'message)
 (setq bbdb-mua-update-interactive-p '(query . create))
-(bbdb-mua-auto-update-init 'message) ;; use 'gnus for incoming messages too
+;(bbdb-mua-auto-update-init 'message) ;; use 'gnus for incoming messages too
 (setq bbdb-mua-auto-update-p 'query) ;; or 'create to create without asking
 
 (setq
