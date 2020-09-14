@@ -21,6 +21,7 @@
                                   org-export
                                   org-inlinetask
                                   ;; add more modules if needed
+                                  org-tempo
                                   )
                                 org-modules)))))
 
