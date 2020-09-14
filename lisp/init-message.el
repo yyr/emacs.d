@@ -14,7 +14,7 @@
   (save-excursion
     (message-goto-signature)
     (previous-line 2)
-    (insert "\n\nThanks.,"))
+    (insert "\n\nThanks & Regards,"))
 
   (let* ((to (message-fetch-field "To"))
          (address-comp (mail-extract-address-components to))

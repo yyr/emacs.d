@@ -116,4 +116,47 @@ in `exec-path', or nil if no such command exists"
      (trailing-spaces-face . ((((type tty)) (:background "magenta")) (t (:background "mistyrose")))))))
 
 (dark-on-light-theme)  ;this should go in custom.el
+
+;;; for gnus
+;;; http://www.randomsample.de/dru5/node/64
+;; 0: gmane.emacs.gnus.user
+;; 0:   .  .  .announce
+;; 0:   .  .w3m
+;; 0:   .  .devel
+;; 0:   .  .bugs
+;; 0:   .mail.getmail.announce
+;; 0:   .  .mairix.user
+;; 0:   .linux.debian.user.security.announce
+;; 0: de.comm.software.gnus
+(defun DE-collapse-group-names ()
+  (save-excursion
+    (let (previous-group current-group common-prefix
+                         common-dot-count prefix suffix)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (when (setq current-group
+                    (get-text-property (point) 'gnus-group))
+          (setq current-group (symbol-name current-group))
+          (when (string-match "\\(.+\\):\\(.+\\)" current-group)
+            (setq current-group (match-string 2 current-group)))
+          (setq common-prefix (substring current-group 0
+                                         (mismatch previous-group current-group))
+                common-dot-count (count ?. common-prefix)
+                prefix (mapconcat (lambda (x) x)
+                                  (make-list common-dot-count "  .") "")
+                suffix (and (string-match
+                             (format "\\([^.]*[.]\\)\\{%d\\}\\(.+\\)" common-dot-count)
+                             current-group)
+                            (match-string 2 current-group))
+                previous-group current-group)
+          (unless (zerop (length prefix))
+            (when (search-forward current-group (point-at-eol) t)
+              (let ((props (text-properties-at (1- (point)))))
+                (replace-match (apply 'propertize (concat prefix suffix)
+                                      props))))))
+        (forward-line 1)))))
+
+(add-hook 'gnus-group-prepare-hook 'DE-collapse-group-names)
+(add-hook 'gnus-group-update-group-hook 'DE-collapse-group-names)
+
 ;;; init-attic.el ends here
