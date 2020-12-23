@@ -157,7 +157,7 @@ mark a check point"
 (load! "init-lispy")
 (load! "init-elisp")
 (load! "init-common-lisp")
-(load! "init-scheme")
+;; (load! "init-scheme")
 (load! "init-grammar")
 
 (load! "init-cc")
@@ -168,7 +168,7 @@ mark a check point"
 (load! "init-compile")
 
 (load! "init-fortran")
-;(load! "init-js")
+(load! "init-js")
 
 ;;; code assistance
 (load! "init-flycheck")
@@ -198,7 +198,7 @@ mark a check point"
 (load! "init-org-misc")
 
 ;;; info,  help, doc, man(woman) etc..
-(load! "init-info")
+;; (load! "init-info")
 (load! "init-eldoc")
 (load! "init-help")
 (load! "init-outline")
