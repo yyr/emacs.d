@@ -20,8 +20,6 @@
 (defvar file-name-handler-alist-backup file-name-handler-alist)
 (setq file-name-handler-alist nil)
 
-(setq gc-cons-threshold 64000000
-      gc-cons-percentage 0.6)
 (add-hook 'after-init-hook #'(lambda ()
                                ;; restore after startup
                                (setq gc-cons-threshold 2000000
