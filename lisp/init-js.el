@@ -6,7 +6,9 @@
         '(js2-mode
           js2-refactor
           xref-js2
-          company-tern))
+          company-tern
+          websocket
+          kite-mini))
 
 (add-to-list 'auto-mode-alist '("\\.\\(js\\|jsx\\)$" . js2-mode))
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
@@ -24,7 +26,8 @@
                            (add-hook 'xref-backend-functions
                                      #'xref-js2-xref-backend nil t)
                            (add-to-list 'company-backends 'company-tern)
-                           (tern-mode)))
+                           (tern-mode 1)
+                           (kite-mini-mode 1)))
 
 ;; Disable completion keybindings, as we use xref-js2 instead
 (add-hook 'tern-mode-hook (lambda ()

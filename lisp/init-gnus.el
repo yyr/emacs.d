@@ -44,6 +44,10 @@
                       (nnimap-address "mail.hcoop.net")))
 
 ;; (add-to-list 'gnus-secondary-select-methods
+;;              '(nnimap "ul"
+;;                       (nnimap-address "outlook.office365.com")))
+
+;; (add-to-list 'gnus-secondary-select-methods
 ;;              '(nnimap "tropmet"
 ;;                       (nnimap-address "mail.tropmet.res.in")
 ;;                       (nnimap-stream network)
@@ -161,27 +165,27 @@ pIf performed over a topic line, toggle folding the topic."
  )
 
 ;;; Gmail envy http://emacs.wordpress.com/2007/10/07/gmail-envy/
-(defun gnus-user-format-function-j (headers)
-  (let ((to (gnus-extra-header 'To headers)))
-    (if (string-match *yag-mails-regex* to)
-        (if (string-match "," to) "~" "»")
-      (if (or (string-match *yag-mails-regex*
-                            (gnus-extra-header 'Cc headers))
-              (string-match *yag-mails-regex*
-                            (gnus-extra-header 'BCc headers)))
-          "~"
-        " "))))
+;; (defun gnus-user-format-function-j (headers)
+;;   (let ((to (gnus-extra-header 'To headers)))
+;;     (if (string-match *yag-mails-regex* to)
+;;         (if (string-match "," to) "~" "»")
+;;       (if (or (string-match *yag-mails-regex*
+;;                             (gnus-extra-header 'Cc headers))
+;;               (string-match *yag-mails-regex*
+;;                             (gnus-extra-header 'BCc headers)))
+;;           "~"
+;;         " "))))
 
-(setq gnus-summary-line-format
-      (concat
-       "%0{%U%R%z%}"
-       "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
-       " " "%uj" " "                    ; gmail style
-       "%4{%-20,20f%}"               ;; name
-       "  "
-       "%3{│%}"
-       "%1{%B%}"
-       "%s\n"))
+;; (setq gnus-summary-line-format
+;;       (concat
+;;        "%0{%U%R%z%}"
+;;        "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
+;;        " " "%uj" " "                    ; gmail style
+;;        "%4{%-20,20f%}"               ;; name
+;;        "  "
+;;        "%3{│%}"
+;;        "%1{%B%}"
+;;        "%s\n"))
 
 ;;; -----------------------------------------------------------------------
 ;;; Article Buffer
