@@ -7,7 +7,10 @@
 ;; ace-jump-mode - navigation by searching
 ;; jump-char - char type navigation
 
-(el-get 'sync '(ace-jump-mode))
+(ensure-package-installed '(goto-chg ace-jump-mode))
+
+(global-set-key (kbd "C-x C-/") 'goto-last-change)
+(global-set-key (kbd "C-x C-?") 'goto-last-change-reverse)
 
 (define-key global-map (kbd "M-l") 'ace-jump-mode)  ; was downcase-word
 (define-key global-map (kbd "M-L") 'downcase-word)

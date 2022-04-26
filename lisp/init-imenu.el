@@ -1,7 +1,7 @@
 ;;; init-imenu.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-(el-get 'sync 'imenu-anywhere)
+(ensure-package-installed 'imenu-anywhere)
 
 (setq imenu-auto-rescan t)
 

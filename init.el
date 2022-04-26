@@ -72,6 +72,20 @@
 (load! "init-hippie-expand")
 (load! "init-company")
 
+;;; look
+(load! "init-font")
+(load! "init-point")
+
+;;; window, frame
+(load! "init-windows")
+(load! "init-frame")
+
+;;; help navigation
+(load! "init-navigation")
+(load! "init-imenu")
+(load! "init-buffers")
+(load! "init-recentf")
+
 ;; langs
 (load! "init-lispy")
 (load! "init-elisp")

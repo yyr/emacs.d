@@ -17,16 +17,17 @@
 ;;----------------------------------------------------------------------------
 (defun split-window-func-with-other-buffer (split-function)
   "dont just dumb split window, change buffer as well"
+  (eval-when-compile (require 'cl))
   (lexical-let ((s-f split-function))
     (lambda ()
       (interactive)
-      (funcall s-f)
+      (func all s-f)
       (set-window-buffer (next-window) (other-buffer)))))
 
-(global-set-key "\C-x2"
-                (split-window-func-with-other-buffer 'split-window-vertically))
-(global-set-key "\C-x3"
-                (split-window-func-with-other-buffer 'split-window-horizontally))
+;; (global-set-key "\C-x2"
+;;                 (split-window-func-with-other-buffer 'split-window-vertically))
+;; (global-set-key "\C-x3"
+;;                 (split-window-func-with-other-buffer 'split-window-horizontally))
 
 
 ;;----------------------------------------------------------------------------
@@ -47,8 +48,8 @@
 (global-set-key "\C-x|" 'split-window-horizontally-instead)
 (global-set-key "\C-x_" 'split-window-vertically-instead)
 
-(global-set-key [f2] (split-window-func-with-other-buffer 'split-window-horizontally))
-(global-set-key (kbd "<S-f2>") 'delete-other-windows)
+;; (global-set-key [f2] (split-window-func-with-other-buffer 'split-window-horizontally))
+;; (global-set-key (kbd "<S-f2>") 'delete-other-windows)
 (global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
 (global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
 

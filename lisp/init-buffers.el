@@ -104,11 +104,6 @@
             (ibuffer-switch-to-saved-filter-groups "default")
             (ibuffer-auto-mode 1)))
 
-;;;
-(el-get 'sync 'ibuffer-vc)
-(global-set-key (kbd "C-S-b") #'ibuffer-vc-set-filter-groups-by-vc-root)
-(global-set-key (kbd "C-b") 'backward-char)
-
 ;; Order the groups so the order is : [Default], [agenda], [emacs]
 (defadvice ibuffer-generate-filter-groups (after reverse-ibuffer-groups ()
                                                  activate)

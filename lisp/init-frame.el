@@ -2,6 +2,7 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
 ;; full screen
+(ensure-package-installed 'smart-mode-line)
 
 ;;; http://stackoverflow.com/a/7763907
 (defun max-emacs-x-window (&optional f)
@@ -21,7 +22,6 @@
 ;; (set-frame-parameter (selected-frame) 'alpha '(100 95))
 ;; (add-to-list 'default-frame-alist '(alpha 100 95))
 
-(el-get 'sync 'smart-mode-line)
 (add-hook 'after-init-hook 'sml/setup)
 
 (setq rm-blacklist
@@ -31,9 +31,6 @@
         " GitGutter" " company" " MRev"
         " zx" " Ref" " Outl"
         " Ind" " Guide" " Compiling"))
-
-;; (el-get 'sync '(jazz-theme
-;;                 solarized-emacs))
 
 ;; (setq sml/show-client t)
 ;; (sml/apply-theme 'automatic)
