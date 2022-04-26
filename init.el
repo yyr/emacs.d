@@ -77,7 +77,6 @@
 (load! "init-elisp")
 
 (load! "init-yasnip")
-(load! "init-multiple-cursors")
 (load! "init-dev")
 
 (load! "init-finish")
