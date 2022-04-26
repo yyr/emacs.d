@@ -2,7 +2,7 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Thursday, January 15 2015
 
-(el-get  'sync 'company-mode)
+(ensure-package-installed '(company))
 (global-company-mode 1)
 
 (setq company-minimum-prefix-length 2)

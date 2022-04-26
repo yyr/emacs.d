@@ -1,6 +1,7 @@
 ;;; init-auto-save.el
 
-(el-get 'sync 'backup-each-save)
+(ensure-package-installed
+ '(backup-each-save))
 
 (setq auto-save-interval 200)
 (setq auto-save-timeout 40)

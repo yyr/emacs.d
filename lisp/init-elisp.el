@@ -2,7 +2,7 @@
 ;; http://yagnesh.org
 
 ;;; elisp setup
-(el-get 'sync 'elisp-slime-nav)
+(ensure-package-installed 'elisp-slime-nav)
 (add-hook 'emacs-lisp-mode-hook 'elisp-slime-nav-mode)
 
 (defun my-elisp-hook ()

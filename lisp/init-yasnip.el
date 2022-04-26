@@ -1,9 +1,8 @@
 ;; init-yasnip.el
 
 ;;; load
-(el-get 'sync '(yasnippet
-                yasnippet-snippets))
 
+(ensure-package-installed '(yasnippet yasnippet-snippets) )
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 ;;; snippet dir

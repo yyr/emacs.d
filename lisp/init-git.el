@@ -1,9 +1,7 @@
 ;;: init-git.el
-(el-get 'sync '(magit
-                git-modes
-                git-gutter-fringe
-;                projectile
-                ))
+
+(ensure-package-installed
+ '(magit git-modes git-gutter-fringe))
 
 (autoload 'magit-status "magit" nil t)
 (global-set-key (kbd "C-<f10>") 'magit-status)

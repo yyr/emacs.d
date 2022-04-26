@@ -1,5 +1,4 @@
 ;;; init-time.el
-
 (setq display-time-day-and-date t)
 (display-time-mode 1)
 

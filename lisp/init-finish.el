@@ -7,9 +7,7 @@
 (add-hook 'emacs-startup-hook
           '(lambda ()
              (progn
-               (message "My .emacs loaded in %s"
-                        (emacs-init-time))
-               ;; bit intersting startup
-               (message "%s" "As always by your command... "))))
+               (message ".emacs loaded in %s; %s"
+                        (emacs-init-time) "As always by your command... "))))
 
 ;;; init-finish.el ends here

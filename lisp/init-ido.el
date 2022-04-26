@@ -1,10 +1,8 @@
 ;;; init-ido.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
-(el-get 'sync '(flx
-                ido-completing-read-plus
-                ido-vertical-mode
-                smex))
+(ensure-package-installed
+ '(flx-ido ido-completing-read+ ido-vertical-mode smex))
 
 (ido-mode t)
 (ido-everywhere t)

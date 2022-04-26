@@ -14,7 +14,6 @@
 (setenv "TMPDIR" "/tmp")
 
 
-
 ;; I dont what this means. but looks imp
 (setq buffer-file-coding-system 'utf-8-unix)
 (setq default-file-name-coding-system 'utf-8-unix)
@@ -128,7 +127,6 @@ before point if point is past text"
 
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
-
 
 (when (fboundp 'copyright-update)
   (setq copyright-names-regexp "Yagnesh\\|Free Software")

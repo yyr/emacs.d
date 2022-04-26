@@ -6,9 +6,7 @@
 ;; common things to load to all lispies
 
 ;;; load some minor modes first
-(el-get 'sync '(paredit
-                highlight-parentheses))
-
+(ensure-package-installed '(paredit highlight-parentheses))
 
 ;; pretty lambda (see also slime) ->  "λ"
 ;;  'greek small letter lambda' / utf8 cebb / unicode 03bb -> \u03BB / mule?!
