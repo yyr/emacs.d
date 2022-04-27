@@ -321,5 +321,4 @@ License: GPL v3 or later
       (execute-kbd-macro inp)
       (write-file out-file-name))))
 
-
 ;;; init-utils-el ends here

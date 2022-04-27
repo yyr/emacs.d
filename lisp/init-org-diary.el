@@ -2,7 +2,7 @@
 ;; Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Friday, June 17 2011
 
-(el-get 'sync 'japanese-holidays)
+(ensure-package-installed 'japanese-holidays)
 
 (setq org-agenda-include-diary nil)
 (setq org-agenda-diary-file "~/git/org/life/diary.org")
@@ -41,12 +41,13 @@
   `(progn
      (define-key calendar-mode-map "f" 'calendar-forward-day)
      (define-key calendar-mode-map "b" 'calendar-backward-day)
-     (require 'japanese-holidays)
+;     (require 'japanese-holidays)
      (setq diary-number-of-entries 31)
      (setq calendar-weekend-marker 'diary)
      (setq mark-holidays-in-calendar t)
      (setq calendar-holidays
-           (append japanese-holidays holiday-local-holidays holiday-other-holidays))))
+;           (append japanese-holidays holiday-local-holidays holiday-other-holidays)
+           (append holiday-local-holidays holiday-other-holidays))))
 
 ;; (add-hook 'today-visible-calendar-hook 'calendar-mark-weekend)
 ;; (add-hook 'today-invisible-calendar-hook 'calendar-mark-weekend)

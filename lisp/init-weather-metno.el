@@ -1,4 +1,5 @@
-(el-get 'sync 'weather-metno)
+(ensure-package-installed 'weather-metno)
+
 (setq weather-metno-get-image-props
       '(:width 8 :height 8 :ascent center))
 

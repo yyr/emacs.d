@@ -1,7 +1,7 @@
 ;;; init-boxquote.el
 ;; Created: 水曜日, 1月  2 2013
 
-(el-get 'sync 'boxquote)
+(ensure-package-installed 'boxquote)
 
 (setq boxquote-top-and-tail "─────"
       boxquote-top-corner "╭"

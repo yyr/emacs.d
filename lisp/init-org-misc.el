@@ -2,6 +2,8 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Tuesday, May 17 2011
 
+(ensure-package-installed 'org-tree-slide)
+
 ;;; org-scratch
 (defun dan/switch-to-org-scratch ()
   "Switch to a temp Org buffer.
@@ -38,7 +40,6 @@ If the region is active, insert it."
         ("A" . (org-agenda nil "T" t))
         ("$" . org-archive-subtree)))
 
-(el-get-bundle 'org-tree-slide)
 (eval-after-load "org-tree-slide"
   `(progn
      (define-key org-tree-slide-mode-map (kbd "<left>")

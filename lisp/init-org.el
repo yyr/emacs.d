@@ -1,8 +1,6 @@
 ;;; init-org.el --
 ;; Copyright (C) Yagnesh Raghava Yakkala. http://yagnesh.org
 
-;; (el-get 'sync 'org-mode)
-
 ;;; load org
 (add-to-list 'auto-mode-alist
              '("\\.\\(org_archive\\)$" . org-mode))

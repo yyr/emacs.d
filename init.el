@@ -93,5 +93,43 @@
 (load! "init-yasnip")
 (load! "init-dev")
 
+(load! "init-org")
+(load! "init-org-todo-state-tags")
+(load! "init-org-agenda")
+(load! "init-org-tags")
+(load! "init-org-capture")
+(load! "init-org-ob")
+(load! "init-org-diary")
+(load! "init-calender")
+(load! "init-weather-metno")
+(load! "init-org-export")
+(load! "init-org-misc")
+
+;;; info,  help, doc, man(woman) etc..
+(load! "init-info")
+(load! "init-eldoc")
+(load! "init-help")
+
+(load! "init-web")
+
+;;; sys & server  shell, term, tramp
+(load! "init-sys")
+(load! "init-print")
+(load! "init-crontab")
+(load! "init-time")
+(load! "init-term")
+(load! "init-tramp")
+
+
+;;; Emacs server
+(load! "init-server")
+(load! "init-session")
+
+;;;  misc
+(load! "init-misc")
+(load! "init-utils")
+(load! "init-boxquote")
+
+
 (load! "init-finish")
 ;; init ends here

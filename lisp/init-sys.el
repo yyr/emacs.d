@@ -1,5 +1,8 @@
-;;; init-battery.el
+;;; init-sys.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
+
+;;; top-mode missing?
+(ensure-package-installed '(wgrep symon))
 
 ;;; http://stackoverflow.com/questions/5562974/emacs-is-it-running-on-laptop-or-on-desktop
 ;; (require 'battery)
@@ -13,4 +16,5 @@
 
 (add-hook 'emacs-startup-hook
           '(lambda nil (display-battery-mode 1)))
-;;; init-battery.el ends here
+
+;;; init-sys.el ends here

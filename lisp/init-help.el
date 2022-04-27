@@ -3,16 +3,23 @@
 ;; Created: Friday, September 16 2011
 
 ;; Emacs help related settings
+(ensure-package-installed 'guide-key)
 
 ;;; help-map additional keys
 ;;; jump to source of `key`
-(define-key help-map (kbd "C-k") 'find-function-on-key)
-(define-key help-map (kbd "C-f") 'find-function-at-point)
-(define-key help-map (kbd "C-v") 'find-variable-at-point)
+(eval-after-load "help"
+  `(progn
+     (define-key help-map (kbd "C-k") 'find-function-on-key)
+     (define-key help-map (kbd "C-f") 'find-function-at-point)
+     (define-key help-map (kbd "C-v") 'find-variable-at-point)))
 
 ;;; help-mode buffer
-(define-key help-mode-map (kbd "n") 'next-line)
-(define-key help-mode-map (kbd "p") 'previous-line)
+(eval-after-load "help-mode"
+  `(progn
+     (define-key help-mode-map (kbd "n") 'next-line)
+     (define-key help-mode-map (kbd "p") 'previous-line)
+     (define-key help-mode-map (kbd "M-<left>") 'help-go-back)
+     (define-key help-mode-map (kbd "M-<right>") 'help-go-forward)))
 
 ;;; http://www.masteringemacs.org/articles/2011/08/04/full-text-searching-info-mode-apropos/
 ;; Custom 'apropos' key bindings
@@ -29,10 +36,7 @@
 (define-key Apropos-Prefix (kbd "C-v") 'apropos-value)
 (define-key Apropos-Prefix (kbd "C-a")   'about-emacs)
 
-(define-key help-mode-map (kbd "M-<left>") 'help-go-back)
-(define-key help-mode-map (kbd "M-<right>") 'help-go-forward)
-
-(el-get 'sync 'guide-key)
+;;; guide-key
 (setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
 (guide-key-mode 1)
 (setq guide-key/guide-key-sequence t)

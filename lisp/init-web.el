@@ -1,9 +1,10 @@
 ;;; init-web.el
 
+(ensure-package-installed 'tinkerer)
+
 (after 'webjump
   (setq webjump-sites
-        (append '(("yorg" . "yagnesh.org")
-                  ("sap" . "sapporoindians.net"))
+        (append '(("yorg" . "yagnesh.org"))
                 webjump-sample-sites)))
 
 (global-set-key "\C-cj" 'webjump)
@@ -13,7 +14,6 @@
 ;; (el-get 'sync 'sx)
 
 ;;; Tinkerer
-(el-get 'sync 'tinkerer)
 (setq tinkerer-root-path "~/git/yorg/")
 
 ;;; init-web.el ends here
