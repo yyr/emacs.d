@@ -1,13 +1,10 @@
 ;;; init-gnus.el
 ;; http://yagnesh.org
 
-(require 'nnimap)
-(require 'starttls)
+;; (require 'nnimap)
+;; (require 'starttls)
 
 ;; (require 'registry)
-
-;;; load my bbdb settings
-(load "init-bbdb")
 
 ;;; some mail secrets ;)
 (if (file-exists-p "~/git/org/gnus-secret.el")
@@ -21,9 +18,9 @@
 ;;; --------------------------------------------------------
 ;;; news
 ;;; --------------------------------------------------------
-(when (not on-lab-server)
-  ;; only laptop has leafnode installed
-  )
+;; (when (not on-lab-server)
+;;   ;; only laptop has leafnode installed
+;;   )
 ;; (setq gnus-select-method '(nntp "news.gmane.io"))
 ;; (setq gnus-select-method '(nnfolder ""))
 

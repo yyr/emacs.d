@@ -2,34 +2,32 @@
 ;; Dired Mode
 ;; -----------------------------------------------------------------------------
 
-;;;; navigation
-
-(el-get 'sync '(direx dired-details)) ;; Make dired less verbose
+;;;  dired-details
+(ensure-package-installed 'direx)
 
 (setq dired-recursive-deletes 'always)
 (setq dired-listing-switches "-alht")
 (setq dired-dwim-target t)
 
-
 (after 'dired
        (require 'dired-x)
-       (require 'dired-details)
        (require 'dired-aux)
        (setq dired-omit-extensions
              (append dired-omit-extensions
                      '(".mod" ".pyc" ".pyo")))
        (add-to-list 'dired-mode-hook
                     (lambda ()
-                      (setq-default dired-details-hidden-string "--- ")
-                      (dired-details-install)
+                      ;; (setq-default dired-details-hidden-string "--- ")
+                      ;; (dired-details-install)
                       (dired-omit-mode 1)))
+       (define-key dired-mode-map [mouse-2] 'dired-find-file)
        (define-key dired-mode-map
-         (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom))
+         (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)
+       (define-key dired-mode-map
+         (vector 'remap 'beginning-of-buffer) 'dired-back-to-top))
 
 (add-hook 'dired-mode-hook
           'turn-on-gnus-dired-mode)
-
-(define-key dired-mode-map [mouse-2] 'dired-find-file)
 
 (autoload 'dired-jump "dired-x"
   "Jump to dired buffer corresponding to current buffer."
@@ -75,9 +73,6 @@
   (interactive)
   (beginning-of-buffer)
   (dired-next-line 1))
-
-(define-key dired-mode-map
-  (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
 
 (defun dired-jump-to-bottom ()
   (interactive)

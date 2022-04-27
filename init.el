@@ -81,17 +81,11 @@
 (load! "init-frame")
 
 ;;; help navigation
+(load! "init-dired")
 (load! "init-navigation")
 (load! "init-imenu")
 (load! "init-buffers")
 (load! "init-recentf")
-
-;; langs
-(load! "init-lispy")
-(load! "init-elisp")
-
-(load! "init-yasnip")
-(load! "init-dev")
 
 (load! "init-org")
 (load! "init-org-todo-state-tags")
@@ -120,16 +114,41 @@
 (load! "init-term")
 (load! "init-tramp")
 
+;;; languages
+(load! "init-flycheck")
+(load! "init-etags")
+(load! "init-lispy")
+(load! "init-elisp")
+(load! "init-yasnip")
+(load! "init-dev")
+(load! "init-common-lisp")
+(load! "init-scheme")
+(load! "init-grammar")
+(load! "init-cc")
+(load! "init-perl")
+(load! "init-html")
+(load! "init-yaml")
+(load! "init-python")
+(load! "init-compile")
+(load! "init-fortran")
+(load! "init-js")
 
 ;;; Emacs server
 (load! "init-server")
 (load! "init-session")
 
+;;; mail, news & messages
+(load! "init-gpg")
+(load! "init-pre-gnus")
+(load! "init-gnus")
+(load! "init-bbdb")
+(load! "init-mail")
+(load! "init-message")
+
 ;;;  misc
 (load! "init-misc")
 (load! "init-utils")
 (load! "init-boxquote")
-
 
 (load! "init-finish")
 ;; init ends here

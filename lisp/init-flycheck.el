@@ -1,5 +1,6 @@
 ;;; init-flycheck.el
-(el-get 'sync 'flycheck)
+(ensure-package-installed 'flycheck)
+
 (add-hook 'prog-mode-hook 'flycheck-mode)
 ;; (dolist (hook '(emacs-lisp-mode-hook
 ;;                 c-mode-hook

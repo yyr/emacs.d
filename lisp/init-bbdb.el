@@ -1,9 +1,8 @@
 ;;; init-bbdb.el
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 
+(ensure-package-installed 'bbdb)
 (setq bbdb-file "~/git/org/.bbdb")
-(el-get 'sync 'bbdb)
-(require 'bbdb)
 
 (setq bbdb-allow-duplicates t)
 ;(bbdb-mua-auto-update-init 'gnus 'message)

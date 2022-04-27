@@ -2,13 +2,12 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Thursday, November 21 2013
 
-(el-get 'sync
-        '(js2-mode
-          js2-refactor
-          xref-js2
-          company-tern
-          websocket
-          kite-mini))
+;;; missing company-tern
+(ensure-package-installed '(js2-mode
+                            js2-refactor
+                            xref-js2
+                            websocket
+                            kite-mini))
 
 (add-to-list 'auto-mode-alist '("\\.\\(js\\|jsx\\)$" . js2-mode))
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
@@ -25,8 +24,8 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (add-hook 'xref-backend-functions
                                      #'xref-js2-xref-backend nil t)
-                           (add-to-list 'company-backends 'company-tern)
-                           (tern-mode 1)
+                           ;; (add-to-list 'company-backends 'company-tern)
+                           ;; (tern-mode 1)
                            (kite-mini-mode 1)))
 
 ;; Disable completion keybindings, as we use xref-js2 instead

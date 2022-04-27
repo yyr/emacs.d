@@ -10,11 +10,10 @@
 ;; (setq ido-use-filename-at-point 'guess)
 (setq ido-auto-merge-work-directories-length 0)
 
-;; (require 'ido-completing-read+)
 (ido-ubiquitous-mode 1)
-
 (ido-vertical-mode 1)
 (flx-ido-mode 1)
+
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)

@@ -3,11 +3,8 @@
 ;;; Description:
 ;; Scheme, guile
 
-(el-get 'sync 'geiser)
-
+(ensure-package-installed 'geiser)
 (setq scheme-program-name "guile")
-
-(require 'geiser-load)
 
 ;; (when (and (symbolp Info-default-directory-list) (file-exists-p "~/local/guile/"))
 ;;   (eval-after-load "info"

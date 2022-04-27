@@ -2,12 +2,12 @@
 ;; Author: Yagnesh Raghava Yakkala. http://yagnesh.org
 ;; Created: Friday, July 22 2011
 
-(el-get 'sync '(pylookup
-                highlight-indentation
-                sphinx-doc
-                company-jedi
-                py-isort
-                py-yapf))
+;;; missing pylookup
+(ensure-package-installed '(highlight-indentation
+                            sphinx-doc
+                            company-jedi
+                            py-isort
+                            py-yapf))
 
 ;;; plakes8, isort, yapf
 
@@ -55,26 +55,26 @@
 ;; Documentation Helpers
 ;;; --------------------------------------------------------------------
 ;;; pylookup
-(add-hook 'python-mode-hook
-          (lambda ()
-            (require 'pylookup)
-            ;; pylookup
-            (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
-            (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
-            ;; indentation
-            (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
-            (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
+;; (add-hook 'python-mode-hook
+;;           (lambda ()
+;;             (require 'pylookup)
+;;             ;; pylookup
+;;             (local-set-key (kbd "C-z C-l") 'pylookup-lookup)
+;;             (local-set-key (kbd "C-z C-s") 'pylookup-lookup-at-point)
+;;             ;; indentation
+;;             (local-set-key (kbd "M-<left>") 'python-indent-shift-left)
+;;             (local-set-key (kbd "M-<right>") 'python-indent-shift-right)))
 
 ;;; pydoc-info
-(setq my-info-dir "~/git/info-collection/")
-(when (file-exists-p (concat my-info-dir "python.info"))
-  (el-get 'sync 'pydoc-info)
-  (require 'pydoc-info)
-  (info-lookup-add-help
-   :mode 'python-mode
-   :parse-rule 'pydoc-info-python-symbol-at-point
-   :doc-spec
-   '(("(python)Index" pydoc-info-lookup-transform-entry)
-     ("(sphinx)Index" pydoc-info-lookup-transform-entry))))
+;; (setq my-info-dir "~/git/info-collection/")
+;; (when (file-exists-p (concat my-info-dir "python.info"))
+;;   (el-get 'sync 'pydoc-info)
+;;   (require 'pydoc-info)
+;;   (info-lookup-add-help
+;;    :mode 'python-mode
+;;    :parse-rule 'pydoc-info-python-symbol-at-point
+;;    :doc-spec
+;;    '(("(python)Index" pydoc-info-lookup-transform-entry)
+;;      ("(sphinx)Index" pydoc-info-lookup-transform-entry))))
 
 ;;; init-python.el ends here
