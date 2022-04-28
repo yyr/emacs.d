@@ -4,6 +4,18 @@
 ;;----------------------------------------------------------------------------
 ;; Find the directory containing a given library
 ;;----------------------------------------------------------------------------
+;; stupid debugger assistant
+(defmacro catch-pkg-load (&optional pkg)
+  "Find out who is loading a PKG if the argument is available or
+mark a check point"
+  (setq debug-on-error t)
+  (if pkg
+      (eval-after-load pkg
+        `(error  "%s is just loaded in %s" ',pkg
+                 (or load-file-name buffer-file-name)))
+    (message "%s already loaded at this point: %s " ',pkg
+             (or load-file-name buffer-file-name))))
+
 ;; (require 'find-func)
 (defun directory-of-library (library-name)
   "open directory with dired which contains the give library"
