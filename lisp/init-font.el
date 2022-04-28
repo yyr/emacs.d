@@ -46,4 +46,5 @@
   (message "Font size: %s" (face-attribute 'default :height)))
 (define-key global-map [(control ?z) ?-] 'font-decrease)      ; Bind to C-z -
 
+(load-theme 'tango-dark t)
 ;;; init-font.el ends here
