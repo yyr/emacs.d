@@ -26,6 +26,8 @@
 
 ;; (setq package-enable-at-startup nil)
 (package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 ;;;
 (defconst emacsd
