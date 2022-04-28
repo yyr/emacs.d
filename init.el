@@ -87,6 +87,7 @@
 (load! "init-buffers")
 (load! "init-recentf")
 
+;;; org
 (load! "init-org")
 (load! "init-org-todo-state-tags")
 (load! "init-org-agenda")
@@ -103,7 +104,6 @@
 (load! "init-info")
 (load! "init-eldoc")
 (load! "init-help")
-
 (load! "init-web")
 
 ;;; sys & server  shell, term, tramp
@@ -113,6 +113,9 @@
 (load! "init-time")
 (load! "init-term")
 (load! "init-tramp")
+(load! "init-doc-view")
+;; (when (executable-find "dict")
+;;   (load! "init-dictem"))
 
 ;;; languages
 (load! "init-flycheck")
@@ -132,6 +135,9 @@
 (load! "init-compile")
 (load! "init-fortran")
 (load! "init-js")
+(load! "init-ncl")
+(load! "init-latex")
+(load! "init-bib")
 
 ;;; Emacs server
 (load! "init-server")

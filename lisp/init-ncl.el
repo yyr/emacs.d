@@ -1,6 +1,6 @@
 ;;; init-ncl.el
 
-(el-get 'sync '(ncl-mode))
+(ensure-package-installed 'ncl-mode)
 
 ;; use downloaded documentation instead (for offline use)
 (if (file-exists-p "/home/yagnesh/doc/ncl-doc/")

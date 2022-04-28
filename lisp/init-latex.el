@@ -6,7 +6,7 @@
 ;;; Description:
 ;; settings for auctex and reftex .. etc
 
-(el-get 'sync '(auctex zotelo timer-revert))
+(ensure-package-installed '(auctex zotelo timer-revert))
 
 (setq
  TeX-electric-escape t
@@ -103,8 +103,8 @@
 ;;; util functions
 
 ;;; http://www.emacswiki.org/emacs/TN
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+;; (load "auctex.el" nil t t)
+;; (load "preview-latex.el" nil t t)
 ;; (require 'tex-buf)
 
 (defun TeX-command-default (name)

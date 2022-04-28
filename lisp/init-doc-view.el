@@ -3,8 +3,10 @@
 ;; Created: Monday, March 31 2014
 
 ;;; pdf-tools
-(when (and (not on-lab-server) (not on-ms))
-  (el-get 'sync 'pdf-tools))
+(ensure-package-installed 'pdf-tools)
+
+;; (when (and (not on-lab-server) (not on-ms)))
+
 
 (autoload 'pdf-view-mode "pdf-view.el" nil t)
 (add-to-list 'auto-mode-alist   '("\\.[pP][dD][fF]\\'" . pdf-view-mode))

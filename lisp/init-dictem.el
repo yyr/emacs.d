@@ -9,6 +9,7 @@
 ;; dict-wn - Wordnet dictinory
 ;; any other dicts you want
 
+(ensure-package-installed 'dictem)
 (el-get 'sync '(dictem))
 
 (setq dictem-server "localhost")
