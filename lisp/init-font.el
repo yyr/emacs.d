@@ -24,6 +24,8 @@
 ;; (set-face-attribute 'default nil :family "Anonymous Pro" :height 110)
 ;; (set-default-font "-Misc-Fixed-Medium-R-Normal--10-100-75-75-C-90-ISO8859-1")
 
+;; (set-face-attribute 'default nil :family "Consolas" :height 110)
+
 ;; font-size
 ;; ---------
 ;; Sometimes you just feel like a larger, bolder font.  Other times you

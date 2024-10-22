@@ -123,7 +123,7 @@ before point if point is past text"
 (add-hook 'find-file-hooks 'goto-address-prog-mode)
 
 ;;; stop unwanted kill-emacs (while using orgmode)
-(global-unset-key (kbd "C-x C-c"))
+;; (global-unset-key (kbd "C-x C-c"))
 
 (when (fboundp 'horizontal-scroll-bar-mode)
   (horizontal-scroll-bar-mode -1))
@@ -131,5 +131,6 @@ before point if point is past text"
 (when (fboundp 'copyright-update)
   (setq copyright-names-regexp "Yagnesh\\|Free Software")
   (add-hook 'before-save-hook 'copyright-update))
+
 
 ;;; init-general.el ends here

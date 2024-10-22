@@ -11,9 +11,13 @@
 (setq diary-file "~/git/org/life/d")
 
 ;;; diary supplement Nick Dokos org-mode mailing list
-;;; location: sapporo
-(setq calendar-latitude +18.52)
-(setq calendar-longitude +73.85)
+;;; location: Sapporo
+;; (setq calendar-latitude +18.52)
+;; (setq calendar-longitude +73.85)
+
+;;; location: Muppavaram
+(setq calendar-latitude +18.544
+      calendar-longitude +80.082)
 
 (defun diary-sunrise ()
   (let ((dss (diary-sunrise-sunset)))
